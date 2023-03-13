@@ -58,7 +58,49 @@ const Navbar = () => {
                 Become a Seller
               </NavLink>
             )}
-            {!currentUser && (
+            {currentUser ? (
+              <>
+                {currentUser && (
+                  <div
+                    className="relative flex items-center gap-4 cursor-pointer"
+                    onClick={() => setOpenDrop((prev) => !prev)}
+                  >
+                    <img
+                      src="https://cdn1.vectorstock.com/i/1000x1000/70/75/user-icon-green-vector-17597075.jpg"
+                      alt="user_image"
+                      className="w-[32px] h-[32px] rounded-[50%] object-cover"
+                    />
+                    <span>{currentUser.username}</span>
+                    <div
+                      className={`absolute top-12 right-0 p-3 bg-white border rounded-md text-black flex-col items-start gap-3 w-[200px] font-medium transition-transform duration-300 ${
+                        openDrop ? "flex" : "hidden"
+                      }`}
+                    >
+                      {currentUser?.isSeller && (
+                        <>
+                          <NavLink to="/gigs" className="cursor-pointer w-full">
+                            Gigs
+                          </NavLink>
+                          <NavLink
+                            to="/addgigs"
+                            className="cursor-pointer w-full"
+                          >
+                            Add New Gigs
+                          </NavLink>
+                        </>
+                      )}
+                      <NavLink to="/orders" className="cursor-pointer w-full">
+                        Orders
+                      </NavLink>
+                      <NavLink to="/messages" className="cursor-pointer w-full">
+                        Messages
+                      </NavLink>
+                      <div className="cursor-pointer w-full">Logout</div>
+                    </div>
+                  </div>
+                )}
+              </>
+            ) : (
               <>
                 <NavLink to="/login" className="cursor-pointer">
                   Sign in
@@ -73,42 +115,6 @@ const Navbar = () => {
                   Join
                 </NavLink>
               </>
-            )}
-            {currentUser && (
-              <div
-                className="relative flex items-center gap-4 cursor-pointer"
-                onClick={() => setOpenDrop((prev) => !prev)}
-              >
-                <img
-                  src="https://cdn1.vectorstock.com/i/1000x1000/70/75/user-icon-green-vector-17597075.jpg"
-                  alt="user_image"
-                  className="w-[32px] h-[32px] rounded-[50%] object-cover"
-                />
-                <span>{currentUser.username}</span>
-                <div
-                  className={`absolute top-12 right-0 p-3 bg-white border rounded-md text-black flex-col items-start gap-3 w-[200px] font-medium transition-transform duration-300 ${
-                    openDrop ? "flex" : "hidden"
-                  }`}
-                >
-                  {currentUser?.isSeller && (
-                    <>
-                      <NavLink to="/gigs" className="cursor-pointer w-full">
-                        Gigs
-                      </NavLink>
-                      <NavLink to="/addgigs" className="cursor-pointer w-full">
-                        Add New Gigs
-                      </NavLink>
-                    </>
-                  )}
-                  <NavLink to="/orders" className="cursor-pointer w-full">
-                    Orders
-                  </NavLink>
-                  <NavLink to="/messages" className="cursor-pointer w-full">
-                    Messages
-                  </NavLink>
-                  <div className="cursor-pointer w-full">Logout</div>
-                </div>
-              </div>
             )}
           </nav>
         </div>
