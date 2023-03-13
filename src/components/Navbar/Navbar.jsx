@@ -4,7 +4,7 @@ import { BsCurrencyDollar } from "react-icons/bs";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
   return (
     <header
       className={`flex items-center justify-center w-full flex-col text-white ${
@@ -12,7 +12,7 @@ const Navbar = () => {
       }`}
     >
       <div className="contain">
-        <div className="w-full flex items-center justify-between py-5">
+        <div className="w-full flex items-center justify-between py-4">
           <Link to="/" className="text-3xl font-bold">
             <span>fiverr</span>
             <span className="text-primary">.</span>
@@ -54,7 +54,11 @@ const Navbar = () => {
           </nav>
         </div>
       </div>
-      <div className="w-full">
+      <div
+        className={`w-full transition-all duration-300 ${
+          active ? "block" : "hidden"
+        }`}
+      >
         <hr className="border-gray-300" />
         <div className="contain">
           <div
