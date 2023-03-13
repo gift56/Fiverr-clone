@@ -32,7 +32,7 @@ const Navbar = () => {
     >
       <div className="contain">
         <div className="w-full flex items-center justify-between py-4">
-          <Link to="/" className="text-3xl font-bold">
+          <Link to="/" className="text-3xl font-bold select-none">
             <span>fiverr</span>
             <span className="text-primary">.</span>
           </Link>

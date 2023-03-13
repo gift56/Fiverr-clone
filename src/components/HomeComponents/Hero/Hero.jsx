@@ -21,8 +21,9 @@ const Hero = () => {
                 className="w-full h-full bg-transparent outline-none text-active"
               />
             </div>
-            <button type="submit" className="bg-primary h-full w-[150px] rounded-tr-md rounded-br-md">Search</button>
+            <button type="submit" className="bg-primary h-full w-[150px] rounded-tr-md rounded-br-md outline-none">Search</button>
           </div>
+
         </div>
       </div>
     </section>
