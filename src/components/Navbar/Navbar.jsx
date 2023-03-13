@@ -85,24 +85,24 @@ const Navbar = () => {
                   className="w-[32px] h-[32px] rounded-[50%] object-cover"
                 />
                 <span>{currentUser.username}</span>
-                <div>
+                <div className="absolute top-12 right-0 p-3 bg-white border rounded-md text-black flex flex-col items-start gap-3 w-[200px] font-medium">
                   {currentUser?.isSeller && (
                     <>
-                      <NavLink to="/gigs" className="cursor-pointer">
+                      <NavLink to="/gigs" className="cursor-pointer w-full">
                         Gigs
                       </NavLink>
-                      <NavLink to="/addgigs" className="cursor-pointer">
+                      <NavLink to="/addgigs" className="cursor-pointer w-full">
                         Add New Gigs
                       </NavLink>
                     </>
                   )}
-                  <NavLink to="/orders" className="cursor-pointer">
+                  <NavLink to="/orders" className="cursor-pointer w-full">
                     Orders
                   </NavLink>
-                  <NavLink to="/messages" className="cursor-pointer">
+                  <NavLink to="/messages" className="cursor-pointer w-full">
                     Messages
                   </NavLink>
-                  <div className="cursor-pointer">Logout</div>
+                  <div className="cursor-pointer w-full">Logout</div>
                 </div>
               </div>
             )}
