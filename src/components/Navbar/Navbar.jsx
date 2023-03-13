@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { TfiWorld } from "react-icons/tfi";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const [active, setActive] = useState(true);
   return (
-    <header className="flex items-center justify-center w-full flex-col bg-navbg text-white">
+    <header
+      className={`flex items-center justify-center w-full flex-col text-white ${
+        active ? "bg-white text-black" : "bg-navbg"
+      }`}
+    >
       <div className="contain">
         <div className="w-full flex items-center justify-between py-5">
           <Link to="/" className="text-3xl font-bold">
@@ -40,7 +45,9 @@ const Navbar = () => {
             <NavLink
               to="/join"
               type="button"
-              className="border py-2 px-5 rounded hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 text-sm font-medium"
+              className={`border py-2 px-5 rounded hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 text-sm font-semibold ${
+                active ? "text-primary border-primary" : ""
+              }`}
             >
               Join
             </NavLink>
@@ -50,7 +57,11 @@ const Navbar = () => {
       <div className="w-full">
         <hr className="border-gray-300" />
         <div className="contain">
-          <div className="w-full flex items-center justify-between py-3 overflow-x-auto gap-5 font-light text-gray-200">
+          <div
+            className={`w-full flex items-center justify-between py-3 overflow-x-auto gap-5 font-medium text-gray-200 ${
+              active ? "text-gray-500" : ""
+            }`}
+          >
             <span className="hover:border-b-2 cursor-pointer transition-[border]  h-8 border-primary">
               Graphics & Design
             </span>
