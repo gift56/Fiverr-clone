@@ -8,6 +8,7 @@ module.exports = {
         active: "#1e1692",
         darkColor: "#62646a",
         navbg: "#013914",
+        clientBg: "#fafafa",
       },
       backgroundPosition: {
         "top-4": "right top -4rem",
