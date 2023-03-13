@@ -9,8 +9,8 @@ module.exports = {
         darkColor: "#62646a",
         navbg: "#013914",
       },
-      backgroundSize: {
-        "100%": "100%",
+      backgroundPosition: {
+        "top-4": "right top -4rem",
       },
       animation: {
         bganimate: "bganimate 30s linear infinite",
