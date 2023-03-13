@@ -11,9 +11,9 @@ const Clients = () => {
   return (
     <section className="w-full bg-clientBg py-6">
       <div className="contain">
-        <div className="flex items-center justify-center w-full gap-4">
-          <h2>Trusted by:</h2>
-          <div className="flex items-center justify-start gap-4">
+        <div className="flex items-center justify-center w-full gap-6">
+          <h2 className="text-base font-medium text-darkColor">Trusted by:</h2>
+          <div className="flex items-center justify-start gap-6">
             {clientsData.map((item, i) => (
               <img src={item} alt={i} key={i} />
             ))}
