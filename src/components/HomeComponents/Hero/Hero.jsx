@@ -2,10 +2,24 @@ import React from "react";
 import { FiSearch } from "react-icons/fi";
 
 const Hero = () => {
+  const buttons = [
+    {
+      text: "Web Design",
+    },
+    {
+      text: "WordPress",
+    },
+    {
+      text: "Logo Design",
+    },
+    {
+      text: "Ai Services",
+    },
+  ];
   return (
     <section className="w-full bg-navbg h-screen text-white animate-bganimate bg-no-repeat bg-cover bg-top-4 pt-20">
       <div className="contain flex flex-col items-start justify-center h-full">
-        <div className="flex flex-col items-start justify-start gap-4">
+        <div className="flex flex-col items-start justify-start gap-5">
           <h2 className="text-5xl font-semibold leading-[120%]">
             Find the perfect <i className="font-light">freelance</i> <br />{" "}
             services for your business
@@ -30,6 +44,9 @@ const Hero = () => {
           </div>
           <div className="flex items-center gap-3">
             <span>Popular :</span>
+            {buttons.map((item, i) => (
+              <button key={i} className="border outline-none py-1 px-2 rounded-2xl text-sm">{item.text}</button>
+            ))}
           </div>
         </div>
       </div>
