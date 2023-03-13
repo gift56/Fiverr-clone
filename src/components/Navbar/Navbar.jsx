@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { TfiWorld } from "react-icons/tfi";
 import { BsCurrencyDollar } from "react-icons/bs";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
   const [openDrop, setOpenDrop] = useState(false);
+  const { pathname } = useLocation();
+
   useEffect(() => {
     const backgroundChange = () => {
       window.scrollY > 0 ? setActive(true) : setActive(false);
@@ -25,7 +27,7 @@ const Navbar = () => {
   return (
     <header
       className={`flex items-center justify-center w-full flex-col text-white sticky top-0 transition-all ease-in-out z-10 ${
-        active ? "bg-white !text-black" : "bg-navbg"
+        active || pathname !== "/" ? "bg-white !text-black" : "bg-navbg"
       }`}
     >
       <div className="contain">
@@ -35,7 +37,7 @@ const Navbar = () => {
             <span className="text-primary">.</span>
           </Link>
           <nav className="flex items-center justify-end gap-7 font-medium text-base">
-            <NavLink to="/" className="cursor-pointer" >
+            <NavLink to="/" className="cursor-pointer">
               Fiverr Business
             </NavLink>
             <NavLink to="/explore" className="cursor-pointer">
@@ -117,14 +119,14 @@ const Navbar = () => {
       </div>
       <div
         className={`w-full transition-all duration-300 ${
-          active ? "flex" : "hidden"
+          active || pathname !== "/" ? "flex" : "hidden"
         }`}
       >
         <hr className="border-black" />
         <div className="contain">
           <div
-            className={`w-full flex items-center justify-between py-3 overflow-x-auto gap-5 font-medium text-gray-200 scrollbar-hide text-sm ${
-              active ? "text-gray-500" : ""
+            className={`w-full flex items-center justify-between py-3 overflow-x-auto gap-5 font-medium scrollbar-hide text-sm ${
+              active || pathname !== "/" ? "!text-gray-500" : "text-gray-200"
             }`}
           >
             <span className="hover:border-b-2 cursor-pointer transition-[border] h-8 scrollbar-hide border-primary">
