@@ -5,6 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
+  const [openDrop, setOpenDrop] = useState(false);
   useEffect(() => {
     const backgroundChange = () => {
       window.scrollY > 0 ? setActive(true) : setActive(false);
@@ -74,9 +75,12 @@ const Navbar = () => {
               </>
             )}
             {currentUser && (
-              <div className="relative flex items-center gap-4">
+              <div
+                className="relative flex items-center gap-4 cursor-pointer"
+                onClick={() => setOpenDrop((prev) => !prev)}
+              >
                 <img
-                  src="https://images.pexels.com/photos/1115697/pexels-photo-1115697.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  src="https://cdn1.vectorstock.com/i/1000x1000/70/75/user-icon-green-vector-17597075.jpg"
                   alt="user_image"
                   className="w-[32px] h-[32px] rounded-[50%] object-cover"
                 />
