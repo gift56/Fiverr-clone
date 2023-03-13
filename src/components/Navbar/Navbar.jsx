@@ -85,7 +85,11 @@ const Navbar = () => {
                   className="w-[32px] h-[32px] rounded-[50%] object-cover"
                 />
                 <span>{currentUser.username}</span>
-                <div className="absolute top-12 right-0 p-3 bg-white border rounded-md text-black flex flex-col items-start gap-3 w-[200px] font-medium">
+                <div
+                  className={`absolute top-12 right-0 p-3 bg-white border rounded-md text-black flex-col items-start gap-3 w-[200px] font-medium transition-transform duration-300 ${
+                    openDrop ? "flex" : "hidden"
+                  }`}
+                >
                   {currentUser?.isSeller && (
                     <>
                       <NavLink to="/gigs" className="cursor-pointer w-full">
