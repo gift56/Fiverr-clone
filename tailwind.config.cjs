@@ -9,31 +9,34 @@ module.exports = {
         darkColor: "#62646a",
         navbg: "#013914",
       },
-      backgroundImage: {
-        heroBg: "url('/src/assets/images/hero1.png')",
+      backgroundSize: {
+        "100%": "100%",
       },
       animation: {
-        bganimate: "bganimate 20s linear infinite",
+        bganimate: "bganimate 30s linear infinite",
       },
       keyframes: {
         bganimate: {
           "0%": {
             backgroundImage: "url('/src/assets/images/hero1.png')",
           },
-          "15%": {
+          "16.66%": {
             backgroundImage: "url('/src/assets/images/hero2.png')",
           },
-          "25%": {
+          "33.33%": {
             backgroundImage: "url('/src/assets/images/hero3.png')",
           },
           "50%": {
             backgroundImage: "url('/src/assets/images/hero4.png')",
           },
-          "75%": {
+          "66.66%": {
             backgroundImage: "url('/src/assets/images/hero5.png')",
           },
-          "100%": {
+          "83.33%": {
             backgroundImage: "url('/src/assets/images/hero6.png')",
+          },
+          "100%": {
+            backgroundImage: "url('/src/assets/images/hero1.png')",
           },
         },
       },
