@@ -35,7 +35,7 @@ const Navbar = () => {
             <span className="text-primary">.</span>
           </Link>
           <nav className="flex items-center justify-end gap-7 font-medium text-base">
-            <NavLink to="/" className="cursor-pointer">
+            <NavLink to="/" className="cursor-pointer" >
               Fiverr Business
             </NavLink>
             <NavLink to="/explore" className="cursor-pointer">
@@ -54,7 +54,7 @@ const Navbar = () => {
               USD
             </span>
             {!currentUser.isSeller && (
-              <NavLink to="seller" className="cursor-pointer">
+              <NavLink to="/seller" className="cursor-pointer">
                 Become a Seller
               </NavLink>
             )}
@@ -81,10 +81,7 @@ const Navbar = () => {
                           <NavLink to="/gigs" className="cursor-pointer w-full">
                             Gigs
                           </NavLink>
-                          <NavLink
-                            to="/addgigs"
-                            className="cursor-pointer w-full"
-                          >
+                          <NavLink to="/add" className="cursor-pointer w-full">
                             Add New Gigs
                           </NavLink>
                         </>
@@ -102,12 +99,11 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <NavLink to="/login" className="cursor-pointer">
+                <NavLink to="/signin" className="cursor-pointer">
                   Sign in
                 </NavLink>
                 <NavLink
                   to="/join"
-                  type="button"
                   className={`border py-2 px-5 rounded hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 text-sm font-semibold ${
                     active ? "text-primary border-primary" : ""
                   }`}
