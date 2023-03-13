@@ -5,3 +5,7 @@
 * {
   font-family: "Noto Sans", sans-serif;
 }
+.contain {
+  width: 80%;
+  margin: 0 auto;
+}

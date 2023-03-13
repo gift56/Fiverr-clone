@@ -5,7 +5,9 @@ module.exports = {
     extend: {
       colors: {
         primary: "#1dbf73",
-        darkColor: "#1e1692",
+        active: "#1e1692",
+        darkColor: "#62646a",
+        navbg: "#013914",
       },
     },
   },
