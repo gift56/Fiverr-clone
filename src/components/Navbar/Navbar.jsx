@@ -4,7 +4,7 @@ import { BsCurrencyDollar } from "react-icons/bs";
 
 const Navbar = () => {
   return (
-    <header>
+    <header className="">
       <div className="contain">
         <div>
           <div className="logo">
