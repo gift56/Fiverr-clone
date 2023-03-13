@@ -57,18 +57,51 @@ const Navbar = () => {
                 Become a Seller
               </NavLink>
             )}
-            <NavLink to="/login" className="cursor-pointer">
-              Sign in
-            </NavLink>
-            <NavLink
-              to="/join"
-              type="button"
-              className={`border py-2 px-5 rounded hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 text-sm font-semibold ${
-                active ? "text-primary border-primary" : ""
-              }`}
-            >
-              Join
-            </NavLink>
+            {!currentUser && (
+              <>
+                <NavLink to="/login" className="cursor-pointer">
+                  Sign in
+                </NavLink>
+                <NavLink
+                  to="/join"
+                  type="button"
+                  className={`border py-2 px-5 rounded hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 text-sm font-semibold ${
+                    active ? "text-primary border-primary" : ""
+                  }`}
+                >
+                  Join
+                </NavLink>
+              </>
+            )}
+            {currentUser && (
+              <div className="relative flex items-center gap-4">
+                <img
+                  src="https://images.pexels.com/photos/1115697/pexels-photo-1115697.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  alt="user_image"
+                  className="w-[32px] h-[32px] rounded-[50%] object-cover"
+                />
+                <span>{currentUser.username}</span>
+                <div>
+                  {currentUser?.isSeller && (
+                    <>
+                      <NavLink to="/gigs" className="cursor-pointer">
+                        Gigs
+                      </NavLink>
+                      <NavLink to="/addgigs" className="cursor-pointer">
+                        Add New Gigs
+                      </NavLink>
+                    </>
+                  )}
+                  <NavLink to="/orders" className="cursor-pointer">
+                    Orders
+                  </NavLink>
+                  <NavLink to="/messages" className="cursor-pointer">
+                    Messages
+                  </NavLink>
+                  <div className="cursor-pointer">Logout</div>
+                </div>
+              </div>
+            )}
           </nav>
         </div>
       </div>
