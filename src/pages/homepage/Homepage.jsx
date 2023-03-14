@@ -2,8 +2,9 @@ import React from "react";
 import Clients from "../../components/HomeComponents/Clients/Clients";
 import Hero from "../../components/HomeComponents/Hero/Hero";
 import Slides from "../../components/Slides/Slides";
-import { cards } from "../../data/data";
 import SingleCard from "../../components/HomeComponents/Services/SingleCard/SingleCard";
+import Features from "../../components/HomeComponents/Features/Features";
+import { cards } from "../../data/data";
 
 const Homepage = () => {
   return (
@@ -15,6 +16,7 @@ const Homepage = () => {
           <SingleCard key={item.id} item={item} />
         ))}
       </Slides>
+      <Features />
     </main>
   );
 };
