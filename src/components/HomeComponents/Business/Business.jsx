@@ -13,8 +13,13 @@ const Business = () => {
               <span className="font-normal"> business.</span>
             </h4>
             <h2 className="text-4xl font-bold">
-              A business solution <br /> designed for <i className="font-light">teams</i>
+              A business solution <br /> designed for{" "}
+              <i className="font-light">teams</i>
             </h2>
+            <p className="max-w-[450px] text-base font-medium">
+              Upgrade to a curated experience packed with tools and benefits,
+              dedicated to businesses
+            </p>
             <div className="w-full flex items-start justify-start flex-col gap-5">
               {/* {featureData.map((item, i) => (
                 <div
