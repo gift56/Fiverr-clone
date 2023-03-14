@@ -3,7 +3,7 @@ import { BsCheckCircle, BsPlayFill } from "react-icons/bs";
 import userImg from "../../../assets/images/users.png";
 
 const Features = () => {
-  const [showVideo, setShowVideo] = useState(true);
+  const [showVideo, setShowVideo] = useState(false);
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -69,7 +69,17 @@ const Features = () => {
             <h2 className="text-4xl font-bold text-darkColor">
               A whole world of freelance <br /> talent at your fingertips
             </h2>
-            <div className="w-full flex items-start justify-start flex-col gap-5"></div>
+            <div className="w-full flex items-start justify-start flex-col gap-5">
+              {featureData.map((item, i) => (
+                <div className="flex items-start justify-start w-full flex-col gap-3">
+                  <div className="flex items-center justify-start gap-3">
+                    <span>
+                      <BsCheckCircle />
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="flex-1">
             <div className="w-full relative" onClick={handleButtonClick}>
