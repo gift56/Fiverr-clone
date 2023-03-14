@@ -38,11 +38,23 @@ const Features = () => {
     setShowVideo(true);
   };
 
+  const featureData = [
+    {
+      title: "The best for every budget",
+      detail: "Find high-quality services at every price point. No hourly rates, just project-based pricing.",
+    },
+  ];
+
   return (
-    <section className="bg-[#f1fdf7] py-10">
+    <section className="bg-[#f1fdf7] py-14">
       <div className="contain">
-        <div className="flex items-center justify-between w-full">
-          <div className="flex-1"></div>
+        <div className="flex items-center justify-between w-full gap-4">
+          <div className="flex-1 flex items-start justify-start flex-col gap-5">
+            <h2 className="text-4xl font-bold text-darkColor">
+              A whole world of freelance <br /> talent at your fingertips
+            </h2>
+            <div className="w-full flex items-start justify-start flex-col gap-5"></div>
+          </div>
           <div className="flex-1">
             <div className="w-full relative" onClick={handleButtonClick}>
               <img src={userImg} alt="features_image" className="w-full" />
@@ -54,7 +66,10 @@ const Features = () => {
             </div>
             {showVideo && (
               <div className="fixed top-0 right-0 bg-[#00000085]  w-full h-full z-40 place-items-center flex justify-center">
-                <div ref={videoRef} className="lg:w-[986px] h-[551px] rounded-2xl w-full">
+                <div
+                  ref={videoRef}
+                  className="lg:w-[986px] h-[551px] rounded-2xl w-full"
+                >
                   <video
                     className="rounded-md"
                     src="https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/vmvv3czyk2ifedefkau7"
