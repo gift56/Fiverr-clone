@@ -6,6 +6,7 @@ import SingleCard from "../../components/HomeComponents/Services/SingleCard/Sing
 import Features from "../../components/HomeComponents/Features/Features";
 import { cards } from "../../data/data";
 import Marketplace from "../../components/HomeComponents/Marketplace/Marketplace";
+import Business from "../../components/HomeComponents/Business/Business";
 
 const Homepage = () => {
   return (
@@ -19,6 +20,7 @@ const Homepage = () => {
       </Slides>
       <Features />
       <Marketplace />
+      <Business />
     </main>
   );
 };

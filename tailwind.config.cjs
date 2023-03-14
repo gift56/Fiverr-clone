@@ -8,6 +8,7 @@ module.exports = {
         active: "#1e1692",
         darkColor: "#404145",
         navbg: "#013914",
+        darkblue: "#0d084d",
         clientBg: "#fafafa",
       },
       backgroundPosition: {
