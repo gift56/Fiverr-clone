@@ -1,7 +1,6 @@
 import React from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import { cards } from "../../../data/data";
-import SingleCard from "./SingleCard/SingleCard";
+
 
 const Services = () => {
   return (

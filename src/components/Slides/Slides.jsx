@@ -27,7 +27,9 @@ const Slides = ({ children, rowId, text }) => {
   return (
     <section className="py-10">
       <div className="contain">
-        
+        <div className="flex flex-col items-start justify-start gap-4 w-full">
+          <h2 className="text-3xl font-bold text-darkColor">{text}</h2>
+        </div>
       </div>
     </section>
   );
