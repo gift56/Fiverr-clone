@@ -27,12 +27,12 @@ const Navbar = () => {
   return (
     <header
       className={`flex items-center justify-center w-full flex-col text-white fixed top-0 transition-all ease-in-out z-10 ${
-        active || pathname !== "/" ? "bg-white !text-black" : ""
+        active || pathname !== "/" ? "bg-white !text-darkColor" : ""
       }`}
     >
       <div className="contain">
         <div className="w-full flex items-center justify-between py-4">
-          <Link to="/" className="text-3xl font-bold select-none">
+          <Link to="/" className="text-4xl select-none font-black tracking-tighter">
             <span>fiverr</span>
             <span className="text-primary">.</span>
           </Link>
