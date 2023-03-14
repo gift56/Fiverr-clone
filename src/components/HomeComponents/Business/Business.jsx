@@ -12,7 +12,7 @@ const Business = () => {
               <span>fiverr</span>
               <span className="font-normal"> business.</span>
             </h4>
-            <h2 className="text-3xl font-bold">
+            <h2 className="text-4xl font-bold">
               A business solution <br /> designed for <i className="font-light">teams</i>
             </h2>
             <div className="w-full flex items-start justify-start flex-col gap-5">
