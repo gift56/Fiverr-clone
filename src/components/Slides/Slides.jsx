@@ -24,9 +24,13 @@ const Slides = ({ children, rowId, text }) => {
       slider.scrollLeft = 0;
     }
   };
-  return <section className="py-10">
-    
-  </section>;
+  return (
+    <section className="py-10">
+      <div className="contain">
+        
+      </div>
+    </section>
+  );
 };
 
 export default Slides;
