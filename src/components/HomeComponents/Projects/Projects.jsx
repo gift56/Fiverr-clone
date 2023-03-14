@@ -9,6 +9,7 @@ const Projects = ({ item }) => {
     >
       <div className="w-full flex items-start flex-col justify-start">
         <img src={item.img} alt={item.description} className="w-full h-[300px] rounded-tr-md rounded-tl-md object-cover" />
+        <div className="w-full"></div>
       </div>
     </Link>
   );
