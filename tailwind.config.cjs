@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         primary: "#1dbf73",
         active: "#1e1692",
-        darkColor: "#62646a",
+        darkColor: "#404145",
         navbg: "#013914",
         clientBg: "#fafafa",
       },
