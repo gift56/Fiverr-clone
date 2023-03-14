@@ -1,9 +1,9 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { BsCheckCircle, BsPlayFill } from "react-icons/bs";
 import userImg from "../../../assets/images/users.png";
 
 const Features = () => {
-  const [showVideo, setShowVideo] = useState(false);
+  const [showVideo, setShowVideo] = useState(true);
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -17,6 +17,22 @@ const Features = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const body = document.querySelector("body");
+
+  const overflowHidden = () => {
+    if (showVideo) {
+      return (body.style.overflow = "hidden");
+    } else {
+      return {
+        body: {
+          one: (body.style.overflowY = "auto"),
+          two: (body.style.overflowX = "hidden"),
+        },
+      };
+    }
+  };
+  useMemo(() => overflowHidden(), [showVideo]);
 
   const handleButtonClick = () => {
     setShowVideo(true);
@@ -37,12 +53,17 @@ const Features = () => {
               </span>
             </div>
             {showVideo && (
-              <div ref={videoRef}>
-                <video
-                  className="rounded-md"
-                  src="https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/vmvv3czyk2ifedefkau7"
-                  controls
-                ></video>
+              <div
+                ref={videoRef}
+                className="fixed top-0 right-0 bg-[#00000085]  w-full h-full z-40 place-items-center flex justify-center"
+              >
+                <div className="lg:w-[986px] h-[551px] rounded-2xl w-full">
+                  <video
+                    className="rounded-md"
+                    src="https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/vmvv3czyk2ifedefkau7"
+                    controls
+                  ></video>
+                </div>
               </div>
             )}
           </div>

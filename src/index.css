@@ -10,3 +10,6 @@
   margin: 0 auto;
 }
 
+.overflow-hiddens {
+  overflow: hidden!;
+}
