@@ -5,6 +5,7 @@ import Slides from "../../components/Slides/Slides";
 import SingleCard from "../../components/HomeComponents/Services/SingleCard/SingleCard";
 import Features from "../../components/HomeComponents/Features/Features";
 import { cards } from "../../data/data";
+import Marketplace from "../../components/HomeComponents/Marketplace/Marketplace";
 
 const Homepage = () => {
   return (
@@ -17,6 +18,7 @@ const Homepage = () => {
         ))}
       </Slides>
       <Features />
+      <Marketplace />
     </main>
   );
 };
