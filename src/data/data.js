@@ -91,15 +91,15 @@ export const cards = [
 export const projectsCards = [
   {
     id: "001",
-    title: "Product Photography",
+    title: "Package Design",
     description: "by passionshake",
-    img: image,
+    img: "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_320,dpr_2.0/v1/attachments/generic_asset/asset/f23a46693ef0e611430e232cbc989e2b-1617004615068/mijalzagier.png",
     userImg:
-      "https://fiverr-res.cloudinary.com/t_profile_thumb,…20928117/1d531e54-7607-4bdb-815f-088dbc0fb971.jpg",
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/58960b09956dc710d2d5a33573261936-1554984111113/750ccab0-8a64-4c91-b9a4-d10039dbf79c.jpg",
   },
   {
     id: "002",
-    title: "LProduct Photography",
+    title: "Product Photography",
     description: "by passionshake",
     img: "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_320,dpr_2.0/v1/attachments/generic_asset/asset/f23a46693ef0e611430e232cbc989e2b-1617004615096/passionshake.jpeg",
     userImg:
