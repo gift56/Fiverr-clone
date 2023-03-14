@@ -71,11 +71,15 @@ const Features = () => {
             </h2>
             <div className="w-full flex items-start justify-start flex-col gap-5">
               {featureData.map((item, i) => (
-                <div className="flex items-start justify-start w-full flex-col gap-3">
+                <div
+                  className="flex items-start justify-start w-full flex-col gap-3"
+                  key={i}
+                >
                   <div className="flex items-center justify-start gap-3">
-                    <span>
-                      <BsCheckCircle />
+                    <span className="text-darkColor">
+                      <BsCheckCircle size={25} />
                     </span>
+                    <h2 className="text-lg font-semibold">{item.title}</h2>
                   </div>
                 </div>
               ))}
