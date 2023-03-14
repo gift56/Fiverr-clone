@@ -88,6 +88,72 @@ export const cards = [
     img: image10,
   },
 ];
+export const projectsCards = [
+  {
+    id: "001",
+    title: "Product Photography",
+    description: "by passionshake",
+    img: image,
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,…20928117/1d531e54-7607-4bdb-815f-088dbc0fb971.jpg",
+  },
+  {
+    id: "002",
+    title: "Logo Design",
+    description: "Build your brand",
+    img: "https://fiverr-res.cloudinary.com/t_profile_thumb,…ofile/photos/22711136/original/fiverr_profile.jpg",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,…ofile/photos/22711136/original/fiverr_profile.jpg",
+  },
+  {
+    id: "003",
+    title: "WordPress",
+    description: "Customize your site",
+    img: "https://fiverr-res.cloudinary.com/t_profile_thumb,…70224917/2bb8af3c-4cce-42a8-a699-f11177524084.png",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,…70224917/2bb8af3c-4cce-42a8-a699-f11177524084.png",
+  },
+  {
+    id: "004",
+    title: "Book Design",
+    description: "by annapletrangeli",
+    img: "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_320,dpr_2.0/v1/attachments/generic_asset/asset/f23a46693ef0e611430e232cbc989e2b-1617004615063/annapietrangeli.jpeg",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/8b60be1bf2915ddc1d551eaa252684d7-1589020928117/1d531e54-7607-4bdb-815f-088dbc0fb971.jpg",
+  },
+  {
+    id: "005",
+    title: "Fylers Design",
+    description: "by spicker",
+    img: "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_…08e858cd563bedbc1f9e48-1617004762616/spickex.jpeg",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/profile/photos/22711136/original/fiverr_profile.jpg",
+  },
+  {
+    id: "006",
+    title: "Social Media Design",
+    description: "by fernandobengu",
+    img: "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_…430e232cbc989e2b-1617004615084/fernandobengua.png",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/c15f6b22da97be41a8878e753a1a16c2-863645391592368980.489561/AF1BF970-07CA-454B-8AF1-2F3E06838C8B",
+  },
+  {
+    id: "007",
+    title: "Animated Gif",
+    description: "by lamonastudio",
+    img: "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_…a8c8e6b6793b24-1617027896306/lamonastudio-img.png",
+    userImg:
+      "	https://fiverr-res.cloudinary.com/t_profile_thumb,…55607494/5a706f4e-9f73-4ebc-97ff-9d2ef16bf28c.jpg",
+  },
+  {
+    id: "008",
+    title: "Illustration",
+    description: "by christophbrandi",
+    img: "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_…30e232cbc989e2b-1617004615082/christophbrandl.png",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,…9215580/6b4a9867-ad06-415f-b307-11177ae30fdd.jpeg",
+  },
+];
 
 export const featureData = [
   {
@@ -111,7 +177,6 @@ export const featureData = [
       "Questions? Our round-the-clock support team is available to help anytime, anywhere.",
   },
 ];
-
 export const marketsData = [
   {
     id: "graphic_design01",
@@ -179,14 +244,14 @@ export const businessData = [
 export const testimonyData = [
   {
     title: "Tim and Dan Joo, Co-Founder",
-    details:`"When you want to create a business bigger than yourself, you need a lot of help. That's what Fiverr does."`
+    details: `"When you want to create a business bigger than yourself, you need a lot of help. That's what Fiverr does."`,
   },
   {
     title: "Tim and Dan Joo, Co-Founder",
-    details:`"When you want to create a business bigger than yourself, you need a lot of help. That's what Fiverr does."`
+    details: `"When you want to create a business bigger than yourself, you need a lot of help. That's what Fiverr does."`,
   },
   {
     title: "Tim and Dan Joo, Co-Founder",
-    details:`"When you want to create a business bigger than yourself, you need a lot of help. That's what Fiverr does."`
+    details: `"When you want to create a business bigger than yourself, you need a lot of help. That's what Fiverr does."`,
   },
 ];
