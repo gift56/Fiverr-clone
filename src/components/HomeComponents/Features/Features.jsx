@@ -4,7 +4,23 @@ import { BsCheckCircle } from "react-icons/bs";
 const Features = () => {
   const [showVideo, setShowVideo] = useState(false);
   const videoRef = useRef(null);
-  
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (videoRef.current && !videoRef.current.contains(event.target)) {
+        setShowVideo(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleButtonClick = () => {
+    setShowVideo(true);
+  };
+
   return (
     <section className="bg-[#f1fdf7] py-10">
       <div className="contain">
