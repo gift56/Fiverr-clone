@@ -181,4 +181,12 @@ export const testimonyData = [
     title: "Tim and Dan Joo, Co-Founder",
     details:`"When you want to create a business bigger than yourself, you need a lot of help. That's what Fiverr does."`
   },
+  {
+    title: "Tim and Dan Joo, Co-Founder",
+    details:`"When you want to create a business bigger than yourself, you need a lot of help. That's what Fiverr does."`
+  },
+  {
+    title: "Tim and Dan Joo, Co-Founder",
+    details:`"When you want to create a business bigger than yourself, you need a lot of help. That's what Fiverr does."`
+  },
 ];
