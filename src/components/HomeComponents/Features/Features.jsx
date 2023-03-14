@@ -53,11 +53,8 @@ const Features = () => {
               </span>
             </div>
             {showVideo && (
-              <div
-                ref={videoRef}
-                className="fixed top-0 right-0 bg-[#00000085]  w-full h-full z-40 place-items-center flex justify-center"
-              >
-                <div className="lg:w-[986px] h-[551px] rounded-2xl w-full">
+              <div className="fixed top-0 right-0 bg-[#00000085]  w-full h-full z-40 place-items-center flex justify-center">
+                <div ref={videoRef} className="lg:w-[986px] h-[551px] rounded-2xl w-full">
                   <video
                     className="rounded-md"
                     src="https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/vmvv3czyk2ifedefkau7"
