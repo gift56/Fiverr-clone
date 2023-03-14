@@ -17,10 +17,12 @@ const Marketplace = () => {
                 key={i}
                 className="w-full flex items-center justify-center flex-col gap-4"
               >
-                <div className="w-12 h-12 relative">
+                <div className="w-12 h-12 relative after:content-[''] after:absolute after:-bottom-2 after:w-full after:h-[2px] after:bg-red-500 hover:after:bg-green-500">
                   <img src={item.icon} alt="" className="w-full" />
                 </div>
-                <h2 className="text-sm text-center font-normal">{item.title}</h2>
+                <h2 className="text-sm text-center font-normal">
+                  {item.title}
+                </h2>
               </Link>
             ))}
           </div>

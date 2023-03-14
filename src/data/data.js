@@ -140,9 +140,9 @@ export const marketsData = [
     title: "Music & Audio",
   },
   {
-    id: "programming_techProgramming_ech",
+    id: "programming_tech",
     icon: marketIcon6,
-    title: "Programming & TechProgramming & Tech",
+    title: "Programming & Tech",
   },
   {
     id: "business07",
