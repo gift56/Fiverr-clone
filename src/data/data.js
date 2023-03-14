@@ -92,6 +92,52 @@ export const cards = [
 export const marketsData = [
   {
     id: "graphic_design01",
+    icon: marketIcon1,
     title: "Graphics & DesignGraphics & Design",
+  },
+  {
+    id: "graphic_design01",
+    icon: marketIcon1,
+    title: "Graphics & DesignGraphics & Design",
+  },
+  {
+    id: "graphic_design01",
+    icon: marketIcon1,
+    title: "Graphics & DesignGraphics & Design",
+  },
+  {
+    id: "graphic_design01",
+    icon: marketIcon1,
+    title: "Graphics & DesignGraphics & Design",
+  },
+  {
+    id: "graphic_design01",
+    icon: marketIcon1,
+    title: "Graphics & DesignGraphics & Design",
+  },
+  {
+    id: "programming_techProgramming_ech",
+    icon: marketIcon1,
+    title: "Programming & TechProgramming & Tech",
+  },
+  {
+    id: "business07",
+    icon: marketIcon7,
+    title: "Business",
+  },
+  {
+    id: "lifestyle08",
+    icon: marketIcon8,
+    title: "Lifestyle",
+  },
+  {
+    id: "data09",
+    icon: marketIcon9,
+    title: "Data",
+  },
+  {
+    id: "photography",
+    icon: marketIcon10,
+    title: "Photography",
   },
 ];
