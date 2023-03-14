@@ -9,6 +9,16 @@ import image8 from "../assets/images/slide8.png";
 import image9 from "../assets/images/slide9.png";
 import image10 from "../assets/images/slide10.png";
 import image11 from "../assets/images/slide1.png";
+import marketIcon1 from "../assets/icons/market1.svg";
+import marketIcon2 from "../assets/icons/market2.svg";
+import marketIcon3 from "../assets/icons/market3.svg";
+import marketIcon4 from "../assets/icons/market4.svg";
+import marketIcon5 from "../assets/icons/market5.svg";
+import marketIcon6 from "../assets/icons/market6.svg";
+import marketIcon7 from "../assets/icons/market7.svg";
+import marketIcon8 from "../assets/icons/market8.svg";
+import marketIcon9 from "../assets/icons/market9.svg";
+import marketIcon10 from "../assets/icons/market10.svg";
 
 export const cards = [
   {
@@ -76,5 +86,12 @@ export const cards = [
     title: "Book Covers",
     description: "Showcase your story",
     img: image10,
+  },
+];
+
+export const marketsData = [
+  {
+    id: "graphic_design01",
+    title: "Graphics & DesignGraphics & Design",
   },
 ];
