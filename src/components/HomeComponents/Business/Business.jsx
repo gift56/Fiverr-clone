@@ -1,6 +1,7 @@
 import React from "react";
 import { BsCheckCircle } from "react-icons/bs";
 import userImg from "../../../assets/images/businessImg.png";
+import { businessData } from "../../../data/data";
 
 const Business = () => {
   return (
@@ -20,25 +21,22 @@ const Business = () => {
               Upgrade to a curated experience packed with tools and benefits,
               dedicated to businesses
             </p>
-            <div className="w-full flex items-start justify-start flex-col gap-5">
-              {/* {featureData.map((item, i) => (
+            <div className="w-full flex items-start justify-start flex-col gap-2">
+              {businessData.map((item, i) => (
                 <div
-                  className="flex items-start justify-start w-full flex-col gap-3"
+                  className="flex items-start justify-start w-full flex-col gap-5"
                   key={i}
                 >
                   <div className="flex items-center justify-start gap-3">
                     <span className="text-darkColor">
                       <BsCheckCircle size={25} />
                     </span>
-                    <h2 className="text-lg font-semibold text-darkColor">
+                    <h2 className="text-sm font-normal max-w-[500px]">
                       {item.title}
                     </h2>
                   </div>
-                  <p className="max-w-[450px] text-base font-medium text-gray-500">
-                    {item.detail}
-                  </p>
                 </div>
-              ))} */}
+              ))}
             </div>
           </div>
           <div className="flex-1">
