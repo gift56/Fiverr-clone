@@ -89,29 +89,28 @@ export const cards = [
   },
 ];
 
-
 export const featureData = [
-    {
-      title: "The best for every budget",
-      detail:
-        "Find high-quality services at every price point. No hourly rates, just project-based pricing.",
-    },
-    {
-      title: "Quality work done quickly",
-      detail:
-        "Find the right freelancer to begin working on your project within minutes.",
-    },
-    {
-      title: "Protected payments, every time",
-      detail:
-        "Always know what you'll pay upfront. Your payment isn't released until you approve the work.",
-    },
-    {
-      title: "24/7 support",
-      detail:
-        "Questions? Our round-the-clock support team is available to help anytime, anywhere.",
-    },
-  ];
+  {
+    title: "The best for every budget",
+    detail:
+      "Find high-quality services at every price point. No hourly rates, just project-based pricing.",
+  },
+  {
+    title: "Quality work done quickly",
+    detail:
+      "Find the right freelancer to begin working on your project within minutes.",
+  },
+  {
+    title: "Protected payments, every time",
+    detail:
+      "Always know what you'll pay upfront. Your payment isn't released until you approve the work.",
+  },
+  {
+    title: "24/7 support",
+    detail:
+      "Questions? Our round-the-clock support team is available to help anytime, anywhere.",
+  },
+];
 
 export const marketsData = [
   {
@@ -163,5 +162,16 @@ export const marketsData = [
     id: "photography",
     icon: marketIcon10,
     title: "Photography",
+  },
+];
+export const businessData = [
+  {
+    title: "Connect to freelancers with proven business experience",
+  },
+  {
+    title: "Get matched with the perfect talent by a customer success manager",
+  },
+  {
+    title: "Manage teamwork and boost productivity with one powerful workspace",
   },
 ];
