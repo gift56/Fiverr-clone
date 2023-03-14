@@ -79,8 +79,11 @@ const Features = () => {
                     <span className="text-darkColor">
                       <BsCheckCircle size={25} />
                     </span>
-                    <h2 className="text-lg font-semibold">{item.title}</h2>
+                    <h2 className="text-lg font-semibold text-darkColor">
+                      {item.title}
+                    </h2>
                   </div>
+                  <p className="max-w-[450px] text-base font-medium text-gray-500">{item.detail}</p>
                 </div>
               ))}
             </div>
