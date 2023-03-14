@@ -1,5 +1,6 @@
 import React from "react";
 import { BsCheckCircle } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import userImg from "../../../assets/images/businessImg.png";
 import { businessData } from "../../../data/data";
 
@@ -38,6 +39,7 @@ const Business = () => {
                 </div>
               ))}
             </div>
+            <Link to="/" className="w-fit bg-primary py-2 px-5 text-base font-semibold rounded mt-8 transition-all hover:bg-primary/75">Explore Fiverr Business</Link>
           </div>
           <div className="flex-1">
             <img src={userImg} alt="business_image" className="w-full" />
