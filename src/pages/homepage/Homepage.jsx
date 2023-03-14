@@ -7,6 +7,7 @@ import Features from "../../components/HomeComponents/Features/Features";
 import { cards } from "../../data/data";
 import Marketplace from "../../components/HomeComponents/Marketplace/Marketplace";
 import Business from "../../components/HomeComponents/Business/Business";
+import Testimony from "../../components/HomeComponents/Testimony/Testimony";
 
 const Homepage = () => {
   return (
@@ -21,6 +22,9 @@ const Homepage = () => {
       <Features />
       <Marketplace />
       <Business />
+      <Slides rowId="2">
+        <Testimony />
+      </Slides>
     </main>
   );
 };

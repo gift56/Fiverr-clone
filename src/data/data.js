@@ -175,3 +175,10 @@ export const businessData = [
     title: "Manage teamwork and boost productivity with one powerful workspace",
   },
 ];
+
+export const testimonyData = [
+  {
+    title: "Tim and Dan Joo, Co-Founder",
+    details:`"When you want to create a business bigger than yourself, you need a lot of help. That's what Fiverr does."`
+  },
+];
