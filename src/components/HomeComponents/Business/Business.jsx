@@ -29,7 +29,7 @@ const Business = () => {
                   key={i}
                 >
                   <div className="flex items-center justify-start gap-3">
-                    <span className="text-darkColor">
+                    <span className="text-gray-500">
                       <BsCheckCircle size={25} />
                     </span>
                     <h2 className="text-sm font-normal max-w-[500px]">
