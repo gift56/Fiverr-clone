@@ -60,7 +60,12 @@ const GigsDetails = () => {
         molestiae quas sit. Optio nam aperiam et provident dignissimos vero rem.
       </p>
       <div className="flex flex-col gap-3 mt-5">
-        <h2 className="text-xl font-semibold text-gray-500">About The Seller</h2>
+        <h2 className="text-xl font-semibold text-gray-500">
+          About The Seller
+        </h2>
+        <div className="flex items-center justify-start gap-3">
+          <img src="" alt="" className="w-20 h-20 border rounded-full" />
+        </div>
       </div>
     </div>
   );
