@@ -34,7 +34,7 @@ const Footer = () => {
               </div>
             ))}
           </div>
-          <div className="w-full flex items-center justify-between">
+          <div className="w-full flex items-center justify-between border-t pt-5">
             <div className="flex items-center justify-start gap-4">
               <div className="flex items-end justify-end">
                 <h2>fivver</h2>
