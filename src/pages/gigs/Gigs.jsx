@@ -21,7 +21,7 @@ const Gigs = () => {
             Web website
           </p>
           <div className="w-full flex items-center justify-between">
-            <p className="text-base font-medium">Budget:</p>
+            <p className="text-base font-normal">Budget:</p>
           </div>
         </div>
       </div>
