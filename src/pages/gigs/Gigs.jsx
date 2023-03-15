@@ -35,9 +35,9 @@ const Gigs = () => {
                 <span>
                   <BiChevronDown size={20} />
                 </span>
-                <div className={`flex flex-col items-start justify-start gap-3 bg-white shadow-box rounded-md py-3 absolute w-[140px] top-8 right-2`}>
-                  <div className="px-4 py-2 w-full border-b text-gray-500 text-sm">Newest</div>
-                  <div className="px-4 py-2 w-full border-b text-gray-500 text-sm">Best Selling</div>
+                <div className={`flex flex-col items-start justify-start bg-white shadow-box rounded-md absolute w-[140px] top-8 right-2`}>
+                  <div className="px-4 py-2 w-full border-b text-gray-500 text-sm cursor-pointer hover:bg-darkColor/40 hover:text-white rounded-tr-md rounded-tl-md">Newest</div>
+                  <div className="px-4 py-2 w-full border-b text-gray-500 text-sm cursor-pointer hover:bg-darkColor/40 hover:text-white rounded-br-md rounded-bl-md">Best Selling</div>
                 </div>
               </div>
             </div>
