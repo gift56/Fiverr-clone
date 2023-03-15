@@ -1,4 +1,5 @@
 import React from "react";
+import { BsTwitter, BsFacebook } from "react-icons/bs";
 
 const Footer = () => {
   const footerLinks = [
