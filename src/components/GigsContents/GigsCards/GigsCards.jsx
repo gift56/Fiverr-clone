@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BsStarFill } from "react-icons/bs";
+import { BsStarFill, BsFillHeartFill } from "react-icons/bs";
 
 const GigsCards = ({ item }) => {
   const truckcateString = (str, num) => {
@@ -16,8 +16,8 @@ const GigsCards = ({ item }) => {
       className="w-full shadow-box flex items-start flex-col justify-start border group"
     >
       <img src={item.img} alt={item.username} className="w-full object-cover" />
-      <div className="w-full bg-white p-5 flex items-start flex-col gap-4 justify-start">
-        <div className="flex items-center justify-start gap-3">
+      <div className="w-full bg-white pt-5 flex items-start flex-col gap-3 justify-start">
+        <div className="flex items-center justify-start gap-3 px-4">
           <div className="w-8 h-8">
             <img
               src={item.userImg}
@@ -30,16 +30,24 @@ const GigsCards = ({ item }) => {
             <p className="text-sm font-normal text-gray-400">{item.rate}</p>
           </div>
         </div>
-        <p className="text-darkColor text-base group-hover:text-primary transition-all duration-300">
+        <p className="text-darkColor text-base group-hover:text-primary transition-all duration-300 px-4">
           {" "}
           {truckcateString(item.description, 60)}
         </p>
-        <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold">
+        <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold px-4">
           <span>
             <BsStarFill />
           </span>
           5.0
         </p>
+        <div className="border-t w-full p-5 flex items-center justify-between">
+          <span className="text-gray-400 cursor-pointer">
+            <BsFillHeartFill size={20} />
+          </span>
+          <span className="text-sm font-normal text-gray-500">
+            started AT <span className="text-xl font-semibold text-darkColor">$10</span>
+          </span>
+        </div>
       </div>
     </Link>
   );

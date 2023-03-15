@@ -89,7 +89,7 @@ const Gigs = () => {
               </div>
             </div>
           </div>
-          <div className="w-full grid grid-cols-4 items-start justify-start gap-5">
+          <div className="w-full grid grid-cols-4 items-start justify-start gap-8">
             {gigCards.map((item) => (
               <GigsCards key={item.id} item={item} />
             ))}
