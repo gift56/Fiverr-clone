@@ -49,6 +49,7 @@ const GigsDetails = () => {
           ))}
         </Slides>
       </div>
+      <h2>About This Gig</h2>
     </div>
   );
 };
