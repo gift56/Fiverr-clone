@@ -1,6 +1,6 @@
 import React from "react";
 import { BiChevronRight } from "react-icons/bi";
-import { BsFillHeartFill } from "react-icons/bs";
+import { BsStarFill } from "react-icons/bs";
 
 const GigsDetails = () => {
   return (
@@ -21,6 +21,12 @@ const GigsDetails = () => {
           <span>John doe</span>
         </div>
       </div>
+      <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold px-4">
+        <span>
+          <BsStarFill />
+        </span>
+        5.0
+      </p>
     </div>
   );
 };
