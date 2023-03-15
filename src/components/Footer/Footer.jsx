@@ -14,6 +14,25 @@ import { footerLinks } from "../../data/data";
 const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
+
+  const socialIcons = [
+    {
+      to: "https://twitter.com/AsiughuE",
+      icon: BsTwitter,
+    },
+    {
+      to: "https://web.facebook.com/?_rdc=1&_rdr",
+      icon: BsFacebook,
+    },
+    {
+      to: "https://www.linkedin.com/in/efe-gift-109120241/",
+      icon: BsLinkedin,
+    },
+    {
+      to: "https://www.instagram.com/",
+      icon: BsInstagram,
+    },
+  ];
   return (
     <footer className="border-t w-full py-14 pb-5">
       <div className="contain">
