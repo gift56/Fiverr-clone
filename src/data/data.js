@@ -173,6 +173,15 @@ export const gigCards = [
     userImg:
       "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/b7aea80e1505beadfcfa8acb1727ecd6-1648513144322/dc817aba-e6ad-4792-94dc-ef4ee5a85a88.jpg",
   },
+  {
+    id: "003",
+    username: "iam_xeeshan",
+    rate: "Level 2 Seller",
+    description: "I will create digital marketing agency website",
+    img: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/162366506/original/e39be81f1415c3bd3ab68e310b932e7b0e7b2200.png",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/3c75053d08590d8557e33499bb3920ca-1596357829974/18c72c19-b2a4-4ab0-b751-af72ff008ed2.jpg",
+  },
 ];
 
 export const featureData = [
