@@ -154,6 +154,26 @@ export const projectsCards = [
       "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/b615b780b5c813d932953d05ec10f811-1596879215580/6b4a9867-ad06-415f-b307-11177ae30fdd.jpeg",
   },
 ];
+export const gigCards = [
+  {
+    id: "001",
+    username: "aliyar",
+    rate: "Top Rated Seller",
+    description: "I will create a responsive wordpress website",
+    img: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/19692647/original/bcb789dd0b2f3e73b4a732b9c985272262feee5c.jpg",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/1797559fa57b3622dabf663f1c57aed2-1678638763286/5f65012c-e1ac-4cb5-9759-64d53503d17b.jpg",
+  },
+  {
+    id: "002",
+    username: "aliyar",
+    rate: "Top Rated Seller",
+    description: "I will create a responsive wordpress website",
+    img: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/188216362/original/d6b3fc6fb10316d374acbd4049bf941e77728a05.png",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/b7aea80e1505beadfcfa8acb1727ecd6-1648513144322/dc817aba-e6ad-4792-94dc-ef4ee5a85a88.jpg",
+  },
+];
 
 export const featureData = [
   {
