@@ -17,11 +17,13 @@ const Gigs = () => {
           </div>
           <h2 className="text-3xl font-bold">Web Development</h2>
           <p className="text-base font-medium">
-            Find a freelance Web development expert to build your
-            Web website
+            Find a freelance Web development expert to build your Web website
           </p>
           <div className="w-full flex items-center justify-between">
-            <p className="text-base font-normal">Budget:</p>
+            <div className="flex items-center justify-start gap-2">
+              <p className="text-base font-normal">Budget:</p>
+              <input type="text" placeholder="min" />
+            </div>
           </div>
         </div>
       </div>
