@@ -85,100 +85,72 @@ const Footer = () => {
       ],
     },
     {
-      title: "Categories",
+      title: "Support",
       links: [
         {
           to: "/",
-          text: "Graphics & Design",
+          text: "Help & Support",
         },
         {
           to: "/",
-          text: "Digital Marketing",
+          text: "Trust & Safety",
         },
         {
           to: "/",
-          text: "Writing & Translation",
+          text: "Selling on Fiverr",
         },
         {
           to: "/",
-          text: "Video & Animation",
-        },
-        {
-          to: "/",
-          text: "Music & Audio",
-        },
-        {
-          to: "/",
-          text: "Programming & Tech",
-        },
-        {
-          to: "/",
-          text: "Data",
-        },
-        {
-          to: "/",
-          text: "Business",
-        },
-        {
-          to: "/",
-          text: "Lifestyle",
-        },
-        {
-          to: "/",
-          text: "Photography",
-        },
-        {
-          to: "/",
-          text: "Sitemap",
+          text: "Buying on Fiverr",
         },
       ],
     },
     {
-      title: "Categories",
+      title: "Community",
       links: [
         {
           to: "/",
-          text: "Graphics & Design",
+          text: "Customer Success Stories",
         },
         {
           to: "/",
-          text: "Digital Marketing",
+          text: "Community hub",
         },
         {
           to: "/",
-          text: "Writing & Translation",
+          text: "Forum",
         },
         {
           to: "/",
-          text: "Video & Animation",
+          text: "Events",
         },
         {
           to: "/",
-          text: "Music & Audio",
+          text: "Blog",
         },
         {
           to: "/",
-          text: "Programming & Tech",
+          text: "Influencers",
         },
         {
           to: "/",
-          text: "Data",
+          text: "Affiliates",
         },
         {
           to: "/",
-          text: "Business",
+          text: "Podcast",
         },
         {
           to: "/",
-          text: "Lifestyle",
+          text: "Invite a Friend",
         },
         {
           to: "/",
-          text: "Photography",
+          text: "Become a Seller",
         },
         {
           to: "/",
-          text: "Sitemap",
+          text: "Community Standards",
         },
       ],
     },
