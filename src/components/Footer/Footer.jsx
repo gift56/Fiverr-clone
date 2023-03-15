@@ -12,7 +12,6 @@ import { Link } from "react-router-dom";
 import { footerLinks } from "../../data/data";
 
 const Footer = () => {
- 
   return (
     <footer className="border-t w-full py-14">
       <div className="contain">
@@ -28,7 +27,13 @@ const Footer = () => {
                 </h2>
                 <div className="flex items-start justify-start flex-col gap-4">
                   {item.links.map((item, i) => (
-                    <Link to={item.to} key={i} className="text-gray-500 hover:underline transition-all duration-300 hover:text-darkColor">{item.text}</Link>
+                    <Link
+                      to={item.to}
+                      key={i}
+                      className="text-gray-500 hover:underline transition-all duration-300 hover:text-darkColor"
+                    >
+                      {item.text}
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -38,7 +43,9 @@ const Footer = () => {
             <div className="flex items-center justify-start gap-4">
               <div className="flex items-end justify-end">
                 <h2>fivver</h2>
+                <span>R</span>
               </div>
+              <p>© Fiverr International Ltd. 2023</p>
             </div>
             <div></div>
           </div>
