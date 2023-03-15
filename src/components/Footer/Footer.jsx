@@ -6,7 +6,8 @@ import {
   BsLinkedin,
   BsPinterest,
 } from "react-icons/bs";
-import { TbMan, TbWorld } from "react-icons/tb";
+import { TbMan } from "react-icons/tb";
+import { TfiWorld } from "react-icons/tfi";
 
 const Footer = () => {
   const footerLinks = [
