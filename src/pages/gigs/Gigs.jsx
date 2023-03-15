@@ -35,7 +35,10 @@ const Gigs = () => {
                 <span>
                   <BiChevronDown size={20} />
                 </span>
-                <div className=""></div>
+                <div className="">
+                  <span>Newest</span>
+                  <span>Best Selling</span>
+                </div>
               </div>
             </div>
           </div>
