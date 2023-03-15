@@ -191,6 +191,80 @@ export const gigCards = [
     userImg:
       "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/826269e8143c8d5a86a84c991c67907d-1609824785703/be0086b7-6101-4655-ad67-fee4d97af74c.jpg",
   },
+  {
+    id: "005",
+    username: "styllishwebs",
+    rate: "Level 2 Seller",
+    description:
+      "I will create amazon affiliate marketing autopilot website with...",
+    img: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/188439358/original/f8788623cfb90f0acb1a20288f06890bbde9a8d7.jpg",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/826269e8143c8d5a86a84c991c67907d-1609824785703/be0086b7-6101-4655-ad67-fee4d97af74c.jpg",
+  },
+  {
+    id: "006",
+    username: "aliyar",
+    rate: "Top Rated Seller",
+    description: "I will create a responsive wordpress website",
+    img: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/19692647/original/bcb789dd0b2f3e73b4a732b9c985272262feee5c.jpg",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/1797559fa57b3622dabf663f1c57aed2-1678638763286/5f65012c-e1ac-4cb5-9759-64d53503d17b.jpg",
+  },
+  {
+    id: "007",
+    username: "webbylynx",
+    rate: "Level 2 Seller",
+    description: "I will build clickbank affiliate website for making money",
+    img: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/188216362/original/d6b3fc6fb10316d374acbd4049bf941e77728a05.png",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/b7aea80e1505beadfcfa8acb1727ecd6-1648513144322/dc817aba-e6ad-4792-94dc-ef4ee5a85a88.jpg",
+  },
+  {
+    id: "008",
+    username: "iam_xeeshan",
+    rate: "Level 2 Seller",
+    description: "I will create digital marketing agency website",
+    img: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/162366506/original/e39be81f1415c3bd3ab68e310b932e7b0e7b2200.png",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/3c75053d08590d8557e33499bb3920ca-1596357829974/18c72c19-b2a4-4ab0-b751-af72ff008ed2.jpg",
+  },
+  {
+    id: "009",
+    username: "yogeshkdl",
+    rate: "Level 2 Seller",
+    description: "I will convert xd, PSD to wordpress using elementor pro",
+    img: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/188439358/original/f8788623cfb90f0acb1a20288f06890bbde9a8d7.jpg",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/826269e8143c8d5a86a84c991c67907d-1609824785703/be0086b7-6101-4655-ad67-fee4d97af74c.jpg",
+  },
+  {
+    id: "0010",
+    username: "styllishwebs",
+    rate: "Level 2 Seller",
+    description:
+      "I will create amazon affiliate marketing autopilot website with...",
+    img: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/188439358/original/f8788623cfb90f0acb1a20288f06890bbde9a8d7.jpg",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/826269e8143c8d5a86a84c991c67907d-1609824785703/be0086b7-6101-4655-ad67-fee4d97af74c.jpg",
+  },
+  {
+    id: "0011",
+    username: "aliyar",
+    rate: "Top Rated Seller",
+    description: "I will create a responsive wordpress website",
+    img: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/19692647/original/bcb789dd0b2f3e73b4a732b9c985272262feee5c.jpg",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/1797559fa57b3622dabf663f1c57aed2-1678638763286/5f65012c-e1ac-4cb5-9759-64d53503d17b.jpg",
+  },
+  {
+    id: "0012",
+    username: "webbylynx",
+    rate: "Level 2 Seller",
+    description: "I will build clickbank affiliate website for making money",
+    img: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/188216362/original/d6b3fc6fb10316d374acbd4049bf941e77728a05.png",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/b7aea80e1505beadfcfa8acb1727ecd6-1648513144322/dc817aba-e6ad-4792-94dc-ef4ee5a85a88.jpg",
+  },
 ];
 
 export const featureData = [
