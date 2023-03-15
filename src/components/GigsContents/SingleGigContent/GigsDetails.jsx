@@ -11,6 +11,11 @@ const GigsDetails = () => {
         </span>
         <span className="text-active">Web Development</span>
       </div>
+      <h1 className="text-3xl font-bold text-darkColor/90 max-w-[790px]">I will create a minimalist creative business logo design</h1>
+      <div className="flex items-center justify-start gap-3">
+        <img src="" alt="" className="w-8 h-8 border rounded-full"/>
+        <span>John doe</span>
+      </div>
     </div>
   );
 };
