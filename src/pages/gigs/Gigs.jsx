@@ -72,7 +72,7 @@ const Gigs = () => {
                     onClick={() => reSort("sales")}
                     className="px-4 py-2 w-full border-b text-gray-500 text-sm cursor-pointer hover:bg-darkColor/40 hover:text-white rounded-br-md rounded-bl-md"
                   >
-                    sales
+                    Sales
                   </div>
                 </div>
               </div>
