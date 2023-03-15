@@ -41,9 +41,9 @@ const Footer = () => {
           </div>
           <div className="w-full flex items-center justify-between border-t pt-5">
             <div className="flex items-center justify-start gap-4">
-              <div className="flex items-end justify-end">
-                <h2>fivver</h2>
-                <span>R</span>
+              <div className="flex items-end justify-end select-none">
+                <h2 className="text-3xl select-none font-black tracking-tighter text-gray-500">fivver</h2>
+                <span className="border text-[6px] rounded-full w-3 h-3 flex items-center justify-center">R</span>
               </div>
               <p>© Fiverr International Ltd. 2023</p>
             </div>
