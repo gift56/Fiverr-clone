@@ -46,7 +46,7 @@ const Gigs = () => {
               </form>
             </div>
             <div className="flex items-center justify-end gap-2">
-              <p className="text-base font-normal text-gray-500">SortBy:</p>
+              <p className="text-base font-normal text-gray-500">Sort by:</p>
               <div className="flex items-center justify-start gap-2 cursor-pointer relative">
                 <div
                   className="flex items-center justify-start gap-2 cursor-pointer relative"
@@ -55,7 +55,7 @@ const Gigs = () => {
                   <p className="text-sm">
                     {sort == "sales" ? "Best Selling" : "Newest"}
                   </p>
-                  <span>
+                  <span className={`${open ? "rotate-180" : "rotate-0"} transition-all duration-300`}>
                     <BiChevronDown size={20} />
                   </span>
                 </div>
