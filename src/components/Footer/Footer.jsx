@@ -1,5 +1,12 @@
 import React from "react";
-import { BsTwitter, BsFacebook } from "react-icons/bs";
+import {
+  BsTwitter,
+  BsFacebook,
+  BsInstagram,
+  BsLinkedin,
+  BsPinterest,
+} from "react-icons/bs";
+import { TbMan, TbWorld } from "react-icons/tb";
 
 const Footer = () => {
   const footerLinks = [
