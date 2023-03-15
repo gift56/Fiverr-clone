@@ -51,6 +51,186 @@ const Footer = () => {
         },
       ],
     },
+    {
+      title: "About",
+      links: [
+        {
+          to: "/",
+          text: "Careers",
+        },
+        {
+          to: "/",
+          text: "Press & News",
+        },
+        {
+          to: "/",
+          text: "Partnerships",
+        },
+        {
+          to: "/",
+          text: "Privacy Policy",
+        },
+        {
+          to: "/",
+          text: "Terms of Service",
+        },
+        {
+          to: "/",
+          text: "Intellectual Property Claims",
+        },
+        {
+          to: "/",
+          text: "Investor Relations",
+        },
+      ],
+    },
+    {
+      title: "Categories",
+      links: [
+        {
+          to: "/",
+          text: "Graphics & Design",
+        },
+        {
+          to: "/",
+          text: "Digital Marketing",
+        },
+        {
+          to: "/",
+          text: "Writing & Translation",
+        },
+        {
+          to: "/",
+          text: "Video & Animation",
+        },
+        {
+          to: "/",
+          text: "Music & Audio",
+        },
+        {
+          to: "/",
+          text: "Programming & Tech",
+        },
+        {
+          to: "/",
+          text: "Data",
+        },
+        {
+          to: "/",
+          text: "Business",
+        },
+        {
+          to: "/",
+          text: "Lifestyle",
+        },
+        {
+          to: "/",
+          text: "Photography",
+        },
+        {
+          to: "/",
+          text: "Sitemap",
+        },
+      ],
+    },
+    {
+      title: "Categories",
+      links: [
+        {
+          to: "/",
+          text: "Graphics & Design",
+        },
+        {
+          to: "/",
+          text: "Digital Marketing",
+        },
+        {
+          to: "/",
+          text: "Writing & Translation",
+        },
+        {
+          to: "/",
+          text: "Video & Animation",
+        },
+        {
+          to: "/",
+          text: "Music & Audio",
+        },
+        {
+          to: "/",
+          text: "Programming & Tech",
+        },
+        {
+          to: "/",
+          text: "Data",
+        },
+        {
+          to: "/",
+          text: "Business",
+        },
+        {
+          to: "/",
+          text: "Lifestyle",
+        },
+        {
+          to: "/",
+          text: "Photography",
+        },
+        {
+          to: "/",
+          text: "Sitemap",
+        },
+      ],
+    },
+    {
+      title: "Categories",
+      links: [
+        {
+          to: "/",
+          text: "Graphics & Design",
+        },
+        {
+          to: "/",
+          text: "Digital Marketing",
+        },
+        {
+          to: "/",
+          text: "Writing & Translation",
+        },
+        {
+          to: "/",
+          text: "Video & Animation",
+        },
+        {
+          to: "/",
+          text: "Music & Audio",
+        },
+        {
+          to: "/",
+          text: "Programming & Tech",
+        },
+        {
+          to: "/",
+          text: "Data",
+        },
+        {
+          to: "/",
+          text: "Business",
+        },
+        {
+          to: "/",
+          text: "Lifestyle",
+        },
+        {
+          to: "/",
+          text: "Photography",
+        },
+        {
+          to: "/",
+          text: "Sitemap",
+        },
+      ],
+    },
   ];
   return (
     <footer className="border-t w-full py-14">
