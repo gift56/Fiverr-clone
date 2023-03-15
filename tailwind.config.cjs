@@ -15,7 +15,7 @@ module.exports = {
         "top-4": "right top -4rem",
       },
       animation: {
-        bganimate: "bganimate 30s linear infinite",
+        bganimate: "bganimate 50s linear infinite",
       },
       keyframes: {
         bganimate: {

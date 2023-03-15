@@ -182,6 +182,15 @@ export const gigCards = [
     userImg:
       "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/3c75053d08590d8557e33499bb3920ca-1596357829974/18c72c19-b2a4-4ab0-b751-af72ff008ed2.jpg",
   },
+  {
+    id: "004",
+    username: "yogeshkdl",
+    rate: "Level 2 Seller",
+    description: "I will convert xd, PSD to wordpress using elementor pro",
+    img: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/188439358/original/f8788623cfb90f0acb1a20288f06890bbde9a8d7.jpg",
+    userImg:
+      "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/826269e8143c8d5a86a84c991c67907d-1609824785703/be0086b7-6101-4655-ad67-fee4d97af74c.jpg",
+  },
 ];
 
 export const featureData = [
