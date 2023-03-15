@@ -2,7 +2,9 @@ import React from 'react'
 
 const Gig = () => {
   return (
-    <div>Gig</div>
+    <main className="py-40">
+      
+    </main>
   )
 }
 
