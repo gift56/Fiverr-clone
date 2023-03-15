@@ -34,7 +34,9 @@ const GigsDetails = () => {
         <Slides rowId="4" distance={750}>
           {[0, 1, 2].map((item, i) => (
             <div className="relative inline-block cursor-pointer w-full mx-2 shadow-box">
-              <div className="w-full p-4"></div>
+              <div className="w-full">
+                <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/142042620/original/c4c5fd5fabae56ac74960aa47825b6b30bd8a1f3/design-minimalist-unique-business-logo.jpg" alt="" />
+              </div>
             </div>
           ))}
         </Slides>
