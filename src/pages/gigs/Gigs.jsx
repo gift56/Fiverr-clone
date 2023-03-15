@@ -52,7 +52,9 @@ const Gigs = () => {
                   className="flex items-center justify-start gap-2 cursor-pointer relative"
                   onClick={() => setOpen((prev) => !prev)}
                 >
-                  <p className="text-sm capitalize">{sort}</p>
+                  <p className="text-sm">
+                    {sort == "sales" ? "Best Selling" : "Newest"}
+                  </p>
                   <span>
                     <BiChevronDown size={20} />
                   </span>
@@ -62,18 +64,21 @@ const Gigs = () => {
                     open ? "flex" : "hidden"
                   } flex-col items-start justify-start bg-white shadow-box rounded-md absolute w-[140px] top-8 right-2`}
                 >
-                  <div
-                    onClick={() => reSort("createdAt")}
-                    className="px-4 py-2 w-full border-b text-gray-500 text-sm cursor-pointer hover:bg-darkColor/40 hover:text-white rounded-tr-md rounded-tl-md"
-                  >
-                    Newest
-                  </div>
-                  <div
-                    onClick={() => reSort("sales")}
-                    className="px-4 py-2 w-full border-b text-gray-500 text-sm cursor-pointer hover:bg-darkColor/40 hover:text-white rounded-br-md rounded-bl-md"
-                  >
-                    Sales
-                  </div>
+                  {sort === "sales" ? (
+                    <div
+                      onClick={() => reSort("createdAt")}
+                      className="px-4 py-2 w-full border-b text-gray-500 text-sm cursor-pointer hover:bg-darkColor/40 hover:text-white rounded-tr-md rounded-tl-md"
+                    >
+                      Newest
+                    </div>
+                  ) : (
+                    <div
+                      onClick={() => reSort("sales")}
+                      className="px-4 py-2 w-full border-b text-gray-500 text-sm cursor-pointer hover:bg-darkColor/40 hover:text-white rounded-br-md rounded-bl-md"
+                    >
+                      Best Selling
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
