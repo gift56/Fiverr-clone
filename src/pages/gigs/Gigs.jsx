@@ -83,6 +83,7 @@ const Gigs = () => {
               </div>
             </div>
           </div>
+          <div className="w-full grid grid-cols-4 items-start justify-start gap-5"></div>
         </div>
       </div>
     </main>
