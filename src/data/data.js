@@ -166,9 +166,9 @@ export const gigCards = [
   },
   {
     id: "002",
-    username: "aliyar",
-    rate: "Top Rated Seller",
-    description: "I will create a responsive wordpress website",
+    username: "webbylynx",
+    rate: "Level 2 Seller",
+    description: "I will build clickbank affiliate website for making money",
     img: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/188216362/original/d6b3fc6fb10316d374acbd4049bf941e77728a05.png",
     userImg:
       "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/b7aea80e1505beadfcfa8acb1727ecd6-1648513144322/dc817aba-e6ad-4792-94dc-ef4ee5a85a88.jpg",
