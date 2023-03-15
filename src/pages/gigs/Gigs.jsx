@@ -23,9 +23,9 @@ const Gigs = () => {
             <div className="flex items-center justify-start gap-2">
               <p className="text-base font-normal text-gray-500">Budget:</p>
               <form className="flex items-center justify-start gap-2">
-                <input type="text" placeholder="min" className="border w-[150px] outline-none px-2 h-[40px] rounded-md" />
-                <input type="text" placeholder="max" className="border w-[150px] outline-none px-2 h-[40px] rounded-md" />
-                <button>Apply</button>
+                <input type="text" placeholder="min" className="border w-[150px] outline-none px-2 h-[40px] rounded-md text-gray-500" />
+                <input type="text" placeholder="max" className="border w-[150px] outline-none px-2 h-[40px] rounded-md text-gray-500" />
+                <button className="w-fit bg-primary text-white text-base font-medium py-2 px-7 outline-none rounded-md hover:bg-primary/95">Apply</button>
               </form>
             </div>
             <div className="flex items-center justify-end gap-2">
