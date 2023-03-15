@@ -5,6 +5,7 @@ import {
   BsInstagram,
   BsLinkedin,
   BsPinterest,
+  BsCurrencyDollar,
 } from "react-icons/bs";
 import { TbMan } from "react-icons/tb";
 import { TfiWorld } from "react-icons/tfi";
@@ -78,7 +79,7 @@ const Footer = () => {
                 © Fiverr International Ltd. {year}
               </p>
             </div>
-            <div></div>
+            <div className="flex items-center justify-end gap-6"></div>
           </div>
         </div>
       </div>
