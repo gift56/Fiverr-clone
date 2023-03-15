@@ -20,6 +20,9 @@ const Gigs = () => {
             Find a freelance Web development expert to build your
             Web website
           </p>
+          <div className="w-full flex items-center justify-between">
+            <p className="text-base font-medium">Budget:</p>
+          </div>
         </div>
       </div>
     </main>
