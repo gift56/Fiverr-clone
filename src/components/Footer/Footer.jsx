@@ -81,8 +81,19 @@ const Footer = () => {
             </div>
             <div className="flex items-center justify-end gap-6">
               <div></div>
-              <div className="flex items-center gap-4">
-                
+              <div className="flex items-center gap-4 text-sm font-medium text-gray-400">
+                <div className="flex items-center gap-2 cursor-pointer">
+                  <span>
+                    <TfiWorld />
+                  </span>
+                  English
+                </div>
+                <span className="flex items-center gap-2 cursor-pointer">
+                  <span>
+                    <BsCurrencyDollar />
+                  </span>
+                  USD
+                </span>
               </div>
             </div>
           </div>
