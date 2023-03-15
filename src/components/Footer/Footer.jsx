@@ -32,6 +32,10 @@ const Footer = () => {
       to: "https://www.instagram.com/",
       icon: BsInstagram,
     },
+    {
+      to: "https://www.pinterest.com/",
+      icon: BsPinterest,
+    },
   ];
   return (
     <footer className="border-t w-full py-14 pb-5">
