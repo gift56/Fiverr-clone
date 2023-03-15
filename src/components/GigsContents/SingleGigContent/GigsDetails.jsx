@@ -49,7 +49,7 @@ const GigsDetails = () => {
           ))}
         </Slides>
       </div>
-      <h2 className="text-2xl font-semibold text-gray-500">About This Gig</h2>
+      <h2 className="text-xl font-semibold text-gray-500">About This Gig</h2>
       <p className="text-base text-gray-700 max-w-[700px] font-normal">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae
         facilis tempora, voluptatibus, enim labore vero ea dolorem quam magnam
@@ -59,8 +59,8 @@ const GigsDetails = () => {
         explicabo error! Modi ullam enim, accusamus amet illo officia ab eveniet
         molestiae quas sit. Optio nam aperiam et provident dignissimos vero rem.
       </p>
-      <div className="flex flex-col gap-3">
-        <h2 className="text-2xl font-semibold text-gray-500">About This Gig</h2>
+      <div className="flex flex-col gap-3 mt-5">
+        <h2 className="text-xl font-semibold text-gray-500">About The Seller</h2>
       </div>
     </div>
   );
