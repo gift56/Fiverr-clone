@@ -79,7 +79,12 @@ const Footer = () => {
                 © Fiverr International Ltd. {year}
               </p>
             </div>
-            <div className="flex items-center justify-end gap-6"></div>
+            <div className="flex items-center justify-end gap-6">
+              <div></div>
+              <div className="flex items-center gap-4">
+                
+              </div>
+            </div>
           </div>
         </div>
       </div>
