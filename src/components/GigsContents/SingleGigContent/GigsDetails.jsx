@@ -15,18 +15,20 @@ const GigsDetails = () => {
       <h1 className="text-3xl font-bold text-darkColor/90 max-w-[790px]">
         I will create a minimalist creative business logo design
       </h1>
-      <div className="flex items-center justify-start gap-5">
+      <div className="flex items-center justify-start gap-3">
         <div className="flex items-center justify-start gap-3">
           <img src="" alt="" className="w-8 h-8 border rounded-full" />
           <span>John doe</span>
         </div>
+        <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold px-4">
+          {[0, 1, 2, 3, 4].map((item, i) => (
+            <span>
+              <BsStarFill />
+            </span>
+          ))}
+          5.0
+        </p>
       </div>
-      <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold px-4">
-        <span>
-          <BsStarFill />
-        </span>
-        5.0
-      </p>
     </div>
   );
 };
