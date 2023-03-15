@@ -80,7 +80,18 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex items-center justify-end gap-6">
-              <div></div>
+              <div className="flex items-center gap-4 text-sm font-medium text-gray-500">
+                {socialIcons.map((item, i) => (
+                  <a
+                    href={item.to}
+                    target="_blank"
+                    key={i}
+                    className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 transition-all duration-300 cursor-pointer"
+                  >
+                    <item.icon size={20} />
+                  </a>
+                ))}
+              </div>
               <div className="flex items-center gap-4 text-sm font-medium text-gray-400">
                 <div className="flex items-center gap-2 cursor-pointer">
                   <span>
@@ -94,6 +105,9 @@ const Footer = () => {
                   </span>
                   USD
                 </span>
+                <div className="w-10 h-10 border-2 rounded-full flex items-center justify-center hover:text-darkColor hover:border-none hover:bg-gray-200 transition-all duration-300 cursor-pointer">
+                  <TbMan size={20} />
+                </div>
               </div>
             </div>
           </div>
