@@ -1,6 +1,7 @@
 import React from "react";
 import { BiChevronRight } from "react-icons/bi";
 import { BsStarFill } from "react-icons/bs";
+import Slides from "../../Slides/Slides";
 
 const GigsDetails = () => {
   return (
@@ -28,6 +29,15 @@ const GigsDetails = () => {
           ))}
           5.0
         </p>
+      </div>
+      <div className="w-full bg-green-500 p-4">
+        <Slides rowId="4" distance={750}>
+          {[0, 1, 2].map((item, i) => (
+            <div className="relative inline-block cursor-pointer w-full mx-2 shadow-box">
+              <div className="w-full bg-red-300 p-4"></div>
+            </div>
+          ))}
+        </Slides>
       </div>
     </div>
   );
