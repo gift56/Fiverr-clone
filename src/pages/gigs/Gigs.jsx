@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { BiHomeAlt, BiChevronDown } from "react-icons/bi";
+import GigsCards from "../../components/GigsContents/GigsCards/GigsCards";
+import { gigCards } from "../../data/data";
 
 const Gigs = () => {
   const [open, setOpen] = useState(false);
@@ -55,7 +57,11 @@ const Gigs = () => {
                   <p className="text-sm">
                     {sort == "sales" ? "Best Selling" : "Newest"}
                   </p>
-                  <span className={`${open ? "rotate-180" : "rotate-0"} transition-all duration-300`}>
+                  <span
+                    className={`${
+                      open ? "rotate-180" : "rotate-0"
+                    } transition-all duration-300`}
+                  >
                     <BiChevronDown size={20} />
                   </span>
                 </div>
@@ -83,7 +89,11 @@ const Gigs = () => {
               </div>
             </div>
           </div>
-          <div className="w-full grid grid-cols-4 items-start justify-start gap-5"></div>
+          <div className="w-full grid grid-cols-4 items-start justify-start gap-5">
+            {gigCards.map((item) => (
+              <GigsCards key={item.id} item={item} />
+            ))}
+          </div>
         </div>
       </div>
     </main>
