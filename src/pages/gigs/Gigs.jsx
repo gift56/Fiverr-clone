@@ -21,23 +21,23 @@ const Gigs = () => {
           </p>
           <div className="w-full flex items-center justify-between">
             <div className="flex items-center justify-start gap-2">
-              <p className="text-base font-normal">Budget:</p>
+              <p className="text-base font-normal text-gray-500">Budget:</p>
               <form className="flex items-center justify-start gap-2">
-                <input type="text" placeholder="min" />
-                <input type="text" placeholder="max" />
+                <input type="text" placeholder="min" className="border w-[150px] outline-none px-2 h-[40px] rounded-md" />
+                <input type="text" placeholder="max" className="border w-[150px] outline-none px-2 h-[40px] rounded-md" />
                 <button>Apply</button>
               </form>
             </div>
             <div className="flex items-center justify-end gap-2">
-              <p className="text-base font-normal">SortBy:</p>
+              <p className="text-base font-normal text-gray-500">SortBy:</p>
               <div className="flex items-center justify-start gap-2 cursor-pointer relative">
                 <p className="text-sm">Best Selling</p>
                 <span>
                   <BiChevronDown size={20} />
                 </span>
-                <div className="">
-                  <span>Newest</span>
-                  <span>Best Selling</span>
+                <div className="flex flex-col items-start justify-start gap-3">
+                  <div>Newest</div>
+                  <div>Best Selling</div>
                 </div>
               </div>
             </div>
