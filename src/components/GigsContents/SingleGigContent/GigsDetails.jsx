@@ -30,11 +30,11 @@ const GigsDetails = () => {
           5.0
         </p>
       </div>
-      <div className="w-full bg-green-500 p-4">
+      <div className="w-full">
         <Slides rowId="4" distance={750}>
           {[0, 1, 2].map((item, i) => (
             <div className="relative inline-block cursor-pointer w-full mx-2 shadow-box">
-              <div className="w-full bg-red-300 p-4"></div>
+              <div className="w-full p-4"></div>
             </div>
           ))}
         </Slides>
