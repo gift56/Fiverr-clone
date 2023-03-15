@@ -4,6 +4,11 @@ import { BsStarFill } from "react-icons/bs";
 import Slides from "../../Slides/Slides";
 
 const GigsDetails = () => {
+  const adsImg = [
+    "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/142042620/original/c4c5fd5fabae56ac74960aa47825b6b30bd8a1f3/design-minimalist-unique-business-logo.jpg",
+    "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/202533806/original/1d22ff320f7486c75b23760e9fd074ad18b771e0/create-modern-responsive-html-landing-page.png",
+    "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/3a211b4709ad773709265d95262c7b37-1648487716/screencapture-ndaya-ci-coming-soon-en-2022-03-28-19_34_55%20(1)/create-modern-responsive-html-landing-page.png",
+  ];
   return (
     <div className="w-full flex items-start justify-start gap-3 flex-col">
       <div className="flex items-center justify-start gap-2 text-gray-500 text-sm font-medium">
@@ -32,10 +37,13 @@ const GigsDetails = () => {
       </div>
       <div className="w-full">
         <Slides rowId="4" distance={750}>
-          {[0, 1, 2].map((item, i) => (
-            <div className="relative inline-block cursor-pointer w-full mx-2 shadow-box">
+          {adsImg.map((item, i) => (
+            <div
+              key={i}
+              className="relative inline-block cursor-pointer w-full mx-2 shadow-box"
+            >
               <div className="w-full">
-                <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/142042620/original/c4c5fd5fabae56ac74960aa47825b6b30bd8a1f3/design-minimalist-unique-business-logo.jpg" alt="" />
+                <img src={item} alt={item} />
               </div>
             </div>
           ))}
