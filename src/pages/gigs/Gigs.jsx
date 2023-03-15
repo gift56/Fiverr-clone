@@ -1,5 +1,5 @@
 import React from "react";
-import { BiHomeAlt } from "react-icons/bi";
+import { BiHomeAlt, BiChevronDown } from "react-icons/bi";
 
 const Gigs = () => {
   return (
@@ -30,6 +30,13 @@ const Gigs = () => {
             </div>
             <div className="flex items-center justify-end gap-2">
               <p className="text-base font-normal">SortBy:</p>
+              <div className="flex items-center justify-start gap-2 cursor-pointer relative">
+                <p className="text-sm">Best Selling</p>
+                <span>
+                  <BiChevronDown size={20} />
+                </span>
+                <div className=""></div>
+              </div>
             </div>
           </div>
         </div>
