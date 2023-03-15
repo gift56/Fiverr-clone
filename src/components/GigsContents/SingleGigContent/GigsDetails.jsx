@@ -65,9 +65,9 @@ const GigsDetails = () => {
         </h2>
         <div className="flex items-center justify-start gap-3">
           <img src="" alt="" className="w-20 h-20 border rounded-full" />
-          <div className="flex flex-col items-start justify-start gap-3">
+          <div className="flex flex-col items-start justify-start gap-2">
             <span className="text-base font-semibold text-darkColor">John doe</span>
-            <p className="flex items-start justify-start gap-1 text-yellow-400 font-semibold w-full">
+            <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold w-full">
               {[0, 1, 2, 3, 4].map((item, i) => (
                 <span>
                   <BsStarFill />
