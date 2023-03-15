@@ -22,9 +22,14 @@ const Gigs = () => {
           <div className="w-full flex items-center justify-between">
             <div className="flex items-center justify-start gap-2">
               <p className="text-base font-normal">Budget:</p>
-              <input type="text" placeholder="min" />
-              <input type="text" placeholder="max" />
-              <button>Apply</button>
+              <form className="flex items-center justify-start gap-2">
+                <input type="text" placeholder="min" />
+                <input type="text" placeholder="max" />
+                <button>Apply</button>
+              </form>
+            </div>
+            <div className="flex items-center justify-end gap-2">
+              <p className="text-base font-normal">SortBy:</p>
             </div>
           </div>
         </div>
