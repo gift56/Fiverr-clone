@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Gigs = () => {
-  return (
-    <div>Gigs</div>
-  )
-}
+  return <main className="pt-40">Gigs</main>;
+};
 
-export default Gigs
+export default Gigs;

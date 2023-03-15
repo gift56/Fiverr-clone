@@ -32,7 +32,10 @@ const Navbar = () => {
     >
       <div className="contain">
         <div className="w-full flex items-center justify-between py-4">
-          <Link to="/" className="text-4xl select-none font-black tracking-tighter">
+          <Link
+            to="/"
+            className="text-4xl select-none font-black tracking-tighter"
+          >
             <span>fiverr</span>
             <span className="text-primary">.</span>
           </Link>
@@ -40,9 +43,7 @@ const Navbar = () => {
             <NavLink to="/" className="cursor-pointer">
               Fiverr Business
             </NavLink>
-            <NavLink to="/explore" className="cursor-pointer">
-              Explore
-            </NavLink>
+            <div className="cursor-pointer">Explore</div>
             <div className="flex items-center gap-2 cursor-pointer">
               <span>
                 <TfiWorld />
