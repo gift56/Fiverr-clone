@@ -67,14 +67,14 @@ const Gigs = () => {
                   {sort === "sales" ? (
                     <div
                       onClick={() => reSort("createdAt")}
-                      className="px-4 py-2 w-full border-b text-gray-500 text-sm cursor-pointe"
+                      className="px-4 py-2 w-full border-b text-gray-500 text-sm cursor-pointer"
                     >
                       Newest
                     </div>
                   ) : (
                     <div
                       onClick={() => reSort("sales")}
-                      className="px-4 py-2 w-full border-b text-gray-500 text-sm cursor-pointe"
+                      className="px-4 py-2 w-full border-b text-gray-500 text-sm cursor-pointer"
                     >
                       Best Selling
                     </div>
