@@ -10,7 +10,7 @@ const Gig = () => {
           <div className="w-[70%]">
             <GigsDetails />
           </div>
-          <div className="w-[30%]">
+          <div className="w-[30%] sticky top-0 z-[1]">
             <GigsOrder />
           </div>
         </div>
