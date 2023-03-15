@@ -155,51 +155,47 @@ const Footer = () => {
       ],
     },
     {
-      title: "Categories",
+      title: "More From Fiverr",
       links: [
         {
           to: "/",
-          text: "Graphics & Design",
+          text: "Fiverr Business",
         },
         {
           to: "/",
-          text: "Digital Marketing",
+          text: "Fiverr Pro",
         },
         {
           to: "/",
-          text: "Writing & Translation",
+          text: "Fiverr Logo Maker",
         },
         {
           to: "/",
-          text: "Video & Animation",
+          text: "Fiverr Guides",
         },
         {
           to: "/",
-          text: "Music & Audio",
+          text: "Get Inspired",
         },
         {
           to: "/",
-          text: "Programming & Tech",
+          text: "Fiverr Select",
         },
         {
           to: "/",
-          text: "Data",
+          text: "ClearVoice",
         },
         {
           to: "/",
-          text: "Business",
+          text: "Fiverr Workspace",
         },
         {
           to: "/",
-          text: "Lifestyle",
+          text: "Learn",
         },
         {
           to: "/",
-          text: "Photography",
-        },
-        {
-          to: "/",
-          text: "Sitemap",
+          text: "Working Not Working",
         },
       ],
     },
