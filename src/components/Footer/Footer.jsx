@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <footer className="border-t w-full py-14">
       <div className="contain">
-        <div className="w-full flex flex-col items-start justify-start">
+        <div className="w-full flex flex-col items-start justify-start gap-10">
           <div className="w-full grid grid-cols-5 gap-5 items-start justify-start">
             {footerLinks.map((item, i) => (
               <div
@@ -34,7 +34,14 @@ const Footer = () => {
               </div>
             ))}
           </div>
-          <div></div>
+          <div className="w-full flex items-center justify-between">
+            <div className="flex items-center justify-start gap-4">
+              <div className="flex items-end justify-end">
+                <h2>fivver</h2>
+              </div>
+            </div>
+            <div></div>
+          </div>
         </div>
       </div>
     </footer>
