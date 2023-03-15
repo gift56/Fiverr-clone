@@ -12,8 +12,10 @@ import { Link } from "react-router-dom";
 import { footerLinks } from "../../data/data";
 
 const Footer = () => {
+  const date = new Date();
+  const year = date.getFullYear();
   return (
-    <footer className="border-t w-full py-14">
+    <footer className="border-t w-full py-14 pb-5">
       <div className="contain">
         <div className="w-full flex flex-col items-start justify-start gap-10">
           <div className="w-full grid grid-cols-5 gap-5 items-start justify-start">
@@ -42,10 +44,16 @@ const Footer = () => {
           <div className="w-full flex items-center justify-between border-t pt-5">
             <div className="flex items-center justify-start gap-4">
               <div className="flex items-end justify-end select-none">
-                <h2 className="text-3xl select-none font-black tracking-tighter text-gray-500">fivver</h2>
-                <span className="border text-[6px] rounded-full w-3 h-3 flex items-center justify-center">R</span>
+                <h2 className="text-3xl select-none font-black tracking-tighter text-gray-500">
+                  fivver
+                </h2>
+                <span className="border text-[6px] rounded-full w-3 h-3 flex items-center justify-center">
+                  R
+                </span>
               </div>
-              <p>© Fiverr International Ltd. 2023</p>
+              <p className="text-sm font-medium text-gray-400">
+                © Fiverr International Ltd. {year}
+              </p>
             </div>
             <div></div>
           </div>
