@@ -21,9 +21,13 @@ const GigsDetails = () => {
       <h1 className="text-3xl font-bold text-darkColor/90 max-w-[790px]">
         I will create a minimalist creative business logo design
       </h1>
-      <div className="flex items-center justify-start gap-3">
+      <div className="flex items-center justify-start gap-3 w-full">
         <div className="flex items-center justify-start gap-3">
-          <img src="" alt="" className="w-8 h-8 border rounded-full" />
+          <img
+            src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d17126381eb48afcee047939cfc4de7c-1558258572050/9f862fd8-b1e4-4b8f-b857-6984b31e635c.jpg"
+            alt=""
+            className="w-8 h-8 border rounded-full"
+          />
           <span>John doe</span>
         </div>
         <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold px-4">
@@ -63,16 +67,14 @@ const GigsDetails = () => {
         <h2 className="text-xl font-semibold text-gray-500">
           About The Seller
         </h2>
-        <div className="flex flex-col items-start justify-start gap-3 w-full">
+        <div className="flex items-start justify-start gap-3 w-full">
           <img
             src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d17126381eb48afcee047939cfc4de7c-1558258572050/9f862fd8-b1e4-4b8f-b857-6984b31e635c.jpg"
             alt=""
             className="w-20 h-20 border rounded-full"
           />
           <div className="flex flex-col items-start justify-start gap-2">
-            <h4 className="text-base font-bold text-darkColor">
-              John doe
-            </h4>
+            <h4 className="text-base font-bold text-darkColor">John doe</h4>
             <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold w-full">
               {[0, 1, 2, 3, 4].map((item, i) => (
                 <span>
@@ -81,10 +83,12 @@ const GigsDetails = () => {
               ))}
               5.0
             </p>
-            <button className="outline-none text-sm font-medium hover:bg-gray-400 hover:text-white transition-all duration-300 border border-gray-400 w-fit py-2 px-4 rounded">Contact Me</button>
+            <button className="outline-none text-sm font-medium hover:bg-gray-400 hover:text-white transition-all duration-300 border border-gray-400 w-fit py-2 px-4 rounded">
+              Contact Me
+            </button>
           </div>
-          <div className="border w-[80%] p-4"></div>
         </div>
+        <div className="border w-[80%] p-4"></div>
       </div>
     </div>
   );
