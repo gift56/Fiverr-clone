@@ -81,7 +81,7 @@ const GigsDetails = () => {
               ))}
               5.0
             </p>
-            <button className="outline-none text-base font-medium hover:bg-gray-400 hover:text-white hover:border-gray-500 transition-all duration-300 border border-gray-500 w-fit py-2 px-4 rounded">Contact Me</button>
+            <button className="outline-none text-sm font-medium hover:bg-gray-400 hover:text-white transition-all duration-300 border border-gray-400 w-fit py-2 px-4 rounded">Contact Me</button>
           </div>
         </div>
       </div>
