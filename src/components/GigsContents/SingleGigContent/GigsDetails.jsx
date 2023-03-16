@@ -70,9 +70,9 @@ const GigsDetails = () => {
             className="w-20 h-20 border rounded-full"
           />
           <div className="flex flex-col items-start justify-start gap-2">
-            <span className="text-base font-semibold text-darkColor">
+            <h4 className="text-base font-bold text-darkColor">
               John doe
-            </span>
+            </h4>
             <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold w-full">
               {[0, 1, 2, 3, 4].map((item, i) => (
                 <span>
@@ -81,6 +81,7 @@ const GigsDetails = () => {
               ))}
               5.0
             </p>
+            <button className="outline-none text-base font-medium hover:bg-gray-400 hover:text-white hover:border-gray-500 transition-all duration-300 border border-gray-500 w-fit py-2 px-4 rounded">Contact Me</button>
           </div>
         </div>
       </div>
