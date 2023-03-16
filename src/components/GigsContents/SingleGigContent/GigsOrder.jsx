@@ -2,7 +2,7 @@ import React from 'react'
 
 const GigsOrder = () => {
   return (
-    <div>GigsOrder</div>
+    <div className='w-full'>GigsOrder</div>
   )
 }
 
