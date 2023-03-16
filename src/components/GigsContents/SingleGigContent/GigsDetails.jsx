@@ -96,18 +96,40 @@ const GigsDetails = () => {
                 <h2 className="text-darkColor font-medium">Somewhere</h2>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-gray-400 text-sm font-normal">Avg. response time</span>
+                <span className="text-gray-400 text-sm font-normal">
+                  Avg. response time
+                </span>
                 <h2 className="text-darkColor font-medium">1 Hour</h2>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-gray-400 text-sm font-normal">Languages</span>
+                <span className="text-gray-400 text-sm font-normal">
+                  Languages
+                </span>
                 <h2 className="text-darkColor font-medium">English</h2>
               </div>
             </div>
             <div className="w-[50%] flex flex-col items-start justify-start gap-4">
-                
+              <div className="flex flex-col gap-1">
+                <span className="text-gray-400 text-sm font-normal">
+                  Member since
+                </span>
+                <h2 className="text-darkColor font-medium">Mar 2019</h2>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="text-gray-400 text-sm font-normal">
+                  Last delivery
+                </span>
+                <h2 className="text-darkColor font-medium">1 day</h2>
+              </div>
             </div>
           </div>
+          <p>
+            My name is Abdul Majid Maqsood. Having an experience of more than 4
+            years in video editing, I led multiple projects by utilizing my
+            skills in various pro-level video editing software. I produce and
+            deliver exceptional content in line with clients' unique
+            requirements.
+          </p>
         </div>
       </div>
     </div>
