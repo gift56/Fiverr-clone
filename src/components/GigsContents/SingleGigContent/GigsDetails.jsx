@@ -88,7 +88,12 @@ const GigsDetails = () => {
             </button>
           </div>
         </div>
-        <div className="border w-[80%] p-4"></div>
+        <div className="border w-[80%] p-4 rounded flex flex-col items-start justify-start gap-5">
+          <div className="w-full flex items-start justify-between gap-4">
+            <div className="w-[50%] flex flex-col items-start justify-start gap-5"></div>
+            <div className="w-[50%] flex flex-col items-start justify-start gap-5"></div>
+          </div>
+        </div>
       </div>
     </div>
   );
