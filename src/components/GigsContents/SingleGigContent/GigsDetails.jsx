@@ -123,7 +123,7 @@ const GigsDetails = () => {
               </div>
             </div>
           </div>
-          <p className="text-darkColor text-sm font-medium border-t w-full pt-4 pr-3">
+          <p className="text-darkColor text-sm font-medium border-t w-full pt-4 pr-4">
             My name is Abdul Majid Maqsood. Having an experience of more than 4
             years in video editing, I led multiple projects by utilizing my
             skills in various pro-level video editing software. I produce and
