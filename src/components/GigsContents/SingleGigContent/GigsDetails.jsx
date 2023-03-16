@@ -139,10 +139,24 @@ const GigsDetails = () => {
             className="w-full flex flex-col gap-4 items-start justify-start border-t last:border-b last:pb-7 pt-7 "
           >
             <div className="flex items-start justify-start gap-4">
-                <div className="w-10 h-10 border bg-gray-300 rounded-full flex items-center justify-center text-base text-gray-500 uppercase font-semibold">U</div>
-                <div className="flex items-start justify-start flex-col gap-4">
-                    
+              <div className="w-10 h-10 border bg-gray-300 rounded-full flex items-center justify-center text-base text-gray-500 uppercase font-semibold">
+                U
+              </div>
+              <div className="flex items-start justify-start flex-col gap-4">
+                <div className="flex items-start justify-start gap-1 flex-col">
+                  <h2 className="text-darkColor font-bold lowercase">
+                    EfeGift222
+                  </h2>
+                  <div className="flex items-center justify-start gap-2">
+                    <img
+                      src="http://www.nigerianembassy.co.il/wp-content/uploads/2019/04/flag.jpg"
+                      alt="flag"
+                      className="w-6 h-4 object-cover rounded"
+                    />
+                    <span className="text-sm font-medium text-gray-500">Nigeria</span>
+                  </div>
                 </div>
+              </div>
             </div>
           </div>
         ))}
