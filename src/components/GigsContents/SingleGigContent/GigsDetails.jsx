@@ -176,12 +176,16 @@ const GigsDetails = () => {
                     Helpful?
                   </p>
                   <div className="flex items-center gap-2">
-                    <div className="flex items-centerjustify-start gap-2">
-                      <span></span>
+                    <div className="flex items-center justify-start gap-2 cursor-pointer text-sm font-semibold">
+                      <span className="text-gray-500">
+                        <BiLike />
+                      </span>
                       <span>Yes</span>
                     </div>
-                    <div className="flex items-centerjustify-start gap-2">
-                      <span></span>
+                    <div className="flex items-center justify-start gap-2 cursor-pointer text-sm font-semibold">
+                      <span className="text-gray-500">
+                        <BiDislike />
+                      </span>
                       <span>No</span>
                     </div>
                   </div>
