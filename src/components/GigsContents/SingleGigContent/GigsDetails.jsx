@@ -153,9 +153,24 @@ const GigsDetails = () => {
                       alt="flag"
                       className="w-6 h-4 object-cover rounded"
                     />
-                    <span className="text-sm font-medium text-gray-500">Nigeria</span>
+                    <span className="text-sm font-medium text-gray-500">
+                      Nigeria
+                    </span>
                   </div>
                 </div>
+                <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold">
+                  {[0, 1, 2, 3, 4].map((item, i) => (
+                    <span key={i}>
+                      <BsStarFill />
+                    </span>
+                  ))}
+                  5
+                </p>
+                <p className="font-medium max-w-[660px]">
+                  Great job on this very well done on this. very fast and timely
+                  with the edits. keep up the great work and will continue to
+                  use you in the future.
+                </p>
               </div>
             </div>
           </div>
