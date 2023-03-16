@@ -132,6 +132,7 @@ const GigsDetails = () => {
           </p>
         </div>
       </div>
+      
     </div>
   );
 };
