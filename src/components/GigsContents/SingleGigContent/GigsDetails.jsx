@@ -132,7 +132,7 @@ const GigsDetails = () => {
           </p>
         </div>
       </div>
-      <div></div>
+      <div className="w-full flex items-start mt-3 justify-start flex-col gap-4"></div>
     </div>
   );
 };
