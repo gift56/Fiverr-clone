@@ -64,9 +64,15 @@ const GigsDetails = () => {
           About The Seller
         </h2>
         <div className="flex items-center justify-start gap-3">
-          <img src="" alt="" className="w-20 h-20 border rounded-full" />
+          <img
+            src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d17126381eb48afcee047939cfc4de7c-1558258572050/9f862fd8-b1e4-4b8f-b857-6984b31e635c.jpg"
+            alt=""
+            className="w-20 h-20 border rounded-full"
+          />
           <div className="flex flex-col items-start justify-start gap-2">
-            <span className="text-base font-semibold text-darkColor">John doe</span>
+            <span className="text-base font-semibold text-darkColor">
+              John doe
+            </span>
             <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold w-full">
               {[0, 1, 2, 3, 4].map((item, i) => (
                 <span>
