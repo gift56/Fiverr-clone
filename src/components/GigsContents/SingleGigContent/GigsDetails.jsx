@@ -90,7 +90,7 @@ const GigsDetails = () => {
         </div>
         <div className="border w-[80%] p-5 rounded flex flex-col items-start justify-start gap-5">
           <div className="w-full flex items-start justify-between gap-4">
-            <div className="w-[50%] flex flex-col items-start justify-start gap-5">
+            <div className="w-[50%] flex flex-col items-start justify-start gap-3">
               <div className="flex flex-col gap-1">
                 <span className="text-gray-400 text-sm font-normal">From</span>
                 <h2 className="text-darkColor font-medium">Somewhere</h2>
@@ -101,10 +101,12 @@ const GigsDetails = () => {
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-gray-400 text-sm font-normal">Languages</span>
-                <h2 className="text-gray-400 text-sm font-normal">English</h2>
+                <h2 className="text-darkColor font-medium">English</h2>
               </div>
             </div>
-            <div className="w-[50%] flex flex-col items-start justify-start gap-5"></div>
+            <div className="w-[50%] flex flex-col items-start justify-start gap-4">
+                
+            </div>
           </div>
         </div>
       </div>
