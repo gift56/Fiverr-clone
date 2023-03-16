@@ -1,6 +1,6 @@
 import React from "react";
-import { BiChevronRight } from "react-icons/bi";
-import { BsStarFill, BiLike, BiDislike } from "react-icons/bs";
+import { BiChevronRight, BiLike, BiDislike } from "react-icons/bi";
+import { BsStarFill } from "react-icons/bs";
 import Slides from "../../Slides/Slides";
 
 const GigsDetails = () => {
@@ -175,7 +175,16 @@ const GigsDetails = () => {
                   <p className="font-semibold text-sm text-gray-900">
                     Helpful?
                   </p>
-                  <div></div>
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-centerjustify-start gap-2">
+                      <span></span>
+                      <span>Yes</span>
+                    </div>
+                    <div className="flex items-centerjustify-start gap-2">
+                      <span></span>
+                      <span>No</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
