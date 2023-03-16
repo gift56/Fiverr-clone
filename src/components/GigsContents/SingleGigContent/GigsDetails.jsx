@@ -59,11 +59,11 @@ const GigsDetails = () => {
         explicabo error! Modi ullam enim, accusamus amet illo officia ab eveniet
         molestiae quas sit. Optio nam aperiam et provident dignissimos vero rem.
       </p>
-      <div className="flex flex-col gap-3 mt-5">
+      <div className="flex flex-col gap-3 mt-5 w-full">
         <h2 className="text-xl font-semibold text-gray-500">
           About The Seller
         </h2>
-        <div className="flex items-center justify-start gap-3">
+        <div className="flex flex-col items-start justify-start gap-3 w-full">
           <img
             src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d17126381eb48afcee047939cfc4de7c-1558258572050/9f862fd8-b1e4-4b8f-b857-6984b31e635c.jpg"
             alt=""
@@ -83,6 +83,7 @@ const GigsDetails = () => {
             </p>
             <button className="outline-none text-sm font-medium hover:bg-gray-400 hover:text-white transition-all duration-300 border border-gray-400 w-fit py-2 px-4 rounded">Contact Me</button>
           </div>
+          <div className="border w-[80%] p-4"></div>
         </div>
       </div>
     </div>
