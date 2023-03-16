@@ -140,7 +140,9 @@ const GigsDetails = () => {
           >
             <div className="flex items-start justify-start gap-4">
                 <div className="w-10 h-10 border bg-gray-300 rounded-full flex items-center justify-center text-base text-gray-500 uppercase font-semibold">U</div>
-                <div></div>
+                <div className="flex items-start justify-start flex-col gap-4">
+                    
+                </div>
             </div>
           </div>
         ))}
