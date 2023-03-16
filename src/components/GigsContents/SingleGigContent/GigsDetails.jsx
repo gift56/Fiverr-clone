@@ -134,8 +134,14 @@ const GigsDetails = () => {
       </div>
       <div className="w-full flex items-start mt-3 justify-start flex-col gap-4">
         {[0, 1, 2, 3, 4].map((item, i) => (
-          <div key={i} className="w-full flex flex-col gap-4 items-start justify-start border-t pt-7">
-
+          <div
+            key={i}
+            className="w-full flex flex-col gap-4 items-start justify-start border-t last:border-b last:pb-7 pt-7 "
+          >
+            <div className="flex items-start justify-start gap-4">
+                <div className="w-10 h-10 border bg-gray-300 rounded-full flex items-center justify-center text-base text-gray-500 uppercase font-semibold">U</div>
+                <div></div>
+            </div>
           </div>
         ))}
       </div>
