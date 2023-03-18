@@ -1,4 +1,5 @@
 import React from "react";
+import { BsTrash } from "react-icons/bs";
 
 const MyGigs = () => {
   const tableData = [
