@@ -64,6 +64,13 @@ const MyGigs = () => {
     },
   ];
 
+  const tableActions = data.map((item) => ({
+    orderId: <span>{item.orderId}</span>,
+    amount: <span>{item.amount}</span>,
+    credit: <span>{item.credit}</span>,
+    date: <span>{item.date}</span>,
+  }));
+
   return (
     <main className="py-40">
       <div className="contain">
@@ -74,6 +81,7 @@ const MyGigs = () => {
               Add New Gig
             </button>
           </div>
+          <table></table>
         </div>
       </div>
     </main>
