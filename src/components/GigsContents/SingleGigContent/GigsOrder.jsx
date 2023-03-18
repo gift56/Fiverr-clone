@@ -33,12 +33,16 @@ const GigsOrder = () => {
       </div>
       <div className="flex flex-col gap-1 items-start justify-start w-full">
         {extra.map((item, i) => (
-          <div key={i} className="flex items-center justify-start gap-2 text-sm text-darkColor/70 font-semibold">
+          <div
+            key={i}
+            className="flex items-center justify-start gap-2 text-sm text-darkColor/70 font-semibold"
+          >
             <BsCheckLg className="text-primary" />
             <span>{item}</span>
           </div>
         ))}
       </div>
+      <button className="w-full h-10 rounded bg-primary/95 text-white hover:bg-primary">Continue</button>
     </div>
   );
 };
