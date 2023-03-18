@@ -74,11 +74,21 @@ const MyGigs = () => {
         />
       </div>
     ),
-    title: <p className="w-full bg-red-400">{item.title}</p>,
-    price: <p className="w-full">{item.price}</p>,
+    title: (
+      <p className="w-full flex items-center justify-start">{item.title}</p>
+    ),
+    price: (
+      <p className="w-full flex items-center justify-start">{item.price}</p>
+    ),
+    orders: (
+      <p className="w-full flex items-center justify-start">{item.sales}</p>
+    ),
     actions: (
-      <div className="w-full">
-        <BsTrash />
+      <div
+        className="w-full flex items-center justify-start text-red-500 cursor-pointer"
+        onClick={() => alert(item.title)}
+      >
+        <BsTrash size={16}/>
       </div>
     ),
   }));
@@ -117,7 +127,7 @@ const MyGigs = () => {
                     {columns?.map((col, i) => (
                       <td
                         key={i}
-                        className="first:text-left text-xs text-darkColor font-medium text-center py-2"
+                        className="first:text-left text-sm text-darkColor font-medium text-center py-2"
                       >
                         {row[col.field]}
                       </td>
