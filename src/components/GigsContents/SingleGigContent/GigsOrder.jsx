@@ -42,7 +42,7 @@ const GigsOrder = () => {
           </div>
         ))}
       </div>
-      <button className="w-full h-10 rounded bg-primary/95 text-white hover:bg-primary">Continue</button>
+      <button className="w-full h-10 rounded bg-primary/95 text-white hover:bg-primary outline-none">Continue</button>
     </div>
   );
 };
