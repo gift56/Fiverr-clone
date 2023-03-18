@@ -8,6 +8,36 @@ const MyGigs = () => {
       price: "20",
       orders: "102",
     },
+    {
+      img: "https://fiverr-res.cloudinary.com/f_auto,q_auto/v1/attachments/generic_asset/asset/c8c0b94d835437aaa18685a80831010a-1675613384041/Website%20Developer%20med2.jpeg",
+      title: "Mara Andre",
+      price: "20",
+      orders: "102",
+    },
+    {
+      img: "https://fiverr-res.cloudinary.com/f_auto,q_auto/v1/attachments/generic_asset/asset/c8c0b94d835437aaa18685a80831010a-1675613384041/Website%20Developer%20med2.jpeg",
+      title: "Mara Andre",
+      price: "20",
+      orders: "102",
+    },
+    {
+      img: "https://fiverr-res.cloudinary.com/f_auto,q_auto/v1/attachments/generic_asset/asset/c8c0b94d835437aaa18685a80831010a-1675613384041/Website%20Developer%20med2.jpeg",
+      title: "Mara Andre",
+      price: "20",
+      orders: "102",
+    },
+    {
+      img: "https://fiverr-res.cloudinary.com/f_auto,q_auto/v1/attachments/generic_asset/asset/c8c0b94d835437aaa18685a80831010a-1675613384041/Website%20Developer%20med2.jpeg",
+      title: "Mara Andre",
+      price: "20",
+      orders: "102",
+    },
+    {
+      img: "https://fiverr-res.cloudinary.com/f_auto,q_auto/v1/attachments/generic_asset/asset/c8c0b94d835437aaa18685a80831010a-1675613384041/Website%20Developer%20med2.jpeg",
+      title: "Mara Andre",
+      price: "20",
+      orders: "102",
+    },
   ];
 
   const columns = [
