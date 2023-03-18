@@ -4,7 +4,7 @@ import { TfiReload } from "react-icons/tfi";
 
 const GigsOrder = () => {
   return (
-    <div className="w-full bg-white border p-4 flex flex-col gap-4 items-start justify-start rounded sticky top-10 z-[1]">
+    <div className="w-full bg-white border p-4 flex flex-col gap-4 items-start justify-start rounded">
       <div className="flex items-center justify-between gap-2 w-full">
         <h2 className="text-gray-800 text-sm font-bold">
           1 AI generated image
