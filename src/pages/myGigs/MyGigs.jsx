@@ -81,7 +81,7 @@ const MyGigs = () => {
               Add New Gig
             </button>
           </div>
-          <table></table>
+          <table className="w-full"></table>
         </div>
       </div>
     </main>
