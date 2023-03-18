@@ -2,7 +2,7 @@ import React from 'react'
 
 const Messages = () => {
   return (
-    <div>Messages</div>
+    <main className="py-40">Messages</main>
   )
 }
 
