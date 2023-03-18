@@ -74,9 +74,13 @@ const MyGigs = () => {
         />
       </div>
     ),
-    title: <p className="w-full">{item.title}</p>,
-    // price: ,
-    // actions: ,
+    title: <p className="w-full bg-red-400">{item.title}</p>,
+    price: <p className="w-full">{item.price}</p>,
+    actions: (
+      <div className="w-full">
+        <BsTrash />
+      </div>
+    ),
   }));
 
   return (
@@ -96,7 +100,7 @@ const MyGigs = () => {
                   columns.map((head, i) => (
                     <th
                       key={i}
-                      className="first:text-left text-gray-700 text-center text-sm font-semibold leading-[18px] pb-2"
+                      className="text-left text-gray-700 text-sm font-semibold leading-[18px] pb-2"
                     >
                       {head.header}
                     </th>
@@ -106,7 +110,10 @@ const MyGigs = () => {
             <tbody className="w-full">
               {tableActions &&
                 tableActions.map((row, i) => (
-                  <tr key={i} className="text-sm leading-5 w-full even:bg-gray-200">
+                  <tr
+                    key={i}
+                    className="text-sm leading-5 w-full even:bg-gray-200"
+                  >
                     {columns?.map((col, i) => (
                       <td
                         key={i}
