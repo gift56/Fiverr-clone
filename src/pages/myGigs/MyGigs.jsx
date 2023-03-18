@@ -106,7 +106,7 @@ const MyGigs = () => {
             <tbody className="w-full">
               {tableActions &&
                 tableActions.map((row, i) => (
-                  <tr key={i} className="h-[40px] text-sm leading-5 w-full even:bg-gray-400">
+                  <tr key={i} className="text-sm leading-5 w-full even:bg-gray-200">
                     {columns?.map((col, i) => (
                       <td
                         key={i}
