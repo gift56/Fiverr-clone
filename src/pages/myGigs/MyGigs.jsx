@@ -7,7 +7,7 @@ const MyGigs = () => {
         <div className="w-full flex flex-col items-start gap-5 justify-start">
           <div className="flex items-center justify-between w-full gap-2">
             <h2 className="text-2xl font-bold">Gigs</h2>
-            <button className="bg-primary/80 py-3 px-2 text-white outline-none rounded-md text-sm hover:bg-primary w-fit">Add New Gig</button>
+            <button className="bg-primary/80 py-3 px-2 text-white outline-none rounded-md text-sm hover:bg-primary w-fit transition-all duration-300">Add New Gig</button>
           </div>
         </div>
       </div>
