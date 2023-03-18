@@ -650,3 +650,21 @@ export const ordersColumns = [
     header: "Contact",
   },
 ];
+export const messageColumns = [
+  {
+    field: "buyer",
+    header: "Buyer",
+  },
+  {
+    field: "lastMessage",
+    header: "Last Message",
+  },
+  {
+    field: "date",
+    header: "Date",
+  },
+  {
+    field: "action",
+    header: "Actions",
+  },
+];
