@@ -81,7 +81,21 @@ const MyGigs = () => {
               Add New Gig
             </button>
           </div>
-          <table className="w-full"></table>
+          <table className="w-full">
+            <thead className="h-[35px]">
+              <tr className="border-b">
+                {columns &&
+                  columns.map((head, i) => (
+                    <th
+                      key={i}
+                      className="first:text-left text-gray-700 text-center text-sm font-semibold leading-[18px] pb-2"
+                    >
+                      {head.header}
+                    </th>
+                  ))}
+              </tr>
+            </thead>
+          </table>
         </div>
       </div>
     </main>
