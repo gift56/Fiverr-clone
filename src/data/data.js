@@ -621,10 +621,32 @@ export const columns = [
   },
   {
     field: "orders",
-    header: "Orders",
+    header: "Sales",
   },
   {
     field: "actions",
     header: "Actions",
+  },
+];
+export const ordersColumns = [
+  {
+    field: "image",
+    header: "Image",
+  },
+  {
+    field: "title",
+    header: "Title",
+  },
+  {
+    field: "price",
+    header: "Price",
+  },
+  {
+    field: "orders",
+    header: "Sales",
+  },
+  {
+    field: "actions",
+    header: "Contact",
   },
 ];

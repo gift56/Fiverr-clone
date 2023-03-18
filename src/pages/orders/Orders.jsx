@@ -1,6 +1,6 @@
 import React from "react";
 import { MdMail } from "react-icons/md";
-import { columns, tableData } from "../../data/data";
+import { ordersColumns, tableData } from "../../data/data";
 
 const Orders = () => {
   const tableActions = tableData.map((item) => ({
@@ -42,8 +42,8 @@ const Orders = () => {
           <table className="w-full">
             <thead className="h-[35px]">
               <tr className="border-b">
-                {columns &&
-                  columns.map((head, i) => (
+                {ordersColumns &&
+                  ordersColumns.map((head, i) => (
                     <th
                       key={i}
                       className="text-left text-gray-700 text-sm font-semibold leading-[18px] pb-2"
