@@ -24,7 +24,7 @@ const Orders = () => {
     ),
     actions: (
       <div
-        className="w-10 h-10 flex items-center justify-start  cursor-pointer bg-blue-600"
+        className="w-10 h-10 cursor-pointer bg-blue-600 rounded-full flex items-center justify-center"
         onClick={() => alert(item.title)}
       >
         <CiMail size={18} />
