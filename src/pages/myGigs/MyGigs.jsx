@@ -66,11 +66,15 @@ const MyGigs = () => {
 
   const tableActions = tableData.map((item) => ({
     image: (
-      <div className="w-10 h-10">
-        <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
+      <div className="w-14 h-10">
+        <img
+          src={item.img}
+          alt={item.title}
+          className="w-full h-full object-cover"
+        />
       </div>
     ),
-    // title: ,
+    title: <p className="w-full">{item.title}</p>,
     // price: ,
     // actions: ,
   }));
@@ -102,11 +106,11 @@ const MyGigs = () => {
             <tbody className="w-full">
               {tableActions &&
                 tableActions.map((row, i) => (
-                  <tr key={i} className="h-[40px] text-sm leading-5 w-full">
+                  <tr key={i} className="h-[40px] text-sm leading-5 w-full even:bg-gray-400">
                     {columns?.map((col, i) => (
                       <td
                         key={i}
-                        className="first:text-left text-xs text-darkColor font-medium text-center"
+                        className="first:text-left text-xs text-darkColor font-medium text-center py-2"
                       >
                         {row[col.field]}
                       </td>
