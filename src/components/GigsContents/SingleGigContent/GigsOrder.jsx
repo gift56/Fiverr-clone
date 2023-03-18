@@ -25,7 +25,9 @@ const GigsOrder = () => {
           <span>Unlimited Revisions</span>
         </div>
       </div>
-      <div></div>
+      <div className="flex flex-col gap-2 items-start justify-start w-full">
+        
+      </div>
     </div>
   );
 };
