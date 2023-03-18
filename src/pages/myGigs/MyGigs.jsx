@@ -1,5 +1,6 @@
 import React from "react";
 import { BsTrash } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import { columns, tableData } from "../../data/data";
 
 const MyGigs = () => {
@@ -27,7 +28,7 @@ const MyGigs = () => {
         className="w-full flex items-center justify-start text-red-500 cursor-pointer"
         onClick={() => alert(item.title)}
       >
-        <BsTrash size={16}/>
+        <BsTrash size={16} />
       </div>
     ),
   }));
@@ -38,9 +39,11 @@ const MyGigs = () => {
         <div className="w-full flex flex-col items-start gap-5 justify-start">
           <div className="flex items-center justify-between w-full gap-2">
             <h2 className="text-2xl font-bold">Gigs</h2>
-            <button className="bg-primary/80 py-3 px-2 text-white outline-none rounded-md text-sm hover:bg-primary w-fit transition-all duration-300">
-              Add New Gig
-            </button>
+            <Link to="/add">
+              <button className="bg-primary/80 py-3 px-2 text-white outline-none rounded-md text-sm hover:bg-primary w-fit transition-all duration-300">
+                Add New Gig
+              </button>
+            </Link>
           </div>
           <table className="w-full">
             <thead className="h-[35px]">
