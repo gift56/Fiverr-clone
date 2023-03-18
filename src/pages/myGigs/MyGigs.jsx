@@ -64,11 +64,9 @@ const MyGigs = () => {
     },
   ];
 
-  const tableActions = data.map((item) => ({
-    orderId: <span>{item.orderId}</span>,
-    amount: <span>{item.amount}</span>,
-    credit: <span>{item.credit}</span>,
-    date: <span>{item.date}</span>,
+  const tableActions = tableData.map((item) => ({
+    // image: ,
+    // title: ,
   }));
 
   return (
