@@ -81,7 +81,7 @@ const Navbar = () => {
                     >
                       {currentUser?.isSeller && (
                         <>
-                          <NavLink to="/gigs" className="cursor-pointer w-full">
+                          <NavLink to="/myGigs" className="cursor-pointer w-full">
                             Gigs
                           </NavLink>
                           <NavLink to="/add" className="cursor-pointer w-full">
