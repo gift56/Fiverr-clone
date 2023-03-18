@@ -1,6 +1,17 @@
 import React from "react";
+import { messageColumns, tableData } from "../../data/data";
 
 const Messages = () => {
+  const tableActions = tableData.map((item, i) => ({
+    buyer: <p>{item.buyer}</p>,
+    lastMessage: (
+      <p className="w-full flex items-center justify-start">
+        {item.lastMessage}
+      </p>
+    ),
+    date: <p className="w-full flex items-center justify-start">{item.date}</p>,
+    actions: <button onClick={() => alert(item.i)}></button>,
+  }));
   return (
     <main className="py-40">
       <div className="contain">
@@ -9,8 +20,8 @@ const Messages = () => {
           <table className="w-full">
             <thead className="h-[35px]">
               <tr className="border-b">
-                {columns &&
-                  columns.map((head, i) => (
+                {messageColumns &&
+                  messageColumns.map((head, i) => (
                     <th
                       key={i}
                       className="text-left text-gray-700 text-sm font-semibold leading-[18px] pb-2"
@@ -27,7 +38,7 @@ const Messages = () => {
                     key={i}
                     className="text-sm leading-5 w-full even:bg-gray-200"
                   >
-                    {columns?.map((col, i) => (
+                    {messageColumns?.map((col, i) => (
                       <td
                         key={i}
                         className="first:text-left text-sm text-darkColor font-medium text-center py-2"
