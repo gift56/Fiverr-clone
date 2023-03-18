@@ -67,6 +67,8 @@ const MyGigs = () => {
   const tableActions = tableData.map((item) => ({
     // image: ,
     // title: ,
+    // price: ,
+    // actions: ,
   }));
 
   return (
