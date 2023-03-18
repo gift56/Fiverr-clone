@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const MyGigs = () => {
   return (
-    <div>G</div>
-  )
-}
+    <main className="py-40">
+      <div className="contain">
+        
+      </div>
+    </main>
+  );
+};
 
-export default MyGigs
+export default MyGigs;
