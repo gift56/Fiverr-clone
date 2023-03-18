@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import { CiMail } from "react-icons/ci";
 
 const Orders = () => {
-  return (
-    <div>Orders</div>
-  )
-}
+  return <div>Orders</div>;
+};
 
-export default Orders
+export default Orders;
