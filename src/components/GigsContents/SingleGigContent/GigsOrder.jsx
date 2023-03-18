@@ -1,8 +1,14 @@
 import React from "react";
-import { AiOutlineClockCircle, AiOutlineCheck } from "react-icons/ai";
+import { AiOutlineClockCircle } from "react-icons/ai";
+import { BsCheckLg } from "react-icons/bs";
 import { TfiReload } from "react-icons/tfi";
 
 const GigsOrder = () => {
+  const extra = [
+    "Up to 2 minutes running time",
+    "Color grading",
+    "Motion graphics",
+  ];
   return (
     <div className="w-full bg-white border p-4 flex flex-col gap-4 items-start justify-start rounded">
       <div className="flex items-center justify-between gap-2 w-full">
@@ -25,8 +31,13 @@ const GigsOrder = () => {
           <span>Unlimited Revisions</span>
         </div>
       </div>
-      <div className="flex flex-col gap-2 items-start justify-start w-full">
-        
+      <div className="flex flex-col gap-1 items-start justify-start w-full">
+        {extra.map((item, i) => (
+          <div key={i} className="flex items-center justify-start gap-2 text-sm text-darkColor/70 font-semibold">
+            <BsCheckLg className="text-primary" />
+            <span>{item}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
