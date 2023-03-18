@@ -60,7 +60,7 @@ const Orders = () => {
                     key={i}
                     className="text-sm leading-5 w-full even:bg-gray-200"
                   >
-                    {columns?.map((col, i) => (
+                    {ordersColumns?.map((col, i) => (
                       <td
                         key={i}
                         className="first:text-left text-sm text-darkColor font-medium text-center py-2"
