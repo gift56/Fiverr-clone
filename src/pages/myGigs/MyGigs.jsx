@@ -6,7 +6,7 @@ const MyGigs = () => {
       <div className="contain">
         <div className="w-full flex flex-col items-start gap-5 justify-start">
           <div className="flex items-center justify-between w-full gap-2">
-            <h2>Gigs</h2>
+            <h2 className="text-2xl font-bold">Gigs</h2>
             <button>Add New Gig</button>
           </div>
         </div>
