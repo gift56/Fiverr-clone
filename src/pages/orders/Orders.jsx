@@ -24,7 +24,7 @@ const Orders = () => {
     ),
     actions: (
       <div
-        className="w-10 h-10 cursor-pointer bg-blue-600 rounded-full flex items-center justify-center text-white"
+        className="w-8 h-8 cursor-pointer bg-blue-600 rounded-full flex items-center justify-center text-white"
         onClick={() => alert(item.title)}
       >
         <MdMail size={18} />
