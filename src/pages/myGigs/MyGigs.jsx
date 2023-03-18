@@ -95,6 +95,21 @@ const MyGigs = () => {
                   ))}
               </tr>
             </thead>
+            <tbody className="w-full">
+              {tableActions &&
+                tableActions.map((row, i) => (
+                  <tr key={i} className="h-[40px] text-sm leading-5 w-full">
+                    {columns?.map((col, i) => (
+                      <td
+                        key={i}
+                        className="first:text-left text-xs text-darkColor font-medium text-center"
+                      >
+                        {row[col.field]}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+            </tbody>
           </table>
         </div>
       </div>
