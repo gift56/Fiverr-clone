@@ -119,7 +119,7 @@ const Navbar = () => {
         </div>
       </div>
       <div
-        className={`w-full transition-all duration-300 ${
+        className={`w-full transition-all duration-300 border-b ${
           active || pathname !== "/" ? "flex" : "hidden"
         }`}
       >
