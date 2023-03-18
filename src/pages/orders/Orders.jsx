@@ -1,5 +1,5 @@
 import React from "react";
-import { CiMail } from "react-icons/ci";
+import { MdMail } from "react-icons/md";
 import { columns, tableData } from "../../data/data";
 
 const Orders = () => {
@@ -24,10 +24,10 @@ const Orders = () => {
     ),
     actions: (
       <div
-        className="w-10 h-10 cursor-pointer bg-blue-600 rounded-full flex items-center justify-center"
+        className="w-10 h-10 cursor-pointer bg-blue-600 rounded-full flex items-center justify-center text-white"
         onClick={() => alert(item.title)}
       >
-        <CiMail size={18} />
+        <MdMail size={18} />
       </div>
     ),
   }));
