@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineClockCircle } from "react-icons/ai";
+import { AiOutlineClockCircle, AiOutlineCheck } from "react-icons/ai";
 import { TfiReload } from "react-icons/tfi";
 
 const GigsOrder = () => {
@@ -25,6 +25,7 @@ const GigsOrder = () => {
           <span>Unlimited Revisions</span>
         </div>
       </div>
+      <div></div>
     </div>
   );
 };
