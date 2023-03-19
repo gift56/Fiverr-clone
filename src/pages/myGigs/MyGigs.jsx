@@ -47,7 +47,7 @@ const MyGigs = () => {
           </div>
           <table className="w-full">
             <thead className="h-[35px]">
-              <tr className="border-b">
+              <tr>
                 {columns &&
                   columns.map((head, i) => (
                     <th
