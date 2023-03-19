@@ -42,7 +42,11 @@ const Add = () => {
                   name="cats"
                   id="cats"
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm appearance-none bg-[url(./assets/icons/dropDown.svg)] bg-no-repeat bg-[center_right_1.2rem] cursor-pointer"
-                ></select>
+                >
+                  {options.map((item, i) => (
+                    <option>{}</option>
+                  ))}
+                </select>
               </div>
             </div>
             <div className="flex-1"></div>
