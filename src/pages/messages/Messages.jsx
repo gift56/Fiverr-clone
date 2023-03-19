@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { messageColumns, messageTableData } from "../../data/data";
 
 const Messages = () => {
@@ -15,14 +16,14 @@ const Messages = () => {
       </p>
     ),
     action: (
-      <div className="w-full flex items-start justify-start">
+      <Link to={`/messages/${i}`} className="w-full flex items-start justify-start">
         <button
           onClick={() => alert(i)}
           className="bg-primary/80 hover:bg-primary text-white w-fit py-2 px-2 text-sm rounded"
         >
           Mark as Read
         </button>
-      </div>
+      </Link>
     ),
   }));
 
