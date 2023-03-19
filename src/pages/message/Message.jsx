@@ -15,7 +15,9 @@ const Message = () => {
             <span>John Doe</span> <BiChevronRight size={20} />
           </p>
           <div className="w-[80%]">
-            <div className="message"></div>
+            <div className="message">
+              
+            </div>
             <div className="flex items-end w-full gap-8">
               <textarea
                 name="message"
