@@ -10,6 +10,7 @@ const Add = () => {
             <div className="flex-1 flex items-start justify-start flex-col gap-2">
               <div className="flex flex-col w-full gap-2 items-start justify-start">
                 <label htmlFor="title">Title</label>
+                <input type="text" name="title" id="title" />
               </div>
             </div>
             <div className="flex-1"></div>
