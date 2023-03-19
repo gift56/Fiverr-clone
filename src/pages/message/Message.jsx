@@ -15,14 +15,14 @@ const Message = () => {
             <span>John Doe</span> <BiChevronRight size={20} />
           </p>
           <div className="w-[80%] flex items-start justify-start gap-4 flex-col h-[500px]">
-            <div className="h-[500px] overflow-auto border p-4 rounded-md flex flex-col gap-5">
-              <div className="item">
+            <div className="h-[500px] overflow-auto border p-4 rounded-md flex flex-col gap-5 w-full">
+              <div className="flex items-start gap-5 max-w-[600px]">
                 <img
                   src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/c51dbf5c160dac9bd067442911e65d16-1626181910196/Miscellaneous_2x.png"
                   alt="sender_img"
                   className="w-14 h-14 object-cover rounded-full border"
                 />
-                <p>
+                <p className="text-sm">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Perspiciatis beatae aperiam cupiditate aliquid reprehenderit
                   voluptatem qui asperiores illo atque suscipit odio, alias
