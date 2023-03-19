@@ -42,7 +42,7 @@ const Messages = () => {
                     {messageColumns?.map((col, i) => (
                       <td
                         key={i}
-                        className="first:text-left text-sm text-darkColor font-medium text-center py-2"
+                        className="first:text-left text-sm text-darkColor font-medium text-center py-5"
                       >
                         {row[col.field]}
                       </td>
