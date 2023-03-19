@@ -3,14 +3,14 @@ import { messageColumns, messageTableData } from "../../data/data";
 
 const Messages = () => {
   const tableActions = messageTableData.map((item, i) => ({
-    buyer: <p>{item.buyer}</p>,
+    buyer: <p className="py-5">{item.buyer}</p>,
     lastMessage: (
-      <p className="w-full flex items-center justify-start">
+      <p className="w-full flex items-center justify-start border-x border-white h-full py-5">
         {item.lastMessage}
       </p>
     ),
-    date: <p className="w-full flex items-center justify-start">{item.date}</p>,
-    actions: <button onClick={() => alert(i)}>Mark as Read</button>,
+    date: <p className="w-full flex items-center justify-start py-5 border-r border-white">{item.date}</p>,
+    action: <button onClick={() => alert(i)} className="py-5">Mark as Read</button>,
   }));
 
   return (
@@ -42,7 +42,7 @@ const Messages = () => {
                     {messageColumns?.map((col, i) => (
                       <td
                         key={i}
-                        className="first:text-left text-sm text-darkColor font-medium text-center py-5"
+                        className="first:text-left text-sm text-darkColor font-medium text-center"
                       >
                         {row[col.field]}
                       </td>
