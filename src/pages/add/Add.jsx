@@ -39,7 +39,7 @@ const Add = () => {
                   name="title"
                   id="title"
                   placeholder="e.g I will do something I'm really good at..."
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                 />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
@@ -52,7 +52,7 @@ const Add = () => {
                 <select
                   name="cats"
                   id="cats"
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm appearance-none bg-[url(./assets/icons/dropDown.svg)] bg-no-repeat bg-[center_right_1.2rem] cursor-pointer border-gray-300"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm appearance-none bg-[url(./assets/icons/dropDown.svg)] bg-no-repeat bg-[center_right_1.2rem] cursor-pointer border-gray-300 focus:border-primary"
                 >
                   {options.map((item, i) => (
                     <option key={i} value={item.value}>
@@ -125,7 +125,7 @@ const Add = () => {
                   cols="30"
                   rows="10"
                   placeholder="Brief description to customers of your service..."
-                  className="w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3"
+                  className="w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3 focus:border-primary"
                 ></textarea>
               </div>
               <button
@@ -148,7 +148,7 @@ const Add = () => {
                   name="service"
                   id="service"
                   placeholder="e.g One page web design..."
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                 />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
@@ -164,7 +164,7 @@ const Add = () => {
                   cols="30"
                   rows="10"
                   placeholder="Short Description of your service..."
-                  className="w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3"
+                  className="w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3 focus:border-primary"
                 ></textarea>
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
@@ -178,7 +178,7 @@ const Add = () => {
                   type="text"
                   name="delivery"
                   id="delivery"
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                 />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
@@ -192,7 +192,7 @@ const Add = () => {
                   type="number"
                   name="revision"
                   id="revision"
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                 />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
@@ -207,28 +207,28 @@ const Add = () => {
                   name="design"
                   id="design"
                   placeholder="e.g page design"
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                 />
                 <input
                   type="text"
                   name="fileuploading"
                   id="fileuploading"
                   placeholder="e.g file uploading"
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                 />
                 <input
                   type="text"
                   name="domain"
                   id="domain"
                   placeholder="e.g setting up a domain"
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                 />
                 <input
                   type="text"
                   name="hosting"
                   id="hosting"
                   placeholder="e.g hosting"
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                 />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
