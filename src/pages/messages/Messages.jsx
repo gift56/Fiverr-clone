@@ -6,7 +6,7 @@ const Messages = () => {
     buyer: <p className="py-5">{item.buyer}</p>,
     lastMessage: (
       <p className="w-full flex items-center justify-start border-x border-white h-full py-5">
-        {item.lastMessage}
+        {item.lastMessage.substring(0, 100)}...
       </p>
     ),
     date: (
