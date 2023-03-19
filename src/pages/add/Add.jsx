@@ -1,6 +1,7 @@
 import React from "react";
 
 const Add = () => {
+  const options = [];
   return (
     <main className="py-40">
       <div className="contain">
@@ -19,9 +20,9 @@ const Add = () => {
                 />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
-                <label htmlFor="category">Category</label>
+                <label htmlFor="cats">Category</label>
                 <select
-                  name="category"
+                  name="cats"
                   id="category"
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm appearance-none bg-[url(./assets/icons/dropDown.svg)] bg-no-repeat bg-[center_right_1.2rem] cursor-pointer"
                 ></select>
