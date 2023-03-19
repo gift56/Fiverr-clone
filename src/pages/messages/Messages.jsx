@@ -37,7 +37,7 @@ const Messages = () => {
                 tableActions.map((row, i) => (
                   <tr
                     key={i}
-                    className="text-sm leading-5 w-full even:bg-gray-200"
+                    className={`text-sm leading-5 w-full`}
                   >
                     {messageColumns?.map((col, i) => (
                       <td
