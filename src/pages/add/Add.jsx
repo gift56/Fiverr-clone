@@ -27,7 +27,9 @@ const Add = () => {
           <div className="flex items-start justify-between gap-4 w-full">
             <div className="flex-1 flex items-start justify-start flex-col gap-2 ">
               <div className="flex flex-col w-full gap-1 items-start justify-start">
-                <label htmlFor="title" className="text-sm font-medium">Title</label>
+                <label htmlFor="title" className="text-sm font-medium">
+                  Title
+                </label>
                 <input
                   type="text"
                   name="title"
@@ -51,13 +53,15 @@ const Add = () => {
                 </select>
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
-                <label htmlFor="title" className="text-sm font-medium">Cover Image</label>
+                <label htmlFor="cover" className="text-sm font-medium">
+                  Cover Image
+                </label>
                 <input
-                  type="text"
-                  name="title"
-                  id="title"
-                  placeholder="e.g I will do something I'm really good at..."
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm"
+                  type="file"
+                  name="cover"
+                  id="cover"
+                  className="hidden"
+                  accept="image/*"
                 />
               </div>
             </div>
