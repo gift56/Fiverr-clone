@@ -105,6 +105,7 @@ const Add = () => {
                   id="description"
                   cols="30"
                   rows="10"
+                  placeholder="Brief description to customers of your service..."
                   className="w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3"
                 ></textarea>
               </div>
@@ -127,6 +128,17 @@ const Add = () => {
                   placeholder="e.g One page web design..."
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
                 />
+              </div>
+              <div className="flex flex-col w-full gap-1 items-start justify-start">
+                <label htmlFor="short_description">Short Description</label>
+                <textarea
+                  name="short_description"
+                  id="short_description"
+                  cols="30"
+                  rows="10"
+                  placeholder="Short Description of your service..."
+                  className="w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3"
+                ></textarea>
               </div>
             </div>
           </div>
