@@ -202,6 +202,19 @@ const Add = () => {
                 >
                   Add Features
                 </label>
+                <input
+                  type="text"
+                  name="design"
+                  id="design"
+                  placeholder="e.g page design"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
+                />
+                <input
+                  type="text"
+                  name="design"
+                  id="design"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
+                />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
