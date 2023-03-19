@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Message = () => {
   return (
-    <main className="py-40">
+    <main className="py-40 pb-10">
       <div className="contain">
         <div className="w-full flex items-center justify-center flex-col gap-4">
           <p className="flex items-center gap-2 uppercase justify-start text-sm font-medium text-darkColor/60 w-[80%]">
@@ -14,7 +14,7 @@ const Message = () => {
             <BiChevronRight size={20} />
             <span>John Doe</span> <BiChevronRight size={20} />
           </p>
-          <div className="w-[80%] flex items-start justify-start gap-4 flex-col">
+          <div className="w-[80%] flex items-start justify-start gap-4 flex-col h-[500px]">
             <div className="h-[500px] overflow-auto border p-4 rounded-md flex flex-col gap-5">
               <div className="item">
                 <img
