@@ -671,6 +671,8 @@ export const messageColumns = [
 export const messageTableData = [
   {
     buyer: "John Doe",
-    lastMessage:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae ut accusamus eius consectetur."
+    lastMessage:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae ut accusamus eius consectetur.",
+    date: "1 hour ago",
   },
 ];
