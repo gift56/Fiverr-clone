@@ -6,7 +6,7 @@ const Message = () => {
   return (
     <main className="py-40">
       <div className="contain">
-        <div className="w-full flex items-center justify-center flex-col">
+        <div className="w-full flex items-center justify-center flex-col gap-4">
           <p className="flex items-center gap-2 uppercase justify-start text-sm font-medium text-darkColor/60 w-[80%]">
             <Link to="/messages" className="font-semibold text-darkColor">
               MESSAGES
@@ -14,7 +14,7 @@ const Message = () => {
             <BiChevronRight size={20} />
             <span>John Doe</span> <BiChevronRight size={20} />
           </p>
-          <div className="w-[80%] flex items-start justify-start gap-2 flex-col">
+          <div className="w-[80%] flex items-start justify-start gap-4 flex-col">
             <div className="h-[400px] overflow-auto border">
               <div className="item">
                 <img
