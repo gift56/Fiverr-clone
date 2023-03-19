@@ -189,7 +189,7 @@ const Add = () => {
                   Revision Number
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   name="revision"
                   id="revision"
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
@@ -202,6 +202,20 @@ const Add = () => {
                 >
                   Add Features
                 </label>
+              </div>
+              <div className="flex flex-col w-full gap-1 items-start justify-start">
+                <label
+                  htmlFor="price"
+                  className="text-sm font-medium text-darkColor/80"
+                >
+                  Price
+                </label>
+                <input
+                  type="number"
+                  name="price"
+                  id="price"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
+                />
               </div>
             </div>
           </div>
