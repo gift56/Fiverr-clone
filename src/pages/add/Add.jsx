@@ -36,7 +36,7 @@ const Add = () => {
                   name="title"
                   id="title"
                   placeholder="e.g I will do something I'm really good at..."
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
                 />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
@@ -44,7 +44,7 @@ const Add = () => {
                 <select
                   name="cats"
                   id="cats"
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm appearance-none bg-[url(./assets/icons/dropDown.svg)] bg-no-repeat bg-[center_right_1.2rem] cursor-pointer"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm appearance-none bg-[url(./assets/icons/dropDown.svg)] bg-no-repeat bg-[center_right_1.2rem] cursor-pointer border-gray-300"
                 >
                   {options.map((item, i) => (
                     <option key={i} value={item.value}>
@@ -64,7 +64,7 @@ const Add = () => {
                   className="hidden"
                   accept="image/*"
                 />
-                <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600">
+                <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600 border-gray-300">
                   <p>Upload Cover Image</p>
                   <BsUpload size={20} />
                   <label
@@ -87,7 +87,7 @@ const Add = () => {
                   accept="image/*"
                   multiple
                 />
-                <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600">
+                <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600 border-gray-300">
                   <p>Upload and Image</p>
                   <BsUpload size={20} />
                   <label
@@ -105,7 +105,7 @@ const Add = () => {
                   id="description"
                   cols="30"
                   rows="10"
-                  className="w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300"
+                  className="w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-2"
                 ></textarea>
               </div>
             </div>
