@@ -67,7 +67,35 @@ const Add = () => {
                 <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600">
                   <p>Upload and Image</p>
                   <BsUpload size={20} />
-                  <label htmlFor="cover" className="w-fit border py-2 px-5 rounded-md cursor-pointer">Browser</label>
+                  <label
+                    htmlFor="cover"
+                    className="w-fit border py-2 px-5 rounded-md cursor-pointer"
+                  >
+                    Browser
+                  </label>
+                </div>
+              </div>
+              <div className="flex flex-col w-full gap-1 items-start justify-start">
+                <label htmlFor="upload" className="text-sm font-medium">
+                  Upload Image
+                </label>
+                <input
+                  type="file"
+                  name="upload"
+                  id="upload"
+                  className="hidden"
+                  accept="image/*"
+                  multiple
+                />
+                <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600">
+                  <p>Upload and Image</p>
+                  <BsUpload size={20} />
+                  <label
+                    htmlFor="upload"
+                    className="w-fit border py-2 px-5 rounded-md cursor-pointer"
+                  >
+                    Browser
+                  </label>
                 </div>
               </div>
             </div>
