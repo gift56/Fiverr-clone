@@ -108,9 +108,27 @@ const Add = () => {
                   className="w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3"
                 ></textarea>
               </div>
-              <button type="submit" className="w-full bg-primary/80 hover:bg-primary mt-4 text-white text-base font-semibold h-10 rounded transition-all duration-300">Create</button>
+              <button
+                type="submit"
+                className="w-full bg-primary/80 hover:bg-primary mt-4 text-white text-base font-semibold h-10 rounded transition-all duration-300"
+              >
+                Create
+              </button>
             </div>
-            <div className="flex-1 flex items-start justify-start flex-col gap-2"></div>
+            <div className="flex-1 flex items-start justify-start flex-col gap-2">
+              <div className="flex flex-col w-full gap-1 items-start justify-start">
+                <label htmlFor="title" className="text-sm font-medium">
+                  Title
+                </label>
+                <input
+                  type="text"
+                  name="title"
+                  id="title"
+                  placeholder="e.g I will do something I'm really good at..."
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
