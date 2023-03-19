@@ -211,8 +211,23 @@ const Add = () => {
                 />
                 <input
                   type="text"
-                  name="design"
-                  id="design"
+                  name="fileuploading"
+                  id="fileuploading"
+                  placeholder="e.g file uploading"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
+                />
+                <input
+                  type="text"
+                  name="domain"
+                  id="domain"
+                  placeholder="e.g setting up a domain"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
+                />
+                <input
+                  type="text"
+                  name="hosting"
+                  id="hosting"
+                  placeholder="e.g hosting"
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
                 />
               </div>
