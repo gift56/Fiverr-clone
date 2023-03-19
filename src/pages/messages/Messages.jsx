@@ -1,8 +1,8 @@
 import React from "react";
-import { messageColumns, tableData } from "../../data/data";
+import { messageColumns, messageTableData } from "../../data/data";
 
 const Messages = () => {
-  const tableActions = tableData.map((item, i) => ({
+  const tableActions = messageTableData.map((item, i) => ({
     buyer: <p>{item.buyer}</p>,
     lastMessage: (
       <p className="w-full flex items-center justify-start">
@@ -10,8 +10,9 @@ const Messages = () => {
       </p>
     ),
     date: <p className="w-full flex items-center justify-start">{item.date}</p>,
-    actions: <button onClick={() => alert(item.i)}></button>,
+    actions: <button onClick={() => alert(i)}>Mark as Read</button>,
   }));
+  
   return (
     <main className="py-40">
       <div className="contain">

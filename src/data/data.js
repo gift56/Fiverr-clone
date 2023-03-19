@@ -668,3 +668,8 @@ export const messageColumns = [
     header: "Actions",
   },
 ];
+export const messageTableData = [
+  {
+    buyer: "",
+  },
+];
