@@ -28,7 +28,7 @@ const Add = () => {
           <div className="flex items-start justify-between gap-4 w-full">
             <div className="flex-1 flex items-start justify-start flex-col gap-2">
               <div className="flex flex-col w-full gap-1 items-start justify-start">
-                <label htmlFor="title" className="text-sm font-medium">
+                <label htmlFor="title" className="text-sm font-medium text-darkColor/80">
                   Title
                 </label>
                 <input
@@ -40,7 +40,7 @@ const Add = () => {
                 />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
-                <label htmlFor="cats">Category</label>
+                <label htmlFor="cats" className="text-sm font-medium text-darkColor/80">Category</label>
                 <select
                   name="cats"
                   id="cats"
@@ -54,7 +54,7 @@ const Add = () => {
                 </select>
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
-                <label htmlFor="cover" className="text-sm font-medium">
+                <label htmlFor="cover" className="text-sm font-medium text-darkColor/80">
                   Cover Image
                 </label>
                 <input
@@ -76,7 +76,7 @@ const Add = () => {
                 </div>
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
-                <label htmlFor="upload" className="text-sm font-medium">
+                <label htmlFor="upload" className="text-sm font-medium text-darkColor/80">
                   Upload Image
                 </label>
                 <input
@@ -99,7 +99,7 @@ const Add = () => {
                 </div>
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
-                <label htmlFor="description">Description</label>
+                <label htmlFor="description" className="text-sm text-darkColor/80 font-medium">Description</label>
                 <textarea
                   name="description"
                   id="description"
@@ -118,7 +118,7 @@ const Add = () => {
             </div>
             <div className="flex-1 flex items-start justify-start flex-col gap-2">
               <div className="flex flex-col w-full gap-1 items-start justify-start">
-                <label htmlFor="service" className="text-sm font-medium">
+                <label htmlFor="service" className="text-sm font-medium text-darkColor/80">
                   Service Title
                 </label>
                 <input
@@ -130,7 +130,7 @@ const Add = () => {
                 />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
-                <label htmlFor="short_description">Short Description</label>
+                <label htmlFor="short_description" className="text-darkColor/80 text-sm font-medium">Short Description</label>
                 <textarea
                   name="short_description"
                   id="short_description"
@@ -141,7 +141,7 @@ const Add = () => {
                 ></textarea>
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
-                <label htmlFor="delivery" className="text-sm font-medium">
+                <label htmlFor="delivery" className="text-sm font-medium text-darkColor/80">
                   Delivery Time (e.g 3 days)
                 </label>
                 <input
@@ -152,13 +152,13 @@ const Add = () => {
                 />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
-                <label htmlFor="revision" className="text-sm font-medium">
+                <label htmlFor="revision" className="text-sm font-medium text-darkColor/80">
                   Revision Number
                 </label>
                 <input
                   type="text"
-                  name="delivery"
-                  id="delivery"
+                  name="revision"
+                  id="revision"
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
                 />
               </div>
