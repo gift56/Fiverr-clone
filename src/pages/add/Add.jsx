@@ -63,6 +63,7 @@ const Add = () => {
                   className="hidden"
                   accept="image/*"
                 />
+                <label htmlFor="cover" className="flex justify-center items-center flex-col gap-3"></label>
               </div>
             </div>
             <div className="flex-1"></div>
