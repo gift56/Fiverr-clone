@@ -110,7 +110,7 @@ const Add = () => {
               </div>
               <button type="submit" className="w-full bg-primary/80 hover:bg-primary mt-4 text-white text-base font-semibold h-10 rounded transition-all duration-300">Create</button>
             </div>
-            <div className="flex-1 flex items-start justify-start flex-col gap-2 "></div>
+            <div className="flex-1 flex items-start justify-start flex-col gap-2"></div>
           </div>
         </div>
       </div>
