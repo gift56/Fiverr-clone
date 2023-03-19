@@ -108,6 +108,7 @@ const Add = () => {
                   className="w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3"
                 ></textarea>
               </div>
+              <button type="submit" className="w-full bg-primary/80 hover:bg-primary mt-4 text-white text-base font-semibold h-10 rounded transition-all duration-300">Create</button>
             </div>
             <div className="flex-1"></div>
           </div>
