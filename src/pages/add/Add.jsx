@@ -100,6 +100,7 @@ const Add = () => {
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label htmlFor="description">Description</label>
+                <textarea name="description" id="description" cols="30" rows="10"></textarea>
               </div>
             </div>
             <div className="flex-1"></div>
