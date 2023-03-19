@@ -9,8 +9,21 @@ const Messages = () => {
         {item.lastMessage}
       </p>
     ),
-    date: <p className="w-full flex items-center justify-start py-5 border-r border-white">{item.date}</p>,
-    action: <button onClick={() => alert(i)} className="py-5">Mark as Read</button>,
+    date: (
+      <p className="w-full flex items-center justify-start py-5 border-r border-white">
+        {item.date}
+      </p>
+    ),
+    action: (
+      <div className="w-full flex items-start justify-start">
+        <button
+          onClick={() => alert(i)}
+          className="bg-primary/80 hover:bg-primary text-white w-fit py-2 px-2 text-sm rounded"
+        >
+          Mark as Read
+        </button>
+      </div>
+    ),
   }));
 
   return (
@@ -35,10 +48,7 @@ const Messages = () => {
             <tbody className="w-full">
               {tableActions &&
                 tableActions.map((row, i) => (
-                  <tr
-                    key={i}
-                    className={`text-sm leading-5 w-full`}
-                  >
+                  <tr key={i} className={`text-sm leading-5 w-full`}>
                     {messageColumns?.map((col, i) => (
                       <td
                         key={i}
