@@ -19,7 +19,7 @@ const Messages = () => {
       </p>
     ),
     date: (
-      <p className={`w-full flex items-center justify-start h-full py-5 border-r border-white ${item.active === true ? "bg-slate-100" : ""}`}>
+      <p className={`w-full flex items-center font-semibold text-darkColor/70 justify-start h-full py-5 border-r border-white ${item.active === true ? "bg-slate-100" : ""}`}>
         {item.date}
       </p>
     ),
