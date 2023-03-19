@@ -1,7 +1,16 @@
 import React from "react";
 
 const Add = () => {
-  const options = [];
+  const options = [
+    {
+      value: "design",
+      text: "Design",
+    },
+    {
+      value: "web",
+      text: "Web Development",
+    },
+  ];
   return (
     <main className="py-40">
       <div className="contain">
