@@ -242,7 +242,7 @@ const Add = () => {
                   type="number"
                   name="price"
                   id="price"
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                 />
               </div>
             </div>
