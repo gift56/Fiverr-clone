@@ -14,9 +14,23 @@ const Message = () => {
             <BiChevronRight size={20} />
             <span>John Doe</span> <BiChevronRight size={20} />
           </p>
-          <div className="w-[80%]">
-            <div className="h-[400px] overflow-auto">
-
+          <div className="w-[80%] flex items-start justify-start gap-2 flex-col">
+            <div className="h-[400px] overflow-auto border">
+              <div className="item">
+                <img
+                  src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/c51dbf5c160dac9bd067442911e65d16-1626181910196/Miscellaneous_2x.png"
+                  alt="sender_img"
+                  className="w-14 h-14 object-cover rounded-full border"
+                />
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Perspiciatis beatae aperiam cupiditate aliquid reprehenderit
+                  voluptatem qui asperiores illo atque suscipit odio, alias
+                  doloribus repellat voluptates nesciunt distinctio! Tempora
+                  labore, voluptate hic repellat ad deserunt alias earum
+                  recusandae nulla ullam repellendus.
+                </p>
+              </div>
             </div>
             <div className="flex items-end w-full gap-8">
               <textarea
@@ -26,7 +40,9 @@ const Message = () => {
                 rows="10"
                 className="border h-[100px] w-[80%] rounded-md resize-none p-2 text-sm font-medium focus:border-2 focus:border-primary outline-none"
               ></textarea>
-              <button className="bg-primary/80 hover:bg-primary text-white w-fit py-2 px-6 text-sm rounded">Send</button>
+              <button className="bg-primary/80 hover:bg-primary text-white w-fit py-2 px-6 text-sm rounded">
+                Send
+              </button>
             </div>
           </div>
         </div>
