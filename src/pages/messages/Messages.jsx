@@ -5,13 +5,13 @@ import { messageColumns, messageTableData } from "../../data/data";
 const Messages = () => {
   const tableActions = messageTableData.map((item, i) => ({
     buyer: (
-      <p className={`py-5 h-full ${item.active === true ? "bg-slate-100" : ""}`}>
+      <p className={`py-5 h-full font-semibold ${item.active === true ? "bg-slate-100" : ""}`}>
         {item.buyer}
       </p>
     ),
     lastMessage: (
       <p
-        className={`w-full flex items-center justify-start border-x border-white h-full py-5 ${
+        className={`w-full flex items-center justify-start text-darkColor/70 border-x border-white h-full py-5 ${
           item.active === true ? "bg-slate-100" : ""
         }`}
       >
