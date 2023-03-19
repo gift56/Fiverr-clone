@@ -22,9 +22,9 @@ const Message = () => {
                 placeholder="Reply a message"
                 cols="30"
                 rows="10"
-                className="border"
+                className="border h-[100px] w-[80%] rounded-md resize-none p-2 text-sm font-medium focus:border-2 focus:border-primary outline-none"
               ></textarea>
-              <button>Send</button>
+              <button className="">Send</button>
             </div>
           </div>
         </div>
