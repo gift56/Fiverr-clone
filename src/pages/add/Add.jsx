@@ -23,7 +23,7 @@ const Add = () => {
                 <select
                   name="category"
                   id="category"
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm"
+                  className="border w-full h-10 px-3 rounded-md outline-none text-sm appearance-none bg-[url(./assets/icons/dropDown.svg)] bg-no-repeat bg-[center_right_1.2rem] cursor-pointer"
                 ></select>
               </div>
             </div>
