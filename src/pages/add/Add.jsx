@@ -9,7 +9,7 @@ const Add = () => {
           <div className="flex items-start justify-between gap-4 w-full">
             <div className="flex-1 flex items-start justify-start flex-col gap-2">
               <div className="flex flex-col w-full gap-2 items-start justify-start">
-                <label htmlFor=""></label>
+                <label htmlFor="title">Title</label>
               </div>
             </div>
             <div className="flex-1"></div>
