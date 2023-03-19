@@ -10,6 +10,14 @@ const Add = () => {
       value: "web",
       text: "Web Development",
     },
+    {
+      value: "animation",
+      text: "Animation",
+    },
+    {
+      value: "web",
+      text: "Web Development",
+    },
   ];
   return (
     <main className="py-40">
