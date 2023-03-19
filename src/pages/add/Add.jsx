@@ -1,4 +1,5 @@
 import React from "react";
+import { BsUpload } from "react-icons/bs";
 
 const Add = () => {
   const options = [
@@ -63,8 +64,10 @@ const Add = () => {
                   className="hidden"
                   accept="image/*"
                 />
-                <div htmlFor="cover" className="flex justify-center items-center flex-col gap-3 w-full border h-[126px] rounded-md">
-
+                <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600">
+                  <p>Upload and Image</p>
+                  <BsUpload size={20} />
+                  <label htmlFor="cover" className="w-fit border py-2 px-5 rounded-md cursor-pointer">Browser</label>
                 </div>
               </div>
             </div>
