@@ -716,6 +716,8 @@ export const messageTableData = [
 export const mesagesData = [
   {
     img: "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/c51dbf5c160dac9bd067442911e65d16-1626181910196/Miscellaneous_2x.png",
-    message:"  Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis beatae aperiam cupiditate aliquid reprehenderit voluptatem qui asperiores illo atque suscipit odio, alias doloribus repellat voluptates nesciunt distinctio! Tempora labore, voluptate hic repellat ad deserunt alias earum recusandae nulla ullam repellendus."
+    message:
+      "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis beatae aperiam cupiditate aliquid reprehenderit voluptatem qui asperiores illo atque suscipit odio, alias doloribus repellat voluptates nesciunt distinctio! Tempora labore, voluptate hic repellat ad deserunt alias earum recusandae nulla ullam repellendus.",
+    owner: false,
   },
 ];
