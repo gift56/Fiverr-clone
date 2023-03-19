@@ -10,6 +10,7 @@ const Message = () => {
           <Link to="/messages" className="font-semibold text-darkColor">MESSAGES</Link> <BiChevronRight size={20} />
           <span>John Doe</span> <BiChevronRight size={20} />
         </p>
+        <div className="message"></div>
       </div>
     </main>
   );
