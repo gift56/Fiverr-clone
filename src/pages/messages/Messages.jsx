@@ -49,7 +49,7 @@ const Messages = () => {
             <tbody className="w-full">
               {tableActions &&
                 tableActions.map((row, i) => (
-                  <tr key={i} className={`text-sm leading-5 w-full`}>
+                  <tr key={i} className={`text-sm leading-5 w-full `}>
                     {messageColumns?.map((col, i) => (
                       <td
                         key={i}

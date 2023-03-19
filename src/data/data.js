@@ -674,35 +674,41 @@ export const messageTableData = [
     lastMessage:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae ut accusamus eius consectetur.",
     date: "1 hour ago",
+    active: true,
   },
   {
     buyer: "John Doe",
     lastMessage:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae ut accusamus eius consectetur.",
     date: "1 hour ago",
+    active: true,
   },
   {
     buyer: "John Doe",
     lastMessage:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae ut accusamus eius consectetur.",
     date: "1 hour ago",
+    active: false,
   },
   {
     buyer: "John Doe",
     lastMessage:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae ut accusamus eius consectetur.",
     date: "1 hour ago",
+    active: false,
   },
   {
     buyer: "John Doe",
     lastMessage:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae ut accusamus eius consectetur.",
     date: "1 hour ago",
+    active: false,
   },
   {
     buyer: "John Doe",
     lastMessage:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae ut accusamus eius consectetur.",
     date: "1 hour ago",
+    active: false,
   },
 ];
