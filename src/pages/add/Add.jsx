@@ -16,7 +16,7 @@ const Add = () => {
     },
     {
       value: "music",
-      text: "Web Development",
+      text: "Music",
     },
   ];
   return (
