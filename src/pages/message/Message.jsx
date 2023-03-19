@@ -30,9 +30,9 @@ const Message = () => {
                     className="w-10 h-10 object-cover rounded-full border"
                   />
                   <p
-                    className={`text-sm rounded-2xl text-white ${
+                    className={`text-sm p-4 rounded-2xl ${
                       item.owner === true
-                        ? "bg-blue-500 p-4 rounded-tr-[0]"
+                        ? "bg-blue-500 rounded-tr-[0] text-white"
                         : "bg-gray-200 rounded-tl-[0]"
                     }`}
                   >
