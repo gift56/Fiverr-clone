@@ -41,7 +41,7 @@ const Orders = () => {
           </div>
           <table className="w-full">
             <thead className="h-[35px]">
-              <tr className="border-b">
+              <tr>
                 {ordersColumns &&
                   ordersColumns.map((head, i) => (
                     <th
