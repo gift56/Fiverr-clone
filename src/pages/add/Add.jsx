@@ -2,7 +2,7 @@ import React from 'react'
 
 const Add = () => {
   return (
-    <main>Add</main>
+    <main className=''>Add</main>
   )
 }
 
