@@ -22,7 +22,7 @@ const Message = () => {
                   alt="sender_img"
                   className="w-14 h-14 object-cover rounded-full border"
                 />
-                <p className="text-sm">
+                <p className="text-sm bg-gray-200 p-4 rounded-tl-[0] rounded-2xl">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Perspiciatis beatae aperiam cupiditate aliquid reprehenderit
                   voluptatem qui asperiores illo atque suscipit odio, alias
