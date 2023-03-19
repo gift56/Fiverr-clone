@@ -33,7 +33,7 @@ const Messages = () => {
           <h2 className="text-2xl font-bold">Messages</h2>
           <table className="w-full">
             <thead className="h-[35px]">
-              <tr className="border-b">
+              <tr>
                 {messageColumns &&
                   messageColumns.map((head, i) => (
                     <th
