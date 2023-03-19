@@ -105,7 +105,7 @@ const Add = () => {
                   id="description"
                   cols="30"
                   rows="10"
-                  className="w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-2"
+                  className="w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3"
                 ></textarea>
               </div>
             </div>
