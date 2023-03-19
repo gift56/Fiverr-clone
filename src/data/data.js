@@ -670,6 +670,7 @@ export const messageColumns = [
 ];
 export const messageTableData = [
   {
-    buyer: "",
+    buyer: "John Doe",
+    lastMessage:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae ut accusamus eius consectetur."
   },
 ];

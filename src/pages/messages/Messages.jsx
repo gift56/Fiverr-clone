@@ -12,7 +12,7 @@ const Messages = () => {
     date: <p className="w-full flex items-center justify-start">{item.date}</p>,
     actions: <button onClick={() => alert(i)}>Mark as Read</button>,
   }));
-  
+
   return (
     <main className="py-40">
       <div className="contain">
