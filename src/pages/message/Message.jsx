@@ -11,6 +11,10 @@ const Message = () => {
           <span>John Doe</span> <BiChevronRight size={20} />
         </p>
         <div className="message"></div>
+        <div className="write">
+          <textarea name="message" placeholder="Reply a message" cols="30" rows="10"></textarea>
+          <button>Send</button>
+        </div>
       </div>
     </main>
   );
