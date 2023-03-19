@@ -4,9 +4,17 @@ import { messageColumns, messageTableData } from "../../data/data";
 
 const Messages = () => {
   const tableActions = messageTableData.map((item, i) => ({
-    buyer: <p className="py-5">{item.buyer}</p>,
+    buyer: (
+      <p className={`py-5  ${item.active === true ? "!bg-blue-100" : ""}`}>
+        {item.buyer}
+      </p>
+    ),
     lastMessage: (
-      <p className="w-full flex items-center justify-start border-x border-white h-full py-5">
+      <p
+        className={`w-full flex items-center justify-start border-x border-white h-full py-5 ${
+          item.active === true ? "!bg-blue-100" : ""
+        }`}
+      >
         {item.lastMessage.substring(0, 100)}...
       </p>
     ),
@@ -49,7 +57,7 @@ const Messages = () => {
             <tbody className="w-full">
               {tableActions &&
                 tableActions.map((row, i) => (
-                  <tr key={i} className={`text-sm leading-5 w-full `}>
+                  <tr key={i} className={`text-sm leading-5 w-full`}>
                     {messageColumns?.map((col, i) => (
                       <td
                         key={i}
