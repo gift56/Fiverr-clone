@@ -24,7 +24,7 @@ const Message = () => {
                 rows="10"
                 className="border h-[100px] w-[80%] rounded-md resize-none p-2 text-sm font-medium focus:border-2 focus:border-primary outline-none"
               ></textarea>
-              <button className="">Send</button>
+              <button className="bg-primary/80 hover:bg-primary text-white w-fit py-2 px-6 text-sm rounded">Send</button>
             </div>
           </div>
         </div>
