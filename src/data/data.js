@@ -712,3 +712,5 @@ export const messageTableData = [
     active: false,
   },
 ];
+
+export const mesagesData=[{}]

@@ -31,13 +31,13 @@ const Message = () => {
                   recusandae nulla ullam repellendus.
                 </p>
               </div>
-              <div className="flex items-start gap-5 max-w-[600px] flex-row-reverse">
+              <div className="flex items-start gap-5 max-w-[600px] flex-row-reverse self-end">
                 <img
                   src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/c51dbf5c160dac9bd067442911e65d16-1626181910196/Miscellaneous_2x.png"
                   alt="sender_img"
                   className="w-10 h-10 object-cover rounded-full border"
                 />
-                <p className="text-sm bg-blue-400 p-4 rounded-tr-[0] rounded-2xl">
+                <p className="text-sm bg-blue-500 p-4 rounded-tr-[0] rounded-2xl text-white">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Perspiciatis beatae aperiam cupiditate aliquid reprehenderit
                   voluptatem qui asperiores illo atque suscipit odio, alias
