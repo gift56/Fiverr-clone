@@ -5,28 +5,28 @@ import { messageColumns, messageTableData } from "../../data/data";
 const Messages = () => {
   const tableActions = messageTableData.map((item, i) => ({
     buyer: (
-      <p className={`py-5  ${item.active === true ? "!bg-blue-100" : ""}`}>
+      <p className={`py-5 h-full ${item.active === true ? "bg-slate-100" : ""}`}>
         {item.buyer}
       </p>
     ),
     lastMessage: (
       <p
         className={`w-full flex items-center justify-start border-x border-white h-full py-5 ${
-          item.active === true ? "!bg-blue-100" : ""
+          item.active === true ? "bg-slate-100" : ""
         }`}
       >
         {item.lastMessage.substring(0, 100)}...
       </p>
     ),
     date: (
-      <p className="w-full flex items-center justify-start py-5 border-r border-white">
+      <p className={`w-full flex items-center justify-start h-full py-5 border-r border-white ${item.active === true ? "bg-slate-100" : ""}`}>
         {item.date}
       </p>
     ),
     action: (
       <Link
         to={`/messages/${i}`}
-        className="w-full flex items-start justify-start"
+        className={`w-full flex items-start justify-start h-full py-3 ${item.active === true ? "bg-slate-100" : ""}`}
       >
         <button className="bg-primary/80 hover:bg-primary text-white w-fit py-2 px-2 text-sm rounded">
           Mark as Read
