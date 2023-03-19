@@ -117,14 +117,14 @@ const Add = () => {
             </div>
             <div className="flex-1 flex items-start justify-start flex-col gap-2">
               <div className="flex flex-col w-full gap-1 items-start justify-start">
-                <label htmlFor="title" className="text-sm font-medium">
-                  Title
+                <label htmlFor="service" className="text-sm font-medium">
+                  Service Title
                 </label>
                 <input
                   type="text"
-                  name="title"
-                  id="title"
-                  placeholder="e.g I will do something I'm really good at..."
+                  name="service"
+                  id="service"
+                  placeholder="e.g One page web design..."
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300"
                 />
               </div>
