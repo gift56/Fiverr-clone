@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Message = () => {
-  return (
-    <div>Message</div>
-  )
-}
+  return <main className="py-10">Message</main>;
+};
 
-export default Message
+export default Message;
