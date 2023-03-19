@@ -1,13 +1,15 @@
 import React from "react";
+import { BiChevronRight } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
 const Message = () => {
   return (
     <main className="py-40">
       <div className="contain">
-        <span>
-          <Link to="/messages"></Link>
-        </span>
+        <p className="flex items-center gap-2 uppercase justify-start text-sm font-medium text-darkColor/60">
+          <Link to="/messages" className="font-semibold text-darkColor">MESSAGES</Link> <BiChevronRight size={20} />
+          <span>John Doe</span> <BiChevronRight size={20} />
+        </p>
       </div>
     </main>
   );
