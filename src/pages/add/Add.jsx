@@ -65,7 +65,7 @@ const Add = () => {
                   accept="image/*"
                 />
                 <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600">
-                  <p>Upload and Image</p>
+                  <p>Upload Cover Image</p>
                   <BsUpload size={20} />
                   <label
                     htmlFor="cover"
