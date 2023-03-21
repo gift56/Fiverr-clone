@@ -9,7 +9,7 @@ try {
   await mongoose.connect(
     "mongodb+srv://efegift:efegift123@cluster0.jly2ewj.mongodb.net/?retryWrites=true&w=majority&dbname=fiverr"
   );
-  console.log("Connected Successfully")
+  console.log("Connected Successfully!")
 } catch (error) {
   console.error(error);
 }
