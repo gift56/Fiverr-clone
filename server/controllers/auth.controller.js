@@ -1,11 +1,5 @@
-export const register = (req, res) => {
-    res.send("It worked")
-};
+export const register = async (req, res) => {};
 
-export const login = (req, res) => {
-    res.send("It worked")
-};
+export const login = async (req, res) => {};
 
-export const logout = (req, res) => {
-    res.send("It worked")
-};
+export const logout = async (req, res) => {};
