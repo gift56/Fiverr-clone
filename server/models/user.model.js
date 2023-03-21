@@ -20,11 +20,11 @@ const userSchema = new Schema({
     type: String,
     required: false,
   },
-  password: {
+  country: {
     type: String,
     required: true,
   },
-  password: {
+  phone: {
     type: String,
     required: true,
   },
