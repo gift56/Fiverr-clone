@@ -19,6 +19,16 @@ const ConversationSchema = new Schema(
     readBySeller: {
       type: Boolean,
       default: false,
+      required: true,
+    },
+    readByBuyer: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
+    lastMessage: {
+      type: String,
+      required: true,
     },
   },
   {
