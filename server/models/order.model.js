@@ -31,6 +31,10 @@ const OrderSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    payment_intent: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
