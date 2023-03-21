@@ -29,7 +29,7 @@ const OrderSchema = new Schema(
     },
     isCompleted: {
       type: Boolean,
-      required: true,
+      default: false,
     },
   },
   {
