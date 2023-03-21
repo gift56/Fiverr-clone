@@ -10,6 +10,7 @@ export const register = async (req, res) => {
     });
 
     await newUser.save();
+    res.status(201)
   } catch (error) {
     res.status(500).send("Something went wrong!");
   }
