@@ -3,12 +3,14 @@ import mongoose from "mongoose";
 
 const app = express();
 
+mongoose.set("strictQuery", true);
+
 try {
   await mongoose.connect(
-    "mongodb+srv://efegift:{admind}567@cluster0.jly2ewj.mongodb.net/?retryWrites=true&w=majority&dbname=fiverr"
+    "mongodb+srv://efegift:efegift123@cluster0.jly2ewj.mongodb.net/?retryWrites=true&w=majority&dbname=fiverr"
   );
 } catch (error) {
-    console.error(error);
+  console.error(error);
 }
 
 app.listen(8000, () => {
