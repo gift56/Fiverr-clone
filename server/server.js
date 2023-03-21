@@ -5,7 +5,7 @@ const app = express();
 
 try {
   await mongoose.connect(
-    "mongodb+srv://efegift:<password>@cluster0.jly2ewj.mongodb.net/?retryWrites=true&w=majority"
+    "mongodb+srv://efegift:{admind}567@cluster0.jly2ewj.mongodb.net/?retryWrites=true&w=majority&dbname=fiverr"
   );
 } catch (error) {
   handleError(error);
