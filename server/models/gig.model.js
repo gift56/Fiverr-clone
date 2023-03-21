@@ -57,7 +57,7 @@ const GigSchema = new Schema(
     },
     features: {
       type: [String],
-      required: true,
+      required: false,
     },
   },
   {
