@@ -8,6 +8,8 @@ export const register = async (req, res) => {
       password: "string",
       country: "string",
     });
+
+    await newUser.save();
   } catch (error) {
     res.status(500).send("Something went wrong!");
   }
