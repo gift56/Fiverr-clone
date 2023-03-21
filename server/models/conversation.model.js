@@ -8,7 +8,7 @@ const ConversationSchema = new Schema(
       required: true,
       unique: true,
     },
-    id: {
+    sellerId: {
       type: String,
       required: true,
       unique: true,
