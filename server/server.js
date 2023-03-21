@@ -16,6 +16,8 @@ const connectMongodb = async () => {
   }
 };
 
+app.use("/api/user", userRoute);
+
 app.listen(8000, () => {
   connectMongodb();
   console.log(`Server running on port http://localhost:${8000}`);
