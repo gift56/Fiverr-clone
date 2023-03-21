@@ -11,7 +11,7 @@ const GigSchema = new Schema(
       type: String,
       required,
     },
-    userId: {
+    desc: {
       type: String,
       required,
     },
