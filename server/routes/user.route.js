@@ -2,6 +2,8 @@ import express from "express";
 
 const router = express.Router();
 
-router.get()
+router.get("test",(req,res)=>{
+    
+})
 
 export default router
