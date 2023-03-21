@@ -22,6 +22,11 @@ const connectMongodb = async () => {
 };
 
 app.use("/api/user", userRoute);
+app.use("/api/gigs", gigRoute);
+app.use("/api/orders", orderRoute);
+app.use("/api/conversation", converstionRoute);
+app.use("/api/messages", messageRoute);
+app.use("/api/reviews", reviewRoute);
 
 app.listen(8000, () => {
   connectMongodb();
