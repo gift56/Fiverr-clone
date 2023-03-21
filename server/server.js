@@ -1,15 +1,14 @@
 import express from "express";
 import mongoose from "mongoose";
+import dotenv from "dotenv"
 
 const app = express();
 
 mongoose.set("strictQuery", true);
 
 try {
-  await mongoose.connect(
-    "mongodb+srv://efegift:efegift123@cluster0.jly2ewj.mongodb.net/?retryWrites=true&w=majority&dbname=fiverr"
-  );
-  console.log("Connected Successfully!")
+  await mongoose.connect(process.env.MONGO);
+  console.log("Connected Successfully!");
 } catch (error) {
   console.error(error);
 }
