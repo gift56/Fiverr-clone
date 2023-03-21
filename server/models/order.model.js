@@ -11,6 +11,18 @@ const OrderSchema = new Schema(
       type: String,
       required: false,
     },
+    title: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
+    sellerId: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,
