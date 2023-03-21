@@ -47,6 +47,14 @@ const GigSchema = new Schema(
       type: String,
       required,
     },
+    deliveryTime: {
+      type: Number,
+      required,
+    },
+    revisionNumber: {
+      type: Number,
+      required,
+    },
   },
   {
     timestamps: true,
