@@ -23,6 +23,10 @@ const OrderSchema = new Schema(
       type: String,
       required: true,
     },
+    buyerId: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,
