@@ -19,6 +19,22 @@ const GigSchema = new Schema(
       type: Number,
       required,
     },
+    starNumber: {
+      type: Number,
+      required,
+    },
+    cat: {
+      type: String,
+      required,
+    },
+    price: {
+      type: Number,
+      required,
+    },
+    cover: {
+      type: String,
+      required,
+    },
   },
   {
     timestamps: true,
