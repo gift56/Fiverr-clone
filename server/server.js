@@ -8,7 +8,7 @@ try {
     "mongodb+srv://efegift:{admind}567@cluster0.jly2ewj.mongodb.net/?retryWrites=true&w=majority&dbname=fiverr"
   );
 } catch (error) {
-  handleError(error);
+    console.error(error);
 }
 
 app.listen(8000, () => {
