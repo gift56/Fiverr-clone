@@ -25,6 +25,7 @@ const connectMongodb = async () => {
   }
 };
 
+app.use(express.json())
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
 app.use("/api/gigs", gigRoute);
