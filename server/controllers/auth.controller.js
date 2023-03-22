@@ -3,15 +3,16 @@ import User from "../models/user.model.js";
 export const register = async (req, res) => {
   try {
     const newUser = new User({
-      username: "string",
-      email: "string@string.com",
-      password: "string",
-      country: "string",
+      username: "test",
+      email: "test",
+      password: "test",
+      country: "test",
     });
 
     await newUser.save();
     res.status(201).send("Registration Successful.");
   } catch (error) {
+    console.log(error.message);
     res.status(500).send("Something went wrong!");
   }
 };
