@@ -9,6 +9,7 @@ export const register = async (req, res) => {
         password: hash,
       });
 
+      
     await newUser.save();
     res.status(201).send("Registration Successful.");
   } catch (error) {
