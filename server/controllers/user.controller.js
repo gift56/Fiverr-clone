@@ -1,3 +1,3 @@
-export const fn = (req, res) => {
+export const deleteUser = (req, res) => {
     res.send("It worked")
 };
