@@ -10,6 +10,6 @@ export const deleteUser = async (req, res) => {
       return res.status(403).send("You can delete only your account!");
     }
     await User.findByIdAndDelete(req.params.id);
-    res.status(200).send("Deleted Sucessfully");
+    res.status(200).send("Deleted Sucessfully.");
   });
 };
