@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 
 const Login = ({ show, setShow }) => {
   const modalRef = useRef(null);
-
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -24,7 +23,6 @@ const Login = ({ show, setShow }) => {
     username: "",
     password: "",
   };
-
   const validationSchema = yup.object({
     username: yup.string().required("Required"),
     password: yup
