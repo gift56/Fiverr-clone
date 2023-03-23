@@ -27,7 +27,10 @@ export const login = async (req, res) => {
     );
     if (!isCorrectPassword) return res.status(400).send("Invalid credentials!");
 
-    const token = jwt.sign({});
+    const token = jwt.sign({
+      id: user._id,
+      isSeller: user.isSeller,
+    });
 
     const { password, ...info } = user._doc;
     res.status(200).send(info);
