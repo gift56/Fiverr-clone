@@ -2,7 +2,9 @@ import React from 'react'
 
 const Login = () => {
   return (
-    <div className=''>Login</div>
+    <section className='py-40'>
+      
+    </section>
   )
 }
 
