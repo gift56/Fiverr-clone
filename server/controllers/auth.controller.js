@@ -17,10 +17,10 @@ export const register = async (req, res, next) => {
   }
 };
 
-export const login = async (req, res) => {
+export const login = async (req, res, next) => {
   try {
     const user = await User.findOne({ username: req.body.username });
-    if (!user) return res.status(404).send("User not found!");
+    if (!user) return next(err);
     const isCorrectPassword = bcrypt.compareSync(
       req.body.password,
       user.password
