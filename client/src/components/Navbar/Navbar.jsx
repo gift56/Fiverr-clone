@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { TfiWorld } from "react-icons/tfi";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import Login from "../../pages/login/Login";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
   const [openDrop, setOpenDrop] = useState(false);
   const { pathname } = useLocation();
+  const [loginModal, setLoginModal] = useState(false);
 
   useEffect(() => {
     const backgroundChange = () => {
@@ -18,11 +20,12 @@ const Navbar = () => {
     };
   }, []);
 
-  const currentUser = {
-    id: 1,
-    username: "Efe Gift",
-    isSeller: true,
-  };
+  // const currentUser = {
+  //   id: 1,
+  //   username: "Efe Gift",
+  //   isSeller: true,
+  // };
+  const currentUser = false;
 
   return (
     <header
@@ -81,30 +84,47 @@ const Navbar = () => {
                     >
                       {currentUser?.isSeller && (
                         <>
-                          <NavLink to="/myGigs" className="cursor-pointer w-full text-sm text-darkColor">
+                          <NavLink
+                            to="/myGigs"
+                            className="cursor-pointer w-full text-sm text-darkColor"
+                          >
                             Gigs
                           </NavLink>
-                          <NavLink to="/add" className="cursor-pointer w-full text-sm text-darkColor">
+                          <NavLink
+                            to="/add"
+                            className="cursor-pointer w-full text-sm text-darkColor"
+                          >
                             Add New Gigs
                           </NavLink>
                         </>
                       )}
-                      <NavLink to="/orders" className="cursor-pointer w-full text-sm text-darkColor">
+                      <NavLink
+                        to="/orders"
+                        className="cursor-pointer w-full text-sm text-darkColor"
+                      >
                         Orders
                       </NavLink>
-                      <NavLink to="/messages" className="cursor-pointer w-full text-sm text-darkColor">
+                      <NavLink
+                        to="/messages"
+                        className="cursor-pointer w-full text-sm text-darkColor"
+                      >
                         Messages
                       </NavLink>
-                      <div className="cursor-pointer w-full text-sm text-darkColor">Logout</div>
+                      <div className="cursor-pointer w-full text-sm text-darkColor">
+                        Logout
+                      </div>
                     </div>
                   </div>
                 )}
               </>
             ) : (
               <>
-                <NavLink to="/signin" className="cursor-pointer">
+                <div
+                  onClick={() => setLoginModal(true)}
+                  className="cursor-pointer"
+                >
                   Sign in
-                </NavLink>
+                </div>
                 <NavLink
                   to="/join"
                   className={`border py-2 px-5 rounded hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 text-sm font-semibold ${
@@ -160,6 +180,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      <Login show={loginModal} setShow={setLoginModal} />
     </header>
   );
 };
