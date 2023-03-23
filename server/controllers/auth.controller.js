@@ -19,6 +19,7 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
   try {
     const user = await User.findOne({ username: req.body.username });
+    if(!user) return res.status(404).send("User not found!")
   } catch (error) {
     res.status(500).send("Something went wrong!");
   }
