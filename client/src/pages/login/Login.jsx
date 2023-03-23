@@ -131,7 +131,6 @@ const Login = ({ show, setShow }) => {
           >
             Not a member yet? {` `}
             <Link to="/join" className="text-primary">
-              {" "}
               Join now
             </Link>
           </div>
