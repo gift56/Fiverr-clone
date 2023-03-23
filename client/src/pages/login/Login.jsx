@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 
-const Login = () => {
+const Login = ({ show, setShow }) => {
   return (
     <section className="py-40">
       <div className="contain">
