@@ -56,5 +56,5 @@ export const logout = async (req, res) => {
       secure: true,
     })
     .status(200)
-    .send("Logged out successfully!");
+    .send("Logged out successfully");
 };
