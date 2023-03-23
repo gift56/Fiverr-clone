@@ -25,7 +25,7 @@ export const login = async (req, res) => {
       user.password
     );
     if (!isCorrectPassword) return res.status(400).send("Invalid credentials!");
-    const { password, ...info } = user;
+    const { password, ...info } = user._doc;
     res.status(200).send(info);
   } catch (error) {
     res.status(500).send("Something went wrong!");
