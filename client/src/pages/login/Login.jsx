@@ -108,7 +108,7 @@ const Login = ({ show, setShow }) => {
               htmlFor="password"
               label="Password"
               labelClassName="text-sm font-medium text-darkColor"
-              type="text"
+              type="password"
               name="password"
               value={values.password}
               onChange={handleChange}
@@ -129,7 +129,7 @@ const Login = ({ show, setShow }) => {
             onClick={() => setShow(false)}
             className="w-full border-t absolute bottom-0 py-4 bg-white z-10 px-8 flex items-center justify-center text-sm font-semibold text-darkColor gap-2"
           >
-            Not a member yet? {` `}
+            Not a member yet?
             <Link to="/join" className="text-primary">
               Join now
             </Link>
