@@ -5,6 +5,9 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import Login from "../../pages/login/Login";
 import useAuthStore from "../../stores";
 import Avatar from "../../assets/icons/avatar.jpg";
+import { toast } from "react-toastify";
+import { Axios } from "../../config";
+import requests from "../../libs/request";
 
 const Navbar = () => {
   const { authUser, removeAuthUser } = useAuthStore();
@@ -35,6 +38,14 @@ const Navbar = () => {
       window.removeEventListener("scroll", backgroundChange);
     };
   }, []);
+
+  const handleLogout = async () => {
+    try {
+      await Axios.post(requests.logout)
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <header
@@ -120,7 +131,10 @@ const Navbar = () => {
                       >
                         Messages
                       </NavLink>
-                      <div className="cursor-pointer w-full text-sm text-darkColor">
+                      <div
+                        onClick={handleLogout}
+                        className="cursor-pointer w-full text-sm text-darkColor"
+                      >
                         Logout
                       </div>
                     </div>

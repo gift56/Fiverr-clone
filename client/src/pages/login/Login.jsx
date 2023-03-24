@@ -43,7 +43,6 @@ const Login = ({ show, setShow }) => {
       setShow(false);
       setLoading(false);
     } catch (error) {
-      console.log(error);
       setLoading(false);
       if (error?.response?.data) {
         toast.error(error?.response?.data, {
