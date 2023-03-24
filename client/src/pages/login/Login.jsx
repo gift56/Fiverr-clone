@@ -41,7 +41,7 @@ const Login = ({ show, setShow }) => {
   const { handleChange, values, handleBlur, handleSubmit, errors, touched } =
     useFormik({
       initialValues,
-      validationSchema:loginSchema,
+      validationSchema: loginSchema,
       onSubmit,
     });
 
