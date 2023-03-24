@@ -1,17 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { TfiWorld } from "react-icons/tfi";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import Login from "../../pages/login/Login";
 import useAuthStore from "../../stores";
-import Avatar from '../../assets/icons/avatar.jpg'
+import Avatar from "../../assets/icons/avatar.jpg";
 
 const Navbar = () => {
-  const { authUser } = useAuthStore();
+  const { authUser, removeAuthUser } = useAuthStore();
   const [active, setActive] = useState(false);
   const [openDrop, setOpenDrop] = useState(false);
   const { pathname } = useLocation();
   const [loginModal, setLoginModal] = useState(false);
+
+  const modalRef = useRef(null);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setOpenDrop(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     const backgroundChange = () => {
@@ -56,7 +69,7 @@ const Navbar = () => {
               USD
             </span>
             {!authUser.isSeller && (
-              <NavLink to="/seller" className="cursor-pointer">
+              <NavLink to="/" className="cursor-pointer">
                 Become a Seller
               </NavLink>
             )}
@@ -68,15 +81,13 @@ const Navbar = () => {
                     onClick={() => setOpenDrop((prev) => !prev)}
                   >
                     <img
-                      src={
-                        authUser.img ||
-                        Avatar
-                      }
+                      src={authUser.img || Avatar}
                       alt="user_image"
                       className="w-[32px] h-[32px] rounded-[50%] object-cover"
                     />
                     <span>{authUser?.username}</span>
                     <div
+                      ref={modalRef}
                       className={`absolute top-12 right-0 p-3 bg-white border rounded-md text-black flex-col items-start gap-3 w-[200px] font-medium transition-transform duration-300 ${
                         openDrop ? "flex" : "hidden"
                       }`}
