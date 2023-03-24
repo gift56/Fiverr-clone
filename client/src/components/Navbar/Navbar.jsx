@@ -44,7 +44,7 @@ const Navbar = () => {
       await Axios.post(requests.logout);
       removeAuthUser();
       toast.success("Logout Successfully", {
-        position: "top-right",
+        position: "bottom-right",
         toastId: 1,
         autoClose: 1000,
       });
@@ -85,7 +85,7 @@ const Navbar = () => {
               </span>
               USD
             </span>
-            {!authUser.isSeller && (
+            {!authUser?.isSeller && (
               <NavLink to="/" className="cursor-pointer">
                 Become a Seller
               </NavLink>

@@ -36,7 +36,7 @@ const Login = ({ show, setShow }) => {
       const res = await Axios.post(requests.login, payload);
       setAuthUser(res.data);
       toast.success("Login Successfully", {
-        position: "top-right",
+        position: "bottom-right",
         toastId: 1,
         autoClose: 1500,
       });
@@ -46,13 +46,13 @@ const Login = ({ show, setShow }) => {
       setLoading(false);
       if (error?.response?.data) {
         toast.error(error?.response?.data, {
-          position: "top-right",
+          position: "bottom-right",
           toastId: 1,
           autoClose: 1500,
         });
       } else {
         toast.error(error?.response?.message, {
-          position: "top-right",
+          position: "bottom-right",
           toastId: 1,
           autoClose: 1500,
         });
