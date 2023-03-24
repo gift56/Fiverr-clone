@@ -17,6 +17,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.9.0",
+    "react-toastify": "^9.1.2",
     "tailwind-scrollbar-hide": "^1.1.7",
     "yup": "^1.0.2"
   },

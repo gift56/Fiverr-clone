@@ -1,13 +1,14 @@
-import React, { useRef, useEffect, useMemo } from "react";
+import React, { useRef, useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { useFormik } from "formik";
-import * as yup from "yup";
 import CustomizeInput from "../../utils/Input/CustomizeInput";
 import { Link } from "react-router-dom";
 import { Axios } from "../../config";
 import requests from "../../libs/request";
+import { loginSchema } from "../../schemas";
 
 const Login = ({ show, setShow }) => {
+  const [loading, setLoading] = useState(false);
   const modalRef = useRef(null);
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -25,14 +26,6 @@ const Login = ({ show, setShow }) => {
     username: "",
     password: "",
   };
-  const validationSchema = yup.object({
-    username: yup.string().required("Required"),
-    password: yup
-      .string()
-      .min(5, "Password must be at least 5 characters long")
-      .required("Required"),
-  });
-
   const onSubmit = async (payload, actions) => {
     try {
       const res = await Axios.post(requests.login, payload);
@@ -48,7 +41,7 @@ const Login = ({ show, setShow }) => {
   const { handleChange, values, handleBlur, handleSubmit, errors, touched } =
     useFormik({
       initialValues,
-      validationSchema,
+      validationSchema:loginSchema,
       onSubmit,
     });
 
