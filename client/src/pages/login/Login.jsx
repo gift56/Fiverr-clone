@@ -44,7 +44,6 @@ const Login = ({ show, setShow }) => {
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      console.log(error)
       if (error?.response?.data) {
         toast.error(error?.response?.data, {
           position: "bottom-right",
@@ -52,7 +51,7 @@ const Login = ({ show, setShow }) => {
           autoClose: 1500,
         });
       } else {
-        toast.error("Something went wrong", {
+        toast.error(error?.response?.message, {
           position: "bottom-right",
           toastId: 1,
           autoClose: 1500,
