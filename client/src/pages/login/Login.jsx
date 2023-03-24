@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { Axios } from "../../config";
 import requests from "../../libs/request";
 import { loginSchema } from "../../schemas";
+import { toast } from "react-toastify";
+import loader from "../../assets/icons/loader.svg";
 
 const Login = ({ show, setShow }) => {
   const [loading, setLoading] = useState(false);
@@ -27,12 +29,28 @@ const Login = ({ show, setShow }) => {
     password: "",
   };
   const onSubmit = async (payload, actions) => {
+    setLoading(true);
     try {
       const res = await Axios.post(requests.login, payload);
       console.log(res);
       setShow(false);
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
+      if (error?.response?.data?.errors) {
+        toast.error(error?.response?.data?.errors[0].detail, {
+          position: "top-right",
+          toastId: 1,
+          autoClose: 1500,
+        });
+      } else {
+        toast.error(error.response.data.message, {
+          position: "top-right",
+          toastId: 1,
+          autoClose: 1500,
+        });
+      }
     }
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
@@ -120,7 +138,13 @@ const Login = ({ show, setShow }) => {
               type="submit"
               className="mt-5 bg-primary/80 hover:bg-primary w-full rounded-md text-white py-2 text-base font-semibold"
             >
-              Login
+              {loading ? (
+                <div className="flex items-center justify-center">
+                  <img src={loader} alt="/" className="w-[40px]" />
+                </div>
+              ) : (
+                <p className="flex items-center justify-center gap-2">Login</p>
+              )}
             </button>
           </form>
           <div
