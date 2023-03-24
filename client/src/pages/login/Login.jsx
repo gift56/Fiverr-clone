@@ -34,7 +34,7 @@ const Login = ({ show, setShow }) => {
   });
 
   const onSubmit = async (payload, actions) => {
-    const res = await Axios.post(requests.login);
+    const res = await Axios.post(requests.login, payload);
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
     setShow(false);
