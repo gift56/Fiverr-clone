@@ -37,12 +37,12 @@ const Login = ({ show, setShow }) => {
     try {
       const res = await Axios.post(requests.login, payload);
       console.log(res);
+      setShow(false);
     } catch (error) {
       console.log(error);
     }
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
-    setShow(false);
   };
 
   const { handleChange, values, handleBlur, handleSubmit, errors, touched } =
