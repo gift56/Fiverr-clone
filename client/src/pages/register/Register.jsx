@@ -71,7 +71,9 @@ const Register = () => {
             className="flex items-start justify-start gap-8 w-full"
           >
             <div className="flex items-start justify-start flex-col gap-4 flex-1">
-              <h1 className="text-2xl text-darkColor font-semibold">Create an Account</h1>
+              <h1 className="text-2xl text-darkColor font-semibold">
+                Create an Account
+              </h1>
               <CustomizeInput
                 showLabel={false}
                 htmlFor="username"
@@ -102,9 +104,26 @@ const Register = () => {
                 placeholder="Email Address"
                 className="bg-white  border border-[#C7CBD1] w-full h-[40px] rounded px-4 focus:border-[1.5px] focus:border-primary outline-none text-sm"
               />
+              <CustomizeInput
+                showLabel={false}
+                htmlFor="password"
+                label="Password"
+                labelClassName="text-sm font-medium text-darkColor"
+                type="password"
+                name="password"
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={getError("password")}
+                id="password"
+                placeholder="******"
+                className="bg-white  border border-[#C7CBD1] w-full h-[40px] rounded px-4 focus:border-[1.5px] focus:border-primary outline-none text-sm"
+              />
             </div>
             <div className="flex items-start justify-start flex-col gap-4 flex-1">
-              <h1 className="text-2xl text-darkColor font-semibold">I want to be a seller</h1>
+              <h1 className="text-2xl text-darkColor font-semibold">
+                I want to be a seller
+              </h1>
             </div>
           </form>
         </div>
