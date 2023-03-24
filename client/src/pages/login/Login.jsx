@@ -75,7 +75,6 @@ const Login = ({ show, setShow }) => {
   };
 
   const body = document.querySelector("html");
-
   const overflowHidden = () => {
     if (show) {
       return (body.style.overflow = "hidden");
