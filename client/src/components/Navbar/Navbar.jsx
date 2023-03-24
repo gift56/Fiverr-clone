@@ -41,7 +41,13 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      await Axios.post(requests.logout)
+      await Axios.post(requests.logout);
+      removeAuthUser();
+      toast.success("Logout Successfully", {
+        position: "top-right",
+        toastId: 1,
+        autoClose: 1000,
+      });
     } catch (error) {
       console.log(error);
     }
