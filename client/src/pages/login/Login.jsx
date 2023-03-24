@@ -8,8 +8,10 @@ import requests from "../../libs/request";
 import { loginSchema } from "../../schemas";
 import { toast } from "react-toastify";
 import loader from "../../assets/icons/loader.svg";
+import useAuthStore from "../../stores";
 
 const Login = ({ show, setShow }) => {
+  const { setAuthUser } = useAuthStore();
   const [loading, setLoading] = useState(false);
   const modalRef = useRef(null);
   useEffect(() => {
@@ -32,6 +34,12 @@ const Login = ({ show, setShow }) => {
     setLoading(true);
     try {
       const res = await Axios.post(requests.login, payload);
+      setAuthUser(res.data);
+      toast.success("Login Successfully", {
+        position: "top-right",
+        toastId: 1,
+        autoClose: 1500,
+      });
       setShow(false);
       setLoading(false);
     } catch (error) {
