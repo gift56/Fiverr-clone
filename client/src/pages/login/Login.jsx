@@ -5,6 +5,7 @@ import * as yup from "yup";
 import CustomizeInput from "../../utils/Input/CustomizeInput";
 import { Link } from "react-router-dom";
 import { Axios } from "../../config";
+import requests from "../../libs/request";
 
 const Login = ({ show, setShow }) => {
   const modalRef = useRef(null);
@@ -33,7 +34,7 @@ const Login = ({ show, setShow }) => {
   });
 
   const onSubmit = async (payload, actions) => {
-    const res=await Axios.post("")
+    const res = await Axios.post(requests.login);
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
     setShow(false);
