@@ -19,7 +19,8 @@
     "react-router-dom": "^6.9.0",
     "react-toastify": "^9.1.2",
     "tailwind-scrollbar-hide": "^1.1.7",
-    "yup": "^1.0.2"
+    "yup": "^1.0.2",
+    "zustand": "^4.3.6"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
