@@ -32,7 +32,6 @@ const Login = ({ show, setShow }) => {
     setLoading(true);
     try {
       const res = await Axios.post(requests.login, payload);
-      console.log(res.data);
       setShow(false);
       setLoading(false);
     } catch (error) {
