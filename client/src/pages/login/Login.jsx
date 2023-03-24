@@ -51,7 +51,7 @@ const Login = ({ show, setShow }) => {
           autoClose: 1500,
         });
       } else {
-        toast.error(error?.response?.message, {
+        toast.error("Something went wrong", {
           position: "bottom-right",
           toastId: 1,
           autoClose: 1500,
