@@ -31,15 +31,17 @@ const Login = ({ show, setShow }) => {
   const onSubmit = async (payload, actions) => {
     setLoading(true);
     try {
-      const res = await Axios.post(requests.login, payload);
-      console.log(res);
+      const res = await Axios.post(requests.login, payload, {
+        withCredentials: true,
+      });
+      console.log(res.data);
       setShow(false);
       setLoading(false);
     } catch (error) {
       console.log(error);
       setLoading(false);
-      if (error?.response?.data?.errors) {
-        toast.error(error?.response?.data?.errors[0].detail, {
+      if (error?.response?.data) {
+        toast.error(error?.response?.data, {
           position: "top-right",
           toastId: 1,
           autoClose: 1500,
