@@ -27,7 +27,6 @@ const connectMongodb = async () => {
   }
 };
 
-
 app.use(cors({ origin: "http://localhost:5173", credential: true }));
 app.use(express.json());
 app.use(cookieParser());
