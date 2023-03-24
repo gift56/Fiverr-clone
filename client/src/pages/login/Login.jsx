@@ -31,9 +31,7 @@ const Login = ({ show, setShow }) => {
   const onSubmit = async (payload, actions) => {
     setLoading(true);
     try {
-      const res = await Axios.post(requests.login, payload, {
-        withCredentials: true,
-      });
+      const res = await Axios.post(requests.login, payload);
       console.log(res.data);
       setShow(false);
       setLoading(false);
@@ -47,7 +45,7 @@ const Login = ({ show, setShow }) => {
           autoClose: 1500,
         });
       } else {
-        toast.error(error.response.data.message, {
+        toast.error(error?.response?.message, {
           position: "top-right",
           toastId: 1,
           autoClose: 1500,
