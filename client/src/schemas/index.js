@@ -13,6 +13,7 @@ export const registerSchema = yup.object({
   email: yup.string().email("Invalid Email").required("Required"),
   img: yup.string().required("Required"),
   country: yup.string().required("Required"),
+  desc: yup.string().required("Required"),
   password: yup
     .string()
     .min(5, "Password must be at least 5 characters long")
