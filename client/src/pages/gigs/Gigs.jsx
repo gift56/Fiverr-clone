@@ -1,16 +1,28 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { BiHomeAlt, BiChevronDown } from "react-icons/bi";
 import GigsCards from "../../components/GigsContents/GigsCards/GigsCards";
 import { gigCards } from "../../data/data";
+import { useQuery } from "@tanstack/react-query";
 
 const Gigs = () => {
   const [open, setOpen] = useState(false);
   const [sort, setSort] = useState("sales");
+  const minRef = useRef();
+  const maxRef = useRef();
 
   const reSort = (types) => {
     setSort(types);
     setOpen(false);
   };
+
+  const { isPending, error, data } = useQuery({
+    queryKey: ["repoData"],
+    queryFn: () =>
+      fetch("https://api.github.com/repos/tannerlinsley/react-query").then(
+        (res) => res.json()
+      ),
+  });
+
   return (
     <main className="py-40">
       <div className="contain">
@@ -34,12 +46,14 @@ const Gigs = () => {
               <form className="flex items-center justify-start gap-2">
                 <input
                   type="text"
+                  ref={minRef}
                   placeholder="min"
                   className="border w-[150px] outline-none px-2 h-[40px] rounded-md text-gray-500"
                 />
                 <input
                   type="text"
                   placeholder="max"
+                  ref={maxRef}
                   className="border w-[150px] outline-none px-2 h-[40px] rounded-md text-gray-500"
                 />
                 <button className="w-fit bg-primary text-white text-base font-medium py-2 px-7 outline-none rounded-md hover:bg-primary/95">
