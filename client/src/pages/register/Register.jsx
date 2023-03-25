@@ -17,6 +17,7 @@ const Register = () => {
     username: "",
     email: "",
     password: "",
+    phone: "",
     img: null,
     country: "",
     isSeller: false,
@@ -244,10 +245,9 @@ const Register = () => {
                 labelClassName="text-sm font-medium text-darkColor"
                 type="text"
                 name="phone"
-                // value={values.phone}
-                // onChange={handleChange}
-                // onBlur={handleBlur}
-                // error={getError("phone")}
+                value={values.phone}
+                onChange={handleChange}
+                onBlur={handleBlur}
                 id="phone"
                 placeholder="phone"
                 className="bg-white  border border-[#C7CBD1] w-full h-[40px] rounded px-4 focus:border-[1.5px] focus:border-primary outline-none text-sm"
@@ -261,7 +261,6 @@ const Register = () => {
                 value={values.desc}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={getError("desc")}
                 id="desc"
                 name="desc"
                 placeholder="A short description of yourself"
