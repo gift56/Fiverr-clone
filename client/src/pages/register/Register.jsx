@@ -244,10 +244,10 @@ const Register = () => {
                 labelClassName="text-sm font-medium text-darkColor"
                 type="text"
                 name="phone"
-                value={values.phone}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                error={getError("phone")}
+                // value={values.phone}
+                // onChange={handleChange}
+                // onBlur={handleBlur}
+                // error={getError("phone")}
                 id="phone"
                 placeholder="phone"
                 className="bg-white  border border-[#C7CBD1] w-full h-[40px] rounded px-4 focus:border-[1.5px] focus:border-primary outline-none text-sm"
