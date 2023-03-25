@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { TfiWorld } from "react-icons/tfi";
 import { BsCurrencyDollar } from "react-icons/bs";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import Login from "../../pages/login/Login";
 import useAuthStore from "../../stores";
 import Avatar from "../../assets/icons/avatar.jpg";
@@ -10,6 +10,7 @@ import { Axios } from "../../config";
 import requests from "../../libs/request";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const { authUser, removeAuthUser } = useAuthStore();
   const [active, setActive] = useState(false);
   const [openDrop, setOpenDrop] = useState(false);
@@ -150,7 +151,10 @@ const Navbar = () => {
             ) : (
               <>
                 <div
-                  onClick={() => setLoginModal(true)}
+                  onClick={() => {
+                    navigate("/");
+                    setLoginModal(true);
+                  }}
                   className="cursor-pointer"
                 >
                   Sign in
