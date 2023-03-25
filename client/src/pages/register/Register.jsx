@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import CustomizeInput from "../../utils/Input/CustomizeInput";
+import CustomizeTextArea from "../../utils/Input/CustomizeTextarea";
 import { Link, useNavigate } from "react-router-dom";
 import { Axios } from "../../config";
 import requests from "../../libs/request";
@@ -199,7 +200,7 @@ const Register = () => {
               />
               <button
                 type="submit"
-                className="w-full bg-primary/80 hover:bg-primary cursor-pointer outline-none text-white rounded py-3 transition-all duration-300"
+                className="w-full bg-primary/80 hover:bg-primary cursor-pointer outline-none text-white rounded py-3 transition-all duration-300 mt-4"
               >
                 {loading ? (
                   <div className="flex items-center justify-center">
@@ -233,6 +234,37 @@ const Register = () => {
                   </span>
                 </label>
               </div>
+              <CustomizeInput
+                showLabel={false}
+                containerClass="my-2"
+                htmlFor="phone"
+                label="Phone Number"
+                labelClassName="text-sm font-medium text-darkColor"
+                type="text"
+                name="phone"
+                value={values.phone}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={getError("phone")}
+                id="phone"
+                placeholder="phone"
+                className="bg-white  border border-[#C7CBD1] w-full h-[40px] rounded px-4 focus:border-[1.5px] focus:border-primary outline-none text-sm"
+              />
+              <CustomizeTextArea
+                rows={9}
+                showLabel={false}
+                htmlFor="desc"
+                label="Bio"
+                labelClassName="text-sm font-medium text-darkColor"
+                value={values.desc}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={getError("desc")}
+                id="desc"
+                name="desc"
+                placeholder="A short description of yourself"
+                className="bg-white border border-[#E6E6E6] w-full h-[107px] rounded p-4 focus:border-[1.5px] outline-none text-sm text-[#454B54] resize-none shadow-smallShadow"
+              />
             </div>
           </form>
         </div>
