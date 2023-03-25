@@ -6,7 +6,6 @@ import { Axios } from "../../config";
 import loader from "../../assets/icons/loader.svg";
 import requests from "../../libs/request";
 import { useLocation } from "react-router-dom";
-import ImNotification from "react-icons/im";
 
 const Gigs = () => {
   const { search } = useLocation();
@@ -128,7 +127,7 @@ const Gigs = () => {
           </div>
           <div
             className={`w-full grid-cols-4 items-start justify-start gap-8 ${
-              isLoading || error ? "flex" : "grid"
+              isLoading || error || data?.length === 0 ? "flex" : "grid"
             }`}
           >
             {isLoading ? (
@@ -143,10 +142,12 @@ const Gigs = () => {
               <>
                 {data?.length === 0 ? (
                   <div className="flex items-center justify-center mt-5 flex-col w-full">
-                    <span>
-                      <ImNotification />
-                    </span>
-                    <p>No Result for </p>
+                    <img
+                      src="https://cdni.iconscout.com/illustration/premium/thumb/error-404-4344461-3613889.png"
+                      alt="/"
+                      className="w-[350px]"
+                    />
+                    <h2 className="text-4xl text-active font-medium">No Result For Selected Budget</h2>
                   </div>
                 ) : (
                   data?.map((item) => <GigsCards key={item._id} item={item} />)
