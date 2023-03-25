@@ -8,6 +8,7 @@ import requests from "../../libs/request";
 import { toast } from "react-toastify";
 import loader from "../../assets/icons/loader.svg";
 import { BsUpload } from "react-icons/bs";
+import { registerSchema } from "../../schemas";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Register = () => {
     username: "",
     email: "",
     password: "",
-    img: "",
+    img: null,
     country: "",
     isSeller: false,
     desc: "",
@@ -64,7 +65,7 @@ const Register = () => {
     setFieldValue,
   } = useFormik({
     initialValues,
-    // validationSchema: registerSchema,
+    validationSchema: registerSchema,
     onSubmit,
   });
 
@@ -147,13 +148,14 @@ const Register = () => {
                   labelClassName="text-sm font-medium text-darkColor"
                   type="file"
                   name="img"
+                  accept="image/*"
                   onChange={handleImageChange}
                   id="img"
                   className="hidden"
                 />
                 <div
                   className={`flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600 ${
-                    errors.img && touched.img
+                    touched.img && errors.img
                       ? "border-red-500"
                       : "border-gray-300"
                   }`}
