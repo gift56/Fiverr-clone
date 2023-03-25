@@ -84,10 +84,15 @@ const Register = () => {
     setFieldValue("img", file);
   }
 
-  const upload = (file) => {
+  const upload = async (file) => {
     const data = new FormData();
     data.append("file", file);
     data.append("upload_preset", "fiverr");
+    try {
+      
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
