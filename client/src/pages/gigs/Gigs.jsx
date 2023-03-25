@@ -1,18 +1,17 @@
 import React, { useRef, useState, useEffect } from "react";
 import { BiHomeAlt, BiChevronDown } from "react-icons/bi";
 import GigsCards from "../../components/GigsContents/GigsCards/GigsCards";
-import { gigCards } from "../../data/data";
 import { useQuery } from "@tanstack/react-query";
 import { Axios } from "../../config";
 import loader from "../../assets/icons/loader.svg";
 import requests from "../../libs/request";
 import { useLocation } from "react-router-dom";
+import ImNotification from "react-icons/im";
 
 const Gigs = () => {
   const { search } = useLocation();
   const [open, setOpen] = useState(false);
   const [sort, setSort] = useState("sales");
-  console.log(search);
   const minRef = useRef();
   const maxRef = useRef();
   const reSort = (types) => {
@@ -27,6 +26,8 @@ const Gigs = () => {
         `${requests.gigs}${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
       ).then((res) => res.data),
   });
+
+  console.log(data?.length);
 
   useEffect(() => {
     refetch();
@@ -115,6 +116,12 @@ const Gigs = () => {
                       Best Selling
                     </div>
                   )}
+                  <span
+                    className="px-4 py-2 w-full border-b text-gray-500 text-sm cursor-pointer"
+                    onClick={() => reSort("sales")}
+                  >
+                    Popular
+                  </span>
                 </div>
               </div>
             </div>
@@ -133,7 +140,18 @@ const Gigs = () => {
                 Error : Something went wrong
               </p>
             ) : (
-              data?.map((item) => <GigsCards key={item._id} item={item} />)
+              <>
+                {data?.length === 0 ? (
+                  <div className="flex items-center justify-center mt-5 flex-col w-full">
+                    <span>
+                      <ImNotification />
+                    </span>
+                    <p>No Result for </p>
+                  </div>
+                ) : (
+                  data?.map((item) => <GigsCards key={item._id} item={item} />)
+                )}
+              </>
             )}
           </div>
         </div>

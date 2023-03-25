@@ -10,7 +10,7 @@ const GigsCards = ({ item }) => {
       return str;
     }
   };
-  console.log(item);
+
   return (
     <Link
       to={`/gigs/${item._id}`}
