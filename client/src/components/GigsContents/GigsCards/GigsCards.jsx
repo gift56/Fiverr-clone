@@ -10,12 +10,17 @@ const GigsCards = ({ item }) => {
       return str;
     }
   };
+  console.log(item);
   return (
     <Link
-      to={`/gigs/${item.id}`}
+      to={`/gigs/${item._id}`}
       className="w-full shadow-box flex items-start flex-col justify-start border group"
     >
-      <img src={item.img} alt={item.username} className="w-full object-cover" />
+      <img
+        src={item.cover}
+        alt={item.username}
+        className="w-full object-cover"
+      />
       <div className="w-full bg-white pt-5 flex items-start flex-col gap-3 justify-start">
         <div className="flex items-center justify-start gap-3 px-4">
           <div className="w-8 h-8">
@@ -32,20 +37,23 @@ const GigsCards = ({ item }) => {
         </div>
         <p className="text-darkColor text-base group-hover:text-primary transition-all duration-300 px-4">
           {" "}
-          {truckcateString(item.description, 60)}
+          {truckcateString(item.desc, 60)}
         </p>
         <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold px-4">
           <span>
             <BsStarFill />
           </span>
-          5.0
+          {item.totalStars}
         </p>
         <div className="border-t w-full p-5 flex items-center justify-between">
           <span className="text-gray-400 cursor-pointer">
             <BsFillHeartFill size={20} />
           </span>
           <span className="text-sm font-normal text-gray-500">
-            started AT <span className="text-xl font-semibold text-darkColor">$10</span>
+            started AT{" "}
+            <span className="text-xl font-semibold text-darkColor">
+              ${item.price}
+            </span>
           </span>
         </div>
       </div>
