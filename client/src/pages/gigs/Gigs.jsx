@@ -18,7 +18,7 @@ const Gigs = () => {
     setOpen(false);
   };
 
-  const { isPending, error, data } = useQuery({
+  const { isLoading, error, data } = useQuery({
     queryKey: ["repoData"],
     queryFn: () => Axios.get(requests.gigs).then((res) => res.data),
   });
@@ -103,8 +103,12 @@ const Gigs = () => {
               </div>
             </div>
           </div>
-          <div className="w-full grid grid-cols-4 items-start justify-start gap-8">
-            {isPending ? (
+          <div
+            className={`w-full grid-cols-4 items-start justify-start gap-8 ${
+              isLoading ? "flex" : "grid"
+            }`}
+          >
+            {isLoading ? (
               <div className="flex items-center justify-center w-full">
                 <img src={loader} alt="/" className="w-[40px]" />
               </div>
