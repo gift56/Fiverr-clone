@@ -12,6 +12,7 @@ const Gigs = () => {
   const { search } = useLocation();
   const [open, setOpen] = useState(false);
   const [sort, setSort] = useState("sales");
+  console.log(search);
   const minRef = useRef();
   const maxRef = useRef();
   const reSort = (types) => {
@@ -20,10 +21,20 @@ const Gigs = () => {
   };
 
   const { isLoading, error, data, refetch } = useQuery({
-    queryKey: ["repoData"],
+    queryKey: ["gigs"],
     queryFn: () =>
-      Axios.get(`${requests.gigs}${search}`).then((res) => res.data),
+      Axios.get(
+        `${requests.gigs}${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
+      ).then((res) => res.data),
   });
+
+  useEffect(() => {
+    refetch();
+  }, [sort]);
+
+  const apply = () => {
+    refetch();
+  };
 
   return (
     <main className="py-40">
@@ -45,7 +56,7 @@ const Gigs = () => {
           <div className="w-full flex items-center justify-between">
             <div className="flex items-center justify-start gap-2">
               <p className="text-base font-normal text-gray-500">Budget:</p>
-              <form className="flex items-center justify-start gap-2">
+              <duv className="flex items-center justify-start gap-2">
                 <input
                   type="text"
                   ref={minRef}
@@ -58,10 +69,13 @@ const Gigs = () => {
                   ref={maxRef}
                   className="border w-[150px] outline-none px-2 h-[40px] rounded-md text-gray-500"
                 />
-                <button className="w-fit bg-primary text-white text-base font-medium py-2 px-7 outline-none rounded-md hover:bg-primary/95">
+                <button
+                  onClick={apply}
+                  className="w-fit bg-primary text-white text-base font-medium py-2 px-7 outline-none rounded-md hover:bg-primary/95"
+                >
                   Apply
                 </button>
-              </form>
+              </duv>
             </div>
             <div className="flex items-center justify-end gap-2">
               <p className="text-base font-normal text-gray-500">Sort by:</p>
@@ -107,7 +121,7 @@ const Gigs = () => {
           </div>
           <div
             className={`w-full grid-cols-4 items-start justify-start gap-8 ${
-              isLoading ? "flex" : "grid"
+              isLoading || error ? "flex" : "grid"
             }`}
           >
             {isLoading ? (
@@ -115,7 +129,7 @@ const Gigs = () => {
                 <img src={loader} alt="/" className="w-[40px]" />
               </div>
             ) : error ? (
-              <p className="text-3xl text-red-400">
+              <p className="text-2xl text-red-400 font-normal">
                 Error : Something went wrong
               </p>
             ) : (
