@@ -136,7 +136,7 @@ const Login = ({ show, setShow }) => {
               onBlur={handleBlur}
               error={getError("password")}
               id="password"
-              placeholder="******"
+              placeholder="********"
               className="bg-white  border border-[#C7CBD1] w-full h-[40px] rounded px-4 focus:border-[1.5px] focus:border-primary outline-none text-sm"
             />
             <button

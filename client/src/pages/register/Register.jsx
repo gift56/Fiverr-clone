@@ -6,6 +6,7 @@ import { Axios } from "../../config";
 import requests from "../../libs/request";
 import { toast } from "react-toastify";
 import loader from "../../assets/icons/loader.svg";
+import { BsUpload } from "react-icons/bs";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -52,16 +53,34 @@ const Register = () => {
     actions.resetForm();
   };
 
-  const { handleChange, values, handleBlur, handleSubmit, errors, touched } =
-    useFormik({
-      initialValues,
-      // validationSchema: registerSchema,
-      onSubmit,
-    });
+  const {
+    handleChange,
+    values,
+    handleBlur,
+    handleSubmit,
+    errors,
+    touched,
+    setFieldValue,
+  } = useFormik({
+    initialValues,
+    // validationSchema: registerSchema,
+    onSubmit,
+  });
 
   const getError = (key) => {
     return touched[key] && errors[key];
   };
+
+  function handleImageChange(event) {
+    const file = event.currentTarget.files[0];
+    if (file && !file.type.startsWith("image/")) {
+      toast.error("Please select an image file");
+      setFieldValue("img", null);
+      return;
+    }
+    setFieldValue("img", file);
+  }
+
   return (
     <div className="py-40">
       <div className="contain">
@@ -116,9 +135,50 @@ const Register = () => {
                 onBlur={handleBlur}
                 error={getError("password")}
                 id="password"
-                placeholder="******"
+                placeholder="********"
                 className="bg-white  border border-[#C7CBD1] w-full h-[40px] rounded px-4 focus:border-[1.5px] focus:border-primary outline-none text-sm"
               />
+              <div className="w-full">
+                <CustomizeInput
+                  showLabel={false}
+                  htmlFor="img"
+                  label="Profile Picture"
+                  labelClassName="text-sm font-medium text-darkColor"
+                  type="file"
+                  name="img"
+                  onChange={handleImageChange}
+                  id="img"
+                  className="hidden"
+                />
+                <div
+                  className={`flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600 ${
+                    errors.img && touched.img
+                      ? "border-red-500"
+                      : "border-gray-300"
+                  }`}
+                >
+                  {values?.img?.type?.startsWith("image/") ? (
+                    <label htmlFor="img" className="cursor-pointer h-full w-full flex items-center justify-center">
+                      <img
+                        src={URL.createObjectURL(values.img)}
+                        alt={values.img.name}
+                        className="w-[120px] h-[120px] rounded-full object-cover"
+                      />
+                    </label>
+                  ) : (
+                    <>
+                      <p>Upload Cover Image</p>
+                      <BsUpload size={20} />
+                      <label
+                        htmlFor="img"
+                        className="w-fit border py-2 px-5 rounded-md cursor-pointer"
+                      >
+                        Browser
+                      </label>
+                    </>
+                  )}
+                </div>
+              </div>
             </div>
             <div className="flex items-start justify-start flex-col gap-4 flex-1">
               <h1 className="text-2xl text-darkColor font-semibold">
