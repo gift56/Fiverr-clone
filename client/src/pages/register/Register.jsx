@@ -197,7 +197,21 @@ const Register = () => {
                 placeholder="country"
                 className="bg-white  border border-[#C7CBD1] w-full h-[40px] rounded px-4 focus:border-[1.5px] focus:border-primary outline-none text-sm"
               />
-              <button type="submit" className="w-full bg-primary/80 hover:bg-primary cursor-pointer outline-none text-white rounded py-3">Register</button>
+              <button
+                type="submit"
+                className="w-full bg-primary/80 hover:bg-primary cursor-pointer outline-none text-white rounded py-3 transition-all duration-300"
+              >
+                {" "}
+                {loading ? (
+                  <div className="flex items-center justify-center">
+                    <img src={loader} alt="/" className="w-[40px]" />
+                  </div>
+                ) : (
+                  <p className="flex items-center justify-center gap-2">
+                    Register
+                  </p>
+                )}
+              </button>
             </div>
             <div className="flex items-start justify-start flex-col gap-4 flex-1">
               <h1 className="text-2xl text-darkColor font-semibold">
