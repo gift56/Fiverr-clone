@@ -84,6 +84,12 @@ const Register = () => {
     setFieldValue("img", file);
   }
 
+  const upload = (file) => {
+    const data = new FormData();
+    data.append("file", file);
+    data.append("upload_preset", "fiverr");
+  };
+
   return (
     <div className="py-40 pb-10">
       <div className="contain">
