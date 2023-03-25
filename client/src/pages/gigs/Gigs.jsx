@@ -3,6 +3,7 @@ import { BiHomeAlt, BiChevronDown } from "react-icons/bi";
 import GigsCards from "../../components/GigsContents/GigsCards/GigsCards";
 import { gigCards } from "../../data/data";
 import { useQuery } from "@tanstack/react-query";
+import { Axios } from "../../config";
 
 const Gigs = () => {
   const [open, setOpen] = useState(false);
@@ -17,10 +18,7 @@ const Gigs = () => {
 
   const { isPending, error, data } = useQuery({
     queryKey: ["repoData"],
-    queryFn: () =>
-      fetch("https://api.github.com/repos/tannerlinsley/react-query").then(
-        (res) => res.json()
-      ),
+    queryFn: () => Axios.get(),
   });
 
   return (
