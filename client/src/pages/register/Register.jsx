@@ -37,9 +37,8 @@ const Register = () => {
         toastId: 1,
         autoClose: 1500,
       });
-      setShow(false);
-      setLoading(false);
       navigate("/");
+      setLoading(false);
     } catch (error) {
       setLoading(false);
       if (error?.response?.data) {
@@ -55,7 +54,6 @@ const Register = () => {
           autoClose: 1500,
         });
       }
-      navigate("/join");
     }
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
