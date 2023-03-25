@@ -3,7 +3,7 @@ import createError from "../utils/createError.js";
 
 export const createGig = async (req, res, next) => {
   if (!req.isSeller)
-    return next(createError(403, "Only sellers can create a gig!"));
+    return next(createError(403, "Oop!😯 Sorry restricted to Sellers only."));
 
   const newGig = new Gig({
     userId: req.userId,
