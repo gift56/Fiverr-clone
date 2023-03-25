@@ -20,7 +20,7 @@ const Gigs = () => {
 
   const { isPending, error, data } = useQuery({
     queryKey: ["repoData"],
-    queryFn: () => Axios.get(requests.gigs),
+    queryFn: () => Axios.get(requests.gigs).then((res) => res.data),
   });
 
   return (
@@ -104,9 +104,17 @@ const Gigs = () => {
             </div>
           </div>
           <div className="w-full grid grid-cols-4 items-start justify-start gap-8">
-            {gigCards.map((item) => (
-              <GigsCards key={item.id} item={item} />
-            ))}
+            {isPending ? (
+              <div className="flex items-center justify-center w-full">
+                <img src={loader} alt="/" className="w-[40px]" />
+              </div>
+            ) : error ? (
+              <p className="text-3xl text-red-400">
+                Error : Something went wrong
+              </p>
+            ) : (
+              data?.map((item) => <GigsCards key={item.id} item={item} />)
+            )}
           </div>
         </div>
       </div>
