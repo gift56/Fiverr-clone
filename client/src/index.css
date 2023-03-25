@@ -13,3 +13,10 @@
 .overflow-hiddens {
   overflow: hidden!;
 }
+
+label .action input:checked ~ i {
+  background-color: #0dcccc;
+}
+label .action input:checked ~ i::before {
+  left: calc(100% - 24px);
+}

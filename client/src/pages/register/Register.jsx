@@ -216,6 +216,23 @@ const Register = () => {
               <h1 className="text-2xl text-darkColor font-semibold">
                 I want to be a seller
               </h1>
+              <div className="w-full mt-8">
+                <label className="flex items-center justify-start w-full relative gap-4">
+                  <span className="text-[#5D6771] text-[15px] leading-5 font-medium flex items-center justify-center select-none">
+                    Activate the seller account
+                  </span>
+                  <span className="flex items-center justify-center select-none action">
+                    <input
+                      type="checkbox"
+                      className="appearance-none"
+                      value={values.isSeller}
+                      onChange={handleChange}
+                      name="isSeller"
+                    />
+                    <i className="bg-[#c5c7c9] relative w-11 h-6 rounded-xl transition-all duration-200 before:content-[''] before:absolute before:top-[2px] before:left-[2.8px] before:w-5 before:h-5 before:bg-white before:rounded-full before:shadow-newLongShadow before:transition-all before:duration-300 cursor-pointer"></i>
+                  </span>
+                </label>
+              </div>
             </div>
           </form>
         </div>
