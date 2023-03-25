@@ -9,7 +9,6 @@ import { toast } from "react-toastify";
 import loader from "../../assets/icons/loader.svg";
 import { BsUpload } from "react-icons/bs";
 import { registerSchema } from "../../schemas";
-import axios from "axios";
 
 const Register = () => {
   const navigate = useNavigate();
