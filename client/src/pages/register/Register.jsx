@@ -197,7 +197,7 @@ const Register = () => {
                 onBlur={handleBlur}
                 error={getError("country")}
                 id="country"
-                placeholder="country"
+                placeholder="e.g Nigeria"
                 className="bg-white  border border-[#C7CBD1] w-full h-[40px] rounded px-4 focus:border-[1.5px] focus:border-primary outline-none text-sm"
               />
               <button
