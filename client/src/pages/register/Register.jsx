@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import loader from "../../assets/icons/loader.svg";
 import { BsUpload } from "react-icons/bs";
 import { registerSchema } from "../../schemas";
+import axios from "axios";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -89,7 +90,10 @@ const Register = () => {
     data.append("file", file);
     data.append("upload_preset", "fiverr");
     try {
-      
+      const res = await axios.post(
+        "https://api.cloudinary.com/v1_1/efegift/image",
+        data
+      );
     } catch (error) {
       console.log(error);
     }
