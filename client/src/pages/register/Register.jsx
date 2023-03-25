@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import CustomizeInput from "../../utils/Input/CustomizeInput";
 import CustomizeTextArea from "../../utils/Input/CustomizeTextarea";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Axios } from "../../config";
 import requests from "../../libs/request";
 import { toast } from "react-toastify";
 import loader from "../../assets/icons/loader.svg";
 import { BsUpload } from "react-icons/bs";
 import { registerSchema } from "../../schemas";
+import upload from "../../libs/upload";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -24,34 +25,38 @@ const Register = () => {
     desc: "",
   };
   const onSubmit = async (payload, actions) => {
-    console.log(payload);
-    // setLoading(true);
-    // try {
-    //   const res = await Axios.post(requests.login, payload);
-    //   setAuthUser(res.data);
-    //   toast.success("Login Successfully", {
-    //     position: "bottom-right",
-    //     toastId: 1,
-    //     autoClose: 1500,
-    //   });
-    //   setShow(false);
-    //   setLoading(false);
-    // } catch (error) {
-    //   setLoading(false);
-    //   if (error?.response?.data) {
-    //     toast.error(error?.response?.data, {
-    //       position: "bottom-right",
-    //       toastId: 1,
-    //       autoClose: 1500,
-    //     });
-    //   } else {
-    //     toast.error(error?.response?.message, {
-    //       position: "bottom-right",
-    //       toastId: 1,
-    //       autoClose: 1500,
-    //     });
-    //   }
-    // }
+    setLoading(true);
+    const url = await upload(values.img);
+    try {
+      const res = await Axios.post(requests.register, {
+        ...payload,
+        img: url,
+      });
+      toast.success(res?.data, {
+        position: "bottom-right",
+        toastId: 1,
+        autoClose: 1500,
+      });
+      setShow(false);
+      setLoading(false);
+      navigate("/");
+    } catch (error) {
+      setLoading(false);
+      if (error?.response?.data) {
+        toast.error(error?.response?.data, {
+          position: "bottom-right",
+          toastId: 1,
+          autoClose: 1500,
+        });
+      } else {
+        toast.error(error?.response?.message, {
+          position: "bottom-right",
+          toastId: 1,
+          autoClose: 1500,
+        });
+      }
+      navigate("/join");
+    }
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
   };
