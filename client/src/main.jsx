@@ -6,13 +6,22 @@ import "./index.css";
 import TopScroll from "./utils/TopScroll";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <TopScroll />
-      <App />
-      <ToastContainer />
+      <QueryClientProvider client={queryClient}>
+        <TopScroll />
+        <App />
+        <ToastContainer />
+      </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
