@@ -4,6 +4,8 @@ import GigsCards from "../../components/GigsContents/GigsCards/GigsCards";
 import { gigCards } from "../../data/data";
 import { useQuery } from "@tanstack/react-query";
 import { Axios } from "../../config";
+import loader from "../../assets/icons/loader.svg";
+import requests from "../../libs/request";
 
 const Gigs = () => {
   const [open, setOpen] = useState(false);
@@ -18,7 +20,7 @@ const Gigs = () => {
 
   const { isPending, error, data } = useQuery({
     queryKey: ["repoData"],
-    queryFn: () => Axios.get(),
+    queryFn: () => Axios.get(requests.gigs),
   });
 
   return (
