@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsStarFill, BsFillHeartFill } from "react-icons/bs";
+import useAuthStore from "../../../stores";
+import Avatar from "../../../assets/icons/avatar.jpg";
 
 const GigsCards = ({ item }) => {
+  const { authUser } = useAuthStore();
   const truckcateString = (str, num) => {
     if (str?.length > num) {
       return str.slice(0, num) + "...";
@@ -25,7 +28,7 @@ const GigsCards = ({ item }) => {
         <div className="flex items-center justify-start gap-3 px-4">
           <div className="w-8 h-8">
             <img
-              src={item.userImg}
+              src={authUser.img || Avatar}
               alt={item.username}
               className="w-full h-full object-cover rounded-full"
             />
