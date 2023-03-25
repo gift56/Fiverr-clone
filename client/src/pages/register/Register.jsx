@@ -82,7 +82,7 @@ const Register = () => {
   }
 
   return (
-    <div className="py-40">
+    <div className="py-40 pb-10">
       <div className="contain">
         <div className="w-[75%] flex items-center justify-center py-10 mx-auto">
           <form
@@ -158,7 +158,10 @@ const Register = () => {
                   }`}
                 >
                   {values?.img?.type?.startsWith("image/") ? (
-                    <label htmlFor="img" className="cursor-pointer h-full w-full flex items-center justify-center">
+                    <label
+                      htmlFor="img"
+                      className="cursor-pointer h-full w-full flex items-center justify-center"
+                    >
                       <img
                         src={URL.createObjectURL(values.img)}
                         alt={values.img.name}
@@ -179,6 +182,21 @@ const Register = () => {
                   )}
                 </div>
               </div>
+              <CustomizeInput
+                showLabel={false}
+                htmlFor="country"
+                label="country"
+                labelClassName="text-sm font-medium text-darkColor"
+                type="text"
+                name="country"
+                value={values.country}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={getError("country")}
+                id="country"
+                placeholder="country"
+                className="bg-white  border border-[#C7CBD1] w-full h-[40px] rounded px-4 focus:border-[1.5px] focus:border-primary outline-none text-sm"
+              />
             </div>
             <div className="flex items-start justify-start flex-col gap-4 flex-1">
               <h1 className="text-2xl text-darkColor font-semibold">
