@@ -46,7 +46,8 @@ const GigsCards = ({ item }) => {
           <span>
             <BsStarFill />
           </span>
-          {item.totalStars}
+          {!isNaN(Math.random(item.totalStars / item.starNumber)) &&
+            Math.floor(item.totalStars / item.starNumber)}
         </p>
         <div className="border-t w-full p-5 flex items-center justify-between">
           <span className="text-gray-400 cursor-pointer">

@@ -56,7 +56,7 @@ const Gigs = () => {
           <div className="w-full flex items-center justify-between">
             <div className="flex items-center justify-start gap-2">
               <p className="text-base font-normal text-gray-500">Budget:</p>
-              <duv className="flex items-center justify-start gap-2">
+              <div className="flex items-center justify-start gap-2">
                 <input
                   type="text"
                   ref={minRef}
@@ -75,7 +75,7 @@ const Gigs = () => {
                 >
                   Apply
                 </button>
-              </duv>
+              </div>
             </div>
             <div className="flex items-center justify-end gap-2">
               <p className="text-base font-normal text-gray-500">Sort by:</p>
