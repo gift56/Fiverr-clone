@@ -5,7 +5,10 @@ const upload = async (file) => {
   data.append("file", file);
   data.append("upload_preset", "fiverr");
   try {
-    const res = await axios.post(process.env.REACT_APP_CLOUDINARY_URL, data);
+    const res = await axios.post(
+      "https://api.cloudinary.com/v1_1/efegift/image/upload",
+      data
+    );
     const { url } = res.data;
     return url;
   } catch (error) {
