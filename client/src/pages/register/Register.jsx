@@ -201,7 +201,6 @@ const Register = () => {
                 type="submit"
                 className="w-full bg-primary/80 hover:bg-primary cursor-pointer outline-none text-white rounded py-3 transition-all duration-300"
               >
-                {" "}
                 {loading ? (
                   <div className="flex items-center justify-center">
                     <img src={loader} alt="/" className="w-[40px]" />
