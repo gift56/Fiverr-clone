@@ -6,21 +6,23 @@ import { useQuery } from "@tanstack/react-query";
 import { Axios } from "../../config";
 import loader from "../../assets/icons/loader.svg";
 import requests from "../../libs/request";
+import { useLocation } from "react-router-dom";
 
 const Gigs = () => {
+  const { search } = useLocation();
   const [open, setOpen] = useState(false);
   const [sort, setSort] = useState("sales");
   const minRef = useRef();
   const maxRef = useRef();
-
   const reSort = (types) => {
     setSort(types);
     setOpen(false);
   };
 
-  const { isLoading, error, data } = useQuery({
+  const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["repoData"],
-    queryFn: () => Axios.get(requests.gigs).then((res) => res.data),
+    queryFn: () =>
+      Axios.get(`${requests.gigs}${search}`).then((res) => res.data),
   });
 
   return (
@@ -117,7 +119,7 @@ const Gigs = () => {
                 Error : Something went wrong
               </p>
             ) : (
-              data?.map((item) => <GigsCards key={item.id} item={item} />)
+              data?.map((item) => <GigsCards key={item._id} item={item} />)
             )}
           </div>
         </div>
