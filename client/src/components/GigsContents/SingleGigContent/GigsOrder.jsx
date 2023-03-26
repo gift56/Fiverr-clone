@@ -3,7 +3,7 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 import { BsCheckLg } from "react-icons/bs";
 import { TfiReload } from "react-icons/tfi";
 
-const GigsOrder = () => {
+const GigsOrder = ({ data }) => {
   const extra = [
     "Up to 2 minutes running time",
     "Color grading",
@@ -12,15 +12,10 @@ const GigsOrder = () => {
   return (
     <div className="w-full bg-white border p-4 flex flex-col gap-4 items-start justify-start rounded">
       <div className="flex items-center justify-between gap-2 w-full">
-        <h2 className="text-gray-800 text-sm font-bold">
-          1 AI generated image
-        </h2>
-        <p className="text-base font-normal">$ 50.99</p>
+        <h2 className="text-gray-800 text-sm font-bold">{data?.shortTitle}</h2>
+        <p className="text-base font-normal">$ {data?.price}</p>
       </div>
-      <p className="text-sm font-medium text-darkColor">
-        <span className="font-bold">2 min video editing</span> Less Footage ,
-        Less requirements and editing work. Be sure to txt me first!
-      </p>
+      <p className="text-sm font-medium text-darkColor">{data?.shortDesc}</p>
       <div className="flex items-center justify-between gap-2 w-full">
         <div className="flex items-center justify-start gap-2 text-sm text-darkColor font-semibold">
           <AiOutlineClockCircle />
@@ -32,7 +27,7 @@ const GigsOrder = () => {
         </div>
       </div>
       <div className="flex flex-col gap-1 items-start justify-start w-full">
-        {extra.map((item, i) => (
+        {data.features.map((item, i) => (
           <div
             key={i}
             className="flex items-center justify-start gap-2 text-sm text-darkColor/70 font-semibold"
@@ -42,7 +37,9 @@ const GigsOrder = () => {
           </div>
         ))}
       </div>
-      <button className="w-full h-10 rounded bg-primary/95 text-white hover:bg-primary outline-none">Continue</button>
+      <button className="w-full h-10 rounded bg-primary/95 text-white hover:bg-primary outline-none">
+        Continue
+      </button>
     </div>
   );
 };
