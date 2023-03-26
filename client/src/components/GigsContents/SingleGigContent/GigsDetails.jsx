@@ -38,7 +38,7 @@ const GigsDetails = ({ data }) => {
                   <BsStarFill />
                 </span>
               ))}
-            <span>{starNub}</span>
+            <span>{Math.round(data.totalStars / data.starNumber)}</span>
           </div>
         )}
       </div>
@@ -77,7 +77,7 @@ const GigsDetails = ({ data }) => {
           <div className="flex flex-col items-start justify-start gap-2">
             <h4 className="text-base font-bold text-darkColor">John Willson</h4>
             <div className="flex items-center justify-start gap-1 text-yellow-400 text-lg font-semibold px-4">
-              {Array(Math.round(data.totalStars / data.starNumber))
+              {Array(Math.round(data?.totalStars / data?.starNumber))
                 .fill()
                 .map((item, i) => (
                   <span key={i}>
