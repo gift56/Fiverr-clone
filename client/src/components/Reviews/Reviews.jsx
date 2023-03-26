@@ -44,7 +44,6 @@ const Reviews = ({ gigId }) => {
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      console.log(error);
       if (error?.response?.data) {
         toast.error(error?.response?.data, {
           position: "bottom-right",

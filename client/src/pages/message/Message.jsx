@@ -31,6 +31,34 @@ const Message = () => {
     desc: yup.string().required("Required"),
   });
 
+  const onSubmit = async (payload, actions) => {
+    setLoading(true);
+    try {
+      const res = await Axios.post(requests.reviews, payload);
+      console.log(res.data);
+      toast.success("Thanks for your Review!😊", {
+        position: "bottom-right",
+        toastId: 1,
+        autoClose: 1500,
+      });
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
+
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    actions.resetForm();
+  };
+
+  const { handleChange, values, handleBlur, handleSubmit, errors, touched } =
+    useFormik({
+      initialValues,
+      validationSchema,
+      onSubmit,
+    });
+
+
   return (
     <main className="py-40 pb-10">
       <div className="contain">
