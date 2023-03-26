@@ -54,7 +54,7 @@ const Message = () => {
     });
 
   return (
-    <main className="py-40 pb-10">
+    <main className="py-40 pb-20">
       <div className="contain">
         <div className="w-full flex items-center justify-center flex-col gap-4">
           <p className="flex items-center gap-2 uppercase justify-start text-sm font-medium text-darkColor/60 w-[80%]">
@@ -83,7 +83,7 @@ const Message = () => {
                       className="w-[350px]"
                     />
                     <h2 className="text-4xl text-active font-medium">
-                      No Messages!
+                      Start Making a Conversation!
                     </h2>
                   </div>
                 ) : (
