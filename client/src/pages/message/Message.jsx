@@ -1,12 +1,27 @@
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import React from "react";
 import { BiChevronRight } from "react-icons/bi";
 import { Link, useParams } from "react-router-dom";
+import { Axios } from "../../config";
 import { mesagesData } from "../../data/data";
+import requests from "../../libs/request";
 import useAuthStore from "../../stores";
 
 const Message = () => {
   const { id } = useParams();
   const { authUser } = useAuthStore();
+  const queryClient = useQueryClient();
+
+  const { isLoading, error, data } = useQuery({
+    queryKey: ["messages"],
+    queryFn: () =>
+      Axios.get(`${requests.messages}/${id}`).then((res) => {
+        return res.data;
+      }),
+  });
+
+  console.log(data)
+
   return (
     <main className="py-40 pb-10">
       <div className="contain">
