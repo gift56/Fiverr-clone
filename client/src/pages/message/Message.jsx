@@ -6,6 +6,8 @@ import { Axios } from "../../config";
 import { mesagesData } from "../../data/data";
 import requests from "../../libs/request";
 import useAuthStore from "../../stores";
+import { useFormik } from "formik";
+import * as yup from "yup";
 
 const Message = () => {
   const { id } = useParams();
@@ -20,7 +22,7 @@ const Message = () => {
       }),
   });
 
-  console.log(data)
+  console.log(data);
 
   return (
     <main className="py-40 pb-10">
