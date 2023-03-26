@@ -1,8 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Axios } from "../../config";
-import { messageColumns, messageTableData } from "../../data/data";
+import { messageColumns } from "../../data/data";
 import requests from "../../libs/request";
 import useAuthStore from "../../stores";
 import loader from "../../assets/icons/loader.svg";
@@ -10,12 +10,29 @@ import moment from "moment";
 
 const Messages = () => {
   const { authUser } = useAuthStore();
+  const queryClient = useQueryClient();
 
   const { isLoading, error, data } = useQuery({
     queryKey: ["conversation"],
     queryFn: () =>
       Axios.get(`${requests.conversations}`).then((res) => res.data),
   });
+
+  const mutation = useMutation({
+    mutationFn: (id) => {
+      return Axios.put(`${requests.conversations}/${id}`);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["conversations"]);
+    },
+  });
+
+  const handleRead = (id) => {
+    mutation.mutate(id);
+  };
+
+  console.log(data);
+  console.log(authUser);
 
   const tableActions = data?.map((item, i) => ({
     buyer: (
@@ -29,15 +46,14 @@ const Messages = () => {
       </p>
     ),
     lastMessage: (
-      <Link
-        to={`/messages/${i}`}
+      <div
         className={`w-full flex items-center justify-start text-darkColor/70 border-x border-white h-full py-5 ${
           (authUser?.isSeller && !item?.readBySeller) ||
           (!authUser.isSeller && !item?.readByBuyer && "bg-slate-100")
         }`}
       >
         {item?.lastMessage?.substring(0, 100)}...
-      </Link>
+      </div>
     ),
     date: (
       <p
@@ -59,7 +75,10 @@ const Messages = () => {
       >
         {((authUser.isSeller && !item.readBySeller) ||
           (!authUser.isSeller && !item.readByBuyer)) && (
-          <button className="bg-primary/80 hover:bg-primary text-white w-fit py-2 px-2 text-sm rounded">
+          <button
+            className="bg-primary/80 hover:bg-primary text-white w-fit py-2 px-2 text-sm rounded"
+            onClick={() => handleRead(item.id)}
+          >
             Mark as Read
           </button>
         )}
