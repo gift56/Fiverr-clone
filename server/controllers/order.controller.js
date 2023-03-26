@@ -35,7 +35,14 @@ import Gig from "../models/gig.model.js";
 
 export const createOrder = async (req, res, next) => {
   try {
-    
+    const gig = Gig.findById(req.params.gigId);
+
+    const newOrder = new Order({
+      gigId: gig._id,
+      img: gig.cover,
+      title: gig.title,
+      buyerId: req.userId,
+    });
   } catch (err) {
     next(err);
   }
@@ -53,7 +60,7 @@ export const getOrders = async (req, res, next) => {
     next(err);
   }
 };
-
+/*
 export const confirm = async (req, res, next) => {
   try {
     const orders = await Order.findOneAndUpdate(
@@ -72,3 +79,4 @@ export const confirm = async (req, res, next) => {
     next(err);
   }
 };
+*/
