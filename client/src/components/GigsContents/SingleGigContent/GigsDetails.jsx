@@ -38,11 +38,11 @@ const GigsDetails = ({ data }) => {
         )}
       </div>
       <div className="w-[90%]">
-        <Slides rowId="4" distance={750}>
+        <Slides rowId="4" distance={700}>
           {data.images.map((item, i) => (
             <div
               key={i}
-              className="relative inline-block cursor-pointer w-full mx-4 shadow-box"
+              className="relative inline-block cursor-pointer w-full mx-4 shadow-box bg-gray-200"
             >
               <div className="w-full h-full">
                 <img
