@@ -77,7 +77,7 @@ const GigsDetails = ({ data }) => {
                   <BsStarFill />
                 </span>
               ))}
-              5.0
+              {Math.round(data.totalStars / data.starNumber)}
             </p>
             <button className="outline-none text-sm font-medium hover:bg-gray-400 hover:text-white transition-all duration-300 border border-gray-400 w-fit py-2 px-4 rounded">
               Contact Me
@@ -89,7 +89,9 @@ const GigsDetails = ({ data }) => {
             <div className="w-[50%] flex flex-col items-start justify-start gap-3">
               <div className="flex flex-col gap-1">
                 <span className="text-gray-400 text-sm font-normal">From</span>
-                <h2 className="text-darkColor font-medium">Somewhere</h2>
+                <h2 className="text-darkColor font-medium">
+                  {authUser?.country}
+                </h2>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-gray-400 text-sm font-normal">

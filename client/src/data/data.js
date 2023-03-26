@@ -88,6 +88,7 @@ export const cards = [
     img: image10,
   },
 ];
+
 export const projectsCards = [
   {
     id: "001",

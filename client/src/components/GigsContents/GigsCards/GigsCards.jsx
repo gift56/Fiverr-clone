@@ -41,15 +41,14 @@ const GigsCards = ({ item }) => {
           </div>
         </div>
         <p className="text-darkColor text-base group-hover:text-primary transition-all duration-300 px-4">
-          {" "}
           {truckcateString(item.desc, 60)}
         </p>
         <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold px-4">
           <span>
             <BsStarFill />
           </span>
-          {!isNaN(Math.random(item.totalStars / item.starNumber)) &&
-            Math.floor(item.totalStars / item.starNumber)}
+          {!isNaN(item.totalStars / item.starNumber) &&
+            Math.round(item.totalStars / item.starNumber)}
         </p>
         <div className="border-t w-full p-5 flex items-center justify-between">
           <span className="text-gray-400 cursor-pointer">
