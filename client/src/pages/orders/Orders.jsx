@@ -41,6 +41,24 @@ const Orders = () => {
     ),
   }));
 
+  const handleContact = async (order) => {
+    const sellerId = order.sellerId;
+    const buyerId = order.buyerId;
+    const id = sellerId + buyerId;
+
+    try {
+      const res = await Axios.get(`/conversations/single/${id}`);
+      navigate(`/message/${res.data.id}`);
+    } catch (err) {
+      if (err.response.status === 404) {
+        const res = await Axios.post(`/conversations/`, {
+          to: authUser.seller ? buyerId : sellerId,
+        });
+        navigate(`/message/${res.data.id}`);
+      }
+    }
+  };
+
   return (
     <main className="py-40">
       <div className="contain">
