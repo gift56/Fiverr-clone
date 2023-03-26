@@ -17,6 +17,8 @@ const Gig = () => {
       Axios.get(`${requests.gigs}/single/${id}`).then((res) => res.data),
   });
 
+  const userId = data?.userId;
+
   return (
     <main className="py-40 pb-10">
       <div className="contain">
@@ -31,7 +33,7 @@ const Gig = () => {
         ) : (
           <div className="w-full flex items-start justify-between gap-6">
             <div className="w-[70%]">
-              <GigsDetails data={data} gigId={id} />
+              <GigsDetails data={data} id={id} userId={userId}/>
             </div>
             <div className="w-[30%] sticky top-40">
               <GigsOrder data={data} />

@@ -3,11 +3,20 @@ import { BiChevronRight } from "react-icons/bi";
 import { BsStarFill } from "react-icons/bs";
 import Slides from "../../Slides/Slides";
 import Avatar from "../../../assets/icons/avatar.jpg";
-import useAuthStore from "../../../stores";
 import Reviews from "../../Reviews/Reviews";
+import requests from "../../../libs/request";
+import { Axios } from "../../../config";
+import { useQuery } from "@tanstack/react-query";
 
-const GigsDetails = ({ data, gigId }) => {
-  const { authUser } = useAuthStore();
+const GigsDetails = ({ data, id, userId }) => {
+  const { data: userData } = useQuery({
+    queryKey: ["user"],
+    queryFn: () =>
+      Axios.get(`${requests.users}/${userId}`).then((res) => {
+        return res.data;
+      }),
+    enabled: !!userId,
+  });
 
   return (
     <div className="w-full flex items-start justify-start gap-3 flex-col">
@@ -24,11 +33,11 @@ const GigsDetails = ({ data, gigId }) => {
       <div className="flex items-center justify-start gap-3 w-full">
         <div className="flex items-center justify-start gap-3">
           <img
-            src={authUser?.img || Avatar}
+            src={userData?.img || Avatar}
             alt={data?.username}
             className="w-8 h-8 border rounded-full"
           />
-          <span>{authUser?.username}</span>
+          <span>{userData?.username}</span>
         </div>
         {!isNaN(data?.totalStars / data?.starNumber) && (
           <div className="flex items-center justify-start gap-1 text-yellow-400 text-lg font-semibold">
@@ -71,13 +80,13 @@ const GigsDetails = ({ data, gigId }) => {
         </h2>
         <div className="flex items-start justify-start gap-3 w-full">
           <img
-            src={authUser?.img|| Avatar}
+            src={userData?.img || Avatar}
             alt=""
             className="w-20 h-20 border rounded-full"
           />
           <div className="flex flex-col items-start justify-start gap-2">
             <h4 className="text-base font-bold text-darkColor">
-              {authUser?.username}
+              {userData?.username}
             </h4>
             <div className="flex items-center justify-start gap-1 text-yellow-400 text-lg font-semibold">
               {Array(Math.round(data?.totalStars / data?.starNumber))
@@ -100,7 +109,7 @@ const GigsDetails = ({ data, gigId }) => {
               <div className="flex flex-col gap-1">
                 <span className="text-gray-400 text-sm font-normal">From</span>
                 <h2 className="text-darkColor font-medium">
-                  {authUser?.country}
+                  {userData?.country}
                 </h2>
               </div>
               <div className="flex flex-col gap-1">
@@ -132,13 +141,13 @@ const GigsDetails = ({ data, gigId }) => {
             </div>
           </div>
           <p className="text-darkColor text-sm font-medium border-t w-full pt-4 pr-4">
-            {authUser?.desc}
+            {userData?.desc}
           </p>
         </div>
       </div>
       <div className="flex flex-col gap-3 mt-5 w-full">
         <h2 className="text-xl font-semibold text-gray-500">Reviews</h2>
-        <Reviews gigId={gigId} />
+        <Reviews gigId={id} />
       </div>
     </div>
   );

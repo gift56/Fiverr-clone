@@ -4,12 +4,13 @@ import { BiLike, BiDislike } from "react-icons/bi";
 import { BsStarFill } from "react-icons/bs";
 import Avatar from "../../../assets/icons/avatar.jpg";
 import { Axios } from "../../../config";
+import requests from "../../../libs/request";
 
 const Review = ({ item }) => {
-  const { isLoading, error, data } = useQuery({
+  const { data } = useQuery({
     queryKey: [item.userId],
     queryFn: () =>
-      Axios.get(`/api/user/${item.userId}`).then((res) => {
+      Axios.get(`${requests.users}/${item.userId}`).then((res) => {
         return res.data;
       }),
   });
