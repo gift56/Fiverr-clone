@@ -47,11 +47,11 @@ const Orders = () => {
     const id = sellerId + buyerId;
 
     try {
-      const res = await Axios.get(`/conversations/single/${id}`);
-      navigate(`/message/${res.data.id}`);
+      const res = await Axios.get(`${requests.conversations}/single/${id}`);
+      navigate(`/messages/${res.data.id}`);
     } catch (err) {
       if (err.response.status === 404) {
-        const res = await Axios.post(`/conversations/`, {
+        const res = await Axios.post(`${requests.conversations}/`, {
           to: authUser.seller ? buyerId : sellerId,
         });
         navigate(`/message/${res.data.id}`);
