@@ -1,5 +1,5 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import React from "react";
+import React, { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { BiChevronRight } from "react-icons/bi";
 import { Link, useParams } from "react-router-dom";
 import { Axios } from "../../config";
@@ -12,7 +12,7 @@ import * as yup from "yup";
 const Message = () => {
   const { id } = useParams();
   const { authUser } = useAuthStore();
-  const queryClient = useQueryClient();
+  const [loading, setLoading] = useState(false);
 
   const { isLoading, error, data } = useQuery({
     queryKey: ["messages"],
@@ -22,7 +22,13 @@ const Message = () => {
       }),
   });
 
-  console.log(data);
+  const initialValues = {
+    conversationId: id,
+    desc: "",
+  };
+  const validationSchema = yup.object({
+    desc: yup.string().required("Required"),
+  });
 
   return (
     <main className="py-40 pb-10">
