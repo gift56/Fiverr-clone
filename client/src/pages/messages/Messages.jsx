@@ -19,7 +19,7 @@ const Messages = () => {
 
   console.log(data);
 
-  const tableActions = data.map((item, i) => ({
+  const tableActions = data?.map((item, i) => ({
     buyer: (
       <p
         className={`py-5 h-full font-semibold ${
