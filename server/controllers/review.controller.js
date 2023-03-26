@@ -21,7 +21,7 @@ export const createReview = async (req, res, next) => {
 
     if (review)
       return next(
-        createError(403, "You have already created a review for this gig!")
+        createError(403, "Already created a review for this gig!")
       );
 
     //TODO: check if the user purchased the gig.
@@ -47,6 +47,7 @@ export const getReviews = async (req, res, next) => {
 };
 export const deleteReview = async (req, res, next) => {
   try {
+    
   } catch (err) {
     next(err);
   }

@@ -6,7 +6,7 @@ import Avatar from "../../../assets/icons/avatar.jpg";
 import useAuthStore from "../../../stores";
 import Reviews from "../../Reviews/Reviews";
 
-const GigsDetails = ({ data }) => {
+const GigsDetails = ({ data, id }) => {
   const { authUser } = useAuthStore();
 
   return (
@@ -138,7 +138,7 @@ const GigsDetails = ({ data }) => {
       </div>
       <div className="flex flex-col gap-3 mt-5 w-full">
         <h2 className="text-xl font-semibold text-gray-500">Reviews</h2>
-        <Reviews />
+        <Reviews gigId={id} />
       </div>
     </div>
   );
