@@ -19,11 +19,11 @@ const GigsOrder = ({ data }) => {
       <div className="flex items-center justify-between gap-2 w-full">
         <div className="flex items-center justify-start gap-2 text-sm text-darkColor font-semibold">
           <AiOutlineClockCircle />
-          <span>4 Days Delivery</span>
+          <span>{data?.deliveryTime} Days Delivery</span>
         </div>
         <div className="flex items-center justify-start gap-2 text-sm text-darkColor font-semibold">
           <TfiReload />
-          <span>Unlimited Revisions</span>
+          <span>{data?.revisionNumber} Revisions</span>
         </div>
       </div>
       <div className="flex flex-col gap-1 items-start justify-start w-full">
