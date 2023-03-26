@@ -39,13 +39,13 @@ const GigsDetails = ({ data, id }) => {
                   <BsStarFill />
                 </span>
               ))}
-            <span>{Math.round(data.totalStars / data.starNumber)}</span>
+            <span>{Math.round(data?.totalStars / data?.starNumber)}</span>
           </div>
         )}
       </div>
       <div className="w-[90%]">
         <Slides rowId="4" distance={700}>
-          {data.images.map((item, i) => (
+          {data?.images?.map((item, i) => (
             <div
               key={i}
               className="relative inline-block cursor-pointer w-full mx-4 shadow-box bg-gray-200"
@@ -77,7 +77,7 @@ const GigsDetails = ({ data, id }) => {
           />
           <div className="flex flex-col items-start justify-start gap-2">
             <h4 className="text-base font-bold text-darkColor">
-              {authUser.username}
+              {authUser?.username}
             </h4>
             <div className="flex items-center justify-start gap-1 text-yellow-400 text-lg font-semibold">
               {Array(Math.round(data?.totalStars / data?.starNumber))

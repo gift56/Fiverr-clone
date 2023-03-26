@@ -20,21 +20,21 @@ const GigsCards = ({ item }) => {
       className="w-full shadow-box flex items-start flex-col justify-start border group"
     >
       <img
-        src={item.cover}
-        alt={item.username}
+        src={item?.cover}
+        alt={item?.username}
         className="w-full object-cover"
       />
       <div className="w-full bg-white pt-5 flex items-start flex-col gap-3 justify-start">
         <div className="flex items-center justify-start gap-3 px-4">
           <div className="w-8 h-8">
             <img
-              src={authUser.img || Avatar}
+              src={authUser?.img || Avatar}
               alt={item.username}
               className="w-full h-full object-cover rounded-full"
             />
           </div>
           <div className="flex flex-col items-start justify-start">
-            <h2 className="text-sm font-medium">{authUser.username}</h2>
+            <h2 className="text-sm font-medium">{authUser?.username}</h2>
             <p className="text-sm font-normal text-gray-400">
               {authUser?.isSeller === true ? "Seller" : "Buyer"}
             </p>
