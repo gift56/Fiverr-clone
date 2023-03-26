@@ -10,7 +10,7 @@ const Reviews = ({ gigId }) => {
   const { isLoading, error, data } = useQuery({
     queryKey: ["reviews"],
     queryFn: () =>
-      Axios.get(`${requests}/${gigId}`).then((res) => {
+      Axios.get(`${requests.reviews}/${gigId}`).then((res) => {
         return res.data;
       }),
   });
@@ -39,7 +39,7 @@ const Reviews = ({ gigId }) => {
               </h2>
             </div>
           ) : (
-            data.map((item, i) => <Review key={item?._id} item={item} />)
+            data.map((item) => <Review key={item?._id} item={item} />)
           )}
         </>
       )}

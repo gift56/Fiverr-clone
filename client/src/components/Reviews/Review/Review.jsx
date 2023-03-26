@@ -1,38 +1,45 @@
 import React from "react";
 import { BiLike, BiDislike } from "react-icons/bi";
 import { BsStarFill } from "react-icons/bs";
+import Avatar from "../../../assets/icons/avatar.jpg";
+import useAuthStore from "../../../stores";
 
-const Review = () => {
+const Review = ({ item }) => {
+  const { authUser } = useAuthStore();
+
   return (
     <div className="w-full flex flex-col gap-4 items-start justify-start border-t last:border-b last:pb-7 pt-7 ">
       <div className="flex items-start justify-start gap-4">
         <div className="w-10 h-10 border bg-gray-300 rounded-full flex items-center justify-center text-base text-gray-500 uppercase font-semibold">
-          E
+          <img
+            src={item.img || Avatar}
+            alt={item.username}
+            className="w-full h-full object-cover rounded-full"
+          />
         </div>
         <div className="flex items-start justify-start flex-col gap-4">
           <div className="flex items-start justify-start gap-1 flex-col">
-            <h2 className="text-darkColor font-bold lowercase">EfeGift222</h2>
+            <h2 className="text-darkColor font-bold lowercase">
+              {authUser?.username}
+            </h2>
             <div className="flex items-center justify-start gap-2">
-              <img
-                src="http://www.nigerianembassy.co.il/wp-content/uploads/2019/04/flag.jpg"
-                alt="flag"
-                className="w-6 h-4 object-cover rounded"
-              />
-              <span className="text-sm font-medium text-gray-500">Nigeria</span>
+              <span className="text-sm font-medium text-gray-500">
+                {authUser?.country}
+              </span>
             </div>
           </div>
           <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold">
-            {[0, 1, 2, 3, 4].map((item, i) => (
-              <span key={i}>
-                <BsStarFill />
-              </span>
-            ))}
-            5
+            {Array(item.star)
+              .fill()
+              .map((item, i) => (
+                <span key={i}>
+                  <BsStarFill />
+                </span>
+              ))}
+            {item.star}
           </p>
           <p className="font-medium max-w-[660px] text-darkColor">
-            Great job on this very well done on this. very fast and timely with
-            the edits. keep up the great work and will continue to use you in
-            the future.
+            {item.desc}
           </p>
           <div className="flex items-center justify-start gap-2">
             <p className="font-semibold text-sm text-gray-900">Helpful?</p>
