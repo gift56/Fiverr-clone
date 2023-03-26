@@ -5,11 +5,12 @@ import { useQuery } from "@tanstack/react-query";
 import { Axios } from "../../config";
 import requests from "../../libs/request";
 import useAuthStore from "../../stores";
+import loader from "../../assets/icons/loader.svg";
 
 const Orders = () => {
   const { authUser } = useAuthStore();
 
-  const { isLoading, error, data, refetch } = useQuery({
+  const { isLoading, error, data } = useQuery({
     queryKey: ["ordes"],
     queryFn: () => Axios.get(`${requests.orders}`).then((res) => res.data),
   });
