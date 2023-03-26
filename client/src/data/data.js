@@ -643,10 +643,6 @@ export const ordersColumns = [
     header: "Price",
   },
   {
-    field: "orders",
-    header: "Buyer",
-  },
-  {
     field: "actions",
     header: "Contact",
   },

@@ -11,18 +11,16 @@ const Orders = () => {
   const { authUser } = useAuthStore();
 
   const { isLoading, error, data } = useQuery({
-    queryKey: ["ordes"],
+    queryKey: ["orders"],
     queryFn: () => Axios.get(`${requests.orders}`).then((res) => res.data),
   });
 
-  console.log(data);
-
-  const tableActions = tableData.map((item) => ({
+  const tableActions = data?.map((item) => ({
     image: (
       <div className="w-14 h-10">
         <img
           src={item.img}
-          alt={item.title}
+          alt={item.username}
           className="w-full h-full object-cover"
         />
       </div>
@@ -32,9 +30,6 @@ const Orders = () => {
     ),
     price: (
       <p className="w-full flex items-center justify-start">{item.price}</p>
-    ),
-    orders: (
-      <p className="w-full flex items-center justify-start">{item.sales}</p>
     ),
     actions: (
       <div
@@ -53,39 +48,64 @@ const Orders = () => {
           <div className="flex items-center justify-between w-full gap-2">
             <h2 className="text-2xl font-bold">Orders</h2>
           </div>
-          <table className="w-full">
-            <thead className="h-[35px]">
-              <tr>
-                {ordersColumns &&
-                  ordersColumns.map((head, i) => (
-                    <th
-                      key={i}
-                      className="text-left text-gray-700 text-sm font-semibold leading-[18px] pb-2"
-                    >
-                      {head.header}
-                    </th>
-                  ))}
-              </tr>
-            </thead>
-            <tbody className="w-full">
-              {tableActions &&
-                tableActions.map((row, i) => (
-                  <tr
-                    key={i}
-                    className="text-sm leading-5 w-full even:bg-gray-200"
-                  >
-                    {ordersColumns?.map((col, i) => (
-                      <td
-                        key={i}
-                        className="first:text-left text-sm text-darkColor font-medium text-center py-2"
-                      >
-                        {row[col.field]}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-            </tbody>
-          </table>
+          {isLoading ? (
+            <div className="flex items-center justify-center w-full">
+              <img src={loader} alt="/" className="w-[40px]" />
+            </div>
+          ) : error ? (
+            <p className="text-2xl text-red-400 font-normal">
+              Error : Something went wrong
+            </p>
+          ) : (
+            <>
+              {data?.length === 0 ? (
+                <div className="flex items-center justify-center mt-5 flex-col w-full">
+                  <img
+                    src="https://cdni.iconscout.com/illustration/premium/thumb/error-404-4344461-3613889.png"
+                    alt="/"
+                    className="w-[350px]"
+                  />
+                  <h2 className="text-4xl text-active font-medium">
+                    No Order Data
+                  </h2>
+                </div>
+              ) : (
+                <table className="w-full">
+                  <thead className="h-[35px]">
+                    <tr>
+                      {ordersColumns &&
+                        ordersColumns.map((head, i) => (
+                          <th
+                            key={i}
+                            className="text-left text-gray-700 text-sm font-semibold leading-[18px] pb-2"
+                          >
+                            {head.header}
+                          </th>
+                        ))}
+                    </tr>
+                  </thead>
+                  <tbody className="w-full">
+                    {tableActions &&
+                      tableActions.map((row, i) => (
+                        <tr
+                          key={i}
+                          className="text-sm leading-5 w-full even:bg-gray-200"
+                        >
+                          {ordersColumns?.map((col, i) => (
+                            <td
+                              key={i}
+                              className="first:text-left text-sm text-darkColor font-medium text-center py-2"
+                            >
+                              {row[col.field]}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              )}
+            </>
+          )}
         </div>
       </div>
     </main>
