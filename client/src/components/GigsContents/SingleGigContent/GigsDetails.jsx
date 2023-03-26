@@ -4,6 +4,7 @@ import { BsStarFill } from "react-icons/bs";
 import Slides from "../../Slides/Slides";
 import Avatar from "../../../assets/icons/avatar.jpg";
 import useAuthStore from "../../../stores";
+import ReactStars from "react-rating-stars-component";
 
 const GigsDetails = ({ data }) => {
   const { authUser } = useAuthStore();
@@ -29,10 +30,13 @@ const GigsDetails = ({ data }) => {
           <span>{authUser?.username}</span>
         </div>
         {!isNaN(data?.totalStars / data?.starNumber) && (
-          <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold px-4">
-            <span>
-              <BsStarFill />
-            </span>
+          <p className="flex items-center justify-start gap-1 text-yellow-400 text-lg font-semibold px-4">
+            <ReactStars
+              count={5}
+              value={Math.round(data?.totalStars / data?.starNumber)}
+              size={24}
+              activeColor="#ffd700"
+            />
             <span>{Math.round(data?.totalStars / data?.starNumber)}</span>
           </p>
         )}
