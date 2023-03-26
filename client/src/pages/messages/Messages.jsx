@@ -6,6 +6,7 @@ import { messageColumns, messageTableData } from "../../data/data";
 import requests from "../../libs/request";
 import useAuthStore from "../../stores";
 import loader from "../../assets/icons/loader.svg";
+import moment from "moment";
 
 const Messages = () => {
   const { authUser } = useAuthStore();
