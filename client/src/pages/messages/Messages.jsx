@@ -57,8 +57,8 @@ const Messages = () => {
           (!authUser.isSeller && !item?.readByBuyer && "bg-slate-100")
         }`}
       >
-        {((currentUser.isSeller && !c.readBySeller) ||
-          (!currentUser.isSeller && !c.readByBuyer)) && (
+        {((authUser.isSeller && !item.readBySeller) ||
+          (!authUser.isSeller && !item.readByBuyer)) && (
           <button className="bg-primary/80 hover:bg-primary text-white w-fit py-2 px-2 text-sm rounded">
             Mark as Read
           </button>
