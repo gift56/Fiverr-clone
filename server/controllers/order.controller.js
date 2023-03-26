@@ -46,6 +46,8 @@ export const createOrder = async (req, res, next) => {
       price: gig.price,
       payment_intent: "temporary",
     });
+    await newOrder.save();
+    res.status(200).send("Successful");
   } catch (err) {
     next(err);
   }
