@@ -26,8 +26,6 @@ const Gigs = () => {
       ).then((res) => res.data),
   });
 
-  console.log(data?.length);
-
   useEffect(() => {
     refetch();
   }, [sort]);
