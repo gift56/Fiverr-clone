@@ -57,9 +57,12 @@ const Messages = () => {
           (!authUser.isSeller && !item?.readByBuyer && "bg-slate-100")
         }`}
       >
-        <button className="bg-primary/80 hover:bg-primary text-white w-fit py-2 px-2 text-sm rounded">
-          Mark as Read
-        </button>
+        {((currentUser.isSeller && !c.readBySeller) ||
+          (!currentUser.isSeller && !c.readByBuyer)) && (
+          <button className="bg-primary/80 hover:bg-primary text-white w-fit py-2 px-2 text-sm rounded">
+            Mark as Read
+          </button>
+        )}
       </Link>
     ),
   }));
