@@ -71,7 +71,7 @@ const GigsDetails = ({ data }) => {
         </h2>
         <div className="flex items-start justify-start gap-3 w-full">
           <img
-            src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d17126381eb48afcee047939cfc4de7c-1558258572050/9f862fd8-b1e4-4b8f-b857-6984b31e635c.jpg"
+            src={data?.cover}
             alt=""
             className="w-20 h-20 border rounded-full"
           />
@@ -79,7 +79,7 @@ const GigsDetails = ({ data }) => {
             <h4 className="text-base font-bold text-darkColor">John doe</h4>
             <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold w-full">
               {[0, 1, 2, 3, 4].map((item, i) => (
-                <span>
+                <span key={i}>
                   <BsStarFill />
                 </span>
               ))}
@@ -115,7 +115,7 @@ const GigsDetails = ({ data }) => {
                 <span className="text-gray-400 text-sm font-normal">
                   Member since
                 </span>
-                <h2 className="text-darkColor font-medium">Mar 2019</h2>
+                <h2 className="text-darkColor font-medium">Mar 2023</h2>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-gray-400 text-sm font-normal">
