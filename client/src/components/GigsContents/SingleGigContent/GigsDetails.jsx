@@ -4,10 +4,10 @@ import { BsStarFill } from "react-icons/bs";
 import Slides from "../../Slides/Slides";
 import Avatar from "../../../assets/icons/avatar.jpg";
 import useAuthStore from "../../../stores";
-import ReactStars from "react-rating-stars-component";
 
 const GigsDetails = ({ data }) => {
   const { authUser } = useAuthStore();
+
   return (
     <div className="w-full flex items-start justify-start gap-3 flex-col">
       <div className="flex items-center justify-start gap-2 text-gray-500 text-sm font-medium">
@@ -30,15 +30,16 @@ const GigsDetails = ({ data }) => {
           <span>{authUser?.username}</span>
         </div>
         {!isNaN(data?.totalStars / data?.starNumber) && (
-          <p className="flex items-center justify-start gap-1 text-yellow-400 text-lg font-semibold px-4">
-            <ReactStars
-              count={5}
-              value={Math.round(data?.totalStars / data?.starNumber)}
-              size={24}
-              activeColor="#ffd700"
-            />
-            <span>{Math.round(data?.totalStars / data?.starNumber)}</span>
-          </p>
+          <div className="flex items-center justify-start gap-1 text-yellow-400 text-lg font-semibold px-4">
+            {Array(Math.round(data.totalStars / data.starNumber))
+              .fill()
+              .map((item, i) => (
+                <span key={i}>
+                  <BsStarFill />
+                </span>
+              ))}
+            <span>{starNub}</span>
+          </div>
         )}
       </div>
       <div className="w-[90%]">
@@ -75,14 +76,16 @@ const GigsDetails = ({ data }) => {
           />
           <div className="flex flex-col items-start justify-start gap-2">
             <h4 className="text-base font-bold text-darkColor">John Willson</h4>
-            <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold w-full">
-              {[0, 1, 2, 3, 4].map((item, i) => (
-                <span key={i}>
-                  <BsStarFill />
-                </span>
-              ))}
-              {Math.round(data.totalStars / data.starNumber)}
-            </p>
+            <div className="flex items-center justify-start gap-1 text-yellow-400 text-lg font-semibold px-4">
+              {Array(Math.round(data.totalStars / data.starNumber))
+                .fill()
+                .map((item, i) => (
+                  <span key={i}>
+                    <BsStarFill />
+                  </span>
+                ))}
+              <span>{Math.round(data?.totalStars / data?.starNumber)}</span>
+            </div>
             <button className="outline-none text-sm font-medium hover:bg-gray-400 hover:text-white transition-all duration-300 border border-gray-400 w-fit py-2 px-4 rounded">
               Contact Me
             </button>
