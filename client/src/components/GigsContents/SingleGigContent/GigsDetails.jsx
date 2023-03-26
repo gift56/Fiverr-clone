@@ -12,6 +12,7 @@ const GigsDetails = ({ data }) => {
     "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/202533806/original/1d22ff320f7486c75b23760e9fd074ad18b771e0/create-modern-responsive-html-landing-page.png",
     "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/3a211b4709ad773709265d95262c7b37-1648487716/screencapture-ndaya-ci-coming-soon-en-2022-03-28-19_34_55%20(1)/create-modern-responsive-html-landing-page.png",
   ];
+  console.log(data);
   return (
     <div className="w-full flex items-start justify-start gap-3 flex-col">
       <div className="flex items-center justify-start gap-2 text-gray-500 text-sm font-medium">
@@ -19,10 +20,10 @@ const GigsDetails = ({ data }) => {
         <span>
           <BiChevronRight />
         </span>
-        <span className="text-active">Web Development</span>
+        <span className="text-active capitalize">{data?.cat}</span>
       </div>
       <h1 className="text-3xl font-bold text-darkColor/90 max-w-[790px]">
-        I will create a minimalist creative business logo design
+        {data?.title}
       </h1>
       <div className="flex items-center justify-start gap-3 w-full">
         <div className="flex items-center justify-start gap-3">
