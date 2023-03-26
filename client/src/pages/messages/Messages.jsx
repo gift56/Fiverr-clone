@@ -46,14 +46,15 @@ const Messages = () => {
       </p>
     ),
     lastMessage: (
-      <div
+      <Link
+        to={`/messages/${item.id}`}
         className={`w-full flex items-center justify-start text-darkColor/70 border-x border-white h-full py-5 ${
           (authUser?.isSeller && !item?.readBySeller) ||
           (!authUser.isSeller && !item?.readByBuyer && "bg-slate-100")
         }`}
       >
         {item?.lastMessage?.substring(0, 100)}...
-      </div>
+      </Link>
     ),
     date: (
       <p
