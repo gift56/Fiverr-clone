@@ -36,7 +36,7 @@ const Messages = () => {
           item.active === true ? "bg-slate-100" : ""
         }`}
       >
-        {item.desc.substring(0, 100)}...
+        {item?.lastMessage?.substring(0, 100)}...
       </Link>
     ),
     date: (
