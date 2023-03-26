@@ -1,5 +1,5 @@
 import React from "react";
-import { BiChevronRight, BiLike, BiDislike } from "react-icons/bi";
+import { BiChevronRight} from "react-icons/bi";
 import { BsStarFill } from "react-icons/bs";
 import Slides from "../../Slides/Slides";
 import Avatar from "../../../assets/icons/avatar.jpg";
@@ -130,11 +130,7 @@ const GigsDetails = ({ data }) => {
             </div>
           </div>
           <p className="text-darkColor text-sm font-medium border-t w-full pt-4 pr-4">
-            My name is Abdul Majid Maqsood. Having an experience of more than 4
-            years in video editing, I led multiple projects by utilizing my
-            skills in various pro-level video editing software. I produce and
-            deliver exceptional content in line with clients' unique
-            requirements.
+            {authUser?.desc}
           </p>
         </div>
       </div>
