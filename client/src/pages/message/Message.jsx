@@ -1,9 +1,10 @@
 import React from "react";
 import { BiChevronRight } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { mesagesData } from "../../data/data";
 
 const Message = () => {
+  const { id } = useParams();
   return (
     <main className="py-40 pb-10">
       <div className="contain">
