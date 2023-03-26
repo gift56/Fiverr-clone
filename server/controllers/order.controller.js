@@ -42,6 +42,7 @@ export const createOrder = async (req, res, next) => {
       img: gig.cover,
       title: gig.title,
       buyerId: req.userId,
+      sellerId: gig.userId,
     });
   } catch (err) {
     next(err);
