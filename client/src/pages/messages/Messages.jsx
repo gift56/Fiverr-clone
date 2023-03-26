@@ -31,9 +31,6 @@ const Messages = () => {
     mutation.mutate(id);
   };
 
-  console.log(data);
-  console.log(authUser);
-
   const tableActions = data?.map((item, i) => ({
     buyer: (
       <p
