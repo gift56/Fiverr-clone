@@ -2,9 +2,11 @@ import React from "react";
 import GigsDetails from "../../components/GigsContents/SingleGigContent/GigsDetails";
 import GigsOrder from "../../components/GigsContents/SingleGigContent/GigsOrder";
 import { useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 
 const Gig = () => {
   const { id } = useParams();
+
   return (
     <main className="py-40">
       <div className="contain">
