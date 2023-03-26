@@ -43,6 +43,7 @@ export const createOrder = async (req, res, next) => {
       title: gig.title,
       buyerId: req.userId,
       sellerId: gig.userId,
+      price: gig.price,
     });
   } catch (err) {
     next(err);
