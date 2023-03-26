@@ -6,7 +6,7 @@ const requests = {
   reviews: "/api/reviews",
   users: "/api/user",
   orders: "/api/orders",
-  conversations: "/api/conversations",
+  conversations: "/api/conversation",
 };
 
 export default requests;
