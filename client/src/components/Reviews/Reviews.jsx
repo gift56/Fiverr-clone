@@ -147,7 +147,7 @@ const Reviews = ({ gigId }) => {
             type="submit"
             className="outline-none bg-primary/80 hover:bg-primary w-fit px-5 py-2 rounded cursor-pointer text-white transition-all duration-300"
           >
-            {isLoading ? (
+            {loading ? (
               <div className="flex items-center justify-center">
                 <img src={loader} alt="/" className="w-[40px]" />
               </div>
