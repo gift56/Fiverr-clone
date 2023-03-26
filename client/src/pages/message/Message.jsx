@@ -8,6 +8,7 @@ import requests from "../../libs/request";
 import useAuthStore from "../../stores";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import loader from "../../assets/icons/loader.svg";
 
 const Message = () => {
   const { id } = useParams();
