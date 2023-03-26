@@ -110,7 +110,7 @@ const Reviews = ({ gigId }) => {
             <div className="flex items-end w-full justify-between gap-4">
               <textarea
                 placeholder="Send your review"
-                className={`w-full border px-4 py-2 outline-none rounded-md h-[90px] resize-none focus:border-primary ${
+                className={`w-full border px-4 py-2 outline-none rounded-md h-[120px] resize-none focus:border-primary ${
                   errors.desc && touched.desc ? "border-red-500" : ""
                 }`}
                 name="desc"
@@ -134,7 +134,7 @@ const Reviews = ({ gigId }) => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.star}
-                  className={`border outline-none cursor-pointer px-2 rounded focus:border-primary text-gray-400 ${
+                  className={`border outline-none cursor-pointer px-4 rounded focus:border-primary text-gray-400  h-10 ${
                     errors.star && touched.star ? "border-red-500" : ""
                   }`}
                 >
