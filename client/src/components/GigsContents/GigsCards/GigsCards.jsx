@@ -14,8 +14,6 @@ const GigsCards = ({ item }) => {
     }
   };
 
-  console.log(authUser);
-
   return (
     <Link
       to={`/gigs/${item._id}`}
