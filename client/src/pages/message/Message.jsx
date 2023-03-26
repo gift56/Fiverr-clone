@@ -2,9 +2,11 @@ import React from "react";
 import { BiChevronRight } from "react-icons/bi";
 import { Link, useParams } from "react-router-dom";
 import { mesagesData } from "../../data/data";
+import useAuthStore from "../../stores";
 
 const Message = () => {
   const { id } = useParams();
+  const { authUser } = useAuthStore();
   return (
     <main className="py-40 pb-10">
       <div className="contain">
