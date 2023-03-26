@@ -45,7 +45,7 @@ const Messages = () => {
           item.active === true ? "bg-slate-100" : ""
         }`}
       >
-        {item.date}
+        {moment(item.updatedAt).fromNow()}
       </p>
     ),
     action: (
