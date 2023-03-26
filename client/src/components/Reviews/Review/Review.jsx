@@ -1,30 +1,38 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { BiLike, BiDislike } from "react-icons/bi";
 import { BsStarFill } from "react-icons/bs";
 import Avatar from "../../../assets/icons/avatar.jpg";
-import useAuthStore from "../../../stores";
+import { Axios } from "../../../config";
 
 const Review = ({ item }) => {
-  const { authUser } = useAuthStore();
+  const { isLoading, error, data } = useQuery({
+    queryKey: [item.userId],
+    queryFn: () =>
+      Axios.get(`/api/user/${item.userId}`).then((res) => {
+        return res.data;
+      }),
+  });
 
+  console.log(data);
   return (
     <div className="w-full flex flex-col gap-4 items-start justify-start border-t last:border-b last:pb-7 pt-7 ">
       <div className="flex items-start justify-start gap-4">
         <div className="w-10 h-10 border bg-gray-300 rounded-full flex items-center justify-center text-base text-gray-500 uppercase font-semibold">
           <img
-            src={item.img || Avatar}
-            alt={item.username}
+            src={data?.img || Avatar}
+            alt={data?.username}
             className="w-full h-full object-cover rounded-full"
           />
         </div>
         <div className="flex items-start justify-start flex-col gap-4">
           <div className="flex items-start justify-start gap-1 flex-col">
             <h2 className="text-darkColor font-bold lowercase">
-              {authUser?.username}
+              {data?.username}
             </h2>
             <div className="flex items-center justify-start gap-2">
               <span className="text-sm font-medium text-gray-500">
-                {authUser?.country}
+                {data?.country}
               </span>
             </div>
           </div>

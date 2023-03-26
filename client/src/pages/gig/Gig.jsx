@@ -31,7 +31,7 @@ const Gig = () => {
         ) : (
           <div className="w-full flex items-start justify-between gap-6">
             <div className="w-[70%]">
-              <GigsDetails data={data} id={id} />
+              <GigsDetails data={data} gigId={id} />
             </div>
             <div className="w-[30%] sticky top-40">
               <GigsOrder data={data} />
