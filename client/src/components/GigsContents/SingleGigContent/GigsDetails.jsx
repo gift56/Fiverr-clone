@@ -71,7 +71,7 @@ const GigsDetails = ({ data, id }) => {
         </h2>
         <div className="flex items-start justify-start gap-3 w-full">
           <img
-            src={authUser?.img}
+            src={authUser?.img|| Avatar}
             alt=""
             className="w-20 h-20 border rounded-full"
           />
