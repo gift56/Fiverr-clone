@@ -4,11 +4,6 @@ import { BsCheckLg } from "react-icons/bs";
 import { TfiReload } from "react-icons/tfi";
 
 const GigsOrder = ({ data }) => {
-  const extra = [
-    "Up to 2 minutes running time",
-    "Color grading",
-    "Motion graphics",
-  ];
   return (
     <div className="w-full bg-white border p-4 flex flex-col gap-4 items-start justify-start rounded">
       <div className="flex items-center justify-between gap-2 w-full">
