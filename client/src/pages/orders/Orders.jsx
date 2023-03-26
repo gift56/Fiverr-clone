@@ -1,8 +1,21 @@
 import React from "react";
 import { MdMail } from "react-icons/md";
 import { ordersColumns, tableData } from "../../data/data";
+import { useQuery } from "@tanstack/react-query";
+import { Axios } from "../../config";
+import requests from "../../libs/request";
+import useAuthStore from "../../stores";
 
 const Orders = () => {
+  const { authUser } = useAuthStore();
+
+  const { isLoading, error, data, refetch } = useQuery({
+    queryKey: ["ordes"],
+    queryFn: () => Axios.get(`${requests.orders}`).then((res) => res.data),
+  });
+
+  console.log(data);
+
   const tableActions = tableData.map((item) => ({
     image: (
       <div className="w-14 h-10">
