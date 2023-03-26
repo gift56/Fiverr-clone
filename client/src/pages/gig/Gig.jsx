@@ -7,6 +7,7 @@ import { Axios } from "../../config";
 import loader from "../../assets/icons/loader.svg";
 import requests from "../../libs/request";
 
+
 const Gig = () => {
   const { id } = useParams();
 

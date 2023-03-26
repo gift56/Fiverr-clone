@@ -6,6 +6,7 @@ import Review from "./Review/Review";
 import loader from "../../assets/icons/loader.svg";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { toast } from "react-toastify";
 
 const Reviews = ({ gigId }) => {
   const [loading, setLoading] = useState(false);
@@ -29,16 +30,34 @@ const Reviews = ({ gigId }) => {
   });
 
   const onSubmit = async (payload, actions) => {
-    // setLoading(true);
-    // try {
-    //   const res = await Axios.post(requests.reviews, payload);
-    //   console.log(res.data);
-    //   setLoading(false);
-    // } catch (error) {
-    //   setLoading(false);
-    //   console.log(error);
-    // }
-    console.log(payload);
+    setLoading(true);
+    try {
+      const res = await Axios.post(requests.reviews, payload);
+      console.log(res.data);
+      toast.success("Thanks for your Review!😊", {
+        position: "bottom-right",
+        toastId: 1,
+        autoClose: 1500,
+      });
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+      if (error?.response?.data) {
+        toast.error(error?.response?.data, {
+          position: "bottom-right",
+          toastId: 1,
+          autoClose: 1500,
+        });
+      } else {
+        toast.error(error?.response?.message, {
+          position: "bottom-right",
+          toastId: 1,
+          autoClose: 1500,
+        });
+      }
+    }
+
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
   };
