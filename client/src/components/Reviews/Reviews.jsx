@@ -14,6 +14,7 @@ const Reviews = ({ gigId }) => {
         return res.data;
       }),
   });
+
   return (
     <div className="w-full flex items-start justify-start flex-col gap-4">
       {isLoading ? (
@@ -25,7 +26,22 @@ const Reviews = ({ gigId }) => {
           Error : Something went wrong
         </p>
       ) : (
-        data.map((item, i) => <Review key={i} />)
+        <>
+          {data?.length === 0 ? (
+            <div className="flex items-center justify-center mt-5 flex-col w-full">
+              <img
+                src="https://cdni.iconscout.com/illustration/premium/thumb/error-404-4344461-3613889.png"
+                alt="/"
+                className="w-[350px]"
+              />
+              <h2 className="text-4xl text-active font-medium">
+                Ooops! No Reviews
+              </h2>
+            </div>
+          ) : (
+            data.map((item, i) => <Review key={item?._id} item={item} />)
+          )}
+        </>
       )}
     </div>
   );
