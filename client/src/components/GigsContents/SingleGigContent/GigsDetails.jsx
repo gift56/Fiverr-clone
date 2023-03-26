@@ -1,5 +1,5 @@
 import React from "react";
-import { BiChevronRight} from "react-icons/bi";
+import { BiChevronRight } from "react-icons/bi";
 import { BsStarFill } from "react-icons/bs";
 import Slides from "../../Slides/Slides";
 import Avatar from "../../../assets/icons/avatar.jpg";
@@ -31,7 +31,7 @@ const GigsDetails = ({ data }) => {
           <span>{authUser?.username}</span>
         </div>
         {!isNaN(data?.totalStars / data?.starNumber) && (
-          <div className="flex items-center justify-start gap-1 text-yellow-400 text-lg font-semibold px-4">
+          <div className="flex items-center justify-start gap-1 text-yellow-400 text-lg font-semibold">
             {Array(Math.round(data.totalStars / data.starNumber))
               .fill()
               .map((item, i) => (
@@ -71,13 +71,15 @@ const GigsDetails = ({ data }) => {
         </h2>
         <div className="flex items-start justify-start gap-3 w-full">
           <img
-            src={data?.cover}
+            src={authUser?.img}
             alt=""
             className="w-20 h-20 border rounded-full"
           />
           <div className="flex flex-col items-start justify-start gap-2">
-            <h4 className="text-base font-bold text-darkColor">John Willson</h4>
-            <div className="flex items-center justify-start gap-1 text-yellow-400 text-lg font-semibold px-4">
+            <h4 className="text-base font-bold text-darkColor">
+              {authUser.username}
+            </h4>
+            <div className="flex items-center justify-start gap-1 text-yellow-400 text-lg font-semibold">
               {Array(Math.round(data?.totalStars / data?.starNumber))
                 .fill()
                 .map((item, i) => (
