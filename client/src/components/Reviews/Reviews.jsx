@@ -8,7 +8,6 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 
 const Reviews = ({ gigId }) => {
-  //   const queryClient = useQueryClient();
   const [loading, setLoading] = useState(false);
   const { isLoading, error, data } = useQuery({
     queryKey: ["reviews"],
@@ -20,7 +19,8 @@ const Reviews = ({ gigId }) => {
 
   const initialValues = {
     desc: "",
-    star: "1",
+    star: "",
+    gigId: gigId,
   };
 
   const validationSchema = yup.object({
@@ -88,7 +88,9 @@ const Reviews = ({ gigId }) => {
           <div className="flex items-end w-full justify-between gap-4">
             <textarea
               placeholder="Send your review"
-              className={`w-full border px-4 py-2 outline-none rounded-md h-[90px] resize-none focus:border-primary`}
+              className={`w-full border px-4 py-2 outline-none rounded-md h-[90px] resize-none focus:border-primary ${
+                errors.desc && touched.desc ? "border-red-500" : ""
+              }`}
               name="desc"
               value={values.desc}
               onChange={handleChange}
@@ -98,16 +100,23 @@ const Reviews = ({ gigId }) => {
               rows="10"
             ></textarea>
             <div className="flex items-start justify-start flex-col">
-              <label htmlFor="star">Rate</label>
+              <label
+                htmlFor="star"
+                className="text-sm font-medium cursor-pointer"
+              >
+                Rate
+              </label>
               <select
                 name="star"
                 id="star"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.star}
-                className="border outline-none cursor-pointer px-2 rounded focus:border-primary"
+                className={`border outline-none cursor-pointer px-2 rounded focus:border-primary text-gray-400 ${
+                  errors.star && touched.star ? "border-red-500" : ""
+                }`}
               >
-                {[1, 2, 3, 4, 5].map((item, i) => (
+                {["star", 1, 2, 3, 4, 5].map((item, i) => (
                   <option value={item} key={i}>
                     {item}
                   </option>
@@ -115,7 +124,10 @@ const Reviews = ({ gigId }) => {
               </select>
             </div>
           </div>
-          <button type="submit" className="outline-none bg-primary/80 hover:bg-primary w-fit px-5 py-2 rounded cursor-pointer text-white transition-all duration-300">
+          <button
+            type="submit"
+            className="outline-none bg-primary/80 hover:bg-primary w-fit px-5 py-2 rounded cursor-pointer text-white transition-all duration-300"
+          >
             {isLoading ? (
               <div className="flex items-center justify-center">
                 <img src={loader} alt="/" className="w-[40px]" />

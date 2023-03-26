@@ -17,7 +17,7 @@ const Gig = () => {
   });
 
   return (
-    <main className="py-40">
+    <main className="py-40 pb-10">
       <div className="contain">
         {isLoading ? (
           <div className="flex items-center justify-center w-full">
