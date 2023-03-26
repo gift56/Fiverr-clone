@@ -44,6 +44,7 @@ export const createOrder = async (req, res, next) => {
       buyerId: req.userId,
       sellerId: gig.userId,
       price: gig.price,
+      payment_intent: "temporary",
     });
   } catch (err) {
     next(err);
