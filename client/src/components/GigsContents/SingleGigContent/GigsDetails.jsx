@@ -2,8 +2,11 @@ import React from "react";
 import { BiChevronRight, BiLike, BiDislike } from "react-icons/bi";
 import { BsStarFill } from "react-icons/bs";
 import Slides from "../../Slides/Slides";
+import Avatar from "../../../assets/icons/avatar.jpg";
+import useAuthStore from "../../../stores";
 
-const GigsDetails = () => {
+const GigsDetails = ({ data }) => {
+  const { authUser } = useAuthStore();
   const adsImg = [
     "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/142042620/original/c4c5fd5fabae56ac74960aa47825b6b30bd8a1f3/design-minimalist-unique-business-logo.jpg",
     "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/202533806/original/1d22ff320f7486c75b23760e9fd074ad18b771e0/create-modern-responsive-html-landing-page.png",
@@ -24,11 +27,11 @@ const GigsDetails = () => {
       <div className="flex items-center justify-start gap-3 w-full">
         <div className="flex items-center justify-start gap-3">
           <img
-            src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d17126381eb48afcee047939cfc4de7c-1558258572050/9f862fd8-b1e4-4b8f-b857-6984b31e635c.jpg"
-            alt=""
+            src={authUser.img || Avatar}
+            alt={data?.username}
             className="w-8 h-8 border rounded-full"
           />
-          <span>John doe</span>
+          <span>{authUser?.username}</span>
         </div>
         <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold px-4">
           {[0, 1, 2, 3, 4].map((item, i) => (
