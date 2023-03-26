@@ -26,7 +26,7 @@ const Messages = () => {
           item.active === true ? "bg-slate-100" : ""
         }`}
       >
-        {item.buyer}
+        {authUser?.isSeller ? item.buyerId : item.sellerId}
       </p>
     ),
     lastMessage: (
