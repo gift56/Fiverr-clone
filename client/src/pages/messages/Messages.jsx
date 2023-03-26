@@ -18,7 +18,7 @@ const Messages = () => {
 
   console.log(data);
 
-  const tableActions = messageTableData.map((item, i) => ({
+  const tableActions = data.map((item, i) => ({
     buyer: (
       <p
         className={`py-5 h-full font-semibold ${
@@ -35,7 +35,7 @@ const Messages = () => {
           item.active === true ? "bg-slate-100" : ""
         }`}
       >
-        {item.lastMessage.substring(0, 100)}...
+        {item.desc.substring(0, 100)}...
       </Link>
     ),
     date: (
@@ -62,7 +62,7 @@ const Messages = () => {
   }));
 
   return (
-    <main className="py-40">
+    <main className="py-40 pb-10">
       <div className="contain">
         <div className="w-full flex flex-col items-start gap-5 justify-start">
           <h2 className="text-2xl font-bold">Messages</h2>
@@ -84,7 +84,7 @@ const Messages = () => {
                     className="w-[350px]"
                   />
                   <h2 className="text-4xl text-active font-medium">
-                    No Order Data
+                    No Messages!
                   </h2>
                 </div>
               ) : (
