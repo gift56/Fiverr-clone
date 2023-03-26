@@ -34,13 +34,8 @@ const Message = () => {
   const onSubmit = async (payload, actions) => {
     setLoading(true);
     try {
-      const res = await Axios.post(requests.reviews, payload);
+      const res = await Axios.post(requests.messages, payload);
       console.log(res.data);
-      toast.success("Thanks for your Review!😊", {
-        position: "bottom-right",
-        toastId: 1,
-        autoClose: 1500,
-      });
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -57,7 +52,6 @@ const Message = () => {
       validationSchema,
       onSubmit,
     });
-
 
   return (
     <main className="py-40 pb-10">
@@ -101,18 +95,26 @@ const Message = () => {
                 </div>
               ))}
             </div>
-            <div className="flex items-end w-full gap-8">
+            <form
+              onSubmit={handleSubmit}
+              className="flex items-end w-full gap-8"
+            >
               <textarea
-                name="message"
+                name="desc"
                 placeholder="Reply a message"
                 cols="30"
                 rows="10"
-                className="border h-[100px] w-[80%] rounded-md resize-none p-2 text-sm font-medium focus:border-2 focus:border-primary outline-none"
+                className={`border h-[100px] w-[80%] rounded-md resize-none p-2 text-sm font-medium focus:border-primary outline-none ${
+                  errors.desc && touched.desc ? "border-red-500" : ""
+                }`}
               ></textarea>
-              <button className="bg-primary/80 hover:bg-primary text-white w-fit py-2 px-6 text-sm rounded">
+              <button
+                type="submit"
+                className="bg-primary/80 hover:bg-primary text-white w-fit py-2 px-6 text-sm rounded"
+              >
                 Send
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
