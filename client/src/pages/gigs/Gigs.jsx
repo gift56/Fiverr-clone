@@ -145,7 +145,9 @@ const Gigs = () => {
                       alt="/"
                       className="w-[350px]"
                     />
-                    <h2 className="text-4xl text-active font-medium">No Result For Selected Budget</h2>
+                    <h2 className="text-4xl text-active font-medium">
+                      No Result For Selected Budget
+                    </h2>
                   </div>
                 ) : (
                   data?.map((item) => <GigsCards key={item._id} item={item} />)

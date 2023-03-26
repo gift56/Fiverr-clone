@@ -3,7 +3,8 @@ const requests = {
   register: "/api/auth/register",
   logout: "/api/auth/logout",
   gigs: "/api/gigs",
-  reviews:"/api/reviews"
+  reviews: "/api/reviews",
+  users: "/api/user",
 };
 
 export default requests;
