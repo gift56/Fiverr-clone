@@ -127,6 +127,9 @@ const Message = () => {
             >
               <textarea
                 name="desc"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.desc}
                 placeholder="Reply a message"
                 cols="30"
                 rows="10"
