@@ -10,7 +10,7 @@ import requests from "../../libs/request";
 const Gig = () => {
   const { id } = useParams();
 
-  const { isLoading, error, data, refetch } = useQuery({
+  const { isLoading, error, data } = useQuery({
     queryKey: ["gig"],
     queryFn: () =>
       Axios.get(`${requests.gigs}/single/${id}`).then((res) => res.data),
@@ -30,10 +30,10 @@ const Gig = () => {
         ) : (
           <div className="w-full flex items-start justify-between gap-6">
             <div className="w-[70%]">
-              <GigsDetails />
+              <GigsDetails data={data} />
             </div>
             <div className="w-[30%] sticky top-40">
-              <GigsOrder />
+              <GigsOrder data={data} />
             </div>
           </div>
         )}
