@@ -34,24 +34,24 @@ const GigsDetails = ({ data }) => {
           />
           <span>{authUser?.username}</span>
         </div>
-        <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold px-4">
-          {[0, 1, 2, 3, 4].map((item, i) => (
+        {!isNaN(data?.totalStars / data?.starNumber) && (
+          <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold px-4">
             <span>
               <BsStarFill />
             </span>
-          ))}
-          5.0
-        </p>
+            <span>{Math.round(data?.totalStars / data?.starNumber)}</span>
+          </p>
+        )}
       </div>
       <div className="w-full">
         <Slides rowId="4" distance={750}>
-          {adsImg.map((item, i) => (
+          {data.images.map((item, i) => (
             <div
               key={i}
-              className="relative inline-block cursor-pointer w-full mx-2 shadow-box"
+              className="relative inline-block cursor-pointer w-full mx-4 shadow-box"
             >
-              <div className="w-full">
-                <img src={item} alt={item} />
+              <div className="w-full h-full">
+                <img src={item} alt={item} className="w-full h-full object-cover" />
               </div>
             </div>
           ))}
