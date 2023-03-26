@@ -24,7 +24,7 @@ const GigsDetails = ({ data, id }) => {
       <div className="flex items-center justify-start gap-3 w-full">
         <div className="flex items-center justify-start gap-3">
           <img
-            src={authUser.img || Avatar}
+            src={authUser?.img || Avatar}
             alt={data?.username}
             className="w-8 h-8 border rounded-full"
           />
@@ -32,7 +32,7 @@ const GigsDetails = ({ data, id }) => {
         </div>
         {!isNaN(data?.totalStars / data?.starNumber) && (
           <div className="flex items-center justify-start gap-1 text-yellow-400 text-lg font-semibold">
-            {Array(Math.round(data.totalStars / data.starNumber))
+            {Array(Math.round(data?.totalStars / data?.starNumber))
               .fill()
               .map((item, i) => (
                 <span key={i}>

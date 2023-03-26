@@ -49,6 +49,7 @@ const Navbar = () => {
         toastId: 1,
         autoClose: 1000,
       });
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
