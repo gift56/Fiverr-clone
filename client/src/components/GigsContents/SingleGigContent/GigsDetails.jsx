@@ -70,7 +70,7 @@ const GigsDetails = ({ data }) => {
             className="w-20 h-20 border rounded-full"
           />
           <div className="flex flex-col items-start justify-start gap-2">
-            <h4 className="text-base font-bold text-darkColor">John doe</h4>
+            <h4 className="text-base font-bold text-darkColor">John Willson</h4>
             <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold w-full">
               {[0, 1, 2, 3, 4].map((item, i) => (
                 <span key={i}>
