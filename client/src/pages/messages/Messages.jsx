@@ -1,8 +1,15 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { Link } from "react-router-dom";
 import { messageColumns, messageTableData } from "../../data/data";
 
 const Messages = () => {
+  const { isLoading, error, data } = useQuery({
+    queryKey: ["orders"],
+    queryFn: () => Axios.get(`${requests.orders}`).then((res) => res.data),
+  });
+
+
   const tableActions = messageTableData.map((item, i) => ({
     buyer: (
       <p

@@ -1,6 +1,6 @@
 import React from "react";
 import { MdMail } from "react-icons/md";
-import { ordersColumns, tableData } from "../../data/data";
+import { ordersColumns } from "../../data/data";
 import { useQuery } from "@tanstack/react-query";
 import { Axios } from "../../config";
 import requests from "../../libs/request";
