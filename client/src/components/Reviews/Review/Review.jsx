@@ -14,7 +14,6 @@ const Review = ({ item }) => {
       }),
   });
 
-  console.log(data);
   return (
     <div className="w-full flex flex-col gap-4 items-start justify-start border-t last:border-b last:pb-7 pt-7 ">
       <div className="flex items-start justify-start gap-4">
