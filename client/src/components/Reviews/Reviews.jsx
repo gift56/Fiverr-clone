@@ -1,12 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useState } from "react";
 import { Axios } from "../../config";
 import requests from "../../libs/request";
 import Review from "./Review/Review";
 import loader from "../../assets/icons/loader.svg";
+import { useFormik } from "formik";
+import * as yup from "yup";
 
 const Reviews = ({ gigId }) => {
   //   const queryClient = useQueryClient();
+  const [loading, setLoading] = useState(false);
   const { isLoading, error, data } = useQuery({
     queryKey: ["reviews"],
     queryFn: () =>
@@ -14,6 +17,38 @@ const Reviews = ({ gigId }) => {
         return res.data;
       }),
   });
+
+  const initialValues = {
+    desc: "",
+    star: "1",
+  };
+
+  const validationSchema = yup.object({
+    desc: yup.string().required("Required"),
+    star: yup.string().required("Required"),
+  });
+
+  const onSubmit = async (payload, actions) => {
+    // setLoading(true);
+    // try {
+    //   const res = await Axios.post(requests.reviews, payload);
+    //   console.log(res.data);
+    //   setLoading(false);
+    // } catch (error) {
+    //   setLoading(false);
+    //   console.log(error);
+    // }
+    console.log(payload);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    actions.resetForm();
+  };
+
+  const { handleChange, values, handleBlur, handleSubmit, errors, touched } =
+    useFormik({
+      initialValues,
+      validationSchema,
+      onSubmit,
+    });
 
   return (
     <div className="w-full flex items-start justify-start flex-col gap-4">
@@ -43,6 +78,54 @@ const Reviews = ({ gigId }) => {
           )}
         </>
       )}
+      <div className="w-full flex flex-col items-start justify-start gap-4 mt-4 border-t pt-3">
+        <h3 className="text-active text-xl font-semibold">Add a review</h3>
+        <form
+          action=""
+          className="flex items-start flex-col gap-2 justify-start w-full"
+          onSubmit={handleSubmit}
+        >
+          <div className="flex items-end w-full justify-between gap-4">
+            <textarea
+              placeholder="Send your review"
+              className={`w-full border px-4 py-2 outline-none rounded-md h-[90px] resize-none focus:border-primary`}
+              name="desc"
+              value={values.desc}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              id=""
+              cols="30"
+              rows="10"
+            ></textarea>
+            <div className="flex items-start justify-start flex-col">
+              <label htmlFor="star">Rate</label>
+              <select
+                name="star"
+                id="star"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.star}
+                className="border outline-none cursor-pointer px-2 rounded focus:border-primary"
+              >
+                {[1, 2, 3, 4, 5].map((item, i) => (
+                  <option value={item} key={i}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <button type="submit" className="outline-none bg-primary/80 hover:bg-primary w-fit px-5 py-2 rounded cursor-pointer text-white transition-all duration-300">
+            {isLoading ? (
+              <div className="flex items-center justify-center">
+                <img src={loader} alt="/" className="w-[40px]" />
+              </div>
+            ) : (
+              "Send"
+            )}
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
