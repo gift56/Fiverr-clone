@@ -17,13 +17,12 @@ const Messages = () => {
       Axios.get(`${requests.conversations}`).then((res) => res.data),
   });
 
-  console.log(data);
-
   const tableActions = data?.map((item, i) => ({
     buyer: (
       <p
         className={`py-5 h-full font-semibold ${
-          item.active === true ? "bg-slate-100" : ""
+          (authUser?.isSeller && !item?.readBySeller) ||
+          (!authUser.isSeller && !item?.readByBuyer && "bg-slate-100")
         }`}
       >
         {authUser?.isSeller ? item.buyerId : item.sellerId}
@@ -33,7 +32,8 @@ const Messages = () => {
       <Link
         to={`/messages/${i}`}
         className={`w-full flex items-center justify-start text-darkColor/70 border-x border-white h-full py-5 ${
-          item.active === true ? "bg-slate-100" : ""
+          (authUser?.isSeller && !item?.readBySeller) ||
+          (!authUser.isSeller && !item?.readByBuyer && "bg-slate-100")
         }`}
       >
         {item?.lastMessage?.substring(0, 100)}...
@@ -42,7 +42,8 @@ const Messages = () => {
     date: (
       <p
         className={`w-full flex items-center font-semibold text-darkColor/70 justify-start h-full py-5 border-r border-white ${
-          item.active === true ? "bg-slate-100" : ""
+          (authUser?.isSeller && !item?.readBySeller) ||
+          (!authUser.isSeller && !item?.readByBuyer && "bg-slate-100")
         }`}
       >
         {moment(item.updatedAt).fromNow()}
@@ -52,7 +53,8 @@ const Messages = () => {
       <Link
         to={`/messages/${i}`}
         className={`w-full flex items-start justify-start h-full py-3 ${
-          item.active === true ? "bg-slate-100" : ""
+          (authUser?.isSeller && !item?.readBySeller) ||
+          (!authUser.isSeller && !item?.readByBuyer && "bg-slate-100")
         }`}
       >
         <button className="bg-primary/80 hover:bg-primary text-white w-fit py-2 px-2 text-sm rounded">
