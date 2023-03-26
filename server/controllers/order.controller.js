@@ -35,7 +35,7 @@ import Gig from "../models/gig.model.js";
 
 export const createOrder = async (req, res, next) => {
   try {
-    const gig = Gig.findById(req.params.gigId);
+    const gig = await Gig.findById(req.params.gigId);
 
     const newOrder = new Order({
       gigId: gig._id,

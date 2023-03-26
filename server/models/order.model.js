@@ -32,7 +32,7 @@ const OrderSchema = new Schema(
       default: false,
     },
     payment_intent: {
-      type: Boolean,
+      type: String,
       default: false,
     },
   },
