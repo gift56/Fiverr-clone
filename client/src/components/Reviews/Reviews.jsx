@@ -1,5 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Axios } from "../../config";
 import requests from "../../libs/request";
 import Review from "./Review/Review";
@@ -7,8 +7,10 @@ import loader from "../../assets/icons/loader.svg";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { toast } from "react-toastify";
+import useAuthStore from "../../stores";
 
 const Reviews = ({ gigId }) => {
+  const { authUser } = useAuthStore();
   const [loading, setLoading] = useState(false);
   const { isLoading, error, data } = useQuery({
     queryKey: ["reviews"],
@@ -97,6 +99,7 @@ const Reviews = ({ gigId }) => {
           )}
         </>
       )}
+      {}
       <div className="w-full flex flex-col items-start justify-start gap-4 mt-4 border-t pt-3">
         <h3 className="text-active text-xl font-semibold">Add a review</h3>
         <form
