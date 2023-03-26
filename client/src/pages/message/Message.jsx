@@ -33,15 +33,15 @@ const Message = () => {
 
   const onSubmit = async (payload, actions) => {
     setLoading(true);
-    try {
-      const res = await Axios.post(requests.messages, payload);
-      console.log(res.data);
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-      console.log(error);
-    }
-
+    // try {
+    //   const res = await Axios.post(requests.messages, payload);
+    //   console.log(res.data);
+    //   setLoading(false);
+    // } catch (error) {
+    //   setLoading(false);
+    //   console.log(error);
+    // }
+    console.log(payload);
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
   };
@@ -88,9 +88,9 @@ const Message = () => {
                   </div>
                 ) : (
                   <div className="h-[500px] overflow-auto border p-4 rounded-md flex flex-col gap-4 w-full">
-                    {mesagesData.map((item, i) => (
+                    {data.map((item, i) => (
                       <div
-                        key={i}
+                        key={item.id}
                         className={`flex items-start gap-5 max-w-[600px] ${
                           item.owner === true ? "self-end flex-row-reverse" : ""
                         }`}
@@ -107,13 +107,7 @@ const Message = () => {
                               : "bg-gray-200 rounded-tl-[0]"
                           }`}
                         >
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Perspiciatis beatae aperiam cupiditate aliquid
-                          reprehenderit voluptatem qui asperiores illo atque
-                          suscipit odio, alias doloribus repellat voluptates
-                          nesciunt distinctio! Tempora labore, voluptate hic
-                          repellat ad deserunt alias earum recusandae nulla
-                          ullam repellendus.
+                          {item.desc}
                         </p>
                       </div>
                     ))}
@@ -141,7 +135,13 @@ const Message = () => {
                 type="submit"
                 className="bg-primary/80 hover:bg-primary text-white w-fit py-2 px-6 text-sm rounded"
               >
-                Send
+                {loading ? (
+                  <div className="flex items-center justify-center">
+                    <img src={loader} alt="/" className="w-[40px]" />
+                  </div>
+                ) : (
+                  "Send"
+                )}
               </button>
             </form>
           </div>
