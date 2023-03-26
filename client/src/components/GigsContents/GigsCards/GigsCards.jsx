@@ -14,6 +14,8 @@ const GigsCards = ({ item }) => {
     }
   };
 
+  console.log(authUser);
+
   return (
     <Link
       to={`/gigs/${item._id}`}
@@ -34,8 +36,10 @@ const GigsCards = ({ item }) => {
             />
           </div>
           <div className="flex flex-col items-start justify-start">
-            <h2 className="text-sm font-medium">{item.username}</h2>
-            <p className="text-sm font-normal text-gray-400">{item.rate}</p>
+            <h2 className="text-sm font-medium">{authUser.username}</h2>
+            <p className="text-sm font-normal text-gray-400">
+              {authUser?.isSeller === true ? "Seller" : "Buyer"}
+            </p>
           </div>
         </div>
         <p className="text-darkColor text-base group-hover:text-primary transition-all duration-300 px-4">

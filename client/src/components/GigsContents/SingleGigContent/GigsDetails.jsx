@@ -43,7 +43,7 @@ const GigsDetails = ({ data }) => {
           </p>
         )}
       </div>
-      <div className="w-full">
+      <div className="w-[90%]">
         <Slides rowId="4" distance={750}>
           {data.images.map((item, i) => (
             <div
@@ -51,7 +51,11 @@ const GigsDetails = ({ data }) => {
               className="relative inline-block cursor-pointer w-full mx-4 shadow-box"
             >
               <div className="w-full h-full">
-                <img src={item} alt={item} className="w-full h-full object-cover" />
+                <img
+                  src={item}
+                  alt={item}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           ))}
@@ -59,13 +63,7 @@ const GigsDetails = ({ data }) => {
       </div>
       <h2 className="text-xl font-semibold text-gray-500">About This Gig</h2>
       <p className="text-base text-gray-700 max-w-[700px] font-normal">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae
-        facilis tempora, voluptatibus, enim labore vero ea dolorem quam magnam
-        numquam deleniti quidem reiciendis nulla beatae nobis quis nesciunt
-        neque unde itaque! Delectus nobis aliquam, vel est enim velit minus,
-        quidem odio eveniet consequuntur distinctio perferendis atque dolor cum,
-        explicabo error! Modi ullam enim, accusamus amet illo officia ab eveniet
-        molestiae quas sit. Optio nam aperiam et provident dignissimos vero rem.
+        {data?.desc}
       </p>
       <div className="flex flex-col gap-3 mt-5 w-full">
         <h2 className="text-xl font-semibold text-gray-500">
