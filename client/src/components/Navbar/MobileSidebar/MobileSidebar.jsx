@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef } from "react";
+import { BsCurrencyDollar } from "react-icons/bs";
 import { TfiWorld } from "react-icons/tfi";
 import { NavLink, useNavigate } from "react-router-dom";
 
@@ -38,13 +39,13 @@ const MobileSidebar = ({ show, setShow, setLoginModal }) => {
 
   return (
     <div
-      className={`w-full h-full bg-black/40 fixed top-0 z-40 left-0 transition-all duration-300 ${
+      className={`w-full h-full bg-black/40 fixed top-0 z-40 left-0 transition-all duration-500 ${
         show ? "flex" : "hidden"
       }`}
     >
       <div
         ref={showRef}
-        className={`flex flex-col gap-4 justify-start items-start w-[300px] bg-white absolute top-0 z-20 h-screen p-6 transition-all duration-300 ${
+        className={`flex flex-col gap-4 justify-start items-start w-[300px] bg-white absolute top-0 z-20 h-screen p-6 ${
           show ? "left-0" : "-left-[100vw]"
         }`}
       >
