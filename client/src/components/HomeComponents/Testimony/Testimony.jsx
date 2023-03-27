@@ -4,7 +4,7 @@ import { BsPlayFill } from "react-icons/bs";
 
 const Testimony = ({ item }) => {
   return (
-    <div className="relative inline-block cursor-pointer w-full mx-4 p-4 pt-0">
+    <div className="relative inline-block cursor-pointer w-full lg:mx-4 p-4 pt-0">
       <div className="w-full flex items-start lg:items-center flex-col lg:flex-row gap-7 justify-start">
         <div className="w-full lg:w-[40%] relative">
           <img src={userImg} alt={item.title} className="w-full rounded-md" />
