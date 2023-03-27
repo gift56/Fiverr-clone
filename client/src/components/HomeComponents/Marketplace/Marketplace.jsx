@@ -7,10 +7,10 @@ const Marketplace = () => {
     <section className="py-14 bg-white">
       <div className="contain">
         <div className="flex flex-col items-start justify-between w-full gap-9">
-          <h2 className="text-4xl font-bold text-darkColor">
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-darkColor">
             Explore the marketplace
           </h2>
-          <div className="w-full grid grid-cols-5 justify-center items-center gap-7 mt-6">
+          <div className="w-full grid grid-cols-3 md:grid-cols-5 justify-center items-center gap-7 mt-6">
             {marketsData.map((item, i) => (
               <Link
                 to="/"

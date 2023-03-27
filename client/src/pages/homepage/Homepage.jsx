@@ -21,8 +21,8 @@ const Homepage = () => {
         ))}
       </Slides>
       <Features />
-      {/*<Marketplace />
-      <Business />
+      <Marketplace />
+      {/*<Business />
       <Slides rowId="2" distance={1200}>
         {testimonyData.map((item, i) => (
           <Testimony item={item} key={i} />
