@@ -79,7 +79,7 @@ const Gigs = () => {
               <p className="text-base font-normal text-gray-500">Sort by:</p>
               <div className="flex items-center justify-start gap-2 cursor-pointer relative">
                 <div
-                  className="flex items-center justify-start gap-2 cursor-pointer relative px-2 h-[40px] rounded-md text-gray-500 border w-[45%]"
+                  className="flex items-center justify-start gap-2 cursor-pointer relative px-2 h-[40px] rounded-md text-gray-500 border w-[45%] md:w-fit"
                   onClick={() => setOpen((prev) => !prev)}
                 >
                   <p className="text-sm w-full">
