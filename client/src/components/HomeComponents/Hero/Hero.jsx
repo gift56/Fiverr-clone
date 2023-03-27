@@ -37,7 +37,7 @@ const Hero = () => {
             </div>
             <button
               type="submit"
-              className="bg-primary h-full lg:w-[150px] lg:rounded-tr-md lg:rounded-br-md outline-none absolute top-16 rounded-md w-full"
+              className="bg-primary h-full lg:w-[150px] outline-none absolute top-16 lg:relative lg:top-0 rounded-md lg:rounded-[0] lg:rounded-tr-md lg:rounded-br-md w-full"
             >
               Search
             </button>
