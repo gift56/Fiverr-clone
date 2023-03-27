@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import { BiChevronRight } from "react-icons/bi";
 import { Link, useParams } from "react-router-dom";
 import { Axios } from "../../config";
-import { mesagesData } from "../../data/data";
 import requests from "../../libs/request";
 import useAuthStore from "../../stores";
 import { useFormik } from "formik";
@@ -52,8 +51,6 @@ const Message = () => {
       validationSchema,
       onSubmit,
     });
-
-  console.log(data);
 
   return (
     <main className="py-40 pb-20">
