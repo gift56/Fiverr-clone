@@ -6,14 +6,33 @@ import { Axios } from "../../config";
 import requests from "../../libs/request";
 import useAuthStore from "../../stores";
 import loader from "../../assets/icons/loader.svg";
+import { useNavigate } from "react-router-dom";
 
 const Orders = () => {
   const { authUser } = useAuthStore();
+  const navigate = useNavigate();
 
   const { isLoading, error, data } = useQuery({
     queryKey: ["orders"],
     queryFn: () => Axios.get(`${requests.orders}`).then((res) => res.data),
   });
+
+  const handleContact = async (order) => {
+    const sellerId = order.sellerId;
+    const buyerId = order.buyerId;
+    const id = sellerId + buyerId;
+    try {
+      const res = await Axios.get(`${requests.conversations}/single/${id}`);
+      navigate(`/messages/${res.data.id}`);
+    } catch (err) {
+      if (err?.response?.status === 404) {
+        const res = await Axios.post(`${requests.conversations}/`, {
+          to: authUser.seller ? buyerId : sellerId,
+        });
+        navigate(`/messages/${res.data.id}`);
+      }
+    }
+  };
 
   const tableActions = data?.map((item) => ({
     image: (
@@ -34,30 +53,12 @@ const Orders = () => {
     actions: (
       <div
         className="w-8 h-8 cursor-pointer bg-blue-600 rounded-full flex items-center justify-center text-white"
-        onClick={() => alert(item.title)}
+        onClick={() => handleContact(item)}
       >
         <MdMail size={18} />
       </div>
     ),
   }));
-
-  const handleContact = async (order) => {
-    const sellerId = order.sellerId;
-    const buyerId = order.buyerId;
-    const id = sellerId + buyerId;
-
-    try {
-      const res = await Axios.get(`${requests.conversations}/single/${id}`);
-      navigate(`/messages/${res.data.id}`);
-    } catch (err) {
-      if (err.response.status === 404) {
-        const res = await Axios.post(`${requests.conversations}/`, {
-          to: authUser.seller ? buyerId : sellerId,
-        });
-        navigate(`/message/${res.data.id}`);
-      }
-    }
-  };
 
   return (
     <main className="py-40">
