@@ -14,7 +14,7 @@ const Homepage = () => {
   return (
     <main>
       <Hero />
-      <Clients />
+      {/* <Clients />
       <Slides rowId="1" distance={500} text="Popular professional services">
         {cards.map((item) => (
           <SingleCard key={item.id} item={item} />
@@ -32,7 +32,7 @@ const Homepage = () => {
         {projectsCards.map((item, i) => (
           <Projects item={item} key={i} />
         ))}
-      </Slides>
+      </Slides> */}
     </main>
   );
 };
