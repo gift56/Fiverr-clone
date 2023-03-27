@@ -13,7 +13,7 @@ const MobileFooter = () => {
   };
 
   return (
-    <div className="w-full flex items-start justify-start flex-col pt-5">
+    <div className="w-full flex sm:hidden items-start justify-start flex-col pt-5">
       {footerLinks.map((item, i) => (
         <div className="w-full rounded-lg py-2 flex flex-col gap-2">
           <div
