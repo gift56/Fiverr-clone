@@ -198,33 +198,14 @@ const Navbar = () => {
               active || pathname !== "/" ? "!text-gray-500" : "text-gray-200"
             }`}
           >
-            <span className="hover:border-b-2 cursor-pointer transition-[border] h-8 scrollbar-hide border-primary">
-              Graphics & Design
-            </span>
-            <span className="hover:border-b-2 cursor-pointer transition-[border] duration-100 h-8 scrollbar-hide border-primary">
-              Digital Marketing
-            </span>
-            <span className="hover:border-b-2 cursor-pointer transition-[border] duration-100 h-8 scrollbar-hide border-primary">
-              Writing & Translation
-            </span>
-            <span className="hover:border-b-2 cursor-pointer transition-[border] duration-100 h-8 scrollbar-hide border-primary">
-              Video & Animation
-            </span>
-            <span className="hover:border-b-2 cursor-pointer transition-[border] duration-100 h-8 scrollbar-hide border-primary">
-              Music & Audio
-            </span>
-            <span className="hover:border-b-2 cursor-pointer transition-[border] duration-100 h-8 scrollbar-hide border-primary">
-              Programming & Tech
-            </span>
-            <span className="hover:border-b-2 cursor-pointer transition-[border] duration-100 h-8 scrollbar-hide border-primary">
-              Business
-            </span>
-            <span className="hover:border-b-2 cursor-pointer transition-[border] duration-100 h-8 scrollbar-hide border-primary">
-              Lifestyle
-            </span>
-            <span className="hover:border-b-2 cursor-pointer transition-[border] duration-100 h-8 scrollbar-hide border-primary">
-              AI Services
-            </span>
+            {links.map((item, i) => (
+              <span
+                key={i}
+                className="hover:border-b-2 cursor-pointer transition-[border] h-8 scrollbar-hide border-primary mx-4 first:ml-0 lg:mx-0"
+              >
+                {item}
+              </span>
+            ))}
           </div>
         </div>
       </div>
