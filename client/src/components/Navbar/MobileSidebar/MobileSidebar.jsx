@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef } from "react";
+import { TfiWorld } from "react-icons/tfi";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const MobileSidebar = ({ show, setShow, setLoginModal }) => {
@@ -43,7 +44,7 @@ const MobileSidebar = ({ show, setShow, setLoginModal }) => {
     >
       <div
         ref={showRef}
-        className={`flex flex-col gap-4 justify-start items-start w-[300px] bg-white absolute top-0 z-20 h-screen p-6 ${
+        className={`flex flex-col gap-4 justify-start items-start w-[300px] bg-white absolute top-0 z-20 h-screen p-6 transition-all duration-300 ${
           show ? "left-0" : "-left-[100vw]"
         }`}
       >
@@ -74,6 +75,23 @@ const MobileSidebar = ({ show, setShow, setLoginModal }) => {
         <NavLink to="/" className={`text-base font-semibold text-gray-400`}>
           Fiverr Business
         </NavLink>
+        <div className="mt-5 border-t w-full flex items-start justify-start flex-col gap-4 pt-3">
+          <p className="cursor-pointer text-gray-400 text-base font-medium">
+            Home
+          </p>
+          <p className="cursor-pointer text-gray-400 text-base font-medium flex items-center justify-start gap-2">
+            English
+            <span>
+              <TfiWorld />
+            </span>
+          </p>
+          <p className="cursor-pointer text-gray-400 text-base font-medium flex items-center justify-start gap-2">
+            <span>
+              <BsCurrencyDollar />
+            </span>
+            USD
+          </p>
+        </div>
       </div>
     </div>
   );
