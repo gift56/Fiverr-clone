@@ -28,11 +28,15 @@ const Homepage = () => {
           <Testimony item={item} key={i} />
         ))}
       </Slides>
-      {/*<Slides rowId="3" distance={500} text="Get inspired with projects made by our freelancers">
+      <Slides
+        rowId="3"
+        distance={500}
+        text="Get inspired with projects made by our freelancers"
+      >
         {projectsCards.map((item, i) => (
           <Projects item={item} key={i} />
         ))}
-      </Slides> */}
+      </Slides>
     </main>
   );
 };
