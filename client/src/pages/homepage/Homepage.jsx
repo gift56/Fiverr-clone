@@ -13,7 +13,7 @@ import Projects from "../../components/HomeComponents/Projects/Projects";
 const Homepage = () => {
   return (
     <main>
-      {/* <Hero /> */}
+      <Hero />
       {/* <Clients />
       <Slides rowId="1" distance={500} text="Popular professional services">
         {cards.map((item) => (
