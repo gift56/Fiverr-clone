@@ -44,7 +44,7 @@ const Features = () => {
       <div className="contain">
         <div className="flex items-center justify-between w-full gap-4">
           <div className="flex-1 flex items-start justify-start flex-col gap-5">
-            <h2 className="text-4xl font-bold text-darkColor">
+            <h2 className="text-2xl lg:text-4xl font-bold text-darkColor">
               A whole world of freelance <br /> talent at your fingertips
             </h2>
             <div className="w-full flex items-start justify-start flex-col gap-5">
@@ -55,13 +55,15 @@ const Features = () => {
                 >
                   <div className="flex items-center justify-start gap-3">
                     <span className="text-darkColor">
-                      <BsCheckCircle size={25} />
+                      <BsCheckCircle className="sm:w-6 sm:h-6 w-4 h-4" />
                     </span>
-                    <h2 className="text-lg font-semibold text-darkColor">
+                    <h2 className="text-base sm:text-lg font-semibold text-darkColor">
                       {item.title}
                     </h2>
                   </div>
-                  <p className="max-w-[450px] text-base font-medium text-gray-500">{item.detail}</p>
+                  <p className="max-w-[450px] text-sm sm:text-base font-medium text-gray-500">
+                    {item.detail}
+                  </p>
                 </div>
               ))}
             </div>
