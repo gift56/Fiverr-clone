@@ -7,7 +7,7 @@ import requests from "../../../libs/request";
 import { useQuery } from "@tanstack/react-query";
 
 const GigsCards = ({ item }) => {
-  const { isLoading, error, data } = useQuery({
+  const { data } = useQuery({
     queryKey: [item.userId],
     queryFn: () =>
       Axios.get(`${requests.users}/${item?.userId}`).then((res) => {
