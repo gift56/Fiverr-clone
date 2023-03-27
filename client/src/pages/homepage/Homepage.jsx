@@ -14,8 +14,8 @@ const Homepage = () => {
   return (
     <main>
       <Hero />
-      {/* <Clients />
-      <Slides rowId="1" distance={500} text="Popular professional services">
+      <Clients />
+      {/* <Slides rowId="1" distance={500} text="Popular professional services">
         {cards.map((item) => (
           <SingleCard key={item.id} item={item} />
         ))}
