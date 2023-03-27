@@ -11,6 +11,7 @@ import { TbMan } from "react-icons/tb";
 import { TfiWorld } from "react-icons/tfi";
 import { Link } from "react-router-dom";
 import { footerLinks } from "../../data/data";
+import MobileFooter from "./MobileFooter/MobileFooter";
 
 const Footer = () => {
   const date = new Date();
@@ -65,6 +66,7 @@ const Footer = () => {
               </div>
             ))}
           </div>
+          <MobileFooter />
           <div className="w-full flex items-center justify-between border-t pt-5 flex-col gap-2 sm:flex-row sm:gap-0">
             <div className="flex items-center justify-start gap-4 flex-col md:flex-row">
               <div className="flex items-end justify-end select-none">

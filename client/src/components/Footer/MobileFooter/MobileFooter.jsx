@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { useState } from "react";
 
 const MobileFooter = () => {
-  return (
-    <div>MobileFooter</div>
-  )
-}
+  const [clicked, setClicked] = useState(null);
+  return <div>MobileFooter</div>;
+};
 
-export default MobileFooter
+export default MobileFooter;
