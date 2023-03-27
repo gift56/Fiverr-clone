@@ -100,7 +100,7 @@ const Login = ({ show, setShow }) => {
           initial={{ opacity: 0, y: "-150px" }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", duration: 1 }}
-          className="w-[406px] min-h-[450px] border border-[#F1F2F4] rounded-lg bg-white p-8 overflow-y-auto text-darkColor flex flex-col items-center relative"
+          className="w-[406px] min-h-[450px] border border-[#F1F2F4] rounded-lg bg-white p-4 md:p-8 overflow-y-auto text-darkColor flex flex-col items-center relative"
         >
           <h2 className="w-full text-center text-2xl font-bold">
             Sign In to Fiverr
