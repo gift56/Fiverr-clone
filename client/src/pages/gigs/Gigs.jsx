@@ -51,21 +51,21 @@ const Gigs = () => {
           <p className="text-base font-medium">
             Find a freelance Web development expert to build your Web website
           </p>
-          <div className="w-full flex items-center justify-between">
-            <div className="flex items-center justify-start gap-2">
+          <div className="w-full flex md:items-center justify-between flex-col md:flex-row gap-4">
+            <div className="flex md:items-center items-start justify-start gap-2 flex-col md:flex-row">
               <p className="text-base font-normal text-gray-500">Budget:</p>
-              <div className="flex items-center justify-start gap-2">
+              <div className="flex items-center justify-start gap-2 w-full">
                 <input
                   type="text"
                   ref={minRef}
                   placeholder="min"
-                  className="border w-[150px] outline-none px-2 h-[40px] rounded-md text-gray-500"
+                  className="border w-[50%] md:w-[150px] outline-none px-2 h-[40px] rounded-md text-gray-500"
                 />
                 <input
                   type="text"
                   placeholder="max"
                   ref={maxRef}
-                  className="border w-[150px] outline-none px-2 h-[40px] rounded-md text-gray-500"
+                  className="border w-[50%] md:w-[150px] outline-none px-2 h-[40px] rounded-md text-gray-500"
                 />
                 <button
                   onClick={apply}
@@ -75,14 +75,14 @@ const Gigs = () => {
                 </button>
               </div>
             </div>
-            <div className="flex items-center justify-end gap-2">
+            <div className="flex flex-col md:flex-row md:items-center justify-end gap-2">
               <p className="text-base font-normal text-gray-500">Sort by:</p>
               <div className="flex items-center justify-start gap-2 cursor-pointer relative">
                 <div
-                  className="flex items-center justify-start gap-2 cursor-pointer relative"
+                  className="flex items-center justify-start gap-2 cursor-pointer relative px-2 h-[40px] rounded-md text-gray-500 border w-[45%]"
                   onClick={() => setOpen((prev) => !prev)}
                 >
-                  <p className="text-sm">
+                  <p className="text-sm w-full">
                     {sort == "sales" ? "Best Selling" : "Newest"}
                   </p>
                   <span
