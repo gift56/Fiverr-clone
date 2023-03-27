@@ -17,7 +17,7 @@ const Hero = () => {
     },
   ];
   return (
-    <section className="w-full bg-[#1a1b1d] h-screen text-white lg:animate-bganimate bg-no-repeat bg-cover bg-top-4 pt-20">
+    <section className="w-full bg-[#1a1b1d] lg:bg-navbg h-screen text-white lg:animate-bganimate bg-no-repeat bg-cover bg-top-4 pt-20">
       <div className="contain flex flex-col items-start justify-center h-full">
         <div className="flex flex-col items-start justify-start gap-5 w-full">
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-semibold leading-[120%]">

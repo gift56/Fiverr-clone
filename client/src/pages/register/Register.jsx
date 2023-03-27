@@ -88,7 +88,7 @@ const Register = () => {
   }
 
   return (
-    <div className="py-40 pb-10">
+    <div className="py-24 lg:py-40 pb-10">
       <div className="contain">
         <div className="w-full lg:w-[75%] flex items-center justify-center py-10 mx-auto">
           <form
