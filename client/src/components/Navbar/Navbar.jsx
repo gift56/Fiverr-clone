@@ -88,13 +88,18 @@ const Navbar = () => {
     >
       <div className="contain">
         <div className="w-full flex items-center justify-between py-4">
-          <Link
-            to="/"
-            className="text-4xl select-none font-black tracking-tighter"
-          >
-            <span>fiverr</span>
-            <span className="text-primary">.</span>
-          </Link>
+          <div className="flex items-center gap-2">
+            <span className="text-darkColor">
+              <GiHamburgerMenu size={25} />
+            </span>
+            <Link
+              to="/"
+              className="text-4xl select-none font-black tracking-tighter"
+            >
+              <span>fiverr</span>
+              <span className="text-primary">.</span>
+            </Link>
+          </div>
           <nav className="flex items-center justify-end gap-7 font-medium text-base">
             <NavLink to="/" className="cursor-pointer hidden lg:flex">
               Fiverr Business
