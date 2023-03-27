@@ -20,7 +20,7 @@ const Hero = () => {
     <section className="w-full bg-[#1a1b1d] h-screen text-white lg:animate-bganimate bg-no-repeat bg-cover bg-top-4 pt-20">
       <div className="contain flex flex-col items-start justify-center h-full">
         <div className="flex flex-col lg:items-start items-center justify-center lg:justify-start gap-5 w-full">
-          <h2 className="text-4xl md:text-5xl font-semibold leading-[120%]">
+          <h2 className="text-2xl sm:text-4xl font-semibold leading-[120%]">
             Find the perfect <i className="font-light">freelance</i> <br />{" "}
             services for your business
           </h2>
