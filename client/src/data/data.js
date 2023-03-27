@@ -370,6 +370,7 @@ export const testimonyData = [
 ];
 export const footerLinks = [
   {
+    id:"cat",
     title: "Categories",
     links: [
       {
@@ -419,6 +420,7 @@ export const footerLinks = [
     ],
   },
   {
+    id:"abt",
     title: "About",
     links: [
       {
@@ -452,6 +454,7 @@ export const footerLinks = [
     ],
   },
   {
+    id:"sup",
     title: "Support",
     links: [
       {
@@ -473,6 +476,7 @@ export const footerLinks = [
     ],
   },
   {
+    id:"com",
     title: "Community",
     links: [
       {
@@ -522,6 +526,7 @@ export const footerLinks = [
     ],
   },
   {
+    id:"more",
     title: "More From Fiverr",
     links: [
       {
