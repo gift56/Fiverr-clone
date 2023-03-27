@@ -93,7 +93,7 @@ const Navbar = () => {
         <div className="w-full flex items-center justify-between py-4 relative">
           <MobileSidebar show={showLink} setShow={setShowLink} />
           <div className="flex items-center gap-2 h-full">
-            <span className="lg:hidden mt-1">
+            <span onClick={() => setShowLink(true)} className="lg:hidden mt-1">
               <FaBars size={25} />
             </span>
             <Link
