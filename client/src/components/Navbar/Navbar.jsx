@@ -18,7 +18,6 @@ const Navbar = () => {
   const [openDrop, setOpenDrop] = useState(false);
   const { pathname } = useLocation();
   const [loginModal, setLoginModal] = useState(false);
-
   const modalRef = useRef(null);
   useEffect(() => {
     const handleClickOutside = (event) => {
