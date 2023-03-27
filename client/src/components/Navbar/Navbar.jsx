@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import { Axios } from "../../config";
 import requests from "../../libs/request";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { FiChevronRight } from "react-icons/fi";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -206,6 +207,9 @@ const Navbar = () => {
                 {item}
               </span>
             ))}
+            <span>
+              <FiChevronRight />
+            </span>
           </div>
         </div>
       </div>
