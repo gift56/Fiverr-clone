@@ -10,8 +10,8 @@ const MobileFooter = ({ item, i }) => {
     }
     setClicked(index);
   };
-  
-  return <div className="pt-5">MobileFooter</div>;
+
+  return <div className="">MobileFooter</div>;
 };
 
 export default MobileFooter;

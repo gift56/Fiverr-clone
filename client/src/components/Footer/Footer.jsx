@@ -66,9 +66,11 @@ const Footer = () => {
               </div>
             ))}
           </div>
-          {footerLinks.map((item, i) => (
-            <MobileFooter item={item} key={i} />
-          ))}
+          <div className="w-full flex items-start justify-start flex-col gap-3 pt-5">
+            {footerLinks.map((item, i) => (
+              <MobileFooter item={item} key={i} i={i} />
+            ))}
+          </div>
           <div className="w-full flex items-center justify-between border-t pt-5 flex-col gap-2 sm:flex-row sm:gap-0">
             <div className="flex items-center justify-start gap-4 flex-col md:flex-row">
               <div className="flex items-end justify-end select-none">
