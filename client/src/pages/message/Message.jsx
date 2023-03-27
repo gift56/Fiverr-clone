@@ -53,6 +53,8 @@ const Message = () => {
       onSubmit,
     });
 
+  console.log(data);
+
   return (
     <main className="py-40 pb-20">
       <div className="contain">
@@ -92,7 +94,9 @@ const Message = () => {
                       <div
                         key={item._id}
                         className={`flex items-start gap-5 max-w-[600px] ${
-                          item.owner === true ? "self-end flex-row-reverse" : ""
+                          item.userId === authUser._id
+                            ? "self-end !flex-row-reverse"
+                            : ""
                         }`}
                       >
                         <img
@@ -102,7 +106,7 @@ const Message = () => {
                         />
                         <p
                           className={`text-sm p-4 rounded-2xl ${
-                            item.owner === true
+                            item.userId === authUser._id
                               ? "bg-blue-500 rounded-tr-[0] text-white"
                               : "bg-gray-200 rounded-tl-[0]"
                           }`}
@@ -133,11 +137,11 @@ const Message = () => {
               ></textarea>
               <button
                 type="submit"
-                className="bg-primary/80 hover:bg-primary text-white w-fit py-2 px-6 text-sm rounded"
+                className="bg-primary/80 hover:bg-primary text-white w-fit py-3 px-6 text-sm rounded"
               >
                 {loading ? (
                   <div className="flex items-center justify-center">
-                    <img src={loader} alt="/" className="w-[40px]" />
+                    <img src={loader} alt="/" className="w-[30px]" />
                   </div>
                 ) : (
                   "Send"
