@@ -90,7 +90,7 @@ const Register = () => {
   return (
     <div className="py-40 pb-10">
       <div className="contain">
-        <div className="w-[75%] flex items-center justify-center py-10 mx-auto">
+        <div className="w-full lg:w-[75%] flex items-center justify-center py-10 mx-auto">
           <form
             onSubmit={handleSubmit}
             className="flex items-start justify-start gap-8 w-full"
