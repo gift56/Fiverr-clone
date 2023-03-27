@@ -42,9 +42,9 @@ const Features = () => {
   return (
     <section className="bg-[#f1fdf7] py-14">
       <div className="contain">
-        <div className="flex items-center justify-between w-full gap-4">
+        <div className="flex lg:items-center flex-col items-start justify-start lg:flex-row lg:justify-between w-full gap-5">
           <div className="flex-1 flex items-start justify-start flex-col gap-5">
-            <h2 className="text-2xl lg:text-4xl font-bold text-darkColor">
+            <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-darkColor">
               A whole world of freelance <br /> talent at your fingertips
             </h2>
             <div className="w-full flex items-start justify-start flex-col gap-5">
@@ -61,7 +61,7 @@ const Features = () => {
                       {item.title}
                     </h2>
                   </div>
-                  <p className="max-w-[450px] text-sm sm:text-base font-medium text-gray-500">
+                  <p className="w-full lg:max-w-[450px] text-sm sm:text-base font-medium text-gray-500">
                     {item.detail}
                   </p>
                 </div>
@@ -78,13 +78,13 @@ const Features = () => {
               </span>
             </div>
             {showVideo && (
-              <div className="fixed top-0 right-0 bg-[#00000085]  w-full h-full z-40 place-items-center flex justify-center">
+              <div className="fixed top-0 right-0 bg-[#00000085]  w-full h-full z-40 place-items-center flex justify-center items-center">
                 <div
                   ref={videoRef}
-                  className="lg:w-[986px] h-[551px] rounded-2xl w-full"
+                  className="lg:w-[986px] lg:h-[551px] h-[250px] rounded-2xl w-[90%] flex items-center justify-center"
                 >
                   <video
-                    className="rounded-md"
+                    className="rounded-md h-full w-full"
                     src="https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/vmvv3czyk2ifedefkau7"
                     controls
                   ></video>
