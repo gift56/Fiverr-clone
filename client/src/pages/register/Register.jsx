@@ -90,12 +90,12 @@ const Register = () => {
   return (
     <div className="py-24 lg:py-40 pb-10">
       <div className="contain">
-        <div className="w-full lg:w-[75%] flex items-center justify-center py-10 mx-auto">
+        <div className="w-full lg:w-[75%] flex items-center flex-col sm:flex-row justify-center py-10 mx-auto">
           <form
             onSubmit={handleSubmit}
-            className="flex items-start justify-start gap-8 w-full"
+            className="flex items-start flex-col sm:flex-row justify-start gap-8 w-full"
           >
-            <div className="flex items-start justify-start flex-col gap-4 flex-1">
+            <div className="flex items-start justify-start flex-col gap-4 w-full sm:flex-1">
               <h1 className="text-2xl text-darkColor font-semibold">
                 Create an Account
               </h1>
@@ -219,7 +219,7 @@ const Register = () => {
                 )}
               </button>
             </div>
-            <div className="flex items-start justify-start flex-col gap-4 flex-1">
+            <div className="flex items-start justify-start flex-col gap-4 w-full sm:flex-1">
               <h1 className="text-2xl text-darkColor font-semibold">
                 I want to be a seller
               </h1>
