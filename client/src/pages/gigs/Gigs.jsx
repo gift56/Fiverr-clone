@@ -124,7 +124,7 @@ const Gigs = () => {
             </div>
           </div>
           <div
-            className={`w-full grid-cols-4 items-start justify-start gap-8 ${
+            className={`w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-start justify-start gap-8 ${
               isLoading || error || data?.length === 0 ? "flex" : "grid"
             }`}
           >
