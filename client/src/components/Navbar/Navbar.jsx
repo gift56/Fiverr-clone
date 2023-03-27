@@ -16,9 +16,11 @@ const Navbar = () => {
   const { authUser, removeAuthUser } = useAuthStore();
   const [active, setActive] = useState(false);
   const [openDrop, setOpenDrop] = useState(false);
+  const [showLink, setShowLink] = useState(false);
   const { pathname } = useLocation();
   const [loginModal, setLoginModal] = useState(false);
   const modalRef = useRef(null);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -89,7 +91,7 @@ const Navbar = () => {
       <div className="contain">
         <div className="w-full flex items-center justify-between py-4">
           <div className="flex items-center gap-2">
-            <span className="text-darkColor">
+            <span className="lg:hidden">
               <GiHamburgerMenu size={25} />
             </span>
             <Link
