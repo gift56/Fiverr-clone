@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import { Axios } from "../../config";
 import requests from "../../libs/request";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { FiChevronRight } from "react-icons/fi";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -215,8 +215,15 @@ const Navbar = () => {
         }`}
       >
         <hr className="border-black" />
-        <div className="contain">
+        <div className="contain relative">
+          <span
+            onClick={slideLeft}
+            className="absolute z-10 top-3 -left-8 cursor-pointer"
+          >
+            <FiChevronLeft size={20} />
+          </span>
           <div
+            id={"navSlider"}
             className={`w-full inline-block h-full whitespace-nowrap scroll-smooth lg:flex items-center lg:justify-between py-3 overflow-x-auto gap-5 font-medium scrollbar-hide text-sm relative ${
               active || pathname !== "/" ? "!text-gray-500" : "text-gray-200"
             }`}
@@ -229,10 +236,13 @@ const Navbar = () => {
                 {item}
               </span>
             ))}
-            <span onClick={slideRight}>
-              <FiChevronRight />
-            </span>
           </div>
+          <span
+            onClick={slideRight}
+            className="absolute z-10 top-3 -right-8 cursor-pointer"
+          >
+            <FiChevronRight size={20} />
+          </span>
         </div>
       </div>
       <Login show={loginModal} setShow={setLoginModal} />
