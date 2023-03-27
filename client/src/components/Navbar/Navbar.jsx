@@ -8,6 +8,7 @@ import Avatar from "../../assets/icons/avatar.jpg";
 import { toast } from "react-toastify";
 import { Axios } from "../../config";
 import requests from "../../libs/request";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -54,6 +55,18 @@ const Navbar = () => {
       console.log(error);
     }
   };
+
+  const links = [
+    "Graphics & Design",
+    "Digital Marketing",
+    "Writing & Translation",
+    "Video & Animation",
+    "Music & Audio",
+    "Programming & Tech",
+    "Business",
+    "Lifestyle",
+    "AI Services",
+  ];
 
   return (
     <header
@@ -181,7 +194,7 @@ const Navbar = () => {
         <hr className="border-black" />
         <div className="contain">
           <div
-            className={`w-full flex items-center justify-between py-3 overflow-x-auto gap-5 font-medium scrollbar-hide text-sm ${
+            className={`w-full inline-block h-full whitespace-nowrap scroll-smooth lg:flex items-center lg:justify-between py-3 overflow-x-auto gap-5 font-medium scrollbar-hide text-sm relative ${
               active || pathname !== "/" ? "!text-gray-500" : "text-gray-200"
             }`}
           >
