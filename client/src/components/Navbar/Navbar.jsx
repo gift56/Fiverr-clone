@@ -229,7 +229,7 @@ const Navbar = () => {
                 {item}
               </span>
             ))}
-            <span>
+            <span onClick={slideRight}>
               <FiChevronRight />
             </span>
           </div>
