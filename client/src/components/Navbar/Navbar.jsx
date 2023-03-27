@@ -239,7 +239,7 @@ const Navbar = () => {
           </div>
           <span
             onClick={slideRight}
-            className="absolute z-10 top-3 -right-8 cursor-pointer xl:hidden"
+            className="absolute z-10 top-3 -right-8 cursor-pointer laptop:hidden"
           >
             <FiChevronRight size={20} />
           </span>
