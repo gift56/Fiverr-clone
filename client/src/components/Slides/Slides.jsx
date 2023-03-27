@@ -28,7 +28,7 @@ const Slides = ({ children, rowId, text, distance }) => {
     <section className="py-10">
       <div className="contain">
         <div className="flex flex-col items-start justify-start gap-4 w-full">
-          <h2 className="text-3xl font-bold text-darkColor">{text}</h2>
+          <h2 className="text-xl md:text-3xl font-bold text-darkColor">{text}</h2>
           <div className="relative flex items-center group w-full">
             <MdChevronLeft
               onClick={slideLeft}
