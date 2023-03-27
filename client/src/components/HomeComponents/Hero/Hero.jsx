@@ -20,11 +20,11 @@ const Hero = () => {
     <section className="w-full bg-[#1a1b1d] h-screen text-white lg:animate-bganimate bg-no-repeat bg-cover bg-top-4 pt-20">
       <div className="contain flex flex-col items-start justify-center h-full">
         <div className="flex flex-col items-start justify-start gap-5 w-full">
-          <h2 className="text-2xl sm:text-4xl font-semibold leading-[120%]">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-semibold leading-[120%]">
             Find the perfect <i className="font-light">freelance</i> <br />{" "}
             services for your business
           </h2>
-          <div className="flex flex-col lg:flex-row items-center w-full gap-5 lg:w-[650px] bg-white h-[50px] rounded-md focus:border focus:border-primary relative mb-20">
+          <div className="flex flex-col lg:flex-row items-center w-full gap-5 lg:w-[650px] bg-white h-[50px] rounded-md focus:border focus:border-primary relative mb-20 lg:mb-0">
             <div className="flex items-center justify-start gap-2 w-full h-full">
               <span className="text-active pl-3">
                 <FiSearch size={18} />
