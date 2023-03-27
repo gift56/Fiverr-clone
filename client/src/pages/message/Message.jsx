@@ -15,7 +15,7 @@ const Message = () => {
   const { authUser } = useAuthStore();
   const [loading, setLoading] = useState(false);
 
-  const { isLoading, error, data } = useQuery({
+  const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["messages"],
     queryFn: () =>
       Axios.get(`${requests.messages}/${id}`).then((res) => {
@@ -33,17 +33,17 @@ const Message = () => {
 
   const onSubmit = async (payload, actions) => {
     setLoading(true);
-    // try {
-    //   const res = await Axios.post(requests.messages, payload);
-    //   console.log(res.data);
-    //   setLoading(false);
-    // } catch (error) {
-    //   setLoading(false);
-    //   console.log(error);
-    // }
-    console.log(payload);
+    try {
+      const res = await Axios.post(requests.messages, payload);
+      setLoading(false);
+      actions.resetForm();
+      refetch();
+      return res.data;
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    actions.resetForm();
   };
 
   const { handleChange, values, handleBlur, handleSubmit, errors, touched } =
@@ -88,9 +88,9 @@ const Message = () => {
                   </div>
                 ) : (
                   <div className="h-[500px] overflow-auto border p-4 rounded-md flex flex-col gap-4 w-full">
-                    {data.map((item, i) => (
+                    {data.map((item) => (
                       <div
-                        key={item.id}
+                        key={item._id}
                         className={`flex items-start gap-5 max-w-[600px] ${
                           item.owner === true ? "self-end flex-row-reverse" : ""
                         }`}
