@@ -10,6 +10,7 @@ import { Axios } from "../../config";
 import requests from "../../libs/request";
 import { FiChevronRight } from "react-icons/fi";
 import { FaBars } from "react-icons/fa";
+import MobileSidebar from "./MobileSidebar/MobileSidebar";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -90,6 +91,7 @@ const Navbar = () => {
     >
       <div className="contain">
         <div className="w-full flex items-center justify-between py-4 relative">
+          <MobileSidebar />
           <div className="flex items-center gap-2 h-full">
             <span className="lg:hidden mt-1">
               <FaBars size={25} />
