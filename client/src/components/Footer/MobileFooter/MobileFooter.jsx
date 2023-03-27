@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const MobileFooter = ({ item, i }) => {
   const [clicked, setClicked] = useState(null);
@@ -26,7 +27,17 @@ const MobileFooter = ({ item, i }) => {
           <FiChevronDown size={18} />
         </span>
       </div>
-      
+      <div className={`flex items-start justify-start flex-col gap-4`}>
+        {item.links.map((item, i) => (
+          <Link
+            to={item.to}
+            key={i}
+            className="text-gray-500 hover:underline transition-all duration-300 hover:text-darkColor"
+          >
+            {item.text}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
