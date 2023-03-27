@@ -36,7 +36,7 @@ const Messages = () => {
       <p
         className={`py-5 h-full font-semibold ${
           (authUser?.isSeller && !item?.readBySeller) ||
-          (!authUser.isSeller && !item?.readByBuyer && "bg-slate-100")
+          (!authUser.isSeller && !item?.readByBuyer && "!bg-slate-200")
         }`}
       >
         {authUser?.isSeller ? item.buyerId : item.sellerId}
@@ -68,7 +68,7 @@ const Messages = () => {
         to={`/messages/${i}`}
         className={`w-full flex items-start justify-start h-full py-3 ${
           (authUser?.isSeller && !item?.readBySeller) ||
-          (!authUser.isSeller && !item?.readByBuyer && "bg-slate-100")
+          (!authUser.isSeller && !item?.readByBuyer && "!bg-slate-300")
         }`}
       >
         {((authUser.isSeller && !item.readBySeller) ||
