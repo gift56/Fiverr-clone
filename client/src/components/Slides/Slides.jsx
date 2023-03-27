@@ -1,7 +1,7 @@
 import React from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
-const Slides = ({ children, rowId, text,distance }) => {
+const Slides = ({ children, rowId, text, distance }) => {
   const slideLeft = () => {
     let slider = document.getElementById("slider" + rowId);
     let maxScrollLeft = slider.scrollWidth - slider.clientWidth; // maximum scroll position

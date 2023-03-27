@@ -68,6 +68,29 @@ const Navbar = () => {
     "AI Services",
   ];
 
+  const slideLeft = () => {
+    let slider = document.getElementById("navSlider");
+    let maxScrollLeft = slider.scrollWidth - slider.clientWidth; // maximum scroll position
+    if (slider.scrollLeft > 0) {
+      // check if not at the beginning
+      slider.scrollLeft = slider.scrollLeft - 400;
+    } else {
+      // if at beginning, wrap to end
+      slider.scrollLeft = maxScrollLeft;
+    }
+  };
+  const slideRight = () => {
+    let slider = document.getElementById("navSlider");
+    let maxScrollLeft = slider.scrollWidth - slider.clientWidth; // maximum scroll position
+    if (slider.scrollLeft < maxScrollLeft) {
+      // check if not at the end
+      slider.scrollLeft = slider.scrollLeft + 400;
+    } else {
+      // if at end, wrap to beginning
+      slider.scrollLeft = 0;
+    }
+  };
+
   return (
     <header
       className={`flex items-center justify-center w-full flex-col text-white fixed top-0 transition-all ease-in-out z-10 ${
