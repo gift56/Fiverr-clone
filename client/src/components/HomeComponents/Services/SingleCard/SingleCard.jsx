@@ -5,7 +5,7 @@ const SingleCard = ({ item }) => {
   return (
     <Link
       to={`/gigs?cat=design`}
-      className="relative inline-block cursor-pointer w-[160px] sm:w-[200px] md:w-[240px] lg:w-[250px] mx-4"
+      className="relative inline-block cursor-pointer w-[200px] md:w-[240px] lg:w-[250px] mx-4"
     >
       <img src={item.img} alt={item.title} className="w-full h-auto block hover:opacity-80 transition-all duration-300 rounded-md" />
       <div className="absolute top-4 text-white left-4">
