@@ -15,7 +15,7 @@ const MobileFooter = () => {
   return (
     <div className="w-full flex sm:hidden items-start justify-start flex-col pt-5">
       {footerLinks.map((item, i) => (
-        <div className="w-full rounded-lg py-2 flex flex-col gap-2">
+        <div key={i} className="w-full rounded-lg py-2 flex flex-col gap-2">
           <div
             onClick={() => toggle(i)}
             className="flex items-center justify-between cursor-pointer text-gray-600"

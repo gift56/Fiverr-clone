@@ -38,7 +38,7 @@ const Gigs = () => {
     <main className="py-40">
       <div className="contain">
         <div className="flex items-start justify-start flex-col gap-4">
-          <div className="flex items-center justify-start gap-4 text-darkColor font-medium">
+          <div className="flex items-center justify-start gap-2 sm:gap-4 text-darkColor font-medium">
             <span>
               <BiHomeAlt size={12} />
             </span>
