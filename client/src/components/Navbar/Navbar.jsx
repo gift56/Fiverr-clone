@@ -96,24 +96,24 @@ const Navbar = () => {
             <span className="text-primary">.</span>
           </Link>
           <nav className="flex items-center justify-end gap-7 font-medium text-base">
-            <NavLink to="/" className="cursor-pointer">
+            <NavLink to="/" className="cursor-pointer hidden lg:flex">
               Fiverr Business
             </NavLink>
-            <div className="cursor-pointer">Explore</div>
-            <div className="flex items-center gap-2 cursor-pointer">
+            <div className="cursor-pointer hidden lg:flex">Explore</div>
+            <div className="items-center gap-2 cursor-pointer hidden lg:flex">
               <span>
                 <TfiWorld />
               </span>
               English
             </div>
-            <span className="flex items-center gap-2 cursor-pointer">
+            <span className="hidden lg:flex items-center gap-2 cursor-pointer">
               <span>
                 <BsCurrencyDollar />
               </span>
               USD
             </span>
             {!authUser?.isSeller && (
-              <NavLink to="/" className="cursor-pointer">
+              <NavLink to="/" className="cursor-pointer hidden lg:flex">
                 Become a Seller
               </NavLink>
             )}
