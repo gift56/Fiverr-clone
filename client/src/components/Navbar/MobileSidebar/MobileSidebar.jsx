@@ -1,8 +1,9 @@
 import React, { useEffect, useMemo, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
-const MobileSidebar = ({ show, setShow }) => {
+const MobileSidebar = ({ show, setShow, setLoginModal }) => {
   const showRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -38,13 +39,23 @@ const MobileSidebar = ({ show, setShow }) => {
         show ? "-left-14" : "-left-[100vw]"
       }`}
     >
-      <div className="sticky h-20 top-0 z-2 bg-white w-full">
+      <div className="sticky top-0 z-2 bg-white w-full flex flex-col gap-3 items-start justify-start">
         <NavLink
           to="/join"
           className={`border py-3 px-6 rounded bg-primary border-primary text-white transition-all duration-300 text-base font-semibold`}
         >
           Join Fiverr
         </NavLink>
+        <div
+          onClick={() => {
+            navigate("/");
+            setShow(false);
+            setLoginModal(true);
+          }}
+          className="cursor-pointer text-darkColor text-base font-semibold"
+        >
+          Sign in
+        </div>
       </div>
     </div>
   );
