@@ -8,8 +8,8 @@ import Avatar from "../../assets/icons/avatar.jpg";
 import { toast } from "react-toastify";
 import { Axios } from "../../config";
 import requests from "../../libs/request";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { FiChevronRight } from "react-icons/fi";
+import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -92,7 +92,7 @@ const Navbar = () => {
         <div className="w-full flex items-center justify-between py-4">
           <div className="flex items-center gap-2">
             <span className="lg:hidden">
-              <GiHamburgerMenu size={25} />
+              <FaBars size={25} />
             </span>
             <Link
               to="/"
