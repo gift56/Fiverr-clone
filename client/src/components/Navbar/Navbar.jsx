@@ -218,7 +218,7 @@ const Navbar = () => {
         <div className="contain relative">
           <span
             onClick={slideLeft}
-            className="absolute z-10 top-3 -left-8 cursor-pointer"
+            className="absolute z-10 top-3 -left-8 cursor-pointer lg:hidden"
           >
             <FiChevronLeft size={20} />
           </span>
@@ -239,7 +239,7 @@ const Navbar = () => {
           </div>
           <span
             onClick={slideRight}
-            className="absolute z-10 top-3 -right-8 cursor-pointer"
+            className="absolute z-10 top-3 -right-8 cursor-pointer xl:hidden"
           >
             <FiChevronRight size={20} />
           </span>
