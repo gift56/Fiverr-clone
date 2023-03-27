@@ -20,8 +20,8 @@ const Homepage = () => {
           <SingleCard key={item.id} item={item} />
         ))}
       </Slides>
-      {/*<Features />
-      <Marketplace />
+      <Features />
+      {/*<Marketplace />
       <Business />
       <Slides rowId="2" distance={1200}>
         {testimonyData.map((item, i) => (
