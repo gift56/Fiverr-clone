@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef } from "react";
+import { NavLink } from "react-router-dom";
 
 const MobileSidebar = ({ show, setShow }) => {
   const showRef = useRef(null);
@@ -33,11 +34,18 @@ const MobileSidebar = ({ show, setShow }) => {
   return (
     <div
       ref={showRef}
-      className={`flex flex-col justify-start items-start w-[350px] bg-white absolute top-0 z-20 h-screen ${
+      className={`flex flex-col justify-start items-start w-[350px] bg-white absolute top-0 z-20 h-screen p-8 ${
         show ? "-left-14" : "-left-[100vw]"
       }`}
     >
-      MobileSidebar
+      <div className="sticky h-20 top-0 z-2 bg-white w-full">
+        <NavLink
+          to="/join"
+          className={`border py-3 px-6 rounded bg-primary border-primary text-white transition-all duration-300 text-base font-semibold`}
+        >
+          Join Fiverr
+        </NavLink>
+      </div>
     </div>
   );
 };
