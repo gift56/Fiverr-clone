@@ -45,7 +45,7 @@ const MobileSidebar = ({ show, setShow, setLoginModal }) => {
     >
       <div
         ref={showRef}
-        className={`flex flex-col gap-4 justify-start items-start w-[300px] bg-white absolute top-0 z-20 h-screen p-6 ${
+        className={`flex flex-col gap-4 justify-start items-start w-[250px] bg-white absolute top-0 z-20 h-screen p-6 ${
           show ? "left-0" : "-left-[100vw]"
         }`}
       >
