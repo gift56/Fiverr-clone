@@ -96,7 +96,7 @@ const Navbar = () => {
             setShow={setShowLink}
             setLoginModal={setLoginModal}
           />
-          <div className="flex items-center gap-2 h-full justify-between">
+          <div className="flex items-center gap-2 h-full justify-between w-[50%] sm:w-fit">
             <span onClick={() => setShowLink(true)} className="lg:hidden mt-1">
               <FaBars size={25} />
             </span>
