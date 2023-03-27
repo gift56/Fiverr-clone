@@ -32,6 +32,7 @@ const MobileSidebar = ({ show, setShow, setLoginModal }) => {
     }
   };
   useMemo(() => overflowHidden(), [show]);
+  
   return (
     <div
       ref={showRef}
