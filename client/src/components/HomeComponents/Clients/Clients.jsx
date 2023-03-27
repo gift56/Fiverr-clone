@@ -17,7 +17,7 @@ const Clients = () => {
           </h2>
           <div className="flex items-center justify-start gap-6">
             {clientsData.map((item, i) => (
-              <img src={item} alt={i} key={i} className="w-[50px] h-[50px] last:hidden" />
+              <img src={item} alt={i} key={i} className="w-[50px] h-[50px] last:hidden md:last:flex md:w-[inherit] md:h-[inherit]" />
             ))}
           </div>
         </div>
