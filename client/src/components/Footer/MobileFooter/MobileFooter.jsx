@@ -11,7 +11,9 @@ const MobileFooter = ({ item, i }) => {
     setClicked(index);
   };
 
-  return <div className="">MobileFooter</div>;
+  return <div className="w-full rounded-lg py-4 flex flex-col gap-5">
+    
+  </div>;
 };
 
 export default MobileFooter;
