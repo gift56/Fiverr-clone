@@ -206,7 +206,7 @@ const Register = () => {
               />
               <button
                 type="submit"
-                className="w-full bg-primary/80 hover:bg-primary cursor-pointer outline-none text-white rounded py-3 transition-all duration-300 mt-4"
+                className="w-full bg-primary/80 hover:bg-primary cursor-pointer outline-none text-white rounded py-3 transition-all duration-300 mt-4 hidden sm:flex"
               >
                 {loading ? (
                   <div className="flex items-center justify-center">
@@ -270,6 +270,20 @@ const Register = () => {
                 className="bg-white border border-[#E6E6E6] w-full h-[107px] rounded p-4 focus:border-[1.5px] outline-none text-sm text-[#454B54] resize-none shadow-smallShadow"
               />
             </div>
+            <button
+              type="submit"
+              className="w-full bg-primary/80 hover:bg-primary cursor-pointer outline-none text-white rounded py-3 transition-all duration-300 mt-4 sm:hidden"
+            >
+              {loading ? (
+                <div className="flex items-center justify-center">
+                  <img src={loader} alt="/" className="w-[40px]" />
+                </div>
+              ) : (
+                <p className="flex items-center justify-center gap-2">
+                  Register
+                </p>
+              )}
+            </button>
           </form>
         </div>
       </div>
