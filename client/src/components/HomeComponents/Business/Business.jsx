@@ -10,7 +10,7 @@ const Business = () => {
       <div className="contain">
         <div className="flex items-center justify-between w-full gap-4">
           <div className="flex-1 flex items-start justify-start flex-col gap-5">
-            <h4 className="text-xl md:text-3xl font-bold">
+            <h4 className="text-lg md:text-3xl font-bold">
               <span>fiverr</span>
               <span className="font-normal"> business.</span>
             </h4>
