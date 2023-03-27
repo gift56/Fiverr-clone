@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import { Axios } from "../../config";
 import requests from "../../libs/request";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FiChevronRight } from "react-icons/fi";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -68,17 +68,6 @@ const Navbar = () => {
     "AI Services",
   ];
 
-  const slideLeft = () => {
-    let slider = document.getElementById("navSlider");
-    let maxScrollLeft = slider.scrollWidth - slider.clientWidth; // maximum scroll position
-    if (slider.scrollLeft > 0) {
-      // check if not at the beginning
-      slider.scrollLeft = slider.scrollLeft - 400;
-    } else {
-      // if at beginning, wrap to end
-      slider.scrollLeft = maxScrollLeft;
-    }
-  };
   const slideRight = () => {
     let slider = document.getElementById("navSlider");
     let maxScrollLeft = slider.scrollWidth - slider.clientWidth; // maximum scroll position
@@ -216,12 +205,6 @@ const Navbar = () => {
       >
         <hr className="border-black" />
         <div className="contain relative">
-          <span
-            onClick={slideLeft}
-            className="absolute z-10 top-3 -left-8 cursor-pointer lg:hidden"
-          >
-            <FiChevronLeft size={20} />
-          </span>
           <div
             id={"navSlider"}
             className={`w-full inline-block h-full whitespace-nowrap scroll-smooth lg:flex items-center lg:justify-between py-3 overflow-x-auto gap-5 font-medium scrollbar-hide text-sm relative ${
