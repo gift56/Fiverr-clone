@@ -8,7 +8,7 @@ const Business = () => {
   return (
     <section className="py-20 bg-darkblue text-white">
       <div className="contain">
-        <div className="flex lg:items-center items-start justify-start lg:justify-between w-full gap-4">
+        <div className="flex lg:items-center items-start justify-start flex-col lg:flex-row lg:justify-between w-full gap-4">
           <div className="flex-1 flex items-start justify-start flex-col gap-5">
             <h4 className="text-lg md:text-3xl font-bold">
               <span>fiverr</span>
