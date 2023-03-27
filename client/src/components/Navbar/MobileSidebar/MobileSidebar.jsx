@@ -32,30 +32,34 @@ const MobileSidebar = ({ show, setShow, setLoginModal }) => {
     }
   };
   useMemo(() => overflowHidden(), [show]);
-  
+
+  const navLinks = [""];
+
   return (
-    <div
-      ref={showRef}
-      className={`flex flex-col justify-start items-start w-[350px] bg-white absolute top-0 z-20 h-screen p-8 ${
-        show ? "-left-14" : "-left-[100vw]"
-      }`}
-    >
-      <div className="sticky top-0 z-2 bg-white w-full flex flex-col gap-3 items-start justify-start">
-        <NavLink
-          to="/join"
-          className={`border py-3 px-6 rounded bg-primary border-primary text-white transition-all duration-300 text-base font-semibold`}
-        >
-          Join Fiverr
-        </NavLink>
-        <div
-          onClick={() => {
-            navigate("/");
-            setShow(false);
-            setLoginModal(true);
-          }}
-          className="cursor-pointer text-darkColor text-base font-semibold"
-        >
-          Sign in
+    <div className={`w-full h-full bg-black/40 fixed top-0 z-40 left-0 transition-all duration-300 ${show ? "flex" : "hidden"}`}>
+      <div
+        ref={showRef}
+        className={`flex flex-col justify-start items-start w-[320px] bg-white absolute top-0 z-20 h-screen p-8 ${
+          show ? "-left-14" : "-left-[100vw]"
+        }`}
+      >
+        <div className="sticky top-0 z-2 bg-white w-full flex flex-col gap-6 items-start justify-start">
+          <NavLink
+            to="/join"
+            className={`border py-3 px-6 rounded bg-primary border-primary text-white transition-all duration-300 text-base font-semibold`}
+          >
+            Join Fiverr
+          </NavLink>
+          <div
+            onClick={() => {
+              navigate("/");
+              setShow(false);
+              setLoginModal(true);
+            }}
+            className="cursor-pointer text-gray-400 text-base font-medium"
+          >
+            Sign in
+          </div>
         </div>
       </div>
     </div>
