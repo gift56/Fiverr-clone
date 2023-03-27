@@ -61,7 +61,7 @@ const Message = () => {
               MESSAGES
             </Link>{" "}
             <BiChevronRight size={20} />
-            <span>John Doe</span> <BiChevronRight size={20} />
+            <span>Client</span> <BiChevronRight size={20} />
           </p>
           <div className="w-[80%] flex items-start justify-start gap-4 flex-col h-[500px]">
             {isLoading ? (
