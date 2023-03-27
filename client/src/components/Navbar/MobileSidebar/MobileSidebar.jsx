@@ -36,11 +36,15 @@ const MobileSidebar = ({ show, setShow, setLoginModal }) => {
   const navLinks = [""];
 
   return (
-    <div className={`w-full h-full bg-black/40 fixed top-0 z-40 left-0 transition-all duration-300 ${show ? "flex" : "hidden"}`}>
+    <div
+      className={`w-full h-full bg-black/40 fixed top-0 z-40 left-0 transition-all duration-300 ${
+        show ? "flex" : "hidden"
+      }`}
+    >
       <div
         ref={showRef}
-        className={`flex flex-col justify-start items-start w-[320px] bg-white absolute top-0 z-20 h-screen p-8 ${
-          show ? "-left-14" : "-left-[100vw]"
+        className={`flex flex-col gap-4 justify-start items-start w-[300px] bg-white absolute top-0 z-20 h-screen p-6 ${
+          show ? "left-0" : "-left-[100vw]"
         }`}
       >
         <div className="sticky top-0 z-2 bg-white w-full flex flex-col gap-6 items-start justify-start">
@@ -61,6 +65,15 @@ const MobileSidebar = ({ show, setShow, setLoginModal }) => {
             Sign in
           </div>
         </div>
+        <p className="cursor-pointer text-gray-400 text-base font-medium">
+          Browser Categories
+        </p>
+        <p className="cursor-pointer text-gray-400 text-base font-medium">
+          Explore
+        </p>
+        <NavLink to="/" className={`text-base font-semibold text-gray-400`}>
+          Fiverr Business
+        </NavLink>
       </div>
     </div>
   );
