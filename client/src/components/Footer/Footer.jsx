@@ -42,7 +42,7 @@ const Footer = () => {
     <footer className="border-t w-full py-14 pb-5">
       <div className="contain">
         <div className="w-full flex flex-col items-start justify-start gap-10">
-          <div className="w-full grid grid-cols-5 gap-5 items-start justify-start">
+          <div className="w-full hidden sm:grid sm:grid-cols-3 lg:grid-cols-5 gap-5 items-start justify-start">
             {footerLinks.map((item, i) => (
               <div
                 key={i}
@@ -65,8 +65,8 @@ const Footer = () => {
               </div>
             ))}
           </div>
-          <div className="w-full flex items-center justify-between border-t pt-5">
-            <div className="flex items-center justify-start gap-4">
+          <div className="w-full flex items-center justify-between border-t pt-5 flex-col sm:flex-row">
+            <div className="flex items-center justify-start gap-4 flex-col sm:flex-row">
               <div className="flex items-end justify-end select-none">
                 <h2 className="text-3xl select-none font-black tracking-tighter text-gray-500">
                   fivver
@@ -79,7 +79,7 @@ const Footer = () => {
                 © Fiverr International Ltd. {year}
               </p>
             </div>
-            <div className="flex items-center justify-end gap-6">
+            <div className="flex items-center justify-end sm:gap-6 flex-col sm:flex-row">
               <div className="flex items-center gap-4 text-sm font-medium text-gray-500">
                 {socialIcons.map((item, i) => (
                   <a
