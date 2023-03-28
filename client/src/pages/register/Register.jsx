@@ -206,7 +206,7 @@ const Register = () => {
               />
               <button
                 type="submit"
-                className="w-full bg-primary/80 hover:bg-primary cursor-pointer outline-none text-white rounded py-3 transition-all duration-300 mt-4 hidden sm:flex"
+                className="w-full bg-primary/80 hover:bg-primary cursor-pointer outline-none text-white rounded py-3 transition-all duration-300 mt-4 hidden sm:block"
               >
                 {loading ? (
                   <div className="flex items-center justify-center">
