@@ -2,8 +2,11 @@ import React from "react";
 import { BsTrash } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { columns, tableData } from "../../data/data";
+import useAuthStore from "../../stores";
 
 const MyGigs = () => {
+  const { authUser } = useAuthStore();
+
   const tableActions = tableData.map((item) => ({
     image: (
       <div className="w-14 h-10">
