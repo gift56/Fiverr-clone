@@ -1,21 +1,10 @@
 import React from "react";
 import { FiSearch } from "react-icons/fi";
+import { buttons } from "../../../data/data";
+import { useFormik } from "formik";
+import * as yup from "yup";
 
 const Hero = () => {
-  const buttons = [
-    {
-      text: "Web Design",
-    },
-    {
-      text: "WordPress",
-    },
-    {
-      text: "Logo Design",
-    },
-    {
-      text: "Ai Services",
-    },
-  ];
   return (
     <section className="w-full bg-[#1a1b1d] lg:bg-navbg h-screen text-white lg:animate-bganimate bg-no-repeat bg-cover bg-top-4 pt-20">
       <div className="contain flex flex-col items-start justify-center h-full">
