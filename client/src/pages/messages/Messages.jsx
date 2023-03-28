@@ -106,7 +106,7 @@ const Messages = () => {
                     alt="/"
                     className="w-full md:w-[350px]"
                   />
-                  <h2 className="text-sm md:text-4xl text-active font-medium">
+                  <h2 className="text-4xl text-active font-medium">
                     No Messages!
                   </h2>
                 </div>
