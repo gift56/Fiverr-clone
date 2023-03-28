@@ -118,7 +118,7 @@ const Message = () => {
             )}
             <form
               onSubmit={handleSubmit}
-              className="flex items-end w-full gap-8"
+              className="flex items-end w-full md:gap-8 flex-col md:flex-row gap-2"
             >
               <textarea
                 name="desc"
@@ -128,7 +128,7 @@ const Message = () => {
                 placeholder="Reply a message"
                 cols="30"
                 rows="10"
-                className={`border h-[100px] w-[80%] rounded-md resize-none p-2 text-sm font-medium focus:border-primary outline-none ${
+                className={`border h-[100px] w-full md:w-[80%] rounded-md resize-none p-2 text-sm font-medium focus:border-primary outline-none ${
                   errors.desc && touched.desc ? "border-red-500" : ""
                 }`}
               ></textarea>
