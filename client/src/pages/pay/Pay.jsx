@@ -36,7 +36,7 @@ const Pay = () => {
   };
 
   return (
-    <div>
+    <div className="py-40 pb-10">
       {clientSecret && (
         <Elements options={options} stripe={stripePromise}>
           <CheckoutForm />
