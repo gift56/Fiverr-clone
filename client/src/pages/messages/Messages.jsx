@@ -34,7 +34,7 @@ const Messages = () => {
   const tableActions = data?.map((item, i) => ({
     buyer: (
       <p
-        className={`py-5 h-full font-semibold ${
+        className={`md:py-5 h-full text-xs font-semibold w-[90px] md:w-full md:text-sm truncate ${
           (authUser?.isSeller && !item?.readBySeller) ||
           (!authUser.isSeller && !item?.readByBuyer && "!bg-slate-100")
         }`}
@@ -45,7 +45,7 @@ const Messages = () => {
     lastMessage: (
       <Link
         to={`/messages/${item.id}`}
-        className={`w-full flex items-center justify-start text-darkColor/70 border-x border-white h-full py-5 ${
+        className={`w-full flex items-center text-xs md:text-sm justify-start text-darkColor/70 border-x border-white h-full py-5 ${
           (authUser?.isSeller && !item?.readBySeller) ||
           (!authUser.isSeller && !item?.readByBuyer && "bg-slate-100")
         }`}
