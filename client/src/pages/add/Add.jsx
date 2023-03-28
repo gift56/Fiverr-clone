@@ -298,6 +298,7 @@ const Add = () => {
                   type="number"
                   name="price"
                   id="price"
+                  onChange={handleChange}
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                 />
               </div>
