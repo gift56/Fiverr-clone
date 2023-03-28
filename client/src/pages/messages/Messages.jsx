@@ -36,7 +36,7 @@ const Messages = () => {
       <p
         className={`py-5 h-full font-semibold ${
           (authUser?.isSeller && !item?.readBySeller) ||
-          (!authUser.isSeller && !item?.readByBuyer && "!bg-slate-200")
+          (!authUser.isSeller && !item?.readByBuyer && "!bg-slate-100")
         }`}
       >
         {authUser?.isSeller ? item.buyerId : item.sellerId}
@@ -68,7 +68,7 @@ const Messages = () => {
         to={`/messages/${i}`}
         className={`w-full flex items-start justify-start h-full py-3 ${
           (authUser?.isSeller && !item?.readBySeller) ||
-          (!authUser.isSeller && !item?.readByBuyer && "!bg-slate-300")
+          (!authUser.isSeller && !item?.readByBuyer && "!bg-slate-100")
         }`}
       >
         {((authUser.isSeller && !item.readBySeller) ||
@@ -104,14 +104,14 @@ const Messages = () => {
                   <img
                     src="https://cdni.iconscout.com/illustration/premium/thumb/error-404-4344461-3613889.png"
                     alt="/"
-                    className="w-[350px]"
+                    className="w-full md:w-[350px]"
                   />
-                  <h2 className="text-4xl text-active font-medium">
+                  <h2 className="text-sm md:text-4xl text-active font-medium">
                     No Messages!
                   </h2>
                 </div>
               ) : (
-                <table className="w-full">
+                <table className="w-full overflow-auto">
                   <thead className="h-[35px]">
                     <tr>
                       {messageColumns &&
