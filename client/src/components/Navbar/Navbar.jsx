@@ -141,7 +141,7 @@ const Navbar = () => {
                     <span>{authUser?.username}</span>
                     <div
                       ref={modalRef}
-                      className={`absolute top-12 right-0 p-3 bg-white border rounded-md text-black flex-col items-start gap-3 w-[200px] font-medium transition-transform duration-300 ${
+                      className={`absolute top-12 right-0 p-3 z-10 bg-white border rounded-md text-black flex-col items-start gap-3 w-[200px] font-medium transition-transform duration-300 ${
                         openDrop ? "flex" : "hidden"
                       }`}
                     >
