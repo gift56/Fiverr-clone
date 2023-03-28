@@ -23,6 +23,8 @@ import Stripe from "stripe";
 //   }
 // };
 
+
+// Stripe payment
 export const intent = async (req, res, next) => {
   const stripe = new Stripe(process.env.STRIPE);
   const gig = await Gig.findById(req.params.id);
