@@ -12,6 +12,8 @@ import Messages from "./pages/messages/Messages";
 import Message from "./pages/message/Message";
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
+import Success from "./pages/success/Success";
+import Pay from "./pages/pay/Pay";
 
 const App = () => {
   return (
@@ -28,7 +30,8 @@ const App = () => {
         <Route path="/add" element={<Add />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/messages/:id" element={<Message />} />
-        <Route path="/pay/:id" element={<Message />} />
+        <Route path="/pay/:id" element={<Pay />} />
+        <Route path="/sucess" element={<Success />} />
       </Routes>
       <Footer />
     </div>
