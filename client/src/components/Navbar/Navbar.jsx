@@ -109,7 +109,9 @@ const Navbar = () => {
             </Link>
           </div>
           <nav className="flex items-center justify-end gap-7 font-medium text-base">
-            <p className="cursor-pointer hidden lg:flex">Fiverr Business</p>
+            <Link to="/" className="cursor-pointer hidden lg:flex">
+              Fiverr Business
+            </Link>
             <div className="cursor-pointer hidden lg:flex">Explore</div>
             <div className="items-center gap-2 cursor-pointer hidden lg:flex">
               <span>
