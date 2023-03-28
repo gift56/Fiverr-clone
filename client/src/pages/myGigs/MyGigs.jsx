@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { BsTrash } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -6,6 +7,12 @@ import useAuthStore from "../../stores";
 
 const MyGigs = () => {
   const { authUser } = useAuthStore();
+
+  const { isLoading, error, data } = useQuery({
+    queryKey: ["conversation"],
+    queryFn: () =>
+      Axios.get(`${requests.conversations}`).then((res) => res.data),
+  });
 
   const tableActions = tableData.map((item) => ({
     image: (
