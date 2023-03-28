@@ -1,19 +1,39 @@
 import React from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { BsTrash } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { columns, tableData } from "../../data/data";
 import useAuthStore from "../../stores";
 import loader from "../../assets/icons/loader.svg";
+import requests from "../../libs/request";
+import { Axios } from "../../config";
 
 const MyGigs = () => {
   const { authUser } = useAuthStore();
+  const queryClient = useQueryClient();
 
   const { isLoading, error, data } = useQuery({
-    queryKey: ["conversation"],
+    queryKey: ["myGigs"],
     queryFn: () =>
-      Axios.get(`${requests.conversations}`).then((res) => res.data),
+      Axios.get(`${requests.gigs}?userId=${authUser?._id}`).then(
+        (res) => res.data
+      ),
   });
+
+  console.log(data);
+
+  const mutation = useMutation({
+    mutationFn: (id) => {
+      return Axios.delete(`${requests.gigs}/${id}`);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["myGigs"]);
+    },
+  });
+
+  const handleDelte = (id) => {
+    mutation.mutate(id);
+  };
 
   const tableActions = tableData.map((item) => ({
     image: (
