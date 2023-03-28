@@ -20,8 +20,6 @@ const MyGigs = () => {
       ),
   });
 
-  console.log(data);
-
   const mutation = useMutation({
     mutationFn: (id) => {
       return Axios.delete(`${requests.gigs}/${id}`);
@@ -31,15 +29,17 @@ const MyGigs = () => {
     },
   });
 
-  const handleDelte = (id) => {
+  console.log(data);
+
+  const handleDelete = (id) => {
     mutation.mutate(id);
   };
 
-  const tableActions = tableData.map((item) => ({
+  const tableActions = data?.map((item) => ({
     image: (
       <div className="w-14 h-10">
         <img
-          src={item.img}
+          src={item.cover}
           alt={item.title}
           className="w-full h-full object-cover"
         />
@@ -57,7 +57,7 @@ const MyGigs = () => {
     actions: (
       <div
         className="w-full flex items-center justify-start text-red-500 cursor-pointer"
-        onClick={() => alert(item.title)}
+        onClick={() => handleDelete(item._id)}
       >
         <BsTrash size={16} />
       </div>
@@ -76,39 +76,64 @@ const MyGigs = () => {
               </button>
             </Link>
           </div>
-          <table className="w-full">
-            <thead className="h-[35px]">
-              <tr>
-                {columns &&
-                  columns.map((head, i) => (
-                    <th
-                      key={i}
-                      className="text-left text-gray-700 text-sm font-semibold leading-[18px] pb-2"
-                    >
-                      {head.header}
-                    </th>
-                  ))}
-              </tr>
-            </thead>
-            <tbody className="w-full">
-              {tableActions &&
-                tableActions.map((row, i) => (
-                  <tr
-                    key={i}
-                    className="text-sm leading-5 w-full even:bg-gray-200"
-                  >
-                    {columns?.map((col, i) => (
-                      <td
-                        key={i}
-                        className="first:text-left text-sm text-darkColor font-medium text-center py-2"
-                      >
-                        {row[col.field]}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-            </tbody>
-          </table>
+          {isLoading ? (
+            <div className="flex items-center justify-center w-full">
+              <img src={loader} alt="/" className="w-[40px]" />
+            </div>
+          ) : error ? (
+            <p className="text-2xl text-red-400 font-normal">
+              Error : Something went wrong
+            </p>
+          ) : (
+            <>
+              {data?.length === 0 ? (
+                <div className="flex items-center justify-center mt-5 flex-col w-full">
+                  <img
+                    src="https://cdni.iconscout.com/illustration/premium/thumb/error-404-4344461-3613889.png"
+                    alt="/"
+                    className="w-full md:w-[350px]"
+                  />
+                  <h2 className="text-4xl text-active font-medium">
+                    No Orders!
+                  </h2>
+                </div>
+              ) : (
+                <table className="w-full">
+                  <thead className="h-[35px]">
+                    <tr>
+                      {columns &&
+                        columns.map((head, i) => (
+                          <th
+                            key={i}
+                            className="text-left text-gray-700 text-sm font-semibold leading-[18px] pb-2"
+                          >
+                            {head.header}
+                          </th>
+                        ))}
+                    </tr>
+                  </thead>
+                  <tbody className="w-full">
+                    {tableActions &&
+                      tableActions.map((row, i) => (
+                        <tr
+                          key={i}
+                          className="text-sm leading-5 w-full even:bg-gray-200"
+                        >
+                          {columns?.map((col, i) => (
+                            <td
+                              key={i}
+                              className="first:text-left text-sm text-darkColor font-medium text-center py-2"
+                            >
+                              {row[col.field]}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              )}
+            </>
+          )}
         </div>
       </div>
     </main>
