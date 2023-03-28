@@ -25,7 +25,6 @@ import Stripe from "stripe";
 
 export const intent = async (req, res, next) => {
   const stripe = new Stripe(process.env.STRIPE);
-
   const gig = await Gig.findById(req.params.id);
 
   const paymentIntent = await stripe.paymentIntents.create({
