@@ -2,8 +2,8 @@ import express from "express";
 import { verifyToken } from "../middleware/jwt.js";
 import {
   getOrders,
-//   intent,
-//   confirm,
+  intent,
+  confirm,
   // createOrder,
 } from "../controllers/order.controller.js";
 
