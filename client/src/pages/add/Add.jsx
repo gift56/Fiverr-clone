@@ -1,25 +1,12 @@
 import React from "react";
 import { BsUpload } from "react-icons/bs";
+import { options } from "../../data/data";
 
 const Add = () => {
-  const options = [
-    {
-      value: "design",
-      text: "Design",
-    },
-    {
-      value: "web",
-      text: "Web Development",
-    },
-    {
-      value: "animation",
-      text: "Animation",
-    },
-    {
-      value: "music",
-      text: "Music",
-    },
-  ];
+  const [singleFile, setSingleFile] = useState(undefined);
+  const [files, setFiles] = useState([]);
+  const [uploading, setUploading] = useState(false);
+ 
   return (
     <main className="py-40 pb-20">
       <div className="contain">

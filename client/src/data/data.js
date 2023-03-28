@@ -685,3 +685,22 @@ export const buttons = [
     text: "Ai Services",
   },
 ];
+
+export const options = [
+  {
+    value: "design",
+    text: "Design",
+  },
+  {
+    value: "web",
+    text: "Web Development",
+  },
+  {
+    value: "animation",
+    text: "Animation",
+  },
+  {
+    value: "music",
+    text: "Music",
+  },
+];
