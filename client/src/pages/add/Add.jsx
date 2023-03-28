@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useReducer, useState } from "react";
 import { BsUpload } from "react-icons/bs";
 import { options } from "../../data/data";
+import { gigReducer, INITIAL_STATE } from "../../reducers/addGigReducer";
 
 const Add = () => {
   const [singleFile, setSingleFile] = useState(undefined);
   const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
- 
+
+  const [] = useReducer(gigReducer, INITIAL_STATE);
+
   return (
     <main className="py-40 pb-20">
       <div className="contain">
