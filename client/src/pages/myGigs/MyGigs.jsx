@@ -2,7 +2,7 @@ import React from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { BsTrash } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { columns, tableData } from "../../data/data";
+import { columns } from "../../data/data";
 import useAuthStore from "../../stores";
 import loader from "../../assets/icons/loader.svg";
 import requests from "../../libs/request";
@@ -28,8 +28,6 @@ const MyGigs = () => {
       queryClient.invalidateQueries(["myGigs"]);
     },
   });
-
-  console.log(data);
 
   const handleDelete = (id) => {
     mutation.mutate(id);
