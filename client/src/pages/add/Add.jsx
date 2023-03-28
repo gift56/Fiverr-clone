@@ -130,7 +130,7 @@ const Add = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-primary/80 hover:bg-primary mt-4 text-white text-base font-semibold h-10 rounded transition-all duration-300 outline-none focus:border-primary"
+                className="w-full bg-primary/80 hover:bg-primary mt-4 text-white text-base font-semibold h-10 rounded transition-all duration-300 outline-none focus:border-primary hidden md:flex"
               >
                 Create
               </button>
@@ -246,6 +246,12 @@ const Add = () => {
                 />
               </div>
             </div>
+            <button
+              type="submit"
+              className="w-full bg-primary/80 hover:bg-primary mt-4 text-white text-base font-semibold h-10 rounded transition-all duration-300 outline-none focus:border-primary flex md:hidden"
+            >
+              Create
+            </button>
           </div>
         </div>
       </div>
