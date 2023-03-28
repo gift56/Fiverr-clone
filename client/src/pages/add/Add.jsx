@@ -1,6 +1,11 @@
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { useReducer, useState } from "react";
 import { BsUpload } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+import { Axios } from "../../config";
 import { options } from "../../data/data";
+import requests from "../../libs/request";
+import upload from "../../libs/upload";
 import { gigReducer, INITIAL_STATE } from "../../reducers/addGigReducer";
 
 const Add = () => {
@@ -8,7 +13,59 @@ const Add = () => {
   const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
 
-  const [] = useReducer(gigReducer, INITIAL_STATE);
+  const [state, dispatch] = useReducer(gigReducer, INITIAL_STATE);
+
+  const handleChange = (e) => {
+    dispatch({
+      type: "CHANGE_INPUT",
+      payload: { name: e.target.name, value: e.target.value },
+    });
+  };
+  const handleFeature = (e) => {
+    e.preventDefault();
+    dispatch({
+      type: "ADD_FEATURE",
+      payload: e.target[0].value,
+    });
+    e.target[0].value = "";
+  };
+
+  const handleUpload = async () => {
+    setUploading(true);
+    try {
+      const cover = await upload(singleFile);
+
+      const images = await Promise.all(
+        [...files].map(async (file) => {
+          const url = await upload(file);
+          return url;
+        })
+      );
+      setUploading(false);
+      dispatch({ type: "ADD_IMAGES", payload: { cover, images } });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const navigate = useNavigate();
+
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: (gig) => {
+      return Axios.post(requests.gigs, gig);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["myGigs"]);
+    },
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    mutation.mutate(state);
+    // navigate("/mygigs")
+  };
 
   return (
     <main className="py-40 pb-20">
