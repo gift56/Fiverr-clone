@@ -36,7 +36,7 @@ const Gig = () => {
               <GigsDetails data={data} id={id} userId={userId}/>
             </div>
             <div className="w-full lg:w-[30%] sticky top-40">
-              <GigsOrder data={data} />
+              <GigsOrder data={data} id={id}/>
             </div>
           </div>
         )}

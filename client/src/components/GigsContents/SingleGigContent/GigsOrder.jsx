@@ -2,8 +2,9 @@ import React from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { BsCheckLg } from "react-icons/bs";
 import { TfiReload } from "react-icons/tfi";
+import { Link } from "react-router-dom";
 
-const GigsOrder = ({ data }) => {
+const GigsOrder = ({ data, id }) => {
   return (
     <div className="w-full bg-white border p-4 flex flex-col gap-4 items-start justify-start rounded">
       <div className="flex items-center justify-between gap-2 w-full">
@@ -32,9 +33,11 @@ const GigsOrder = ({ data }) => {
           </div>
         ))}
       </div>
-      <button className="w-full h-10 rounded bg-primary/95 text-white hover:bg-primary outline-none">
-        Continue
-      </button>
+      <Link to={`/pay/${id}`} className="w-full">
+        <button className="w-full h-10 rounded bg-primary/95 text-white hover:bg-primary outline-none">
+          Continue
+        </button>
+      </Link>
     </div>
   );
 };
