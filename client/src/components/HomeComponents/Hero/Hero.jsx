@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { buttons } from "../../../data/data";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import loader from "../../../assets/icons/loader.svg";
 
 const Hero = () => {
   return (
