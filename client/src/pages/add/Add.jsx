@@ -87,6 +87,7 @@ const Add = () => {
                   id="title"
                   placeholder="e.g I will do something I'm really good at..."
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
+                  onChange={handleChange}
                 />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
@@ -99,6 +100,7 @@ const Add = () => {
                 <select
                   name="cats"
                   id="cats"
+                  onChange={handleChange}
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm appearance-none bg-[url(./assets/icons/dropDown.svg)] bg-no-repeat bg-[center_right_1.2rem] cursor-pointer border-gray-300 focus:border-primary"
                 >
                   {options.map((item, i) => (
@@ -121,6 +123,7 @@ const Add = () => {
                   id="cover"
                   className="hidden"
                   accept="image/*"
+                  onChange={(e) => setSingleFile(e.target.files[0])}
                 />
                 <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600 border-gray-300">
                   <p>Upload Cover Image</p>
@@ -147,6 +150,7 @@ const Add = () => {
                   className="hidden"
                   accept="image/*"
                   multiple
+                  onChange={(e) => setFiles(e.target.files)}
                 />
                 <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600 border-gray-300">
                   <p>Upload and Image</p>
@@ -173,6 +177,7 @@ const Add = () => {
                   rows="10"
                   placeholder="Brief description to customers of your service..."
                   className="w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3 focus:border-primary"
+                  onChange={handleChange}
                 ></textarea>
               </div>
               <button
