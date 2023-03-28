@@ -52,15 +52,8 @@ const GigsCards = ({ item }) => {
           {truckcateString(item.desc, 60)}
         </p>
         <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold px-4">
-          {Array(Math.round(item?.totalStars / item?.starNumber))
-            .fill()
-            .map((item, i) => (
-              <span key={i}>
-                <BsStarFill />
-              </span>
-            ))}
-          {!isNaN(item?.totalStars / item?.starNumber) &&
-            Math.round(item?.totalStars / item?.starNumber)}
+          {!isNaN(item.totalStars / item.starNumber) &&
+            Math.round(item.totalStars / item.starNumber)}
         </p>
         <div className="border-t w-full p-5 flex items-center justify-between">
           <span className="text-gray-400 cursor-pointer">

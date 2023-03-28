@@ -34,7 +34,11 @@ const Hero = () => {
             Find the perfect <i className="font-light">freelance</i> <br />{" "}
             services for your business
           </h2>
-          <div className="flex flex-col lg:flex-row items-center w-full gap-5 lg:w-[650px] bg-white h-[50px] rounded-md focus:border focus:border-primary relative mb-20 lg:mb-0">
+          <div
+            className={`flex flex-col lg:flex-row items-center w-full gap-5 lg:w-[650px] bg-white h-[50px] rounded-md focus:border focus:border-primary relative mb-20 lg:mb-0 ${
+              errors.input && touched.input ? "border-2 border-red-400" : ""
+            }`}
+          >
             <div className="flex items-center justify-start gap-2 w-full h-full">
               <span className="text-active pl-3">
                 <FiSearch size={18} />
