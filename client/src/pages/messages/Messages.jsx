@@ -88,7 +88,7 @@ const Messages = () => {
     <main className="py-40 pb-10">
       <div className="contain">
         <div className="w-full flex flex-col items-start gap-5 justify-start">
-          <h2 className="text-2xl font-bold">Messages</h2>
+          <h2 className="text-xl md:text-2xl font-bold">Messages</h2>
           {isLoading ? (
             <div className="flex items-center justify-center w-full">
               <img src={loader} alt="/" className="w-[40px]" />
