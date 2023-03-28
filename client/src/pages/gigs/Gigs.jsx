@@ -145,8 +145,8 @@ const Gigs = () => {
                       alt="/"
                       className="w-[350px]"
                     />
-                    <h2 className="text-4xl text-active font-medium">
-                      No Result For Selected Budget
+                    <h2 className="text-2xl md:text-4xl text-active font-medium text-center">
+                      Oops!🤷‍♂️ No Result 
                     </h2>
                   </div>
                 ) : (

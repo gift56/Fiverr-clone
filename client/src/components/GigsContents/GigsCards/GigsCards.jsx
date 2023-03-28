@@ -14,7 +14,6 @@ const GigsCards = ({ item }) => {
         return res.data;
       }),
   });
-  console.log(data);
   const truckcateString = (str, num) => {
     if (str?.length > num) {
       return str.slice(0, num) + "...";
