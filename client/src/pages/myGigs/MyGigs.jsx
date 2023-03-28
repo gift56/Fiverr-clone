@@ -1,9 +1,10 @@
-import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import { useQuery } from "@tanstack/react-query";
 import { BsTrash } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { columns, tableData } from "../../data/data";
 import useAuthStore from "../../stores";
+import loader from "../../assets/icons/loader.svg";
 
 const MyGigs = () => {
   const { authUser } = useAuthStore();
