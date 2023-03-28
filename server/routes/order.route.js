@@ -4,14 +4,14 @@ import {
   getOrders,
 //   intent,
 //   confirm,
-  createOrder,
+  // createOrder,
 } from "../controllers/order.controller.js";
 
 const router = express.Router();
 
-router.post("/:gigId", verifyToken, createOrder);
+// router.post("/:gigId", verifyToken, createOrder);
 router.get("/", verifyToken, getOrders);
-// router.post("/create-payment-intent/:id", verifyToken, intent);
-// router.put("/", verifyToken, confirm);
+router.post("/create-payment-intent/:id", verifyToken, intent);
+router.put("/", verifyToken, confirm);
 
 export default router;
