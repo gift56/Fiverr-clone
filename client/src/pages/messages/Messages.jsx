@@ -74,7 +74,7 @@ const Messages = () => {
         {((authUser.isSeller && !item.readBySeller) ||
           (!authUser.isSeller && !item.readByBuyer)) && (
           <button
-            className="bg-primary/80 hover:bg-primary text-white w-fit py-2 sm:px-2 text-sm rounded md:text-sm text-xs"
+            className="bg-primary/80 hover:bg-primary text-white w-fit py-2 sm:px-2 rounded md:text-sm text-xs"
             onClick={() => handleRead(item.id)}
           >
             Mark as Read
