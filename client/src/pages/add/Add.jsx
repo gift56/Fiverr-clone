@@ -21,7 +21,7 @@ const Add = () => {
     },
   ];
   return (
-    <main className="py-40">
+    <main className="py-40 pb-20">
       <div className="contain">
         <div className="flex flex-col w-full gap-4 items-start justify-start">
           <h2 className="text-2xl font-bold">Add New Gig</h2>
@@ -248,7 +248,7 @@ const Add = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-primary/80 hover:bg-primary mt-4 text-white text-base font-semibold h-10 rounded transition-all duration-300 outline-none focus:border-primary flex md:hidden"
+              className="w-full bg-primary/80 hover:bg-primary mt-4 text-white text-base font-semibold h-10 rounded transition-all duration-300 outline-none focus:border-primary md:hidden"
             >
               Create
             </button>
