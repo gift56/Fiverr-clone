@@ -1,9 +1,9 @@
-import useAuthStore from "../../stores";
+// import useAuthStore from "../stores";
 
-const { authUser } = useAuthStore();
+// const { authUser } = useAuthStore();
 
 export const INITIAL_STATE = {
-  userId: authUser?._id,
+  // userId: authUser?._id,
   title: "",
   cat: "",
   cover: "",

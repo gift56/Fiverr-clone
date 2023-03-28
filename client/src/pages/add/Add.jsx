@@ -190,29 +190,31 @@ const Add = () => {
             <div className="w-full md:flex-1 flex items-start justify-start flex-col gap-2">
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
-                  htmlFor="service"
+                  htmlFor="shortTitle"
                   className="text-sm font-medium text-darkColor/80"
                 >
                   Service Title
                 </label>
                 <input
                   type="text"
-                  name="service"
-                  id="service"
+                  name="shortTitle"
+                  id="shortTitle"
+                  onChange={handleChange}
                   placeholder="e.g One page web design..."
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                 />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
-                  htmlFor="short_description"
+                  htmlFor="shortDesc"
                   className="text-darkColor/80 text-sm font-medium"
                 >
                   Short Description
                 </label>
                 <textarea
-                  name="short_description"
-                  id="short_description"
+                  name="shortDesc"
+                  id="shortDesc"
+                  onChange={handleChange}
                   cols="30"
                   rows="10"
                   placeholder="Short Description of your service..."
@@ -221,29 +223,31 @@ const Add = () => {
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
-                  htmlFor="delivery"
+                  htmlFor="deliveryTime"
                   className="text-sm font-medium text-darkColor/80"
                 >
                   Delivery Time (e.g 3 days)
                 </label>
                 <input
-                  type="text"
-                  name="delivery"
-                  id="delivery"
+                  type="number"
+                  name="deliveryTime"
+                  onChange={handleChange}
+                  id="deliveryTime"
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                 />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
-                  htmlFor="revision"
+                  htmlFor="revisionNumber"
                   className="text-sm font-medium text-darkColor/80"
                 >
                   Revision Number
                 </label>
                 <input
                   type="number"
-                  name="revision"
-                  id="revision"
+                  name="revisionNumber"
+                  onChange={handleChange}
+                  id="revisionNumber"
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                 />
               </div>
@@ -254,34 +258,34 @@ const Add = () => {
                 >
                   Add Features
                 </label>
-                <input
-                  type="text"
-                  name="design"
-                  id="design"
-                  placeholder="e.g page design"
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
-                />
-                <input
-                  type="text"
-                  name="fileuploading"
-                  id="fileuploading"
-                  placeholder="e.g file uploading"
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
-                />
-                <input
-                  type="text"
-                  name="domain"
-                  id="domain"
-                  placeholder="e.g setting up a domain"
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
-                />
-                <input
-                  type="text"
-                  name="hosting"
-                  id="hosting"
-                  placeholder="e.g hosting"
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
-                />
+                <form
+                  action=""
+                  className="w-full flex items-center justify-start gap-2"
+                  onSubmit={handleFeature}
+                >
+                  <input
+                    type="text"
+                    name="design"
+                    id="design"
+                    placeholder="e.g page design"
+                    className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
+                  />
+                  <button type="submit">add</button>
+                </form>
+                <div className="flex flex-wrap gap-5 w-full">
+                  {state?.features?.map((f) => (
+                    <div className="item" key={f}>
+                      <button
+                        onClick={() =>
+                          dispatch({ type: "REMOVE_FEATURE", payload: f })
+                        }
+                      >
+                        {f}
+                        <span>X</span>
+                      </button>
+                    </div>
+                  ))}
+                </div>
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
