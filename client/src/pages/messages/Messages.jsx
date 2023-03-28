@@ -55,7 +55,7 @@ const Messages = () => {
     ),
     date: (
       <p
-        className={`w-full flex items-center font-semibold text-darkColor/70 justify-start h-full py-5 border-r border-white ${
+        className={`w-full flex items-center text-xs md:text-sm font-semibold text-darkColor/70 justify-start h-full py-5 border-r border-white ${
           (authUser?.isSeller && !item?.readBySeller) ||
           (!authUser.isSeller && !item?.readByBuyer && "bg-slate-100")
         }`}
@@ -74,7 +74,7 @@ const Messages = () => {
         {((authUser.isSeller && !item.readBySeller) ||
           (!authUser.isSeller && !item.readByBuyer)) && (
           <button
-            className="bg-primary/80 hover:bg-primary text-white w-fit py-2 px-2 text-sm rounded"
+            className="bg-primary/80 hover:bg-primary text-white w-fit py-2 sm:px-2 text-sm rounded md:text-sm text-xs"
             onClick={() => handleRead(item.id)}
           >
             Mark as Read
