@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useMemo, useReducer, useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { BsUpload } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
@@ -17,6 +17,8 @@ const Add = () => {
   const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
   const [state, dispatch] = useReducer(gigReducer, INITIAL_STATE);
+
+  // useMemo(() => set, [uploading])
 
   const handleUpload = async () => {
     setUploading(true);
@@ -240,7 +242,7 @@ const Add = () => {
                     className="w-fit border py-2 px-5 rounded-md cursor-pointer hover:bg-primary hover:border-primary hover:text-white text-base font-medium transition-all duration-300"
                   >
                     {uploading ? (
-                      <div className="flex items-center justify-center">
+                      <div className="flex items-center justify-center w-[400px]">
                         <img src={loader} alt="/" className="w-[30px]" />
                       </div>
                     ) : (
