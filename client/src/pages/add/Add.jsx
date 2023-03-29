@@ -1,4 +1,4 @@
-import React, { useMemo, useReducer, useState } from "react";
+import React, { useReducer, useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { BsUpload } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
@@ -17,8 +17,6 @@ const Add = () => {
   const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
   const [state, dispatch] = useReducer(gigReducer, INITIAL_STATE);
-
-  // useMemo(() => set, [uploading])
 
   const handleUpload = async () => {
     setUploading(true);
@@ -103,7 +101,6 @@ const Add = () => {
     });
     e.target[0].value = "";
   };
-
 
   return (
     <main className="py-40 pb-20">
@@ -254,7 +251,12 @@ const Add = () => {
                     {files.length === 0 ? null : (
                       <div className="flex items-center flex-wrap gap-2">
                         {[...files].map((item, i) => (
-                          <p key={i} className="truncate w-[120px] text-sm border bg-gray-300 p-2 rounded-3xl">{item.name}</p>
+                          <p
+                            key={i}
+                            className="truncate w-[120px] text-sm border bg-gray-300 p-2 rounded-3xl"
+                          >
+                            {item.name}
+                          </p>
                         ))}
                       </div>
                     )}
