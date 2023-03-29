@@ -12,7 +12,6 @@ import { useFormik } from "formik";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import useAuthStore from "../../stores";
 
-
 const Add = () => {
   const [uploading, setUploading] = useState(false);
   const { authUser } = useAuthStore();
@@ -70,7 +69,7 @@ const Add = () => {
   //   navigate("/mygigs");
   // };
 
-  const initialValue = {
+  const initialValues = {
     userId: authUser?._id,
     title: "",
     cat: "",
@@ -84,6 +83,11 @@ const Add = () => {
     features: [],
     price: 0,
   };
+
+  const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
+    useFormik({
+      initialValues,
+    });
 
   return (
     <main className="py-40 pb-20">
@@ -106,6 +110,8 @@ const Add = () => {
                   placeholder="e.g I will do something I'm really good at..."
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                   onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.title}
                 />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
@@ -119,6 +125,8 @@ const Add = () => {
                   name="cat"
                   id="cat"
                   onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.cat}
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm appearance-none bg-[url(./assets/icons/dropDown.svg)] bg-no-repeat bg-[center_right_1.2rem] cursor-pointer border-gray-300 focus:border-primary"
                 >
                   {options.map((item, i) => (
@@ -144,11 +152,11 @@ const Add = () => {
                   // onChange={(e) => setSingleFile(e.target.files[0])}
                 />
                 <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600 border-gray-300">
-                  {singleFile?.type?.startsWith("image/") ? (
+                  {values.cover?.type?.startsWith("image/") ? (
                     <div className="flex items-center justify-center gap-2">
                       <img
-                        src={URL.createObjectURL(singleFile)}
-                        alt={singleFile.name}
+                        src={URL.createObjectURL(values.cover)}
+                        alt={values.cover.name}
                         className="w-[100px] h-[100px] rounded-full border-2 border-primary object-cover"
                       />
                       <label
@@ -188,7 +196,7 @@ const Add = () => {
                   multiple
                   // onChange={(e) => setFiles(e.target.files)}
                 />
-                {files.length === 0 ? (
+                {values.images.length === 0 ? (
                   <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600 border-gray-300">
                     <p>Upload and Image</p>
                     <BsUpload size={20} />
@@ -201,7 +209,7 @@ const Add = () => {
                   </div>
                 ) : (
                   <button
-                    onClick={handleUpload}
+                    // onClick={handleUpload}
                     className="w-fit border py-2 px-5 rounded-md cursor-pointer hover:bg-primary hover:border-primary hover:text-white text-base font-medium transition-all duration-300"
                   >
                     {/* {uploading ? (
