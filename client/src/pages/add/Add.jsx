@@ -84,21 +84,14 @@ const Add = () => {
     // navigate("/mygigs");
   };
 
-  const {
-    values,
-    handleBlur,
-    handleChange,
-    handleSubmit,
-    errors,
-    touched,
-    setFieldValue,
-  } = useFormik({
-    initialValues: state,
-    validationSchema: addGigSchema,
-    onSubmit,
-    validateOnChange: true,
-    validateOnBlur: true,
-  });
+  const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
+    useFormik({
+      initialValues: state,
+      validationSchema: addGigSchema,
+      onSubmit,
+      validateOnChange: true,
+      validateOnBlur: true,
+    });
 
   const handleFeature = (e) => {
     e.preventDefault();
@@ -109,7 +102,7 @@ const Add = () => {
     e.target[0].value = "";
   };
 
-  console.log(state);
+  // console.log(state);
 
   return (
     <main className="py-40 pb-20">
@@ -130,7 +123,9 @@ const Add = () => {
                   name="title"
                   id="title"
                   placeholder="e.g I will do something I'm really good at..."
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
+                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary ${
+                    errors.title && touched.title ? "border-red-500" : ""
+                  }`}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.title}
@@ -150,7 +145,9 @@ const Add = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.cat}
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm appearance-none bg-[url(./assets/icons/dropDown.svg)] bg-no-repeat bg-[center_right_1.2rem] cursor-pointer border-gray-300 focus:border-primary"
+                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm appearance-none bg-[url(./assets/icons/dropDown.svg)] bg-no-repeat bg-[center_right_1.2rem] cursor-pointer border-gray-300 focus:border-primary ${
+                    errors.cat && touched.cat ? "border-red-500" : ""
+                  }`}
                 >
                   {options.map((item, i) => (
                     <option key={i} value={item.value}>
@@ -258,7 +255,9 @@ const Add = () => {
                   cols="30"
                   rows="10"
                   placeholder="Brief description to customers of your service..."
-                  className="w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3 focus:border-primary"
+                  className={`w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3 focus:border-primary ${
+                    errors.desc && touched.desc ? "border-red-500" : ""
+                  }`}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.desc}
@@ -288,7 +287,11 @@ const Add = () => {
                   onBlur={handleBlur}
                   value={values.shortTitle}
                   placeholder="e.g One page web design..."
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
+                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary ${
+                    errors.shortTitle && touched.shortTitle
+                      ? "border-red-500"
+                      : ""
+                  }`}
                 />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
@@ -307,7 +310,11 @@ const Add = () => {
                   cols="30"
                   rows="10"
                   placeholder="Short Description of your service..."
-                  className="w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3 focus:border-primary"
+                  className={`w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3 focus:border-primary ${
+                    errors.shortDesc && touched.shortDesc
+                      ? "border-red-500"
+                      : ""
+                  }`}
                 ></textarea>
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
@@ -324,7 +331,7 @@ const Add = () => {
                   onBlur={handleBlur}
                   value={values.deliveryTime}
                   id="deliveryTime"
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
+                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"`}
                 />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
