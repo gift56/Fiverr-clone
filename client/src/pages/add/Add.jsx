@@ -8,60 +8,81 @@ import requests from "../../libs/request";
 import upload from "../../libs/upload";
 import { gigReducer, INITIAL_STATE } from "../../reducers/addGigReducer";
 import loader from "../../assets/icons/loader.svg";
+import { useFormik } from "formik";
+import { IoCloseCircleOutline } from "react-icons/io5";
+import useAuthStore from "../../stores";
+
 
 const Add = () => {
-  const [singleFile, setSingleFile] = useState(undefined);
-  const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
-  const [state, dispatch] = useReducer(gigReducer, INITIAL_STATE);
+  const { authUser } = useAuthStore();
 
-  const handleChange = (e) => {
-    dispatch({
-      type: "CHANGE_INPUT",
-      payload: { name: e.target.name, value: e.target.value },
-    });
-  };
-  const handleFeature = (e) => {
-    e.preventDefault();
-    dispatch({
-      type: "ADD_FEATURE",
-      payload: e.target[0].value,
-    });
-    e.target[0].value = "";
-  };
+  // const [singleFile, setSingleFile] = useState(undefined);
+  // const [files, setFiles] = useState([]);
+  // const [state, dispatch] = useReducer(gigReducer, INITIAL_STATE);
 
-  const handleUpload = async () => {
-    setUploading(true);
-    try {
-      const cover = await upload(singleFile);
+  // const handleChange = (e) => {
+  //   dispatch({
+  //     type: "CHANGE_INPUT",
+  //     payload: { name: e.target.name, value: e.target.value },
+  //   });
+  // };
+  // const handleFeature = (e) => {
+  //   e.preventDefault();
+  //   dispatch({
+  //     type: "ADD_FEATURE",
+  //     payload: e.target[0].value,
+  //   });
+  //   e.target[0].value = "";
+  // };
 
-      const images = await Promise.all(
-        [...files].map(async (file) => {
-          const url = await upload(file);
-          return url;
-        })
-      );
-      setUploading(false);
-      dispatch({ type: "ADD_IMAGES", payload: { cover, images } });
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  const navigate = useNavigate();
-  const queryClient = useQueryClient();
-  const mutation = useMutation({
-    mutationFn: (gig) => {
-      return Axios.post(requests.gigs, gig);
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries(["myGigs"]);
-    },
-  });
+  // const handleUpload = async () => {
+  //   setUploading(true);
+  //   try {
+  //     const cover = await upload(singleFile);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    mutation.mutate(state);
-    navigate("/mygigs");
+  //     const images = await Promise.all(
+  //       [...files].map(async (file) => {
+  //         const url = await upload(file);
+  //         return url;
+  //       })
+  //     );
+  //     setUploading(false);
+  //     dispatch({ type: "ADD_IMAGES", payload: { cover, images } });
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+  // const navigate = useNavigate();
+  // const queryClient = useQueryClient();
+  // const mutation = useMutation({
+  //   mutationFn: (gig) => {
+  //     return Axios.post(requests.gigs, gig);
+  //   },
+  //   onSuccess: () => {
+  //     queryClient.invalidateQueries(["myGigs"]);
+  //   },
+  // });
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // mutation.mutate(state);
+  //   navigate("/mygigs");
+  // };
+
+  const initialValue = {
+    userId: authUser?._id,
+    title: "",
+    cat: "",
+    cover: "",
+    images: [],
+    desc: "",
+    shortTitle: "",
+    shortDesc: "",
+    deliveryTime: 0,
+    revisionNumber: 0,
+    features: [],
+    price: 0,
   };
 
   return (
@@ -120,7 +141,7 @@ const Add = () => {
                   id="cover"
                   className="hidden"
                   accept="image/*"
-                  onChange={(e) => setSingleFile(e.target.files[0])}
+                  // onChange={(e) => setSingleFile(e.target.files[0])}
                 />
                 <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600 border-gray-300">
                   {singleFile?.type?.startsWith("image/") ? (
@@ -130,7 +151,12 @@ const Add = () => {
                         alt={singleFile.name}
                         className="w-[100px] h-[100px] rounded-full border-2 border-primary object-cover"
                       />
-                      <label htmlFor="cover" className="cursor-pointer text-sm sm:text-base font-medium">Change Cover Image</label>
+                      <label
+                        htmlFor="cover"
+                        className="cursor-pointer text-sm sm:text-base font-medium"
+                      >
+                        Change Cover Image
+                      </label>
                     </div>
                   ) : (
                     <>
@@ -160,7 +186,7 @@ const Add = () => {
                   className="hidden"
                   accept="image/*"
                   multiple
-                  onChange={(e) => setFiles(e.target.files)}
+                  // onChange={(e) => setFiles(e.target.files)}
                 />
                 {files.length === 0 ? (
                   <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600 border-gray-300">
@@ -178,13 +204,13 @@ const Add = () => {
                     onClick={handleUpload}
                     className="w-fit border py-2 px-5 rounded-md cursor-pointer hover:bg-primary hover:border-primary hover:text-white text-base font-medium transition-all duration-300"
                   >
-                    {uploading ? (
+                    {/* {uploading ? (
                       <div className="flex items-center justify-center">
                         <img src={loader} alt="/" className="w-[40px]" />
                       </div>
                     ) : (
                       "Upload Images"
-                    )}
+                    )} */}
                   </button>
                 )}
               </div>
@@ -286,7 +312,7 @@ const Add = () => {
                 </label>
                 <form
                   className="w-full flex items-center justify-start gap-2"
-                  onSubmit={handleFeature}
+                  // onSubmit={handleFeature}
                 >
                   <input
                     type="text"
@@ -294,21 +320,32 @@ const Add = () => {
                     placeholder="e.g page design"
                     className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                   />
-                  <button type="submit">add</button>
+                  <button
+                    type="submit"
+                    className="border w-fit h-10 px-4 rounded bg-primary/80 border-primary hover:bg-primary text-white transition-all duration-300 capitalize"
+                  >
+                    add
+                  </button>
                 </form>
-                <div className="flex flex-wrap gap-5 w-full">
-                  {state?.features?.map((f) => (
-                    <div className="item" key={f}>
+                <div className="flex flex-wrap gap-3 w-full">
+                  {/* {state?.features?.map((f) => (
+                    <div
+                      className="flex items-center gap-2 justify-start w-fit bg-primary/90 px-2 py-1 rounded-2xl text-white"
+                      key={f}
+                    >
                       <button
-                        onClick={() =>
-                          dispatch({ type: "REMOVE_FEATURE", payload: f })
-                        }
+                        // onClick={() =>
+                        //   dispatch({ type: "REMOVE_FEATURE", payload: f })
+                        // }
+                        className="flex items-center gap-2 justify-start w-fit"
                       >
                         {f}
-                        <span>X</span>
+                        <span>
+                          <IoCloseCircleOutline />
+                        </span>
                       </button>
                     </div>
-                  ))}
+                  ))} */}
                 </div>
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">

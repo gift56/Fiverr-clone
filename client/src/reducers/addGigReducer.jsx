@@ -1,7 +1,3 @@
-// import useAuthStore from "../stores";
-
-// const { authUser } = useAuthStore();
-
 export const INITIAL_STATE = {
   // userId: authUser?._id,
   title: "",
