@@ -1,5 +1,5 @@
 export const INITIAL_STATE = {
-  // userId: authUser?._id,
+  userId: JSON.parse(localStorage.getItem("currentUser"))?._id,
   title: "",
   cat: "",
   cover: "",

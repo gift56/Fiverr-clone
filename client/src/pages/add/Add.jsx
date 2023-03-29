@@ -1,5 +1,5 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { useReducer, useState } from "react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { BsUpload } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { Axios } from "../../config";
@@ -8,86 +8,63 @@ import requests from "../../libs/request";
 import upload from "../../libs/upload";
 import { gigReducer, INITIAL_STATE } from "../../reducers/addGigReducer";
 import loader from "../../assets/icons/loader.svg";
-import { useFormik } from "formik";
 import { IoCloseCircleOutline } from "react-icons/io5";
-import useAuthStore from "../../stores";
+// import { useFormik } from "formik";
 
 const Add = () => {
+  const [singleFile, setSingleFile] = useState(undefined);
+  const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
-  const { authUser } = useAuthStore();
+  const [state, dispatch] = useReducer(gigReducer, INITIAL_STATE);
 
-  // const [singleFile, setSingleFile] = useState(undefined);
-  // const [files, setFiles] = useState([]);
-  // const [state, dispatch] = useReducer(gigReducer, INITIAL_STATE);
-
-  // const handleChange = (e) => {
-  //   dispatch({
-  //     type: "CHANGE_INPUT",
-  //     payload: { name: e.target.name, value: e.target.value },
-  //   });
-  // };
-  // const handleFeature = (e) => {
-  //   e.preventDefault();
-  //   dispatch({
-  //     type: "ADD_FEATURE",
-  //     payload: e.target[0].value,
-  //   });
-  //   e.target[0].value = "";
-  // };
-
-  // const handleUpload = async () => {
-  //   setUploading(true);
-  //   try {
-  //     const cover = await upload(singleFile);
-
-  //     const images = await Promise.all(
-  //       [...files].map(async (file) => {
-  //         const url = await upload(file);
-  //         return url;
-  //       })
-  //     );
-  //     setUploading(false);
-  //     dispatch({ type: "ADD_IMAGES", payload: { cover, images } });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-  // const navigate = useNavigate();
-  // const queryClient = useQueryClient();
-  // const mutation = useMutation({
-  //   mutationFn: (gig) => {
-  //     return Axios.post(requests.gigs, gig);
-  //   },
-  //   onSuccess: () => {
-  //     queryClient.invalidateQueries(["myGigs"]);
-  //   },
-  // });
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // mutation.mutate(state);
-  //   navigate("/mygigs");
-  // };
-
-  const initialValues = {
-    userId: authUser?._id,
-    title: "",
-    cat: "",
-    cover: "",
-    images: [],
-    desc: "",
-    shortTitle: "",
-    shortDesc: "",
-    deliveryTime: 0,
-    revisionNumber: 0,
-    features: [],
-    price: 0,
+  const handleChange = (e) => {
+    dispatch({
+      type: "CHANGE_INPUT",
+      payload: { name: e.target.name, value: e.target.value },
+    });
+  };
+  const handleFeature = (e) => {
+    e.preventDefault();
+    dispatch({
+      type: "ADD_FEATURE",
+      payload: e.target[0].value,
+    });
+    e.target[0].value = "";
   };
 
-  const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
-    useFormik({
-      initialValues,
-    });
+  const handleUpload = async () => {
+    setUploading(true);
+    try {
+      const cover = await upload(singleFile);
+
+      const images = await Promise.all(
+        [...files].map(async (file) => {
+          const url = await upload(file);
+          return url;
+        })
+      );
+      setUploading(false);
+      dispatch({ type: "ADD_IMAGES", payload: { cover, images } });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
+  const mutation = useMutation({
+    mutationFn: (gig) => {
+      return Axios.post(requests.gigs, gig);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["myGigs"]);
+    },
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    mutation.mutate(state);
+    navigate("/mygigs");
+  };
 
   return (
     <main className="py-40 pb-20">
@@ -110,8 +87,6 @@ const Add = () => {
                   placeholder="e.g I will do something I'm really good at..."
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                   onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.title}
                 />
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
@@ -125,8 +100,6 @@ const Add = () => {
                   name="cat"
                   id="cat"
                   onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.cat}
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm appearance-none bg-[url(./assets/icons/dropDown.svg)] bg-no-repeat bg-[center_right_1.2rem] cursor-pointer border-gray-300 focus:border-primary"
                 >
                   {options.map((item, i) => (
@@ -149,14 +122,14 @@ const Add = () => {
                   id="cover"
                   className="hidden"
                   accept="image/*"
-                  // onChange={(e) => setSingleFile(e.target.files[0])}
+                  onChange={(e) => setSingleFile(e.target.files[0])}
                 />
                 <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600 border-gray-300">
-                  {values.cover?.type?.startsWith("image/") ? (
+                  {singleFile?.type?.startsWith("image/") ? (
                     <div className="flex items-center justify-center gap-2">
                       <img
-                        src={URL.createObjectURL(values.cover)}
-                        alt={values.cover.name}
+                        src={URL.createObjectURL(singleFile)}
+                        alt={singleFile.name}
                         className="w-[100px] h-[100px] rounded-full border-2 border-primary object-cover"
                       />
                       <label
@@ -194,9 +167,9 @@ const Add = () => {
                   className="hidden"
                   accept="image/*"
                   multiple
-                  // onChange={(e) => setFiles(e.target.files)}
+                  onChange={(e) => setFiles(e.target.files)}
                 />
-                {values.images.length === 0 ? (
+                {files.length === 0 ? (
                   <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600 border-gray-300">
                     <p>Upload and Image</p>
                     <BsUpload size={20} />
@@ -209,16 +182,16 @@ const Add = () => {
                   </div>
                 ) : (
                   <button
-                    // onClick={handleUpload}
+                    onClick={handleUpload}
                     className="w-fit border py-2 px-5 rounded-md cursor-pointer hover:bg-primary hover:border-primary hover:text-white text-base font-medium transition-all duration-300"
                   >
-                    {/* {uploading ? (
+                    {uploading ? (
                       <div className="flex items-center justify-center">
                         <img src={loader} alt="/" className="w-[40px]" />
                       </div>
                     ) : (
                       "Upload Images"
-                    )} */}
+                    )}
                   </button>
                 )}
               </div>
@@ -320,7 +293,7 @@ const Add = () => {
                 </label>
                 <form
                   className="w-full flex items-center justify-start gap-2"
-                  // onSubmit={handleFeature}
+                  onSubmit={handleFeature}
                 >
                   <input
                     type="text"
@@ -336,15 +309,15 @@ const Add = () => {
                   </button>
                 </form>
                 <div className="flex flex-wrap gap-3 w-full">
-                  {/* {state?.features?.map((f) => (
+                  {state?.features?.map((f) => (
                     <div
                       className="flex items-center gap-2 justify-start w-fit bg-primary/90 px-2 py-1 rounded-2xl text-white"
                       key={f}
                     >
                       <button
-                        // onClick={() =>
-                        //   dispatch({ type: "REMOVE_FEATURE", payload: f })
-                        // }
+                        onClick={() =>
+                          dispatch({ type: "REMOVE_FEATURE", payload: f })
+                        }
                         className="flex items-center gap-2 justify-start w-fit"
                       >
                         {f}
@@ -353,7 +326,7 @@ const Add = () => {
                         </span>
                       </button>
                     </div>
-                  ))} */}
+                  ))}
                 </div>
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">

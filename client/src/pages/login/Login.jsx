@@ -35,6 +35,7 @@ const Login = ({ show, setShow }) => {
     try {
       const res = await Axios.post(requests.login, payload);
       setAuthUser(res.data);
+      localStorage.setItem("currentUser", JSON.stringify(res.data));
       toast.success("Login Successfully", {
         position: "bottom-right",
         toastId: 1,
