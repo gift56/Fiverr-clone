@@ -165,14 +165,14 @@ const Add = () => {
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
-                  htmlFor="description"
+                  htmlFor="desc"
                   className="text-sm text-darkColor/80 font-medium"
                 >
                   Description
                 </label>
                 <textarea
-                  name="description"
-                  id="description"
+                  name="desc"
+                  id="desc"
                   cols="30"
                   rows="10"
                   placeholder="Brief description to customers of your service..."
@@ -254,20 +254,18 @@ const Add = () => {
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
-                  htmlFor="feature"
+                  htmlFor="features"
                   className="text-sm font-medium text-darkColor/80"
                 >
                   Add Features
                 </label>
                 <form
-                  action=""
                   className="w-full flex items-center justify-start gap-2"
                   onSubmit={handleFeature}
                 >
                   <input
                     type="text"
-                    name="design"
-                    id="design"
+                    id="features"
                     placeholder="e.g page design"
                     className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                   />
