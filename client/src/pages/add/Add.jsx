@@ -9,8 +9,7 @@ import upload from "../../libs/upload";
 import { gigReducer, INITIAL_STATE } from "../../reducers/addGigReducer";
 import loader from "../../assets/icons/loader.svg";
 import { IoCloseCircleOutline } from "react-icons/io5";
-import { useFormik } from "formik";
-import { addGigSchema } from "../../schemas";
+import { toast } from "react-toastify";
 
 const Add = () => {
   const [singleFile, setSingleFile] = useState(undefined);
@@ -22,7 +21,6 @@ const Add = () => {
     setUploading(true);
     try {
       const cover = await upload(singleFile);
-
       const images = await Promise.all(
         [...files].map(async (file) => {
           const url = await upload(file);
@@ -44,55 +42,22 @@ const Add = () => {
     onSuccess: () => {
       queryClient.invalidateQueries(["myGigs"]);
     },
+    onError: (error) => {
+      store.setRequestLoading(false);
+      console.log(error);
+      toast.error("Something went wrong", {
+        position: "top-right",
+        toastId: 1,
+      });
+    },
   });
 
-  const onSubmit = async (payload, actions) => {
+  const handleChange = (e) => {
     dispatch({
       type: "CHANGE_INPUT",
-      payload: { name: "title", value: payload.title },
+      payload: { name: e.target.name, value: e.target.value },
     });
-    dispatch({
-      type: "CHANGE_INPUT",
-      payload: { name: "cat", value: payload.cat },
-    });
-    dispatch({
-      type: "CHANGE_INPUT",
-      payload: { name: "desc", value: payload.desc },
-    });
-    dispatch({
-      type: "CHANGE_INPUT",
-      payload: { name: "shortTitle", value: payload.shortTitle },
-    });
-    dispatch({
-      type: "CHANGE_INPUT",
-      payload: { name: "shortDesc", value: payload.shortDesc },
-    });
-    dispatch({
-      type: "CHANGE_INPUT",
-      payload: { name: "deliveryTime", value: payload.deliveryTime },
-    });
-    dispatch({
-      type: "CHANGE_INPUT",
-      payload: { name: "revisionNumber", value: payload.revisionNumber },
-    });
-    dispatch({
-      type: "CHANGE_INPUT",
-      payload: { name: "price", value: payload.price },
-    });
-    mutation.mutate(state);
-    navigate("/mygigs");
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    actions.resetForm();
   };
-
-  const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
-    useFormik({
-      initialValues: state,
-      validationSchema: addGigSchema,
-      onSubmit,
-      validateOnChange: true,
-      validateOnBlur: true,
-    });
 
   const handleFeature = (e) => {
     e.preventDefault();
@@ -103,6 +68,11 @@ const Add = () => {
     e.target[0].value = "";
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    mutation.mutate(state);
+    navigate("/myGigs")
+  };
   return (
     <main className="py-40 pb-20">
       <div className="contain">
@@ -122,18 +92,16 @@ const Add = () => {
                   name="title"
                   id="title"
                   placeholder="e.g I will do something I'm really good at..."
-                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary ${
-                    errors.title && touched.title ? "border-red-500" : ""
-                  }`}
+                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary`}
                   onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.title}
+                  // onBlur={handleBlur}
+                  // value={values.title}
                 />
-                {errors.title && (
+                {/* {errors.title && (
                   <p className="text-sm font-medium text-red-500 text-end w-full">
                     {errors.title}
                   </p>
-                )}
+                )} */}
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
@@ -146,11 +114,9 @@ const Add = () => {
                   name="cat"
                   id="cat"
                   onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.cat}
-                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm appearance-none bg-[url(./assets/icons/dropDown.svg)] bg-no-repeat bg-[center_right_1.2rem] cursor-pointer border-gray-300 focus:border-primary ${
-                    errors.cat && touched.cat ? "border-red-500" : ""
-                  }`}
+                  // onBlur={handleBlur}
+                  // value={values.cat}
+                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm appearance-none bg-[url(./assets/icons/dropDown.svg)] bg-no-repeat bg-[center_right_1.2rem] cursor-pointer border-gray-300 focus:border-primary`}
                 >
                   {options.map((item, i) => (
                     <option key={i} value={item.value}>
@@ -158,11 +124,11 @@ const Add = () => {
                     </option>
                   ))}
                 </select>
-                {errors.cat && (
+                {/* {errors.cat && (
                   <p className="text-sm font-medium text-red-500 text-end w-full">
                     {errors.cat}
                   </p>
-                )}
+                )} */}
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
@@ -277,18 +243,16 @@ const Add = () => {
                   cols="30"
                   rows="10"
                   placeholder="Brief description to customers of your service..."
-                  className={`w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3 focus:border-primary ${
-                    errors.desc && touched.desc ? "border-red-500" : ""
-                  }`}
+                  className={`w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3 focus:border-primary`}
                   onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.desc}
+                  // onBlur={handleBlur}
+                  // value={values.desc}
                 ></textarea>
-                {errors.desc && (
+                {/* {errors.desc && (
                   <p className="text-sm font-medium text-red-500 text-end w-full">
                     {errors.desc}
                   </p>
-                )}
+                )} */}
               </div>
               <button
                 type="submit"
@@ -311,20 +275,16 @@ const Add = () => {
                   name="shortTitle"
                   id="shortTitle"
                   onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.shortTitle}
+                  // onBlur={handleBlur}
+                  // value={values.shortTitle}
                   placeholder="e.g One page web design..."
-                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary ${
-                    errors.shortTitle && touched.shortTitle
-                      ? "border-red-500"
-                      : ""
-                  }`}
+                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary`}
                 />
-                {errors.shortTitle && (
+                {/* {errors.shortTitle && (
                   <p className="text-sm font-medium text-red-500 text-end w-full">
                     {errors.shortTitle}
                   </p>
-                )}
+                )} */}
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
@@ -337,22 +297,18 @@ const Add = () => {
                   name="shortDesc"
                   id="shortDesc"
                   onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.shortDesc}
+                  // onBlur={handleBlur}
+                  // value={values.shortDesc}
                   cols="30"
                   rows="10"
                   placeholder="Short Description of your service..."
-                  className={`w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3 focus:border-primary ${
-                    errors.shortDesc && touched.shortDesc
-                      ? "border-red-500"
-                      : ""
-                  }`}
+                  className={`w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3 focus:border-primary`}
                 ></textarea>
-                {errors.shortDesc && (
+                {/* {errors.shortDesc && (
                   <p className="text-sm font-medium text-red-500 text-end w-full">
                     {errors.shortDesc}
                   </p>
-                )}
+                )} */}
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
@@ -365,20 +321,16 @@ const Add = () => {
                   type="number"
                   name="deliveryTime"
                   onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.deliveryTime}
+                  // onBlur={handleBlur}
+                  // value={values.deliveryTime}
                   id="deliveryTime"
-                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary ${
-                    errors.deliveryTime && touched.deliveryTime
-                      ? "border-red-500"
-                      : ""
-                  }`}
+                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary`}
                 />
-                {errors.deliveryTime && (
+                {/* {errors.deliveryTime && (
                   <p className="text-sm font-medium text-red-500 text-end w-full">
                     {errors.deliveryTime}
                   </p>
-                )}
+                )} */}
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
@@ -391,20 +343,16 @@ const Add = () => {
                   type="number"
                   name="revisionNumber"
                   onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.revisionNumber}
+                  // onBlur={handleBlur}
+                  // value={values.revisionNumber}
                   id="revisionNumber"
-                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary ${
-                    errors.revisionNumber && touched.revisionNumber
-                      ? "border-red-500"
-                      : ""
-                  }`}
+                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary `}
                 />
-                {errors.revisionNumber && (
+                {/* {errors.revisionNumber && (
                   <p className="text-sm font-medium text-red-500 text-end w-full">
                     {errors.revisionNumber}
                   </p>
-                )}
+                )} */}
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
@@ -463,17 +411,15 @@ const Add = () => {
                   name="price"
                   id="price"
                   onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.price}
-                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary ${
-                    errors.price && touched.price ? "border-red-500" : ""
-                  }`}
+                  // onBlur={handleBlur}
+                  // value={values.price}
+                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary`}
                 />
-                {errors.price && (
+                {/* {errors.price && (
                   <p className="text-sm font-medium text-red-500 text-end w-full">
                     {errors.price}
                   </p>
-                )}
+                )} */}
               </div>
             </div>
             <button
