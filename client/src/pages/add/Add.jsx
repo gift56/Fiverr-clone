@@ -48,8 +48,38 @@ const Add = () => {
 
   const onSubmit = (payload, action) => {
     console.log(payload);
-    dispatch({ type: "CHANGE_INPUT", payload: { name: "title", value: values.title }});
-    dispatch({ type: "CHANGE_INPUT", payload: { name: "cat", value: values.cat }});
+    dispatch({
+      type: "CHANGE_INPUT",
+      payload: { name: "title", value: payload.title },
+    });
+    dispatch({
+      type: "CHANGE_INPUT",
+      payload: { name: "cat", value: payload.cat },
+    });
+    dispatch({
+      type: "CHANGE_INPUT",
+      payload: { name: "desc", value: payload.desc },
+    });
+    dispatch({
+      type: "CHANGE_INPUT",
+      payload: { name: "shortTitle", value: payload.shortTitle },
+    });
+    dispatch({
+      type: "CHANGE_INPUT",
+      payload: { name: "shortDesc", value: payload.shortDesc },
+    });
+    dispatch({
+      type: "CHANGE_INPUT",
+      payload: { name: "deliveryTime", value: payload.deliveryTime },
+    });
+    dispatch({
+      type: "CHANGE_INPUT",
+      payload: { name: "revisionNumber", value: payload.revisionNumber },
+    });
+    dispatch({
+      type: "CHANGE_INPUT",
+      payload: { name: "price", value: payload.price },
+    });
     // mutation.mutate(state);
     // navigate("/mygigs");
   };
@@ -77,13 +107,9 @@ const Add = () => {
       payload: e.target[0].value,
     });
     e.target[0].value = "";
-    // if (newFeature) {
-    //   dispatch({ type: "ADD_FEATURE", payload: newFeature });
-    //   setFieldValue("features", "");
-    // }
   };
 
-  console.log(state);
+  // console.log(state);
 
   return (
     <main className="py-40 pb-20">
