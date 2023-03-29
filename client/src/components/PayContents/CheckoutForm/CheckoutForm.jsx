@@ -90,7 +90,7 @@ const CheckoutForm = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
         <PaymentElement id="payment-element" options={paymentElementOptions} />
-        <button disabled={isLoading || !stripe || !elements} id="submit">
+        <button className="w-fit text-white bg-primary/80 hover:bg-primary mt-2 py-2 px-4 rounded-md transition-all duration-300" disabled={isLoading || !stripe || !elements} id="submit">
           <span id="button-text">
             {isLoading ? (
               <div className="spinner" id="spinner"></div>
