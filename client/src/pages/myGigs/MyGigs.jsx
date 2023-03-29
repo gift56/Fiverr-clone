@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { BsTrash } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -12,7 +12,7 @@ const MyGigs = () => {
   const { authUser } = useAuthStore();
   const queryClient = useQueryClient();
 
-  const { isLoading, error, data } = useQuery({
+  const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["myGigs"],
     queryFn: () =>
       Axios.get(`${requests.gigs}?userId=${authUser?._id}`).then(
@@ -32,6 +32,10 @@ const MyGigs = () => {
   const handleDelete = (id) => {
     mutation.mutate(id);
   };
+
+  useEffect(() => {
+    refetch();
+  }, []);
 
   const tableActions = data?.map((item) => ({
     image: (
