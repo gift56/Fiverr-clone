@@ -104,6 +104,7 @@ const Add = () => {
     e.target[0].value = "";
   };
 
+
   return (
     <main className="py-40 pb-20">
       <div className="contain">
@@ -237,18 +238,27 @@ const Add = () => {
                     </label>
                   </div>
                 ) : (
-                  <button
-                    onClick={handleUpload}
-                    className="w-fit border py-2 px-5 rounded-md cursor-pointer hover:bg-primary hover:border-primary hover:text-white text-base font-medium transition-all duration-300"
-                  >
-                    {uploading ? (
-                      <div className="flex items-center justify-center w-[400px]">
-                        <img src={loader} alt="/" className="w-[30px]" />
+                  <div className="flex items-start  flex-col lg:flex-row justify-start gap-4 w-full">
+                    <button
+                      onClick={handleUpload}
+                      className="w-[150px] border py-2 rounded-md cursor-pointer hover:bg-primary hover:border-primary hover:text-white text-base font-medium transition-all duration-300"
+                    >
+                      {uploading ? (
+                        <div className="flex items-center justify-center">
+                          <img src={loader} alt="/" className="w-[30px]" />
+                        </div>
+                      ) : (
+                        "Upload Images"
+                      )}
+                    </button>
+                    {files.length === 0 ? null : (
+                      <div className="flex items-center flex-wrap gap-2">
+                        {[...files].map((item, i) => (
+                          <p key={i} className="truncate w-[120px] text-sm border bg-gray-300 p-2 rounded-3xl">{item.name}</p>
+                        ))}
                       </div>
-                    ) : (
-                      "Upload Images"
                     )}
-                  </button>
+                  </div>
                 )}
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
