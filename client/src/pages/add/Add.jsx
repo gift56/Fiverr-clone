@@ -130,7 +130,11 @@ const Add = () => {
                   onBlur={handleBlur}
                   value={values.title}
                 />
-                {/* {errors.title ? <div>{errors.title}</div> : null} */}
+                {errors.title && (
+                  <p className="text-sm font-medium text-red-500 text-end w-full">
+                    {errors.title}
+                  </p>
+                )}
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
@@ -155,6 +159,11 @@ const Add = () => {
                     </option>
                   ))}
                 </select>
+                {errors.cat && (
+                  <p className="text-sm font-medium text-red-500 text-end w-full">
+                    {errors.cat}
+                  </p>
+                )}
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
@@ -262,6 +271,11 @@ const Add = () => {
                   onBlur={handleBlur}
                   value={values.desc}
                 ></textarea>
+                {errors.desc && (
+                  <p className="text-sm font-medium text-red-500 text-end w-full">
+                    {errors.desc}
+                  </p>
+                )}
               </div>
               <button
                 type="submit"
@@ -293,6 +307,11 @@ const Add = () => {
                       : ""
                   }`}
                 />
+                {errors.shortTitle && (
+                  <p className="text-sm font-medium text-red-500 text-end w-full">
+                    {errors.shortTitle}
+                  </p>
+                )}
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
@@ -316,6 +335,11 @@ const Add = () => {
                       : ""
                   }`}
                 ></textarea>
+                {errors.shortDesc && (
+                  <p className="text-sm font-medium text-red-500 text-end w-full">
+                    {errors.shortDesc}
+                  </p>
+                )}
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
@@ -331,8 +355,17 @@ const Add = () => {
                   onBlur={handleBlur}
                   value={values.deliveryTime}
                   id="deliveryTime"
-                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"`}
+                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary ${
+                    errors.deliveryTime && touched.deliveryTime
+                      ? "border-red-500"
+                      : ""
+                  }`}
                 />
+                {errors.deliveryTime && (
+                  <p className="text-sm font-medium text-red-500 text-end w-full">
+                    {errors.deliveryTime}
+                  </p>
+                )}
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
@@ -348,8 +381,17 @@ const Add = () => {
                   onBlur={handleBlur}
                   value={values.revisionNumber}
                   id="revisionNumber"
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
+                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary ${
+                    errors.revisionNumber && touched.revisionNumber
+                      ? "border-red-500"
+                      : ""
+                  }`}
                 />
+                {errors.revisionNumber && (
+                  <p className="text-sm font-medium text-red-500 text-end w-full">
+                    {errors.revisionNumber}
+                  </p>
+                )}
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
@@ -410,8 +452,15 @@ const Add = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.price}
-                  className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
+                  className={`border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary ${
+                    errors.price && touched.price ? "border-red-500" : ""
+                  }`}
                 />
+                {errors.price && (
+                  <p className="text-sm font-medium text-red-500 text-end w-full">
+                    {errors.price}
+                  </p>
+                )}
               </div>
             </div>
             <button

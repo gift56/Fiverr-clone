@@ -20,12 +20,12 @@ export const registerSchema = yup.object({
 });
 
 export const addGigSchema = yup.object().shape({
-  title: yup.string().required("Title is required"),
-  cat: yup.string().required("Category is required"),
-  desc: yup.string().required("Description is required"),
-  shortTitle: yup.string().required("Short Title is required"),
-  shortDesc: yup.string().required("Short Description is required"),
-  deliveryTime: yup.number().positive().integer().required("Delivery Time is required"),
-  revisionNumber: yup.number().positive().integer().required("Revision Number is required"),
-  price: yup.number().positive().integer().required("Price is required"),
+  title: yup.string().required("Required"),
+  cat: yup.string().required("Required"),
+  desc: yup.string().required("Required"),
+  shortTitle: yup.string().required("Required"),
+  shortDesc: yup.string().required("Required"),
+  deliveryTime: yup.number().positive().integer().required("Required"),
+  revisionNumber: yup.number().positive().integer().required("Required"),
+  price: yup.number().positive().integer().required("Required"),
 });
