@@ -99,7 +99,7 @@ const Add = () => {
                 </label>
                 <select
                   name="cat"
-                  id="cats"
+                  id="cat"
                   onChange={handleChange}
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm appearance-none bg-[url(./assets/icons/dropDown.svg)] bg-no-repeat bg-[center_right_1.2rem] cursor-pointer border-gray-300 focus:border-primary"
                 >
