@@ -35,13 +35,13 @@ const Reviews = ({ gigId }) => {
     setLoading(true);
     try {
       const res = await Axios.post(requests.reviews, payload);
-      console.log(res.data);
       toast.success("Thanks for your Review!😊", {
         position: "bottom-right",
         toastId: 1,
         autoClose: 1500,
       });
       setLoading(false);
+      return res.data;
     } catch (error) {
       setLoading(false);
       if (error?.response?.data) {
