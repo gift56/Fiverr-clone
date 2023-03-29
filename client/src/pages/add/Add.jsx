@@ -102,8 +102,6 @@ const Add = () => {
     e.target[0].value = "";
   };
 
-  // console.log(state);
-
   return (
     <main className="py-40 pb-20">
       <div className="contain">
