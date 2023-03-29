@@ -13,7 +13,6 @@ const Add = () => {
   const [singleFile, setSingleFile] = useState(undefined);
   const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
-
   const [state, dispatch] = useReducer(gigReducer, INITIAL_STATE);
 
   const handleChange = (e) => {
@@ -124,14 +123,26 @@ const Add = () => {
                   onChange={(e) => setSingleFile(e.target.files[0])}
                 />
                 <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600 border-gray-300">
-                  <p>Upload Cover Image</p>
-                  <BsUpload size={20} />
-                  <label
-                    htmlFor="cover"
-                    className="w-fit border py-2 px-5 rounded-md cursor-pointer"
-                  >
-                    Browser
-                  </label>
+                  {singleFile?.type?.startsWith("image/") ? (
+                    <label htmlFor="cover">
+                      <img
+                        src={URL.createObjectURL(singleFile)}
+                        alt={singleFile.name}
+                        className="w-[80px] h-[80px] rounded-full border-2 border-primary"
+                      />
+                    </label>
+                  ) : (
+                    <>
+                      <p>Upload Cover Image</p>
+                      <BsUpload size={20} />
+                      <label
+                        htmlFor="cover"
+                        className="w-fit border py-2 px-5 rounded-md cursor-pointer"
+                      >
+                        Browser
+                      </label>
+                    </>
+                  )}
                 </div>
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
