@@ -39,16 +39,16 @@ const MyGigs = () => {
 
   const tableActions = data?.map((item) => ({
     image: (
-      <div className="w-14 h-10">
+      <div className="w-14 h-14">
         <img
           src={item.cover}
           alt={item.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover rounded-full"
         />
       </div>
     ),
     title: (
-      <p className="w-full flex items-center justify-start">{item.title}</p>
+      <p className="w-full flex items-center justify-start text-left">{item.title}</p>
     ),
     price: (
       <p className="w-full flex items-center justify-start">{item.price}</p>
