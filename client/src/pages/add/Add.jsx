@@ -138,15 +138,15 @@ const Add = () => {
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
-                  htmlFor="upload"
+                  htmlFor="images"
                   className="text-sm font-medium text-darkColor/80"
                 >
                   Upload Image
                 </label>
                 <input
                   type="file"
-                  name="upload"
-                  id="upload"
+                  name="images"
+                  id="images"
                   className="hidden"
                   accept="image/*"
                   multiple
