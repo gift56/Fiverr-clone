@@ -318,7 +318,7 @@ const Add = () => {
                         onClick={() =>
                           dispatch({ type: "REMOVE_FEATURE", payload: f })
                         }
-                        className="flex items-center gap-2 justify-start w-fit"
+                        className="flex items-center gap-2 justify-start w-fit lowercase"
                       >
                         {f}
                         <span>
