@@ -124,13 +124,14 @@ const Add = () => {
                 />
                 <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600 border-gray-300">
                   {singleFile?.type?.startsWith("image/") ? (
-                    <label htmlFor="cover">
+                    <div className="flex items-center justify-center gap-2">
                       <img
                         src={URL.createObjectURL(singleFile)}
                         alt={singleFile.name}
-                        className="w-[80px] h-[80px] rounded-full border-2 border-primary"
+                        className="w-[100px] h-[100px] rounded-full border-2 border-primary object-cover"
                       />
-                    </label>
+                      <label htmlFor="cover" className="cursor-pointer text-sm sm:text-base font-medium">Change Cover Image</label>
+                    </div>
                   ) : (
                     <>
                       <p>Upload Cover Image</p>
