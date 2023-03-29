@@ -156,7 +156,7 @@ const Add = () => {
                   <p>Upload and Image</p>
                   <BsUpload size={20} />
                   <label
-                    htmlFor="upload"
+                    htmlFor="images"
                     className="w-fit border py-2 px-5 rounded-md cursor-pointer"
                   >
                     Browser
