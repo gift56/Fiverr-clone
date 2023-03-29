@@ -92,7 +92,7 @@ const Add = () => {
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
-                  htmlFor="cats"
+                  htmlFor="cat"
                   className="text-sm font-medium text-darkColor/80"
                 >
                   Category
