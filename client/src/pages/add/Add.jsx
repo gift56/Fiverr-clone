@@ -18,14 +18,6 @@ const Add = () => {
   const [uploading, setUploading] = useState(false);
   const [state, dispatch] = useReducer(gigReducer, INITIAL_STATE);
 
-  const handleFeature = (e) => {
-    e.preventDefault();
-    dispatch({
-      type: "ADD_FEATURE",
-      payload: e.target[0].value,
-    });
-    e.target[0].value = "";
-  };
   const handleUpload = async () => {
     setUploading(true);
     try {
@@ -56,18 +48,42 @@ const Add = () => {
 
   const onSubmit = (payload, action) => {
     console.log(payload);
-    // mutation.mutate(payload);
+    dispatch({ type: "CHANGE_INPUT", payload: { name: "title", value: values.title }});
+    dispatch({ type: "CHANGE_INPUT", payload: { name: "cat", value: values.cat }});
+    // mutation.mutate(state);
     // navigate("/mygigs");
   };
 
-  const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
-    useFormik({
-      initialValues: state,
-      validationSchema: addGigSchema,
-      onSubmit,
-      validateOnChange: true,
-      validateOnBlur: true,
+  const {
+    values,
+    handleBlur,
+    handleChange,
+    handleSubmit,
+    errors,
+    touched,
+    setFieldValue,
+  } = useFormik({
+    initialValues: state,
+    validationSchema: addGigSchema,
+    onSubmit,
+    validateOnChange: true,
+    validateOnBlur: true,
+  });
+
+  const handleFeature = (e) => {
+    e.preventDefault();
+    dispatch({
+      type: "ADD_FEATURE",
+      payload: e.target[0].value,
     });
+    e.target[0].value = "";
+    // if (newFeature) {
+    //   dispatch({ type: "ADD_FEATURE", payload: newFeature });
+    //   setFieldValue("features", "");
+    // }
+  };
+
+  console.log(state);
 
   return (
     <main className="py-40 pb-20">
@@ -195,7 +211,7 @@ const Add = () => {
                   >
                     {uploading ? (
                       <div className="flex items-center justify-center">
-                        <img src={loader} alt="/" className="w-[40px]" />
+                        <img src={loader} alt="/" className="w-[30px]" />
                       </div>
                     ) : (
                       "Upload Images"
@@ -316,6 +332,7 @@ const Add = () => {
                   <input
                     type="text"
                     id="features"
+                    name="features"
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.features}

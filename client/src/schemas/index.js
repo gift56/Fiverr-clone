@@ -25,7 +25,7 @@ export const addGigSchema = yup.object().shape({
   desc: yup.string().required("Description is required"),
   shortTitle: yup.string().required("Short Title is required"),
   shortDesc: yup.string().required("Short Description is required"),
-  deliveryTime: yup.number().required("Delivery Time is required"),
-  revisionNumber: yup.number().required("Revision Number is required"),
-  price: yup.number().required("Price is required"),
+  deliveryTime: yup.number().positive().integer().required("Delivery Time is required"),
+  revisionNumber: yup.number().positive().integer().required("Revision Number is required"),
+  price: yup.number().positive().integer().required("Price is required"),
 });
