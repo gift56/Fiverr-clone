@@ -9,7 +9,7 @@ import upload from "../../libs/upload";
 import { gigReducer, INITIAL_STATE } from "../../reducers/addGigReducer";
 import loader from "../../assets/icons/loader.svg";
 import { IoCloseCircleOutline } from "react-icons/io5";
-// import { useFormik } from "formik";
+import { useFormik } from "formik";
 
 const Add = () => {
   const [singleFile, setSingleFile] = useState(undefined);

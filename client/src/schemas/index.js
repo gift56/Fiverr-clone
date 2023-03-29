@@ -19,4 +19,13 @@ export const registerSchema = yup.object({
     .required("Required"),
 });
 
-// export const addGigSchema
+const addGigSchema = yup.object().shape({
+  title: yup.string().required("Title is required"),
+  cat: yup.string().required("Category is required"),
+  desc: yup.string().required("Description is required"),
+  shortTitle: yup.string().required("Short Title is required"),
+  shortDesc: yup.string().required("Short Description is required"),
+  deliveryTime: yup.number().required("Delivery Time is required"),
+  revisionNumber: yup.number().required("Revision Number is required"),
+  price: yup.number().required("Price is required"),
+});
