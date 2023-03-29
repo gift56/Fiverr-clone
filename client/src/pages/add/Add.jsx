@@ -10,6 +10,7 @@ import { gigReducer, INITIAL_STATE } from "../../reducers/addGigReducer";
 import loader from "../../assets/icons/loader.svg";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { useFormik } from "formik";
+import { addGigSchema } from "../../schemas";
 
 const Add = () => {
   const [singleFile, setSingleFile] = useState(undefined);
@@ -17,12 +18,6 @@ const Add = () => {
   const [uploading, setUploading] = useState(false);
   const [state, dispatch] = useReducer(gigReducer, INITIAL_STATE);
 
-  const handleChange = (e) => {
-    dispatch({
-      type: "CHANGE_INPUT",
-      payload: { name: e.target.name, value: e.target.value },
-    });
-  };
   const handleFeature = (e) => {
     e.preventDefault();
     dispatch({
@@ -60,11 +55,19 @@ const Add = () => {
     },
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    mutation.mutate(state);
-    navigate("/mygigs");
+  const onSubmit = (payload, action) => {
+    console.log(payload);
+    // mutation.mutate(payload);
+    // navigate("/mygigs");
   };
+
+  const { values, handleBlur, handleChange, handleSubmit } = useFormik({
+    initialValues: state,
+    validationSchema: addGigSchema,
+    onSubmit,
+    validateOnChange: true,
+    validateOnBlur: true,
+  });
 
   return (
     <main className="py-40 pb-20">
