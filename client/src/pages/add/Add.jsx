@@ -46,8 +46,7 @@ const Add = () => {
     },
   });
 
-  const onSubmit = (payload, action) => {
-    console.log(payload);
+  const onSubmit = async (payload, actions) => {
     dispatch({
       type: "CHANGE_INPUT",
       payload: { name: "title", value: payload.title },
@@ -80,8 +79,10 @@ const Add = () => {
       type: "CHANGE_INPUT",
       payload: { name: "price", value: payload.price },
     });
-    // mutation.mutate(state);
-    // navigate("/mygigs");
+    mutation.mutate(state);
+    navigate("/mygigs");
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    actions.resetForm();
   };
 
   const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
