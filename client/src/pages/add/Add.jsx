@@ -109,7 +109,7 @@ const Add = () => {
     e.target[0].value = "";
   };
 
-  // console.log(state);
+  console.log(state);
 
   return (
     <main className="py-40 pb-20">
@@ -358,10 +358,6 @@ const Add = () => {
                   <input
                     type="text"
                     id="features"
-                    name="features"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.features}
                     placeholder="e.g page design"
                     className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                   />
