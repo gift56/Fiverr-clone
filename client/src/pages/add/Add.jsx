@@ -7,6 +7,7 @@ import { options } from "../../data/data";
 import requests from "../../libs/request";
 import upload from "../../libs/upload";
 import { gigReducer, INITIAL_STATE } from "../../reducers/addGigReducer";
+import loader from "../../assets/icons/loader.svg";
 
 const Add = () => {
   const [singleFile, setSingleFile] = useState(undefined);
@@ -47,11 +48,8 @@ const Add = () => {
       console.log(err);
     }
   };
-
   const navigate = useNavigate();
-
   const queryClient = useQueryClient();
-
   const mutation = useMutation({
     mutationFn: (gig) => {
       return Axios.post(requests.gigs, gig);
@@ -64,7 +62,7 @@ const Add = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     mutation.mutate(state);
-    // navigate("/mygigs")
+    navigate("/mygigs");
   };
 
   return (
@@ -152,16 +150,31 @@ const Add = () => {
                   multiple
                   onChange={(e) => setFiles(e.target.files)}
                 />
-                <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600 border-gray-300">
-                  <p>Upload and Image</p>
-                  <BsUpload size={20} />
-                  <label
-                    htmlFor="images"
-                    className="w-fit border py-2 px-5 rounded-md cursor-pointer"
+                {files.length === 0 ? (
+                  <div className="flex justify-center items-center flex-col gap-3 w-full border h-[136px] rounded-md text-sm text-gray-600 border-gray-300">
+                    <p>Upload and Image</p>
+                    <BsUpload size={20} />
+                    <label
+                      htmlFor="images"
+                      className="w-fit border py-2 px-5 rounded-md cursor-pointer"
+                    >
+                      Browser
+                    </label>
+                  </div>
+                ) : (
+                  <button
+                    onClick={handleUpload}
+                    className="w-fit border py-2 px-5 rounded-md cursor-pointer hover:bg-primary hover:border-primary hover:text-white text-base font-medium transition-all duration-300"
                   >
-                    Browser
-                  </label>
-                </div>
+                    {uploading ? (
+                      <div className="flex items-center justify-center">
+                        <img src={loader} alt="/" className="w-[40px]" />
+                      </div>
+                    ) : (
+                      "Upload Images"
+                    )}
+                  </button>
+                )}
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
