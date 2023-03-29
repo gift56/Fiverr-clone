@@ -26,7 +26,6 @@ const Add = () => {
     });
     e.target[0].value = "";
   };
-
   const handleUpload = async () => {
     setUploading(true);
     try {
@@ -61,13 +60,14 @@ const Add = () => {
     // navigate("/mygigs");
   };
 
-  const { values, handleBlur, handleChange, handleSubmit } = useFormik({
-    initialValues: state,
-    validationSchema: addGigSchema,
-    onSubmit,
-    validateOnChange: true,
-    validateOnBlur: true,
-  });
+  const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
+    useFormik({
+      initialValues: state,
+      validationSchema: addGigSchema,
+      onSubmit,
+      validateOnChange: true,
+      validateOnBlur: true,
+    });
 
   return (
     <main className="py-40 pb-20">
@@ -90,7 +90,10 @@ const Add = () => {
                   placeholder="e.g I will do something I'm really good at..."
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                   onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.title}
                 />
+                {/* {errors.title ? <div>{errors.title}</div> : null} */}
               </div>
               <div className="flex flex-col w-full gap-1 items-start justify-start">
                 <label
@@ -103,6 +106,8 @@ const Add = () => {
                   name="cat"
                   id="cat"
                   onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.cat}
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm appearance-none bg-[url(./assets/icons/dropDown.svg)] bg-no-repeat bg-[center_right_1.2rem] cursor-pointer border-gray-300 focus:border-primary"
                 >
                   {options.map((item, i) => (
@@ -213,6 +218,8 @@ const Add = () => {
                   placeholder="Brief description to customers of your service..."
                   className="w-full border h-[136px] rounded-md text-sm text-gray-600 outline-none resize-none border-gray-300 p-3 focus:border-primary"
                   onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.desc}
                 ></textarea>
               </div>
               <button
@@ -236,6 +243,8 @@ const Add = () => {
                   name="shortTitle"
                   id="shortTitle"
                   onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.shortTitle}
                   placeholder="e.g One page web design..."
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                 />
@@ -251,6 +260,8 @@ const Add = () => {
                   name="shortDesc"
                   id="shortDesc"
                   onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.shortDesc}
                   cols="30"
                   rows="10"
                   placeholder="Short Description of your service..."
@@ -268,6 +279,8 @@ const Add = () => {
                   type="number"
                   name="deliveryTime"
                   onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.deliveryTime}
                   id="deliveryTime"
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                 />
@@ -283,6 +296,8 @@ const Add = () => {
                   type="number"
                   name="revisionNumber"
                   onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.revisionNumber}
                   id="revisionNumber"
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                 />
@@ -301,6 +316,9 @@ const Add = () => {
                   <input
                     type="text"
                     id="features"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.features}
                     placeholder="e.g page design"
                     className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                   />
@@ -344,6 +362,8 @@ const Add = () => {
                   name="price"
                   id="price"
                   onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.price}
                   className="border w-full h-10 px-3 rounded-md outline-none text-sm border-gray-300 focus:border-primary"
                 />
               </div>
