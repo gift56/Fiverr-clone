@@ -30,7 +30,7 @@ const GigsCards = ({ item }) => {
       <img
         src={item?.cover}
         alt={item?.username}
-        className="w-full object-cover"
+        className="w-full object-cover group-hover:opacity-80 transition-all duration-300"
       />
       <div className="w-full bg-white pt-5 flex items-start flex-col gap-3 justify-start">
         <div className="flex items-center justify-start gap-3 px-4">

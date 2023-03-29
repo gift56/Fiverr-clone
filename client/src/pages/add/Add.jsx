@@ -35,6 +35,7 @@ const Add = () => {
   };
   const navigate = useNavigate();
   const queryClient = useQueryClient();
+  
   const mutation = useMutation({
     mutationFn: (gig) => {
       return Axios.post(requests.gigs, gig);

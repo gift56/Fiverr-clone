@@ -36,11 +36,11 @@ const Orders = () => {
 
   const tableActions = data?.map((item) => ({
     image: (
-      <div className="w-14 h-10">
+      <div className="w-14 h-14">
         <img
           src={item.img}
           alt={item.username}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover rounded-full"
         />
       </div>
     ),
