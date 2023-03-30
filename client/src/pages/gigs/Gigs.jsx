@@ -36,8 +36,9 @@ const Gigs = () => {
   const newSearch = search.split("?cat=");
   const newCat = newSearch[1];
 
-  const findData = data.find((item) => item.cat === newCat);
-  console.log(findData);
+  const findData =
+    data?.length === 0 ? null : data?.find((item) => item?.cat === newCat);
+
   return (
     <main className="py-40">
       <div className="contain">
@@ -47,9 +48,13 @@ const Gigs = () => {
               <BiHomeAlt size={12} />
             </span>
             <span>/</span>
-            <span className="text-sm">{findData?.shortTitle}</span>
+            <span className="text-sm">
+              {findData?.shortTitle ? findData?.shortTitle : "Designs"}
+            </span>
             <span>/</span>
-            <span className="text-sm">Website Development</span>
+            <span className="text-sm">
+              {findData?.title ? findData?.title : "Job Title"}
+            </span>
           </div>
           <h2 className="text-3xl font-bold">Web Development</h2>
           <p className="text-base font-medium">
