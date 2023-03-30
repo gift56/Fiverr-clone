@@ -72,7 +72,7 @@ const Add = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     mutation.mutate(state);
-    navigate("/myGigs")
+    // navigate("/myGigs")
   };
   return (
     <main className="py-40 pb-20">

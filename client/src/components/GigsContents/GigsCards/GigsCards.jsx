@@ -14,6 +14,8 @@ const GigsCards = ({ item }) => {
         return res.data;
       }),
   });
+
+  console.log(data);
   const truckcateString = (str, num) => {
     if (str?.length > num) {
       return str.slice(0, num) + "...";
@@ -30,7 +32,7 @@ const GigsCards = ({ item }) => {
       <img
         src={item?.cover}
         alt={item?.username}
-        className="w-full object-cover"
+        className="w-full object-cover h-[200px]"
       />
       <div className="w-full bg-white pt-5 flex items-start flex-col gap-3 justify-start">
         <div className="flex items-center justify-start gap-3 px-4">
@@ -54,6 +56,7 @@ const GigsCards = ({ item }) => {
         <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold px-4">
           {!isNaN(item.totalStars / item.starNumber) &&
             Math.round(item.totalStars / item.starNumber)}
+          <BsStarFill />
         </p>
         <div className="border-t w-full p-5 flex items-center justify-between">
           <span className="text-gray-400 cursor-pointer">
