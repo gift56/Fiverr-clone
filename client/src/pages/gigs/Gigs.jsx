@@ -33,8 +33,11 @@ const Gigs = () => {
   const apply = () => {
     refetch();
   };
+  const newSearch = search.split("?cat=");
+  const newCat = newSearch[1];
 
-  console.log(data);
+  const findData = data.find((item) => item.cat === newCat);
+  console.log(findData);
   return (
     <main className="py-40">
       <div className="contain">
@@ -44,7 +47,7 @@ const Gigs = () => {
               <BiHomeAlt size={12} />
             </span>
             <span>/</span>
-            <span className="text-sm">Programming & Tech</span>
+            <span className="text-sm">{findData?.shortTitle}</span>
             <span>/</span>
             <span className="text-sm">Website Development</span>
           </div>
