@@ -15,12 +15,10 @@ import requests from "../../libs/request";
 import loader from "../../assets/icons/loader.svg";
 
 const Homepage = () => {
-  const { isLoading, error, data, refetch } = useQuery({
+  const { isLoading, error, data } = useQuery({
     queryKey: ["gigs"],
     queryFn: () => Axios.get(requests.gigs).then((res) => res.data),
   });
-
-  console.log(data);
 
   return (
     <main>
