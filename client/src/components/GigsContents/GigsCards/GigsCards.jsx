@@ -7,6 +7,7 @@ import requests from "../../../libs/request";
 import { useQuery } from "@tanstack/react-query";
 
 const GigsCards = ({ item }) => {
+  console.log(item);
   const { data } = useQuery({
     queryKey: [item.userId],
     queryFn: () =>
@@ -15,7 +16,6 @@ const GigsCards = ({ item }) => {
       }),
   });
 
-  console.log(data);
   const truckcateString = (str, num) => {
     if (str?.length > num) {
       return str.slice(0, num) + "...";
@@ -54,9 +54,9 @@ const GigsCards = ({ item }) => {
           {truckcateString(item.desc, 60)}
         </p>
         <p className="flex items-center justify-start gap-1 text-yellow-400 font-semibold px-4">
+          <BsStarFill />
           {!isNaN(item.totalStars / item.starNumber) &&
             Math.round(item.totalStars / item.starNumber)}
-          <BsStarFill />
         </p>
         <div className="border-t w-full p-5 flex items-center justify-between">
           <span className="text-gray-400 cursor-pointer">
