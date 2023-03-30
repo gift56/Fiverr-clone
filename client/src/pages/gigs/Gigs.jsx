@@ -34,6 +34,7 @@ const Gigs = () => {
     refetch();
   };
 
+  console.log(data);
   return (
     <main className="py-40">
       <div className="contain">

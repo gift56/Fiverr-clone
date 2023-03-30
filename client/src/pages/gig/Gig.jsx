@@ -16,8 +16,6 @@ const Gig = () => {
   });
   const userId = data?.userId;
 
-  console.log(data);
-
   return (
     <main className="py-40 pb-10">
       <div className="contain">
