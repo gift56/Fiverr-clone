@@ -7,7 +7,6 @@ import requests from "../../../libs/request";
 import { useQuery } from "@tanstack/react-query";
 
 const GigsCards = ({ item }) => {
-  console.log(item);
   const { data } = useQuery({
     queryKey: [item.userId],
     queryFn: () =>
