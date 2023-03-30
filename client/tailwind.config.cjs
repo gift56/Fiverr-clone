@@ -47,6 +47,7 @@ module.exports = {
       },
       screens: {
         laptop: "1136px",
+        tab: "900px",
       },
     },
   },

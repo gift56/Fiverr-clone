@@ -124,7 +124,7 @@ const Gigs = () => {
             </div>
           </div>
           <div
-            className={`w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-start justify-start gap-8 ${
+            className={`w-full grid-cols-1 sm:grid-cols-2 tab:grid-cols-3 lg:grid-cols-4 items-start justify-start gap-8 ${
               isLoading || error || data?.length === 0 ? "flex" : "grid"
             }`}
           >
@@ -146,7 +146,7 @@ const Gigs = () => {
                       className="w-[350px]"
                     />
                     <h2 className="text-2xl md:text-4xl text-active font-medium text-center">
-                      Oops!🤷‍♂️ No Result 
+                      Oops!🤷‍♂️ No Result
                     </h2>
                   </div>
                 ) : (
