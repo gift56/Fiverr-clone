@@ -18,8 +18,6 @@ const GigsDetails = ({ data, id, userId }) => {
     enabled: !!userId,
   });
 
-  console.log(userData);
-
   return (
     <div className="w-full flex items-start justify-start gap-3 flex-col">
       <div className="flex items-center justify-start gap-2 text-gray-500 text-sm font-medium">
@@ -91,13 +89,13 @@ const GigsDetails = ({ data, id, userId }) => {
               {userData?.username}
             </h4>
             <div className="flex items-center justify-start gap-1 text-yellow-400 text-lg font-semibold">
-              {/* {Array(Math.round(data?.totalStars / data?.starNumber))
+              {Array(Math.round(data?.totalStars / data?.starNumber))
                 .fill()
                 .map((item, i) => (
                   <span key={i}>
                     <BsStarFill />
                   </span>
-                ))} */}
+                ))}
               <span>{Math.round(data?.totalStars / data?.starNumber)}</span>
             </div>
             <button className="outline-none text-sm font-medium hover:bg-gray-400 hover:text-white transition-all duration-300 border border-gray-400 w-fit py-2 px-4 rounded">
