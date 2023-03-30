@@ -2,12 +2,12 @@ import React, { useEffect, useMemo, useRef } from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { TfiWorld } from "react-icons/tfi";
 import { NavLink, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const MobileSidebar = ({ show, setShow, setLoginModal }) => {
   const variants = {
-    open: { opacity: 1, x: 0 },
-    closed: { opacity: 0, x: "-100%" },
+    open: { opacity: 1, x: 0, transition: { duration: 0.3 } },
+    closed: { opacity: 0, x: "-100%", transition: { duration: 0.3 } },
   };
   const showRef = useRef(null);
   const navigate = useNavigate();
@@ -46,7 +46,9 @@ const MobileSidebar = ({ show, setShow, setLoginModal }) => {
         show ? "flex" : "hidden"
       }`}
     >
-      <div
+      <motion.div
+        animate={show ? "open" : "closed"}
+        variants={variants}
         ref={showRef}
         className={`flex flex-col gap-4 justify-start items-start w-[250px] bg-white absolute top-0 z-20 h-screen p-6 ${
           show ? "left-0" : "-left-[100vw]"
@@ -96,7 +98,7 @@ const MobileSidebar = ({ show, setShow, setLoginModal }) => {
             USD
           </p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
