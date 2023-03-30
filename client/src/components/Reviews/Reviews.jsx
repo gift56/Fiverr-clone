@@ -89,7 +89,7 @@ const Reviews = ({ gigId }) => {
                 alt="/"
                 className="w-[350px]"
               />
-              <h2 className="text-4xl text-active font-medium">
+              <h2 className="text-xl md:text-4xl text-active font-medium">
                 Ooops! No Reviews
               </h2>
             </div>
@@ -106,7 +106,7 @@ const Reviews = ({ gigId }) => {
             className="flex items-start flex-col gap-2 justify-start w-full"
             onSubmit={handleSubmit}
           >
-            <div className="flex items-end w-full justify-between gap-4">
+            <div className="flex items-end w-full justify-between gap-4 md:flex-row flex-col">
               <textarea
                 placeholder="Send your review"
                 className={`w-full border px-4 py-2 outline-none rounded-md h-[120px] resize-none focus:border-primary ${
