@@ -2,8 +2,13 @@ import React, { useEffect, useMemo, useRef } from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { TfiWorld } from "react-icons/tfi";
 import { NavLink, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion"
 
 const MobileSidebar = ({ show, setShow, setLoginModal }) => {
+  const variants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: "-100%" },
+  };
   const showRef = useRef(null);
   const navigate = useNavigate();
 
@@ -34,8 +39,6 @@ const MobileSidebar = ({ show, setShow, setLoginModal }) => {
     }
   };
   useMemo(() => overflowHidden(), [show]);
-
-  const navLinks = [""];
 
   return (
     <div
