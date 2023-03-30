@@ -16,6 +16,7 @@ const Add = () => {
   const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
   const [state, dispatch] = useReducer(gigReducer, INITIAL_STATE);
+  const [loading, setLoading] = useState(false);
 
   const handleUpload = async () => {
     setUploading(true);
@@ -35,7 +36,7 @@ const Add = () => {
   };
   const navigate = useNavigate();
   const queryClient = useQueryClient();
-  
+
   const mutation = useMutation({
     mutationFn: (gig) => {
       return Axios.post(requests.gigs, gig);
@@ -70,9 +71,13 @@ const Add = () => {
   };
 
   const handleSubmit = (e) => {
+    setLoading(true);
     e.preventDefault();
     mutation.mutate(state);
-    // navigate("/myGigs")
+    setTimeout(() => {
+      navigate("/myGigs");
+      setLoading(false);
+    }, 5000);
   };
   return (
     <main className="py-40 pb-20">
@@ -260,7 +265,13 @@ const Add = () => {
                 onClick={handleSubmit}
                 className="w-full bg-primary/80 hover:bg-primary mt-4 text-white text-base font-semibold h-10 rounded transition-all duration-300 outline-none focus:border-primary hidden md:block"
               >
-                Create
+                {loading ? (
+                  <div className="flex items-center justify-center">
+                    <img src={loader} alt="/" className="w-[30px]" />
+                  </div>
+                ) : (
+                  "Create"
+                )}
               </button>
             </div>
             <div className="w-full md:flex-1 flex items-start justify-start flex-col gap-2">
@@ -319,7 +330,7 @@ const Add = () => {
                   Delivery Time (e.g 3 days)
                 </label>
                 <input
-                  type="number"
+                  type="text"
                   name="deliveryTime"
                   onChange={handleChange}
                   // onBlur={handleBlur}
@@ -341,7 +352,7 @@ const Add = () => {
                   Revision Number
                 </label>
                 <input
-                  type="number"
+                  type="text"
                   name="revisionNumber"
                   onChange={handleChange}
                   // onBlur={handleBlur}
@@ -408,7 +419,7 @@ const Add = () => {
                   Price
                 </label>
                 <input
-                  type="number"
+                  type="text"
                   name="price"
                   id="price"
                   onChange={handleChange}
@@ -428,7 +439,13 @@ const Add = () => {
               onClick={handleSubmit}
               className="w-full bg-primary/80 hover:bg-primary mt-4 text-white text-base font-semibold h-10 rounded transition-all duration-300 outline-none focus:border-primary md:hidden"
             >
-              Create
+               {loading ? (
+                  <div className="flex items-center justify-center">
+                    <img src={loader} alt="/" className="w-[30px]" />
+                  </div>
+                ) : (
+                  "Create"
+                )}
             </button>
           </div>
         </div>
