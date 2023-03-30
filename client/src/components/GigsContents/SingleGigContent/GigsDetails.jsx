@@ -18,7 +18,7 @@ const GigsDetails = ({ data, id, userId }) => {
     enabled: !!userId,
   });
 
-  console.log(data);
+  console.log(userData);
 
   return (
     <div className="w-full flex items-start justify-start gap-3 flex-col">
@@ -41,7 +41,7 @@ const GigsDetails = ({ data, id, userId }) => {
           />
           <span>{userData?.username}</span>
         </div>
-        {/* {!isNaN(data?.totalStars / data?.starNumber) && (
+        {!isNaN(data?.totalStars / data?.starNumber) && (
           <div className="flex items-center justify-start gap-1 text-yellow-400 text-lg font-semibold">
             {Array(Math.round(data?.totalStars / data?.starNumber))
               .fill()
@@ -52,7 +52,7 @@ const GigsDetails = ({ data, id, userId }) => {
               ))}
             <span>{Math.round(data?.totalStars / data?.starNumber)}</span>
           </div>
-        )} */}
+        )}
       </div>
       <div className="w-[90%]">
         <Slides rowId="4" distance={700}>

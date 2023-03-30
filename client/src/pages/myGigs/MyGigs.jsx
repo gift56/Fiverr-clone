@@ -11,11 +11,10 @@ import { Axios } from "../../config";
 const MyGigs = () => {
   const { authUser } = useAuthStore();
   const queryClient = useQueryClient();
-
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["myGigs"],
     queryFn: () =>
-      Axios.get(`${requests.gigs}?userId=${authUser?._id}`).then(
+      Axios.get(`${requests.gigs}?userId=${authUser._id}`).then(
         (res) => res.data
       ),
   });
@@ -33,9 +32,9 @@ const MyGigs = () => {
     mutation.mutate(id);
   };
 
-  useEffect(() => {
-    refetch();
-  }, []);
+  // useEffect(() => {
+  //   refetch();
+  // }, []);
 
   const tableActions = data?.map((item) => ({
     image: (
@@ -48,7 +47,9 @@ const MyGigs = () => {
       </div>
     ),
     title: (
-      <p className="w-full flex items-center justify-start text-left">{item.title}</p>
+      <p className="w-full flex items-center justify-start text-left">
+        {item.title}
+      </p>
     ),
     price: (
       <p className="w-full flex items-center justify-start">{item.price}</p>

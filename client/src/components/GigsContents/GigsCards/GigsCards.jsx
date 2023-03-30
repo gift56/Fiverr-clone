@@ -10,7 +10,7 @@ const GigsCards = ({ item }) => {
   const { data } = useQuery({
     queryKey: [item.userId],
     queryFn: () =>
-      Axios.get(`${requests.users}/${item?.userId}`).then((res) => {
+      Axios.get(`${requests.users}/${item.userId}`).then((res) => {
         return res.data;
       }),
   });

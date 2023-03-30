@@ -7,17 +7,16 @@ import { Axios } from "../../config";
 import loader from "../../assets/icons/loader.svg";
 import requests from "../../libs/request";
 
-
 const Gig = () => {
   const { id } = useParams();
-
   const { isLoading, error, data } = useQuery({
     queryKey: ["gig"],
     queryFn: () =>
       Axios.get(`${requests.gigs}/single/${id}`).then((res) => res.data),
   });
-
   const userId = data?.userId;
+
+  console.log(data);
 
   return (
     <main className="py-40 pb-10">
@@ -33,10 +32,10 @@ const Gig = () => {
         ) : (
           <div className="w-full flex items-start justify-between gap-6 flex-col lg:flex-row">
             <div className="w-full lg:w-[70%]">
-              <GigsDetails data={data} id={id} userId={userId}/>
+              <GigsDetails data={data} id={id} userId={userId} />
             </div>
             <div className="w-full lg:w-[30%] sticky top-40">
-              <GigsOrder data={data} id={id}/>
+              <GigsOrder data={data} id={id} />
             </div>
           </div>
         )}
