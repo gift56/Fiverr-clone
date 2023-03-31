@@ -29,7 +29,7 @@ const Homepage = () => {
           <img src={loader} alt="/" className="w-[40px]" />
         </div>
       ) : error ? (
-        <p className="text-2xl text-red-400 font-normal">
+        <p className="text-xl md:text-2xl text-red-400 font-normal">
           Error : Something went wrong
         </p>
       ) : (
