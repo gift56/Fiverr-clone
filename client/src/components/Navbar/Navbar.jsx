@@ -85,7 +85,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`flex items-center justify-center w-full flex-col text-white fixed top-0 transition-all ease-in-out z-10 ${
+      className={`flex items-center justify-center w-full flex-col text-white fixed top-0 transition-all ease-in-out z-20 ${
         active || pathname !== "/" ? "bg-white !text-darkColor" : ""
       }`}
     >
