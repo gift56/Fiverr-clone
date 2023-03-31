@@ -29,7 +29,7 @@ const connectMongodb = async () => {
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://fiverr-clone-nine.vercel.app"],
+    origin: ["http://localhost:5173", "https://fiverr-web.netlify.app"],
     credentials: true,
   })
 );
