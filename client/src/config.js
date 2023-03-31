@@ -1,6 +1,6 @@
 import axios from "axios";
 export const Axios = axios.create({
-  baseURL: "https://poised-petticoat-seal.cyclic.app",
+  baseURL: "http://localhost:8000",
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
