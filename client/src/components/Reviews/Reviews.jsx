@@ -12,7 +12,7 @@ import useAuthStore from "../../stores";
 const Reviews = ({ gigId }) => {
   const { authUser } = useAuthStore();
   const [loading, setLoading] = useState(false);
-  const { isLoading, error, data } = useQuery({
+  const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["reviews"],
     queryFn: () =>
       Axios.get(`${requests.reviews}/${gigId}`).then((res) => {
@@ -41,6 +41,9 @@ const Reviews = ({ gigId }) => {
         autoClose: 1500,
       });
       setLoading(false);
+      refetch();
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      actions.resetForm();
       return res.data;
     } catch (error) {
       setLoading(false);
@@ -58,9 +61,6 @@ const Reviews = ({ gigId }) => {
         });
       }
     }
-
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    actions.resetForm();
   };
 
   const { handleChange, values, handleBlur, handleSubmit, errors, touched } =

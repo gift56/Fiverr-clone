@@ -32,9 +32,11 @@ const MyGigs = () => {
     mutation.mutate(id);
   };
 
-  // useEffect(() => {
-  //   refetch();
-  // }, []);
+  useEffect(() => {
+    refetch();
+  }, []);
+
+  console.log(data)
 
   const tableActions = data?.map((item) => ({
     image: (
