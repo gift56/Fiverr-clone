@@ -27,7 +27,8 @@ const connectMongodb = async () => {
   }
 };
 
-app.use(cors({ origin: "*", credentials: true }));
+
+app.use(cors())
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api/auth", authRoute);
