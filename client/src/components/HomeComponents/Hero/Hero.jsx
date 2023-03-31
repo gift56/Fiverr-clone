@@ -37,7 +37,6 @@ const Hero = () => {
   const changeImage = [image1, image2, image3, image4, image5, image6];
 
   useEffect(() => {
-    setShowOpacityAnimation(true);
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === changeImage.length - 1 ? 0 : prevIndex + 1
@@ -116,7 +115,7 @@ const Hero = () => {
       <img
         src={changeImage[currentImageIndex]}
         alt="slide"
-        className={`transition-opacity ease-linear duration-300 hidden lg:flex absolute top-0 h-full w-full ${
+        className={`transition-opacity  duration-800 hidden lg:flex absolute top-0 h-full w-full ${
           showOpacityAnimation ? "opacity-95" : "opacity-100"
         }`}
       />
