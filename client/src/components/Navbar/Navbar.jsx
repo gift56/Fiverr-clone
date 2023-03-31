@@ -83,6 +83,7 @@ const Navbar = () => {
     }
   };
 
+
   return (
     <header
       className={`flex items-center justify-center w-full flex-col text-white fixed top-0 transition-all ease-in-out z-20 ${
@@ -132,7 +133,7 @@ const Navbar = () => {
               <>
                 {authUser && (
                   <div
-                    className="relative flex items-center gap-4 cursor-pointer"
+                    className="relative flex flex-col sm:flex-row items-center sm:gap-4 cursor-pointer"
                     onClick={() => setOpenDrop((prev) => !prev)}
                   >
                     <img
