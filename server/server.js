@@ -27,7 +27,14 @@ const connectMongodb = async () => {
   }
 };
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://fiverr-clone-nine.vercel.app"],
+    credentials: true,
+  })
+);
+// Handle preflight requests
+app.options("*", cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api/auth", authRoute);
